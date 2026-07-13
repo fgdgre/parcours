@@ -1,0 +1,10 @@
+[
+  { "type": "type", "prompt": "Sprint 1/8 — “My name is Dmytro and I'm learning French.” (use: j'apprends)", "answer": ["je m'appelle dmytro et j'apprends le français"], "hint": "apprendre = to learn; j'apprends." },
+  { "type": "type", "prompt": "Sprint 2/8 — “We just arrived at the station.”", "answer": ["nous venons d'arriver à la gare", "on vient d'arriver à la gare"] },
+  { "type": "type", "prompt": "Sprint 3/8 — “You mustn't do that here.”", "answer": ["il ne faut pas faire ça ici", "il faut pas faire ça ici"] },
+  { "type": "type", "prompt": "Sprint 4/8 — “I want to see them tomorrow.”", "answer": ["je veux les voir demain"] },
+  { "type": "type", "prompt": "Sprint 5/8 — “Do you understand me or not?” (informal)", "answer": ["tu me comprends ou pas", "tu me comprends ou non", "est-ce que tu me comprends ou pas"] },
+  { "type": "type", "prompt": "Sprint 6/8 — “She has to come with us.”", "answer": ["elle doit venir avec nous"] },
+  { "type": "type", "prompt": "Sprint 7/8 — “I just found the tickets — I'm going to give them to Marie.” (…les donner à Marie)", "answer": ["je viens de trouver les billets, je vais les donner à marie", "je viens de trouver les billets je vais les donner à marie"] },
+  { "type": "type", "prompt": "Sprint 8/8 — “His name is Paul, he lives next to the school.”", "answer": ["il s'appelle paul, il habite à côté de l'école", "il s'appelle paul il habite à côté de l'école"] }
+]

@@ -2,6 +2,11 @@
   <div class="page stack">
     <h1>Progress</h1>
 
+    <NuxtLink to="/guide" class="card spread">
+      <span>📖 How to run this program</span>
+      <span class="chip">Guide →</span>
+    </NuxtLink>
+
     <div class="stats">
       <div class="card stat">
         <span class="num">{{ progress.wordsSeen }}</span>
@@ -25,9 +30,9 @@
     <div v-for="ch in curriculum" :key="ch.id" class="stack chapter">
       <div class="spread">
         <span>{{ ch.title }}</span>
-        <span class="muted small">{{ doneIn(ch) }}/{{ ch.lessons.length }}</span>
+        <span class="muted small">{{ doneIn(ch) }}/{{ required(ch).length }}</span>
       </div>
-      <ProgressBar :value="ch.lessons.length ? doneIn(ch) / ch.lessons.length : 0" />
+      <ProgressBar :value="required(ch).length ? doneIn(ch) / required(ch).length : 0" />
     </div>
 
     <h2>Backup</h2>
@@ -70,11 +75,12 @@
 
 <script setup lang="ts">
 import type { Chapter } from '~/types/content'
-import { allLessons, curriculum } from '~/content'
+import { allLessons, curriculum, isOptional } from '~/content'
 
 const progress = useProgress()
 
-const doneIn = (ch: Chapter) => ch.lessons.filter(l => progress.isDone(l.id)).length
+const required = (ch: Chapter) => ch.lessons.filter(l => !isOptional(l))
+const doneIn = (ch: Chapter) => required(ch).filter(l => progress.isDone(l.id)).length
 const lessonsDone = computed(() => allLessons.filter(l => progress.isDone(l.id)).length)
 const minutesDone = computed(() =>
   allLessons.filter(l => progress.isDone(l.id)).reduce((s, l) => s + l.durationMin, 0),

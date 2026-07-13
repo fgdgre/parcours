@@ -1,0 +1,10 @@
+[
+  { "type": "type", "prompt": "Sprint 1/8 — “What did you do this morning?” (informal, use: ce matin)", "answer": ["qu'est-ce que tu as fait ce matin", "tu as fait quoi ce matin"] },
+  { "type": "type", "prompt": "Sprint 2/8 — “I took the bus and I worked.”", "answer": ["j'ai pris le bus et j'ai travaillé"] },
+  { "type": "type", "prompt": "Sprint 3/8 — “We didn't see the film.”", "answer": ["nous n'avons pas vu le film", "on n'a pas vu le film", "on a pas vu le film"] },
+  { "type": "type", "prompt": "Sprint 4/8 — “I did it for you.” (informal)", "answer": ["je l'ai fait pour toi"] },
+  { "type": "type", "prompt": "Sprint 5/8 — “Did she take the train yesterday?”", "answer": ["elle a pris le train hier", "est-ce qu'elle a pris le train hier"] },
+  { "type": "type", "prompt": "Sprint 6/8 — “I had a good day, thanks.”", "answer": ["j'ai eu un bon jour, merci", "j'ai eu un bon jour merci", "j'ai eu une bonne journée merci", "j'ai eu une bonne journée, merci"] },
+  { "type": "type", "prompt": "Sprint 7/8 — “They bought the house next to the school.”", "answer": ["ils ont acheté la maison à côté de l'école", "elles ont acheté la maison à côté de l'école"] },
+  { "type": "type", "prompt": "Sprint 8/8 — “I just ate, I don't want to eat something now.”", "answer": ["je viens de manger, je ne veux pas manger quelque chose maintenant", "je viens de manger je ne veux pas manger quelque chose maintenant", "je viens de manger je veux pas manger quelque chose maintenant"] }
+]

@@ -340,6 +340,22 @@
         "durationMin": 6
       },
       {
+        "id": "challenge-ch1-reading",
+        "type": "exercises",
+        "title": "Challenge · read a café dialogue",
+        "exerciseFile": "challenge-ch1-reading",
+        "durationMin": 8,
+        "optional": true
+      },
+      {
+        "id": "challenge-ch1-sprint",
+        "type": "exercises",
+        "title": "Challenge · translation sprint",
+        "exerciseFile": "challenge-ch1-sprint",
+        "durationMin": 8,
+        "optional": true
+      },
+      {
         "id": "ch1-checkpoint",
         "type": "checkpoint",
         "title": "Chapter 1 checkpoint",
@@ -714,6 +730,22 @@
         "title": "Speaking · liaisons aloud",
         "exerciseFile": "speak-ch2",
         "durationMin": 7
+      },
+      {
+        "id": "challenge-ch2-reading",
+        "type": "exercises",
+        "title": "Challenge · read a weekly routine",
+        "exerciseFile": "challenge-ch2-reading",
+        "durationMin": 8,
+        "optional": true
+      },
+      {
+        "id": "challenge-ch2-sprint",
+        "type": "exercises",
+        "title": "Challenge · translation sprint",
+        "exerciseFile": "challenge-ch2-sprint",
+        "durationMin": 8,
+        "optional": true
       },
       {
         "id": "ch2-checkpoint",
@@ -1135,6 +1167,22 @@
         "durationMin": 7
       },
       {
+        "id": "challenge-ch3-reading",
+        "type": "exercises",
+        "title": "Challenge · read asking for directions",
+        "exerciseFile": "challenge-ch3-reading",
+        "durationMin": 8,
+        "optional": true
+      },
+      {
+        "id": "challenge-ch3-sprint",
+        "type": "exercises",
+        "title": "Challenge · translation sprint",
+        "exerciseFile": "challenge-ch3-sprint",
+        "durationMin": 8,
+        "optional": true
+      },
+      {
         "id": "ch3-checkpoint",
         "type": "checkpoint",
         "title": "Chapter 3 checkpoint",
@@ -1479,6 +1527,22 @@
         "title": "Speaking · chapter 4",
         "exerciseFile": "speak-ch4",
         "durationMin": 7
+      },
+      {
+        "id": "challenge-ch4-reading",
+        "type": "exercises",
+        "title": "Challenge · read a day in the past",
+        "exerciseFile": "challenge-ch4-reading",
+        "durationMin": 8,
+        "optional": true
+      },
+      {
+        "id": "challenge-ch4-sprint",
+        "type": "exercises",
+        "title": "Challenge · translation sprint",
+        "exerciseFile": "challenge-ch4-sprint",
+        "durationMin": 8,
+        "optional": true
       },
       {
         "id": "ch4-checkpoint",
@@ -1826,6 +1890,22 @@
         "durationMin": 7
       },
       {
+        "id": "challenge-ch5-reading",
+        "type": "exercises",
+        "title": "Challenge · read a weekend story",
+        "exerciseFile": "challenge-ch5-reading",
+        "durationMin": 8,
+        "optional": true
+      },
+      {
+        "id": "challenge-ch5-sprint",
+        "type": "exercises",
+        "title": "Challenge · translation sprint",
+        "exerciseFile": "challenge-ch5-sprint",
+        "durationMin": 8,
+        "optional": true
+      },
+      {
         "id": "ch5-checkpoint",
         "type": "checkpoint",
         "title": "Milestone · Language Transfer complete",
@@ -2056,6 +2136,14 @@
         "durationMin": 15
       },
       {
+        "id": "challenge-ch6-reading",
+        "type": "exercises",
+        "title": "Challenge · read: learning French in Warsaw",
+        "exerciseFile": "challenge-ch6-reading",
+        "durationMin": 10,
+        "optional": true
+      },
+      {
         "id": "ch6-checkpoint",
         "type": "checkpoint",
         "title": "Chapter 6 checkpoint",
@@ -2272,6 +2360,14 @@
           "I worked through unit 40 (test final du livre) — left page rule, right page exercises, checked with the corrigés."
         ],
         "durationMin": 15
+      },
+      {
+        "id": "challenge-ch7-reading",
+        "type": "exercises",
+        "title": "Challenge · read: the first French class",
+        "exerciseFile": "challenge-ch7-reading",
+        "durationMin": 10,
+        "optional": true
       },
       {
         "id": "checkpoint-m3",

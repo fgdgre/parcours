@@ -1,0 +1,43 @@
+[
+  {
+    "type": "mc",
+    "passage": "Lundi passé, je suis allé à mon premier cours de français à l'école de langues. Le professeur a parlé seulement en français ! Au début, je n'ai pas tout compris, mais après vingt minutes, ça a commencé à aller mieux. Nous avons fait un petit dialogue : « Bonjour, je voudrais un billet pour Lyon, s'il vous plaît. » Après le cours, une étudiante m'a demandé : « Tu veux prendre un café ? » Nous avons parlé pendant une heure — en français ! Je ne sais pas si mon français est bon, mais je sais une chose : il faut parler pour apprendre.",
+    "prompt": "What was special about the teacher?",
+    "options": ["they spoke only French", "they spoke five languages", "they gave no homework", "they came from Lyon"],
+    "answer": 0,
+    "explain": "le professeur a parlé seulement en français."
+  },
+  {
+    "type": "mc",
+    "passage": "Lundi passé, je suis allé à mon premier cours de français à l'école de langues. Le professeur a parlé seulement en français ! Au début, je n'ai pas tout compris, mais après vingt minutes, ça a commencé à aller mieux. Nous avons fait un petit dialogue : « Bonjour, je voudrais un billet pour Lyon, s'il vous plaît. » Après le cours, une étudiante m'a demandé : « Tu veux prendre un café ? » Nous avons parlé pendant une heure — en français ! Je ne sais pas si mon français est bon, mais je sais une chose : il faut parler pour apprendre.",
+    "prompt": "How did the class feel at the start?",
+    "options": ["he didn't understand everything, then it got better", "easy from minute one", "boring", "too short"],
+    "answer": 0,
+    "explain": "au début, je n'ai pas tout compris… ça a commencé à aller mieux."
+  },
+  {
+    "type": "mc",
+    "prompt": "What happened after the class?",
+    "options": ["a student invited him for coffee and they spoke French for an hour", "he went straight home", "he bought a ticket to Lyon", "he complained to the teacher"],
+    "answer": 0,
+    "explain": "« Tu veux prendre un café ? » … nous avons parlé pendant une heure."
+  },
+  {
+    "type": "type",
+    "prompt": "From the text: write the writer's final lesson — “you have to speak in order to learn”.",
+    "answer": ["il faut parler pour apprendre"],
+    "hint": "il faut + pour."
+  },
+  {
+    "type": "type",
+    "prompt": "Silent practice: “At the start, I didn't understand everything.” (use: au début / tout)",
+    "answer": ["au début, je n'ai pas tout compris", "au début je n'ai pas tout compris"],
+    "hint": "tout goes between pas and compris."
+  },
+  {
+    "type": "type",
+    "prompt": "Translate: “I would like a ticket to Lyon, please.”",
+    "answer": ["je voudrais un billet pour lyon, s'il vous plaît", "je voudrais un billet pour lyon s'il vous plaît"],
+    "hint": "un billet pour + city."
+  }
+]

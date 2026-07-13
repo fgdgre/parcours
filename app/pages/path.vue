@@ -11,10 +11,10 @@
         <span class="head-text">
           <span class="title">{{ ch.title }}</span>
           <span class="muted small">{{ ch.subtitle }}</span>
-          <ProgressBar class="head-bar" :value="ch.lessons.length ? doneIn(ch) / ch.lessons.length : 0" />
+          <ProgressBar class="head-bar" :value="required(ch).length ? doneIn(ch) / required(ch).length : 0" />
         </span>
         <span class="head-meta">
-          <span class="muted small">{{ doneIn(ch) }}/{{ ch.lessons.length }}</span>
+          <span class="muted small">{{ doneIn(ch) }}/{{ required(ch).length }}</span>
           <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M9 6l6 6-6 6" />
           </svg>
@@ -29,11 +29,12 @@
 
 <script setup lang="ts">
 import type { Chapter } from '~/types/content'
-import { curriculum } from '~/content'
+import { curriculum, isOptional } from '~/content'
 
 const progress = useProgress()
 
-const doneIn = (ch: Chapter) => ch.lessons.filter(l => progress.isDone(l.id)).length
+const required = (ch: Chapter) => ch.lessons.filter(l => !isOptional(l))
+const doneIn = (ch: Chapter) => required(ch).filter(l => progress.isDone(l.id)).length
 
 const currentChapterId = computed(
   () => curriculum.find(ch => doneIn(ch) < ch.lessons.length)?.id ?? curriculum[0]?.id,

@@ -1,0 +1,43 @@
+[
+  {
+    "type": "mc",
+    "passage": "Je m'appelle Andriy et j'habite à Varsovie avec ma femme. Nous sommes arrivés en Pologne l'année passée. Le matin, je travaille — je suis développeur — et le soir, j'apprends le français parce que nous voulons aller au Canada. Ce n'est pas facile : il faut travailler, faire les exercices, écouter des podcasts… Mais j'aime les langues, et ma femme m'aide beaucoup. Elle parle déjà bien !",
+    "prompt": "Why is Andriy learning French?",
+    "options": ["because they want to go to Canada", "because he lives in Poland", "because his wife is French", "for his developer job"],
+    "answer": 0,
+    "explain": "parce que nous voulons aller au Canada."
+  },
+  {
+    "type": "mc",
+    "passage": "Je m'appelle Andriy et j'habite à Varsovie avec ma femme. Nous sommes arrivés en Pologne l'année passée. Le matin, je travaille — je suis développeur — et le soir, j'apprends le français parce que nous voulons aller au Canada. Ce n'est pas facile : il faut travailler, faire les exercices, écouter des podcasts… Mais j'aime les langues, et ma femme m'aide beaucoup. Elle parle déjà bien !",
+    "prompt": "What is true about his wife?",
+    "options": ["she helps him and already speaks well", "she doesn't like languages", "she works in the morning", "she stayed in Ukraine"],
+    "answer": 0,
+    "explain": "ma femme m'aide beaucoup; elle parle déjà bien."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Ce n'est pas facile” means…",
+    "options": ["it's not easy", "it's not possible", "it's not finished", "it's not French"],
+    "answer": 0,
+    "explain": "facile = easy (cognate of “facility”)."
+  },
+  {
+    "type": "type",
+    "prompt": "From the text: write the phrase meaning “she helps me a lot”. (aider = to help)",
+    "answer": ["elle m'aide beaucoup", "ma femme m'aide beaucoup"],
+    "hint": "me + aide → m'aide."
+  },
+  {
+    "type": "type",
+    "prompt": "Silent practice: “I'm learning French in the evening.” (use: j'apprends)",
+    "answer": ["j'apprends le français le soir"],
+    "hint": "apprendre → j'apprends."
+  },
+  {
+    "type": "type",
+    "prompt": "Translate: “It's not easy, but I like it.”",
+    "answer": ["ce n'est pas facile, mais j'aime ça", "ce n'est pas facile mais j'aime ça", "c'est pas facile mais j'aime ça"],
+    "hint": "j'aime ça = I like it/that."
+  }
+]

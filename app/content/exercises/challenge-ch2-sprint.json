@@ -1,0 +1,10 @@
+[
+  { "type": "type", "prompt": "Sprint 1/8 — “Do you (formal) want to eat something?”", "answer": ["vous voulez manger quelque chose", "voulez-vous manger quelque chose", "est-ce que vous voulez manger quelque chose"] },
+  { "type": "type", "prompt": "Sprint 2/8 — “We can come on Thursday.”", "answer": ["on peut venir jeudi", "nous pouvons venir jeudi"] },
+  { "type": "type", "prompt": "Sprint 3/8 — “What do you want to do tonight?” (informal)", "answer": ["qu'est-ce que tu veux faire ce soir", "tu veux faire quoi ce soir"] },
+  { "type": "type", "prompt": "Sprint 4/8 — “I like the new house.”", "answer": ["j'aime la nouvelle maison"] },
+  { "type": "type", "prompt": "Sprint 5/8 — “They have three children.”", "answer": ["ils ont trois enfants", "elles ont trois enfants"] },
+  { "type": "type", "prompt": "Sprint 6/8 — “Where are you going tomorrow morning?” (formal)", "answer": ["où allez-vous demain matin", "vous allez où demain matin", "où est-ce que vous allez demain matin"] },
+  { "type": "type", "prompt": "Sprint 7/8 — “I work a lot, but I like my work.”", "answer": ["je travaille beaucoup, mais j'aime mon travail", "je travaille beaucoup mais j'aime mon travail"] },
+  { "type": "type", "prompt": "Sprint 8/8 — “There is no bread today.”", "answer": ["il n'y a pas de pain aujourd'hui"] }
+]

@@ -27,6 +27,8 @@ export interface ExerciseLesson {
   title: string
   exerciseFile: string
   durationMin: number
+  /** extra practice: excluded from Today sessions and chapter progress */
+  optional?: boolean
 }
 
 export interface CheckpointLesson {
@@ -57,8 +59,8 @@ export interface Card {
 }
 
 export type Exercise =
-  | { type: 'mc'; prompt: string; options: string[]; answer: number; explain?: string }
-  | { type: 'type'; prompt: string; answer: string[]; hint?: string }
+  | { type: 'mc'; prompt: string; options: string[]; answer: number; explain?: string; passage?: string }
+  | { type: 'type'; prompt: string; answer: string[]; hint?: string; passage?: string }
   | { type: 'conjugate'; verb: string; pronoun: string; tense: string; answer: string[] }
   | { type: 'dictation'; ttsText: string; answer: string[] }
   | { type: 'speak'; target: string; en: string }

@@ -1,0 +1,10 @@
+[
+  { "type": "type", "prompt": "Sprint 1/8 — “I want to eat.”", "answer": ["je veux manger"] },
+  { "type": "type", "prompt": "Sprint 2/8 — “It's not possible today.”", "answer": ["ce n'est pas possible aujourd'hui", "c'est pas possible aujourd'hui"] },
+  { "type": "type", "prompt": "Sprint 3/8 — “Why not?”", "answer": ["pourquoi pas"] },
+  { "type": "type", "prompt": "Sprint 4/8 — “I have a question for you.”", "answer": ["j'ai une question pour toi", "j'ai une question pour vous"] },
+  { "type": "type", "prompt": "Sprint 5/8 — “There is a café here.”", "answer": ["il y a un café ici"] },
+  { "type": "type", "prompt": "Sprint 6/8 — “I can come with you.”", "answer": ["je peux venir avec toi", "je peux venir avec vous"] },
+  { "type": "type", "prompt": "Sprint 7/8 — “Me too, thanks a lot!”", "answer": ["moi aussi, merci beaucoup", "moi aussi merci beaucoup"] },
+  { "type": "type", "prompt": "Sprint 8/8 — “I'm going to speak French now.”", "answer": ["je vais parler français maintenant"] }
+]

@@ -1,8 +1,11 @@
 <template>
   <div class="page stack">
-    <header>
-      <h1>Today</h1>
-      <p class="muted small">{{ dateLabel }}</p>
+    <header class="spread">
+      <div>
+        <h1>Today</h1>
+        <p class="muted small">{{ dateLabel }}</p>
+      </div>
+      <NuxtLink to="/guide" class="muted small guide-link">How this works →</NuxtLink>
     </header>
 
     <NuxtLink v-if="progress.dueIds.length > 0" to="/cards" class="card due spread">
@@ -32,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import { allLessons } from '~/content'
+import { allLessons, isOptional } from '~/content'
 import { todayIso } from '~/utils/srs'
 
 const progress = useProgress()
@@ -42,7 +45,7 @@ const dateLabel = new Date().toLocaleDateString('en-GB', {
 })
 
 const session = computed(() => {
-  const incomplete = allLessons.filter(l => !progress.isDone(l.id))
+  const incomplete = allLessons.filter(l => !progress.isDone(l.id) && !isOptional(l))
   const picked = []
   let minutes = 0
   for (const lesson of incomplete) {
@@ -60,6 +63,7 @@ const dailyDone = computed(() => progress.isDone(`daily-${todayIso()}`))
 </script>
 
 <style scoped>
+.guide-link { flex-shrink: 0; padding-top: 6px; }
 .due { border-color: var(--accent); }
 .daily-done { opacity: 0.7; }
 .done-check { color: var(--ok); font-weight: 700; }

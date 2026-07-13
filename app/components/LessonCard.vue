@@ -1,9 +1,9 @@
 <template>
-  <NuxtLink :to="`/lesson/${lesson.id}`" class="card lesson" :class="{ done }">
+  <NuxtLink :to="`/lesson/${lesson.id}`" class="card lesson" :class="{ done, optional }">
     <span class="icon" aria-hidden="true">{{ icon }}</span>
     <span class="body">
       <span class="title">{{ lesson.title }}</span>
-      <span class="muted small">{{ subtitle }}</span>
+      <span class="muted small">{{ subtitle }}<template v-if="optional"> · optional</template></span>
     </span>
     <span v-if="done" class="check" aria-label="done">✓</span>
   </NuxtLink>
@@ -15,6 +15,7 @@ import type { Lesson } from '~/types/content'
 const props = defineProps<{ lesson: Lesson }>()
 const progress = useProgress()
 const done = computed(() => progress.isDone(props.lesson.id))
+const optional = computed(() => props.lesson.type === 'exercises' && !!props.lesson.optional)
 
 const icon = computed(() => {
   switch (props.lesson.type) {
@@ -48,6 +49,7 @@ const subtitle = computed(() => {
 }
 .lesson:active { transform: scale(0.985); border-color: var(--accent); }
 .lesson.done { opacity: 0.62; }
+.lesson.optional { border-style: dashed; }
 .icon { font-size: 1.1rem; width: 28px; text-align: center; flex-shrink: 0; }
 .body { display: flex; flex-direction: column; min-width: 0; }
 .title { font-weight: 600; }

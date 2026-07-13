@@ -1,5 +1,6 @@
 <template>
   <div class="stack">
+    <p v-if="exercise.passage" class="card passage" lang="fr">{{ exercise.passage }}</p>
     <h2>{{ exercise.prompt }}</h2>
     <button
       v-for="(opt, i) in shuffled"
@@ -22,7 +23,7 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-  exercise: { type: 'mc'; prompt: string; options: string[]; answer: number; explain?: string }
+  exercise: { type: 'mc'; prompt: string; options: string[]; answer: number; explain?: string; passage?: string }
 }>()
 defineEmits<{ done: [] }>()
 
@@ -50,6 +51,7 @@ function optionClass(i: number) {
 </script>
 
 <style scoped>
+.passage { font-size: 1.05rem; line-height: 1.7; font-style: normal; white-space: pre-line; }
 .option { justify-content: flex-start; text-align: left; }
 .opt-ok { border-color: var(--ok); background: var(--ok-soft); color: var(--ok); }
 .opt-err { border-color: var(--err); background: var(--err-soft); color: var(--err); }

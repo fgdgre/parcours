@@ -1,0 +1,10 @@
+[
+  { "type": "type", "prompt": "Sprint 1/8 — “I went to Warsaw to work.”", "answer": ["je suis allé à varsovie pour travailler", "je suis allée à varsovie pour travailler"] },
+  { "type": "type", "prompt": "Sprint 2/8 — “They arrived yesterday evening.”", "answer": ["ils sont arrivés hier soir", "elles sont arrivées hier soir"] },
+  { "type": "type", "prompt": "Sprint 3/8 — “I didn't go to the market, I didn't have time.”", "answer": ["je ne suis pas allé au marché, je n'ai pas eu le temps", "je ne suis pas allée au marché, je n'ai pas eu le temps", "je ne suis pas allé au marché je n'ai pas eu le temps"] },
+  { "type": "type", "prompt": "Sprint 4/8 — “We have to speak French to live in Canada.”", "answer": ["il faut parler français pour habiter au canada", "il faut parler français pour vivre au canada", "on doit parler français pour habiter au canada"] },
+  { "type": "type", "prompt": "Sprint 5/8 — “Did you (informal) go to the school this morning?”", "answer": ["tu es allé à l'école ce matin", "tu es allée à l'école ce matin", "est-ce que tu es allé à l'école ce matin"] },
+  { "type": "type", "prompt": "Sprint 6/8 — “I just did it — I'm going to give it to you now.” (informal)", "answer": ["je viens de le faire, je vais te le donner maintenant", "je viens de le faire je vais te le donner maintenant"] },
+  { "type": "type", "prompt": "Sprint 7/8 — “She went home because she has to work tomorrow.” (use: parce qu'elle)", "answer": ["elle est allée à la maison parce qu'elle doit travailler demain"], "hint": "parce que = because." },
+  { "type": "type", "prompt": "Sprint 8/8 — “We saw them at the station and we spoke.”", "answer": ["nous les avons vus à la gare et nous avons parlé", "on les a vus à la gare et on a parlé", "on les a vu à la gare et on a parlé"] }
+]

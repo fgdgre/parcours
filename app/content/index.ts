@@ -26,6 +26,8 @@ export const lessonById: Record<string, Lesson> = Object.fromEntries(
   allLessons.map(l => [l.id, l]),
 )
 
+export const isOptional = (l: Lesson): boolean => l.type === 'exercises' && !!l.optional
+
 export function chapterOf(lessonId: string): Chapter | undefined {
   return curriculum.find(c => c.lessons.some(l => l.id === lessonId))
 }

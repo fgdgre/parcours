@@ -1,0 +1,49 @@
+[
+  {
+    "type": "mc",
+    "passage": "Hier, j'ai eu un bon jour. Le matin, j'ai travaillé à la maison et j'ai écouté un podcast en français — j'ai compris beaucoup de choses ! Le soir, on a regardé un film avec un ami. Après le film, nous avons parlé et j'ai acheté quelque chose à manger. Je n'ai pas eu le temps de faire les exercices, mais ce n'est pas un problème.",
+    "prompt": "What did the writer do in the morning?",
+    "options": ["worked at home and listened to a French podcast", "watched a film", "went to the market", "met a friend"],
+    "answer": 0,
+    "explain": "j'ai travaillé à la maison et j'ai écouté un podcast."
+  },
+  {
+    "type": "mc",
+    "passage": "Hier, j'ai eu un bon jour. Le matin, j'ai travaillé à la maison et j'ai écouté un podcast en français — j'ai compris beaucoup de choses ! Le soir, on a regardé un film avec un ami. Après le film, nous avons parlé et j'ai acheté quelque chose à manger. Je n'ai pas eu le temps de faire les exercices, mais ce n'est pas un problème.",
+    "prompt": "What did the writer NOT manage to do?",
+    "options": ["the exercises", "watching the film", "buying food", "talking with the friend"],
+    "answer": 0,
+    "explain": "je n'ai pas eu le temps de faire les exercices."
+  },
+  {
+    "type": "mc",
+    "prompt": "“J'ai compris beaucoup de choses” means…",
+    "options": ["I understood a lot of things", "I took many things", "I learned everything", "I heard some things"],
+    "answer": 0,
+    "explain": "comprendre → compris."
+  },
+  {
+    "type": "type",
+    "prompt": "From the text: write the phrase meaning “we watched a film”.",
+    "answer": ["on a regardé un film", "nous avons regardé un film"],
+    "hint": "regarder → regardé."
+  },
+  {
+    "type": "type",
+    "prompt": "Silent practice: “I didn't work yesterday evening.”",
+    "answer": ["je n'ai pas travaillé hier soir", "j'ai pas travaillé hier soir"],
+    "hint": "hier soir."
+  },
+  {
+    "type": "type",
+    "prompt": "Translate: “Did you (informal) understand the film?” (use: compris)",
+    "answer": ["tu as compris le film", "est-ce que tu as compris le film"],
+    "hint": "comprendre → compris."
+  },
+  {
+    "type": "type",
+    "prompt": "Translate: “She bought something for the children.”",
+    "answer": ["elle a acheté quelque chose pour les enfants"],
+    "hint": "quelque chose pour…"
+  }
+]

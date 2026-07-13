@@ -1,0 +1,49 @@
+[
+  {
+    "type": "mc",
+    "passage": "Le lundi, je travaille à la maison. Le matin, je regarde une vidéo et j'écoute un podcast. J'aime beaucoup le café le matin ! Le soir, on mange avec un ami. Le samedi et le dimanche, je ne travaille pas — on va au marché et on parle beaucoup.",
+    "prompt": "Where does the writer work on Mondays?",
+    "options": ["at home", "at a café", "at the market", "at school"],
+    "answer": 0,
+    "explain": "je travaille à la maison = I work at home."
+  },
+  {
+    "type": "mc",
+    "passage": "Le lundi, je travaille à la maison. Le matin, je regarde une vidéo et j'écoute un podcast. J'aime beaucoup le café le matin ! Le soir, on mange avec un ami. Le samedi et le dimanche, je ne travaille pas — on va au marché et on parle beaucoup.",
+    "prompt": "What happens on the weekend?",
+    "options": ["no work; market and lots of talking", "extra work", "watching videos all day", "eating alone"],
+    "answer": 0,
+    "explain": "samedi/dimanche: je ne travaille pas, on va au marché, on parle."
+  },
+  {
+    "type": "mc",
+    "prompt": "In the text, “on mange avec un ami” means…",
+    "options": ["we eat with a friend", "one eats a friend's food", "he eats with a friend", "we eat as friends do"],
+    "answer": 0,
+    "explain": "on = the spoken “we”."
+  },
+  {
+    "type": "type",
+    "prompt": "From the text: write the phrase meaning “I listen to a podcast”.",
+    "answer": ["j'écoute un podcast"],
+    "hint": "écouter."
+  },
+  {
+    "type": "type",
+    "prompt": "Silent practice: “On Friday, we're going to eat together.”",
+    "answer": ["vendredi, on va manger ensemble", "vendredi on va manger ensemble", "vendredi, nous allons manger ensemble", "vendredi nous allons manger ensemble"],
+    "hint": "ensemble = together."
+  },
+  {
+    "type": "type",
+    "prompt": "Translate: “The bread is very good here.”",
+    "answer": ["le pain est très bon ici"],
+    "hint": "bon = good (for things)."
+  },
+  {
+    "type": "type",
+    "prompt": "Translate: “I don't have time on Monday.”",
+    "answer": ["je n'ai pas le temps lundi", "j'ai pas le temps lundi", "je n'ai pas le temps le lundi"],
+    "hint": "le temps = time."
+  }
+]

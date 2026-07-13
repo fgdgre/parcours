@@ -1,0 +1,50 @@
+[
+  {
+    "type": "mc",
+    "passage": "— Bonjour, madame !\n— Bonjour, monsieur. Ça va ?\n— Oui, très bien, merci. Je voudrais un café, s'il vous plaît.\n— D'accord.\n— C'est combien ?\n— Deux euros.\n— Merci beaucoup. Au revoir !",
+    "prompt": "What does the man order?",
+    "options": ["a coffee", "a tea", "bread", "water"],
+    "answer": 0,
+    "explain": "je voudrais un café = I would like a coffee."
+  },
+  {
+    "type": "mc",
+    "passage": "— Bonjour, madame !\n— Bonjour, monsieur. Ça va ?\n— Oui, très bien, merci. Je voudrais un café, s'il vous plaît.\n— D'accord.\n— C'est combien ?\n— Deux euros.\n— Merci beaucoup. Au revoir !",
+    "prompt": "What does “C'est combien ?” ask?",
+    "options": ["How much is it?", "How are you?", "What is it?", "Where is it?"],
+    "answer": 0,
+    "explain": "combien = how much."
+  },
+  {
+    "type": "mc",
+    "prompt": "In the dialogue, how does the man say “please”?",
+    "options": ["s'il vous plaît", "d'accord", "merci beaucoup", "ça va"],
+    "answer": 0,
+    "explain": "s'il vous plaît — the formal please."
+  },
+  {
+    "type": "type",
+    "prompt": "From the dialogue: write the phrase that means “I would like”.",
+    "answer": ["je voudrais"],
+    "hint": "The polite want."
+  },
+  {
+    "type": "mc",
+    "prompt": "“D'accord” in the dialogue means…",
+    "options": ["okay", "goodbye", "excuse me", "of course not"],
+    "answer": 0,
+    "explain": "d'accord = okay / agreed."
+  },
+  {
+    "type": "type",
+    "prompt": "Silent practice: translate “It's very good, thank you.”",
+    "answer": ["c'est très bien merci", "c'est très bien, merci", "c'est très bon merci"],
+    "hint": "c'est très…"
+  },
+  {
+    "type": "type",
+    "prompt": "Translate: “Yes, but not now.”",
+    "answer": ["oui, mais pas maintenant", "oui mais pas maintenant"],
+    "hint": "mais = but."
+  }
+]

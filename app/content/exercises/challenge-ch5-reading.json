@@ -1,0 +1,49 @@
+[
+  {
+    "type": "mc",
+    "passage": "Samedi, je suis allé au marché avec ma sœur. Nous avons acheté du pain et quelque chose pour la maison. Après, on est allés au restaurant à côté de la banque — j'aime beaucoup ce restaurant. Ma sœur a pris le train le soir, elle habite loin d'ici. Demain, je vais travailler, mais ce soir, il faut faire les exercices de français !",
+    "prompt": "Who went to the market with the writer?",
+    "options": ["his sister", "his brother", "a friend", "his mother"],
+    "answer": 0,
+    "explain": "avec ma sœur = with my sister."
+  },
+  {
+    "type": "mc",
+    "passage": "Samedi, je suis allé au marché avec ma sœur. Nous avons acheté du pain et quelque chose pour la maison. Après, on est allés au restaurant à côté de la banque — j'aime beaucoup ce restaurant. Ma sœur a pris le train le soir, elle habite loin d'ici. Demain, je vais travailler, mais ce soir, il faut faire les exercices de français !",
+    "prompt": "Why did the sister take the train?",
+    "options": ["she lives far away", "she works on trains", "the restaurant was far", "she was late"],
+    "answer": 0,
+    "explain": "elle habite loin d'ici = she lives far from here."
+  },
+  {
+    "type": "mc",
+    "prompt": "Which verbs in the text use être for the past?",
+    "options": ["je suis allé / on est allés", "nous avons acheté", "elle a pris", "il faut faire"],
+    "answer": 0,
+    "explain": "aller is in the être club; acheter and prendre take avoir."
+  },
+  {
+    "type": "type",
+    "prompt": "From the text: write the phrase meaning “we went to the restaurant”.",
+    "answer": ["on est allés au restaurant", "on est allé au restaurant", "nous sommes allés au restaurant"],
+    "hint": "aller → être."
+  },
+  {
+    "type": "type",
+    "prompt": "Silent practice: “I went to the bank this morning.” (use: ce matin)",
+    "answer": ["je suis allé à la banque ce matin", "je suis allée à la banque ce matin"],
+    "hint": "être + allé(e)."
+  },
+  {
+    "type": "type",
+    "prompt": "Translate: “We have to do the French exercises tonight.”",
+    "answer": ["il faut faire les exercices de français ce soir", "on doit faire les exercices de français ce soir", "nous devons faire les exercices de français ce soir"],
+    "hint": "il faut…"
+  },
+  {
+    "type": "type",
+    "prompt": "Translate: “She came Saturday and we ate together.”",
+    "answer": ["elle est venue samedi et on a mangé ensemble", "elle est venue samedi et nous avons mangé ensemble"],
+    "hint": "venir → être + venue; manger → avoir."
+  }
+]

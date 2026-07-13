@@ -1,5 +1,6 @@
 <template>
   <div class="stack">
+    <p v-if="exercise.passage" class="card passage" lang="fr">{{ exercise.passage }}</p>
     <h2>{{ exercise.prompt }}</h2>
     <p v-if="exercise.hint" class="muted small">{{ exercise.hint }}</p>
 
@@ -50,7 +51,7 @@ import { cardsById } from '~/content'
 import WordBank from './WordBank.vue'
 
 const props = defineProps<{
-  exercise: { type: 'type'; prompt: string; answer: string[]; hint?: string }
+  exercise: { type: 'type'; prompt: string; answer: string[]; hint?: string; passage?: string }
 }>()
 const emit = defineEmits<{ done: [] }>()
 
@@ -106,6 +107,7 @@ function onEnter() {
 </script>
 
 <style scoped>
+.passage { font-size: 1.05rem; line-height: 1.7; white-space: pre-line; }
 .mode-toggle {
   min-height: 38px;
   padding: 6px 12px;

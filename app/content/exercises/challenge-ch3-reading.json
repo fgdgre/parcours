@@ -1,0 +1,49 @@
+[
+  {
+    "type": "mc",
+    "passage": "— Excusez-moi, madame, où est la gare, s'il vous plaît ?\n— C'est loin d'ici. Il faut prendre le bus.\n— Je viens d'arriver dans la ville, je ne sais pas où est le bus…\n— Pas de problème ! C'est devant la pharmacie, à côté de la banque.\n— Merci beaucoup, madame !",
+    "prompt": "What does the man want to find?",
+    "options": ["the train station", "the pharmacy", "the bank", "a bus ticket"],
+    "answer": 0,
+    "explain": "où est la gare = where is the station."
+  },
+  {
+    "type": "mc",
+    "passage": "— Excusez-moi, madame, où est la gare, s'il vous plaît ?\n— C'est loin d'ici. Il faut prendre le bus.\n— Je viens d'arriver dans la ville, je ne sais pas où est le bus…\n— Pas de problème ! C'est devant la pharmacie, à côté de la banque.\n— Merci beaucoup, madame !",
+    "prompt": "Why doesn't he know the city?",
+    "options": ["He just arrived", "He never travels", "He lost his map", "He can't read"],
+    "answer": 0,
+    "explain": "je viens d'arriver = I just arrived."
+  },
+  {
+    "type": "mc",
+    "prompt": "In the dialogue, where is the bus stop?",
+    "options": ["in front of the pharmacy, next to the bank", "behind the station", "far from the pharmacy", "between two banks"],
+    "answer": 0,
+    "explain": "devant la pharmacie, à côté de la banque."
+  },
+  {
+    "type": "type",
+    "prompt": "From the dialogue: write the phrase meaning “you have to take the bus”.",
+    "answer": ["il faut prendre le bus"],
+    "hint": "il faut…"
+  },
+  {
+    "type": "type",
+    "prompt": "Silent practice: “I have to find the pharmacy.”",
+    "answer": ["je dois trouver la pharmacie"],
+    "hint": "devoir + trouver."
+  },
+  {
+    "type": "type",
+    "prompt": "Translate: “Can you (formal) give me the tickets?”",
+    "answer": ["vous pouvez me donner les billets", "pouvez-vous me donner les billets", "est-ce que vous pouvez me donner les billets"],
+    "hint": "me before donner."
+  },
+  {
+    "type": "type",
+    "prompt": "Translate: “I know it, but I can't do it now.”",
+    "answer": ["je le sais, mais je ne peux pas le faire maintenant", "je le sais mais je ne peux pas le faire maintenant", "je le sais mais je peux pas le faire maintenant"],
+    "hint": "le before sais AND before faire."
+  }
+]
