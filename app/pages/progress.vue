@@ -1,0 +1,127 @@
+<template>
+  <div class="page stack">
+    <h1>Progress</h1>
+
+    <div class="stats">
+      <div class="card stat">
+        <span class="num">{{ progress.wordsSeen }}</span>
+        <span class="muted small">words seen</span>
+      </div>
+      <div class="card stat">
+        <span class="num">{{ progress.wordsLearned }}</span>
+        <span class="muted small">words learned</span>
+      </div>
+      <div class="card stat">
+        <span class="num">{{ lessonsDone }}</span>
+        <span class="muted small">lessons done</span>
+      </div>
+      <div class="card stat">
+        <span class="num">{{ minutesDone }}</span>
+        <span class="muted small">minutes studied</span>
+      </div>
+    </div>
+
+    <h2>Chapters</h2>
+    <div v-for="ch in curriculum" :key="ch.id" class="stack chapter">
+      <div class="spread">
+        <span>{{ ch.title }}</span>
+        <span class="muted small">{{ doneIn(ch) }}/{{ ch.lessons.length }}</span>
+      </div>
+      <ProgressBar :value="ch.lessons.length ? doneIn(ch) / ch.lessons.length : 0" />
+    </div>
+
+    <h2>Backup</h2>
+    <div class="card stack">
+      <p class="muted small">
+        Your progress lives only in this browser. Export a backup file from time to time.
+      </p>
+      <button class="btn btn-block" @click="exportBackup">Export backup</button>
+      <label class="btn btn-block import-label">
+        Import backup
+        <input type="file" accept="application/json" class="file-input" @change="importBackup">
+      </label>
+      <p v-if="ioMessage" class="small" :class="ioOk ? 'feedback-ok' : 'feedback-err'">{{ ioMessage }}</p>
+    </div>
+
+    <h2>Settings</h2>
+    <div class="card stack">
+      <label class="spread">
+        <span>
+          Strict accents
+          <span class="muted small block">Typed answers must include é, è, ç…</span>
+        </span>
+        <input v-model="progress.settings.strictAccents" type="checkbox" class="switch">
+      </label>
+      <label class="stack rate">
+        <span class="spread">
+          <span>Speech speed</span>
+          <span class="muted small">{{ progress.settings.ttsRate.toFixed(2) }}×</span>
+        </span>
+        <input v-model.number="progress.settings.ttsRate" type="range" min="0.7" max="1.1" step="0.05">
+      </label>
+    </div>
+
+    <div class="card stack danger">
+      <p class="muted small">Removes all progress, reviews and settings from this browser.</p>
+      <button class="btn btn-block reset" @click="resetAll">Reset everything</button>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import type { Chapter } from '~/types/content'
+import { allLessons, curriculum } from '~/content'
+
+const progress = useProgress()
+
+const doneIn = (ch: Chapter) => ch.lessons.filter(l => progress.isDone(l.id)).length
+const lessonsDone = computed(() => allLessons.filter(l => progress.isDone(l.id)).length)
+const minutesDone = computed(() =>
+  allLessons.filter(l => progress.isDone(l.id)).reduce((s, l) => s + l.durationMin, 0),
+)
+
+const ioMessage = ref('')
+const ioOk = ref(true)
+
+function exportBackup() {
+  const blob = new Blob([progress.exportBackup()], { type: 'application/json' })
+  const a = document.createElement('a')
+  a.href = URL.createObjectURL(blob)
+  a.download = `parcours-backup-${new Date().toLocaleDateString('sv-SE')}.json`
+  a.click()
+  URL.revokeObjectURL(a.href)
+  ioOk.value = true
+  ioMessage.value = 'Backup downloaded.'
+}
+
+async function importBackup(e: Event) {
+  const file = (e.target as HTMLInputElement).files?.[0]
+  if (!file) return
+  const result = progress.importBackup(await file.text())
+  ioOk.value = result.ok
+  ioMessage.value = result.ok ? 'Backup imported.' : `Import failed: ${result.error}`
+  ;(e.target as HTMLInputElement).value = ''
+}
+
+function resetAll() {
+  if (confirm('Delete ALL progress in this browser? Export a backup first if unsure.')) {
+    progress.resetAll()
+    ioOk.value = true
+    ioMessage.value = 'Everything was reset.'
+  }
+}
+</script>
+
+<style scoped>
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.stat { display: flex; flex-direction: column; align-items: center; padding: 14px 8px; }
+.num { font-size: 1.5rem; font-weight: 700; }
+.chapter { margin-bottom: 8px; }
+.block { display: block; }
+.import-label { position: relative; overflow: hidden; }
+.file-input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.switch { width: 22px; height: 22px; accent-color: var(--accent); }
+.rate input { width: 100%; accent-color: var(--accent); }
+.danger { border-color: var(--err); }
+.reset { color: var(--err); border-color: var(--err); }
+</style>

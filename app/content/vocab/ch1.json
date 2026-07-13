@@ -1,0 +1,29 @@
+[
+  {
+    "id": "v1-01",
+    "fr": "bonjour",
+    "en": "hello, good day",
+    "ipa": "/bɔ̃ʒuʁ/",
+    "exFr": "Bonjour, ça va ?",
+    "exEn": "Hello, how are you?",
+    "tags": ["greetings"]
+  },
+  {
+    "id": "v1-02",
+    "fr": "merci",
+    "en": "thank you",
+    "ipa": "/mɛʁsi/",
+    "exFr": "Merci beaucoup !",
+    "exEn": "Thank you very much!",
+    "tags": ["politeness"]
+  },
+  {
+    "id": "v1-03",
+    "fr": "oui",
+    "en": "yes",
+    "ipa": "/wi/",
+    "exFr": "Oui, je veux bien.",
+    "exEn": "Yes, I'd like that.",
+    "tags": ["core"]
+  }
+]

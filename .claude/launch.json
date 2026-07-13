@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "parcours",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "/Users/dmytro.domin/PhpstormProjects/parcours",
+      "port": 3000
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ch1",
+    "title": "Chapter 1 — Fondations",
+    "subtitle": "Weeks 1–2 · fixture data, replaced at content assembly",
+    "lessons": [
+      {
+        "id": "ch1-lt-01",
+        "type": "external",
+        "title": "Language Transfer — Track 1",
+        "provider": "link",
+        "url": "https://www.languagetransfer.org/french",
+        "durationMin": 10,
+        "instructions": "Listen actively: pause and answer aloud before the student does.",
+        "teaches": "How French and English share thousands of words."
+      },
+      {
+        "id": "ch1-vocab-01",
+        "type": "vocab",
+        "title": "First words · batch 1",
+        "cardIds": ["v1-01", "v1-02", "v1-03"],
+        "newCards": 3,
+        "durationMin": 5
+      },
+      {
+        "id": "ch1-ex-01",
+        "type": "exercises",
+        "title": "Practice — track 1",
+        "exerciseFile": "fixture",
+        "durationMin": 5
+      },
+      {
+        "id": "ch1-checkpoint",
+        "type": "checkpoint",
+        "title": "Chapter 1 checkpoint",
+        "canDoStatements": [
+          "I can greet someone and say my name.",
+          "I can turn -tion words into French."
+        ],
+        "durationMin": 2
+      }
+    ]
+  }
+]

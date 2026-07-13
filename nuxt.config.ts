@@ -1,6 +1,7 @@
 export default defineNuxtConfig({
   ssr: false,
   modules: ['@pinia/nuxt'],
+  components: [{ path: '~/components', pathPrefix: false }],
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2026-07-13',
   app: {

@@ -1,0 +1,52 @@
+<template>
+  <NuxtLink :to="`/lesson/${lesson.id}`" class="card lesson" :class="{ done }">
+    <span class="icon" aria-hidden="true">{{ icon }}</span>
+    <span class="body">
+      <span class="title">{{ lesson.title }}</span>
+      <span class="muted small">{{ subtitle }}</span>
+    </span>
+    <span v-if="done" class="check" aria-label="done">✓</span>
+  </NuxtLink>
+</template>
+
+<script setup lang="ts">
+import type { Lesson } from '~/types/content'
+
+const props = defineProps<{ lesson: Lesson }>()
+const progress = useProgress()
+const done = computed(() => progress.isDone(props.lesson.id))
+
+const icon = computed(() => {
+  switch (props.lesson.type) {
+    case 'external': return props.lesson.provider === 'link' ? '🔗' : '▶'
+    case 'vocab': return '🃏'
+    case 'exercises': return '✏️'
+    case 'checkpoint': return '🏁'
+  }
+})
+
+const subtitle = computed(() => {
+  const min = `${props.lesson.durationMin} min`
+  switch (props.lesson.type) {
+    case 'external': return min
+    case 'vocab': return `${props.lesson.cardIds.length} words · ${min}`
+    case 'exercises': return `practice · ${min}`
+    case 'checkpoint': return 'checkpoint'
+  }
+})
+</script>
+
+<style scoped>
+.lesson {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  color: var(--fg);
+}
+.lesson.done { opacity: 0.62; }
+.icon { font-size: 1.1rem; width: 28px; text-align: center; flex-shrink: 0; }
+.body { display: flex; flex-direction: column; min-width: 0; }
+.title { font-weight: 600; }
+.check { margin-left: auto; color: var(--ok); font-weight: 700; }
+</style>
