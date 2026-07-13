@@ -422,6 +422,13 @@
         "teaches": "One building block of the French sound system."
       },
       {
+        "id": "ex-lt-09-10",
+        "type": "exercises",
+        "title": "Practice · vous & polite questions",
+        "exerciseFile": "ex-lt-09-10",
+        "durationMin": 6
+      },
+      {
         "id": "lt-11",
         "type": "external",
         "title": "Language Transfer · Track 11",
@@ -496,6 +503,13 @@
         "teaches": "One building block of the French sound system."
       },
       {
+        "id": "ex-lt-11-12",
+        "type": "exercises",
+        "title": "Practice · nous, on & near future",
+        "exerciseFile": "ex-lt-11-12",
+        "durationMin": 6
+      },
+      {
         "id": "ch2-vocab-03",
         "type": "vocab",
         "title": "Evening, tomorrow, everyday nouns",
@@ -512,6 +526,13 @@
           "v2-30"
         ],
         "newCards": 10,
+        "durationMin": 6
+      },
+      {
+        "id": "dictation-ch2",
+        "type": "exercises",
+        "title": "Dictation · everyday sentences",
+        "exerciseFile": "dictation-ch2",
         "durationMin": 6
       },
       {
@@ -557,6 +578,13 @@
         "durationMin": 4,
         "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
         "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ex-lt-13-14",
+        "type": "exercises",
+        "title": "Practice · likes & qu'est-ce que",
+        "exerciseFile": "ex-lt-13-14",
+        "durationMin": 6
       },
       {
         "id": "ch2-vocab-04",
@@ -652,6 +680,13 @@
         "teaches": "One building block of the French sound system."
       },
       {
+        "id": "ex-lt-15-16",
+        "type": "exercises",
+        "title": "Practice · they, liaisons & pas de",
+        "exerciseFile": "ex-lt-15-16",
+        "durationMin": 6
+      },
+      {
         "id": "dylane-19",
         "type": "external",
         "title": "Pronunciation 19/55 · Pronunciation of A À Â in French",
@@ -672,6 +707,13 @@
         "durationMin": 8,
         "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
         "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "speak-ch2",
+        "type": "exercises",
+        "title": "Speaking · liaisons aloud",
+        "exerciseFile": "speak-ch2",
+        "durationMin": 7
       },
       {
         "id": "ch2-checkpoint",

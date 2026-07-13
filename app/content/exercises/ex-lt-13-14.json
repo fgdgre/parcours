@@ -1,0 +1,71 @@
+[
+  {
+    "type": "mc",
+    "prompt": "After “j'aime”, French needs the article: how do you say “I like coffee”?",
+    "options": ["J'aime le café", "J'aime café", "J'aime un café", "J'aime de café"],
+    "answer": 0,
+    "explain": "Likes and dislikes take le/la/les: j'aime LE café, j'aime LES enfants."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I like coffee.”",
+    "answer": ["j'aime le café"],
+    "hint": "le café — the article is required."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I don't like winter.”",
+    "answer": ["je n'aime pas l'hiver", "j'aime pas l'hiver"],
+    "hint": "ne … pas around aime; hiver starts with a vowel sound → l'hiver."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Qu'est-ce que…” at the start of a question means…",
+    "options": ["What…", "Who…", "When…", "Why…"],
+    "answer": 0,
+    "explain": "Qu'est-ce que tu veux ? = What do you want?"
+  },
+  {
+    "type": "type",
+    "prompt": "Ask: “What do you want to do?” (informal)",
+    "answer": ["qu'est-ce que tu veux faire", "tu veux faire quoi"],
+    "hint": "Qu'est-ce que + normal sentence — or the casual “… quoi ?” at the end."
+  },
+  {
+    "type": "conjugate",
+    "verb": "aimer",
+    "pronoun": "tu",
+    "tense": "present",
+    "answer": ["aimes"]
+  },
+  {
+    "type": "type",
+    "prompt": "Ask: “What is that?”",
+    "answer": ["qu'est-ce que c'est", "c'est quoi"],
+    "hint": "The single most useful question in a new country."
+  },
+  {
+    "type": "mc",
+    "prompt": "“les” is…",
+    "options": [
+      "“the” for plural — any gender",
+      "“the” for feminine only",
+      "“some”",
+      "“them” only"
+    ],
+    "answer": 0,
+    "explain": "le (m), la (f), les (plural for both)."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I like children.”",
+    "answer": ["j'aime les enfants"],
+    "hint": "Plural likes → les. Listen for the liaison: les‿enfants."
+  },
+  {
+    "type": "type",
+    "prompt": "Ask: “What are you going to do tomorrow?” (informal)",
+    "answer": ["qu'est-ce que tu vas faire demain", "tu vas faire quoi demain"],
+    "hint": "qu'est-ce que + tu vas + infinitive."
+  }
+]

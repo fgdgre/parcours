@@ -1,0 +1,78 @@
+[
+  {
+    "type": "conjugate",
+    "verb": "vouloir",
+    "pronoun": "ils",
+    "tense": "present",
+    "answer": ["veulent"]
+  },
+  {
+    "type": "mc",
+    "prompt": "“Il veut” vs “ils veulent” — in speech you hear the difference because…",
+    "options": [
+      "veut ends in a vowel sound, veulent ends in an L sound",
+      "you hear the final -s of “ils”",
+      "you can't hear any difference",
+      "“ils” is stressed"
+    ],
+    "answer": 0,
+    "explain": "il veut /vø/ vs ils veulent /vœl/ — the verb itself tells you it's plural."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “She wants to come with us.”",
+    "answer": ["elle veut venir avec nous"],
+    "hint": "elle veut + infinitive."
+  },
+  {
+    "type": "conjugate",
+    "verb": "être",
+    "pronoun": "ils",
+    "tense": "present",
+    "answer": ["sont"]
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “They are here now.”",
+    "answer": ["ils sont ici maintenant", "elles sont ici maintenant", "ils sont là maintenant", "elles sont là maintenant"],
+    "hint": "ils sont / elles sont."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Il n'y a pas de pain.” — after “pas”, “un/une/du” usually becomes…",
+    "options": ["de", "le", "la", "des"],
+    "answer": 0,
+    "explain": "Negation squeezes articles to “de”: il y a du pain → il n'y a pas DE pain."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I don't have bread.”",
+    "answer": ["je n'ai pas de pain", "j'ai pas de pain"],
+    "hint": "pas de + noun."
+  },
+  {
+    "type": "conjugate",
+    "verb": "avoir",
+    "pronoun": "ils",
+    "tense": "present",
+    "answer": ["ont"]
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “They have two children.”",
+    "answer": ["ils ont deux enfants", "elles ont deux enfants"],
+    "hint": "Liaison alert: ils‿ont with a Z sound."
+  },
+  {
+    "type": "mc",
+    "prompt": "“ils ont” vs “ils sont” — how do you tell them apart by ear?",
+    "options": [
+      "ils‿ont has a Z liaison (they have); ils sont has an S sound (they are)",
+      "they sound identical, only context helps",
+      "ils ont is always stressed",
+      "ils sont has a longer O"
+    ],
+    "answer": 0,
+    "explain": "/il.zɔ̃/ = they have; /il.sɔ̃/ = they are. This Z-vs-S pair is a classic exam trap."
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“Vous voulez” means…",
+    "options": ["you want (formal or plural)", "we want", "they want", "you wanted"],
+    "answer": 0,
+    "explain": "vous = the polite “you”, and also “you” for several people."
+  },
+  {
+    "type": "conjugate",
+    "verb": "vouloir",
+    "pronoun": "vous",
+    "tense": "present",
+    "answer": ["voulez"]
+  },
+  {
+    "type": "mc",
+    "prompt": "“Quelque chose” means…",
+    "options": ["something", "someone", "somewhere", "sometimes"],
+    "answer": 0,
+    "explain": "quelque chose = something. “Je veux quelque chose” — I want something."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I want to eat something.”",
+    "answer": ["je veux manger quelque chose"],
+    "hint": "je veux + infinitive + quelque chose."
+  },
+  {
+    "type": "type",
+    "prompt": "Ask formally: “Do you want to eat something?”",
+    "answer": ["vous voulez manger quelque chose", "est-ce que vous voulez manger quelque chose", "voulez-vous manger quelque chose"],
+    "hint": "Three ways work: intonation, est-ce que, or inversion."
+  },
+  {
+    "type": "conjugate",
+    "verb": "pouvoir",
+    "pronoun": "vous",
+    "tense": "present",
+    "answer": ["pouvez"]
+  },
+  {
+    "type": "type",
+    "prompt": "Ask: “Can you repeat, please?” (formal)",
+    "answer": ["vous pouvez répéter s'il vous plaît", "pouvez-vous répéter s'il vous plaît", "est-ce que vous pouvez répéter s'il vous plaît", "vous pouvez répéter"],
+    "hint": "répéter is a cognate — repeat."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Voulez-vous… ?” compared to “Vous voulez… ?” is…",
+    "options": [
+      "the same question, more formal (inversion)",
+      "a different tense",
+      "wrong in French",
+      "only used in writing"
+    ],
+    "answer": 0,
+    "explain": "Swapping verb and pronoun (inversion) is the more formal way to ask."
+  },
+  {
+    "type": "conjugate",
+    "verb": "être",
+    "pronoun": "vous",
+    "tense": "present",
+    "answer": ["êtes", "etes"]
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “You are here.” (formal)",
+    "answer": ["vous êtes ici", "vous êtes là"],
+    "hint": "Listen for the liaison: vous‿êtes."
+  }
+]

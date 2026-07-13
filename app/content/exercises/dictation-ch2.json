@@ -1,0 +1,42 @@
+[
+  {
+    "type": "dictation",
+    "ttsText": "Vous voulez un café ?",
+    "answer": ["vous voulez un café"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Nous allons à la maison.",
+    "answer": ["nous allons à la maison"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Qu'est-ce que tu veux faire ?",
+    "answer": ["qu'est-ce que tu veux faire"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Je n'ai pas le temps aujourd'hui.",
+    "answer": ["je n'ai pas le temps aujourd'hui"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Ils sont ici maintenant.",
+    "answer": ["ils sont ici maintenant", "elles sont ici maintenant"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "On va manger quelque chose.",
+    "answer": ["on va manger quelque chose"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "J'aime le café le matin.",
+    "answer": ["j'aime le café le matin"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Vous pouvez répéter, s'il vous plaît ?",
+    "answer": ["vous pouvez répéter s'il vous plaît"]
+  }
+]

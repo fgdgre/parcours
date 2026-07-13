@@ -81,6 +81,22 @@ for (const ch of curriculum) {
   }
 }
 
+// order guarantees: ids must match titles, and sequences must ascend across the path
+const flat = curriculum.flatMap(c => c.lessons)
+for (const l of flat) {
+  let m
+  if ((m = l.id.match(/^lt-(\d+)$/)) && !l.title.endsWith(`Track ${Number(m[1])}`)) {
+    errors.push(`${l.id}: title does not match track number: "${l.title}"`)
+  }
+  if ((m = l.id.match(/^dylane-(\d+)$/)) && Number(m[1]) <= 55 && !l.title.startsWith(`Pronunciation ${Number(m[1])}/55`)) {
+    errors.push(`${l.id}: title does not match lesson number: "${l.title}"`)
+  }
+}
+for (const prefix of ['lt', 'dylane']) {
+  const seq = flat.filter(l => new RegExp(`^${prefix}-\\d+$`).test(l.id)).map(l => Number(l.id.split('-')[1]))
+  if (seq.some((n, i) => i > 0 && n <= seq[i - 1])) errors.push(`${prefix} lessons are out of order in the path`)
+}
+
 const orphans = Object.keys(cards).filter(id =>
   !curriculum.some(ch => ch.lessons.some(l => l.type === 'vocab' && l.cardIds.includes(id))),
 )

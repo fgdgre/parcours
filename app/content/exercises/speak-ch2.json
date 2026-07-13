@@ -1,0 +1,12 @@
+[
+  { "type": "speak", "target": "Vous avez le temps ?", "en": "Do you have time? (liaison: vous‿avez)" },
+  { "type": "speak", "target": "Nous allons à la maison.", "en": "We're going home. (liaison: nous‿allons)" },
+  { "type": "speak", "target": "On va manger ensemble.", "en": "We're going to eat together." },
+  { "type": "speak", "target": "Qu'est-ce que c'est ?", "en": "What is that?" },
+  { "type": "speak", "target": "J'aime beaucoup le café.", "en": "I really like coffee." },
+  { "type": "speak", "target": "Ils ont deux enfants.", "en": "They have two children. (liaison: ils‿ont, deux‿enfants)" },
+  { "type": "speak", "target": "Vous pouvez répéter ?", "en": "Can you repeat?" },
+  { "type": "speak", "target": "Elle veut venir avec nous.", "en": "She wants to come with us." },
+  { "type": "speak", "target": "Où allez-vous ?", "en": "Where are you going? (liaison: allez‿vous)" },
+  { "type": "speak", "target": "Nous voulons parler français.", "en": "We want to speak French." }
+]
