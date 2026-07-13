@@ -8,6 +8,7 @@ export const STORAGE_KEY = 'parcours.v1'
 export interface Settings {
   strictAccents: boolean
   ttsRate: number
+  preferKeyboard: boolean
 }
 
 export interface PersistedState {
@@ -20,7 +21,7 @@ export interface PersistedState {
 }
 
 export function defaultSettings(): Settings {
-  return { strictAccents: false, ttsRate: 0.95 }
+  return { strictAccents: false, ttsRate: 0.95, preferKeyboard: false }
 }
 
 export function serializeState(

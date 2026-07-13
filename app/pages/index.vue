@@ -10,6 +10,11 @@
       <span class="chip">Review →</span>
     </NuxtLink>
 
+    <NuxtLink v-if="progress.wordsSeen >= 15" to="/daily" class="card spread" :class="{ 'daily-done': dailyDone }">
+      <span>✍️ Daily sentences <span v-if="dailyDone" class="done-check">✓</span></span>
+      <span class="chip">{{ dailyDone ? 'again →' : '5 fresh →' }}</span>
+    </NuxtLink>
+
     <template v-if="session.length > 0">
       <div class="spread">
         <h2>Your session</h2>
@@ -28,6 +33,7 @@
 
 <script setup lang="ts">
 import { allLessons } from '~/content'
+import { todayIso } from '~/utils/srs'
 
 const progress = useProgress()
 
@@ -49,8 +55,12 @@ const session = computed(() => {
 })
 
 const totalMin = computed(() => session.value.reduce((s, l) => s + l.durationMin, 0))
+
+const dailyDone = computed(() => progress.isDone(`daily-${todayIso()}`))
 </script>
 
 <style scoped>
 .due { border-color: var(--accent); }
+.daily-done { opacity: 0.7; }
+.done-check { color: var(--ok); font-weight: 700; }
 </style>

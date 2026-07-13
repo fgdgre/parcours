@@ -1,6 +1,8 @@
 # Parcours
 
-Personal French A0→B2 learning app: the complete verified program (Language Transfer, Dylane's pronunciation course, comprehensible input, frequency vocabulary, Grammaire progressive) as an ordered path with a daily session screen, SRS flashcards, and native exercises — multiple choice, typing, conjugation, TTS dictation, and speaking checks via the browser's speech recognizer.
+Personal French A0→B2 learning app: the complete verified program (Language Transfer, Dylane's pronunciation course, comprehensible input, frequency vocabulary, Grammaire progressive) as an ordered path with a daily session screen, SRS flashcards, and native exercises — multiple choice, translation with a Duolingo-style word bank (or keyboard, toggleable), conjugation, TTS dictation, and speaking checks via the browser's speech recognizer.
+
+**Daily sentences** (`/daily`, appears on Today once ≥15 words are learned): five fresh translation sentences per day, generated deterministically from a date seed by combining only drilled sentence patterns with words from your own SRS deck — no runtime AI, grammar correct by construction (`app/utils/sentenceGen.ts`).
 
 No backend, no accounts, no gamification. Progress lives in `localStorage` with export/import backup. End goal: TCF Canada, NCLC 7 (B2) in all four skills.
 
