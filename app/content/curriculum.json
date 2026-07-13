@@ -808,6 +808,13 @@
         "teaches": "One high-frequency word explored from every angle, all in French."
       },
       {
+        "id": "ex-lt-17-18",
+        "type": "exercises",
+        "title": "Practice · devoir & il faut",
+        "exerciseFile": "ex-lt-17-18",
+        "durationMin": 6
+      },
+      {
         "id": "lt-19",
         "type": "external",
         "title": "Language Transfer · Track 19",
@@ -893,6 +900,13 @@
         "teaches": "One high-frequency word explored from every angle, all in French."
       },
       {
+        "id": "ex-lt-19-20",
+        "type": "exercises",
+        "title": "Practice · me, te & names (s’appeler)",
+        "exerciseFile": "ex-lt-19-20",
+        "durationMin": 6
+      },
+      {
         "id": "lt-21",
         "type": "external",
         "title": "Language Transfer · Track 21",
@@ -967,6 +981,13 @@
         "teaches": "One high-frequency word explored from every angle, all in French."
       },
       {
+        "id": "ex-lt-21-22",
+        "type": "exercises",
+        "title": "Practice · le, la, les as “it”",
+        "exerciseFile": "ex-lt-21-22",
+        "durationMin": 6
+      },
+      {
         "id": "lt-23",
         "type": "external",
         "title": "Language Transfer · Track 23",
@@ -1019,6 +1040,13 @@
         "teaches": "Comprehensible input — your brain acquiring French from context."
       },
       {
+        "id": "dictation-ch3",
+        "type": "exercises",
+        "title": "Dictation · chapter 3",
+        "exerciseFile": "dictation-ch3",
+        "durationMin": 6
+      },
+      {
         "id": "lt-24",
         "type": "external",
         "title": "Language Transfer · Track 24",
@@ -1039,6 +1067,13 @@
         "durationMin": 5,
         "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
         "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ex-lt-23-24",
+        "type": "exercises",
+        "title": "Practice · venir de (just did)",
+        "exerciseFile": "ex-lt-23-24",
+        "durationMin": 6
       },
       {
         "id": "dylane-29",
@@ -1091,6 +1126,13 @@
         ],
         "newCards": 10,
         "durationMin": 6
+      },
+      {
+        "id": "speak-ch3",
+        "type": "exercises",
+        "title": "Speaking · chapter 3",
+        "exerciseFile": "speak-ch3",
+        "durationMin": 7
       },
       {
         "id": "ch3-checkpoint",
@@ -1166,6 +1208,13 @@
         "teaches": "One high-frequency word explored from every angle, all in French."
       },
       {
+        "id": "ex-lt-25-26",
+        "type": "exercises",
+        "title": "Practice · the past with avoir",
+        "exerciseFile": "ex-lt-25-26",
+        "durationMin": 6
+      },
+      {
         "id": "lt-27",
         "type": "external",
         "title": "Language Transfer · Track 27",
@@ -1232,6 +1281,13 @@
         "teaches": "One high-frequency word explored from every angle, all in French."
       },
       {
+        "id": "ex-lt-27-28",
+        "type": "exercises",
+        "title": "Practice · fait, vu, pris, eu",
+        "exerciseFile": "ex-lt-27-28",
+        "durationMin": 6
+      },
+      {
         "id": "lt-29",
         "type": "external",
         "title": "Language Transfer · Track 29",
@@ -1285,6 +1341,13 @@
         "durationMin": 8,
         "instructions": "Watch without subtitles first. Replay with French subtitles if lost.",
         "teaches": "One high-frequency word explored from every angle, all in French."
+      },
+      {
+        "id": "ex-lt-29-30",
+        "type": "exercises",
+        "title": "Practice · past: negation & questions",
+        "exerciseFile": "ex-lt-29-30",
+        "durationMin": 6
       },
       {
         "id": "lt-31",
@@ -1353,6 +1416,13 @@
         "teaches": "One high-frequency word explored from every angle, all in French."
       },
       {
+        "id": "ex-lt-31-32",
+        "type": "exercises",
+        "title": "Practice · past + pronouns",
+        "exerciseFile": "ex-lt-31-32",
+        "durationMin": 6
+      },
+      {
         "id": "dylane-39",
         "type": "external",
         "title": "Pronunciation 39/55 · H muet and H aspiré in French",
@@ -1375,6 +1445,13 @@
         "teaches": "One building block of the French sound system."
       },
       {
+        "id": "dictation-ch4",
+        "type": "exercises",
+        "title": "Dictation · chapter 4",
+        "exerciseFile": "dictation-ch4",
+        "durationMin": 6
+      },
+      {
         "id": "dylane-41",
         "type": "external",
         "title": "Pronunciation 41/55 · L in French",
@@ -1395,6 +1472,13 @@
         "durationMin": 6,
         "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
         "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "speak-ch4",
+        "type": "exercises",
+        "title": "Speaking · chapter 4",
+        "exerciseFile": "speak-ch4",
+        "durationMin": 7
       },
       {
         "id": "ch4-checkpoint",
@@ -1458,6 +1542,13 @@
         "teaches": "One building block of the French sound system."
       },
       {
+        "id": "ex-lt-33-34",
+        "type": "exercises",
+        "title": "Practice · past with être (allé, venu)",
+        "exerciseFile": "ex-lt-33-34",
+        "durationMin": 6
+      },
+      {
         "id": "lt-35",
         "type": "external",
         "title": "Language Transfer · Track 35",
@@ -1513,6 +1604,13 @@
         "teaches": "One building block of the French sound system."
       },
       {
+        "id": "ex-lt-35-36",
+        "type": "exercises",
+        "title": "Practice · mixing avoir & être",
+        "exerciseFile": "ex-lt-35-36",
+        "durationMin": 6
+      },
+      {
         "id": "lt-37",
         "type": "external",
         "title": "Language Transfer · Track 37",
@@ -1555,6 +1653,13 @@
         "durationMin": 4,
         "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
         "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ex-lt-37-38",
+        "type": "exercises",
+        "title": "Practice · il faut & pour",
+        "exerciseFile": "ex-lt-37-38",
+        "durationMin": 6
       },
       {
         "id": "sef-01",
@@ -1612,6 +1717,13 @@
         "teaches": "One building block of the French sound system."
       },
       {
+        "id": "ex-lt-39-40",
+        "type": "exercises",
+        "title": "Practice · grand review",
+        "exerciseFile": "ex-lt-39-40",
+        "durationMin": 6
+      },
+      {
         "id": "dylane-51",
         "type": "external",
         "title": "Pronunciation 51/55 · 25 unusual French pronunciations",
@@ -1643,6 +1755,13 @@
         "durationMin": 24,
         "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
         "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "dictation-ch5",
+        "type": "exercises",
+        "title": "Dictation · chapter 5",
+        "exerciseFile": "dictation-ch5",
+        "durationMin": 6
       },
       {
         "id": "dylane-54",
@@ -1698,6 +1817,13 @@
         "durationMin": 4,
         "instructions": "Real people, real speed (slowed). First pass: French subtitles. Second pass: none.",
         "teaches": "Multiple native voices — the ear training exams reward."
+      },
+      {
+        "id": "speak-ch5",
+        "type": "exercises",
+        "title": "Speaking · chapter 5",
+        "exerciseFile": "speak-ch5",
+        "durationMin": 7
       },
       {
         "id": "ch5-checkpoint",

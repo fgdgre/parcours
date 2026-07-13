@@ -1,0 +1,12 @@
+[
+  { "type": "speak", "target": "Je suis allé au marché.", "en": "I went to the market." },
+  { "type": "speak", "target": "Elle est venue hier.", "en": "She came yesterday." },
+  { "type": "speak", "target": "Il faut le faire maintenant.", "en": "We have to do it now." },
+  { "type": "speak", "target": "Je veux aller au Canada pour travailler.", "en": "I want to go to Canada to work." },
+  { "type": "speak", "target": "Qu'est-ce que tu as fait ?", "en": "What did you do?" },
+  { "type": "speak", "target": "Je viens d'arriver.", "en": "I just arrived." },
+  { "type": "speak", "target": "On a beaucoup travaillé.", "en": "We worked a lot." },
+  { "type": "speak", "target": "Je ne l'ai pas vu.", "en": "I didn't see it." },
+  { "type": "speak", "target": "Nous sommes arrivés à la gare.", "en": "We arrived at the station. (liaison: nous‿sommes… sommes‿arrivés)" },
+  { "type": "speak", "target": "Vous avez le temps ?", "en": "Do you have time? (liaison: vous‿avez)" }
+]

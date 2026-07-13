@@ -1,0 +1,10 @@
+[
+  { "type": "dictation", "ttsText": "Je suis allé à la gare.", "answer": ["je suis allé à la gare", "je suis allée à la gare"] },
+  { "type": "dictation", "ttsText": "Elle est venue avec nous.", "answer": ["elle est venue avec nous"] },
+  { "type": "dictation", "ttsText": "Il faut parler français au Canada.", "answer": ["il faut parler français au canada"] },
+  { "type": "dictation", "ttsText": "Qu'est-ce que tu as fait hier soir ?", "answer": ["qu'est-ce que tu as fait hier soir"] },
+  { "type": "dictation", "ttsText": "Je viens de le faire.", "answer": ["je viens de le faire"] },
+  { "type": "dictation", "ttsText": "On est allés au restaurant.", "answer": ["on est allés au restaurant", "on est allé au restaurant"] },
+  { "type": "dictation", "ttsText": "Je ne suis pas allé au travail.", "answer": ["je ne suis pas allé au travail", "je ne suis pas allée au travail"] },
+  { "type": "dictation", "ttsText": "Nous avons pris le train hier.", "answer": ["nous avons pris le train hier"] }
+]

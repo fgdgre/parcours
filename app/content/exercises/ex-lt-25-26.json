@@ -1,0 +1,66 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“J'ai parlé” means…",
+    "options": ["I spoke / I have spoken", "I speak", "I will speak", "I was speaking right now"],
+    "answer": 0,
+    "explain": "The past: avoir + participle. J'ai parlé = I spoke."
+  },
+  {
+    "type": "mc",
+    "prompt": "The French past you'll use 90% of the time is built with…",
+    "options": ["avoir + past participle", "être + infinitive", "a special ending on the verb", "aller + infinitive"],
+    "answer": 0,
+    "explain": "j'ai mangé, tu as parlé, il a regardé — avoir does the heavy lifting."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I ate at home.”",
+    "answer": ["j'ai mangé à la maison"],
+    "hint": "j'ai + mangé."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I worked yesterday.”",
+    "answer": ["j'ai travaillé hier"],
+    "hint": "hier = yesterday."
+  },
+  {
+    "type": "type",
+    "prompt": "What is the past participle of “parler”?",
+    "answer": ["parlé", "parle"],
+    "hint": "-er verbs: swap -er for -é (sounds the same!)."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “You spoke with Marie.” (informal)",
+    "answer": ["tu as parlé avec marie"],
+    "hint": "tu as + participle."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Il a regardé la vidéo” means…",
+    "options": ["He watched the video", "He is watching the video", "He will watch the video", "He has the video"],
+    "answer": 0,
+    "explain": "il a + regardé = he watched."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “We bought the bread.” (two ways accepted)",
+    "answer": ["nous avons acheté le pain", "on a acheté le pain"],
+    "hint": "nous avons / on a + acheté."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I listened to the podcast yesterday.”",
+    "answer": ["j'ai écouté le podcast hier"],
+    "hint": "écouter → écouté."
+  },
+  {
+    "type": "mc",
+    "prompt": "Good news about -er participles: “parlé” sounds…",
+    "options": ["exactly like the infinitive “parler”", "completely different", "like English -ed", "like the je-form"],
+    "answer": 0,
+    "explain": "parler / parlé — same sound /paʁle/. In speech you already know all of them."
+  }
+]

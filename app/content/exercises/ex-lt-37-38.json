@@ -1,0 +1,65 @@
+[
+  {
+    "type": "type",
+    "prompt": "Say: “We have to take the bus.” (three ways accepted)",
+    "answer": ["il faut prendre le bus", "on doit prendre le bus", "nous devons prendre le bus"],
+    "hint": "il faut + infinitive."
+  },
+  {
+    "type": "mc",
+    "prompt": "“pour + infinitive” means…",
+    "options": ["in order to", "for the", "because", "before"],
+    "answer": 0,
+    "explain": "je parle français POUR travailler = I speak French in order to work."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I speak French to work in Canada.”",
+    "answer": ["je parle français pour travailler au canada"],
+    "hint": "pour + infinitive; au Canada."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “It's necessary to speak French.”",
+    "answer": ["il faut parler français"],
+    "hint": "il faut …"
+  },
+  {
+    "type": "mc",
+    "prompt": "“Il ne faut pas…” means…",
+    "options": ["one must not…", "it's not enough…", "he doesn't need…", "there isn't…"],
+    "answer": 0,
+    "explain": "il ne faut pas faire ça = you mustn't do that."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “You mustn't do that.”",
+    "answer": ["il ne faut pas faire ça", "il faut pas faire ça"],
+    "hint": "il ne faut pas + infinitive."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I want to go to Canada to work.” (your actual plan)",
+    "answer": ["je veux aller au canada pour travailler"],
+    "hint": "aller au Canada + pour + infinitive."
+  },
+  {
+    "type": "mc",
+    "prompt": "Why “AU Canada” and not “à Canada”?",
+    "options": ["à + le squeezes into au (Canada is masculine)", "Canada starts with C", "it's an exception to memorize", "both are correct"],
+    "answer": 0,
+    "explain": "à + le = au. Le Canada → au Canada, le travail → au travail."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “We have to find the tickets.”",
+    "answer": ["il faut trouver les billets", "on doit trouver les billets", "nous devons trouver les billets"],
+    "hint": "les billets = the tickets."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I have to know it.”",
+    "answer": ["je dois le savoir"],
+    "hint": "le before savoir."
+  }
+]

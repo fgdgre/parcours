@@ -44,4 +44,27 @@ describe('dailySentences', () => {
   it('returns empty when nothing is learned', () => {
     expect(dailySentences([], 'seed', 5)).toEqual([])
   })
+
+  it('never produces past tense unless unlocked', () => {
+    const base = dailySentences(cards, 'p', 30)
+    for (const s of base) expect(s.answer[0]).not.toMatch(/j'ai \w+é/)
+  })
+
+  it('produces past tense with regular participles when unlocked', () => {
+    const out = dailySentences(cards, 'p', 40, { pastTense: true })
+    const past = out.filter(s => s.answer[0]!.startsWith("j'ai ") || s.answer[0]!.includes("n'ai pas"))
+    expect(past.length).toBeGreaterThan(0)
+    for (const s of past) {
+      expect(s.answer[0]).toMatch(/(mangé|parlé)/)
+    }
+  })
+
+  it('object pronoun template picks le/la by the noun gender', () => {
+    const out = dailySentences(cards, 'q', 40, { objectPronouns: true })
+    const pron = out.filter(s => s.prompt.includes('I want it'))
+    for (const s of pron) {
+      if (s.prompt.includes('le café')) expect(s.answer[0]).toBe('je le veux')
+      if (s.prompt.includes('la maison')) expect(s.answer[0]).toBe('je la veux')
+    }
+  })
 })

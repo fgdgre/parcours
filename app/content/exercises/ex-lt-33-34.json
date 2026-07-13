@@ -1,0 +1,72 @@
+[
+  {
+    "type": "mc",
+    "prompt": "A small club of verbs builds its past with être instead of avoir. Which ones?",
+    "options": [
+      "movement verbs like aller, venir, arriver",
+      "all -er verbs",
+      "verbs about food",
+      "none — être is never used"
+    ],
+    "answer": 0,
+    "explain": "je SUIS allé, elle EST venue, on EST arrivés — the going/coming club."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I went to Paris.”",
+    "answer": ["je suis allé à paris", "je suis allée à paris"],
+    "hint": "être + allé (add -e if you're speaking as a woman)."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “She went home.”",
+    "answer": ["elle est allée à la maison"],
+    "hint": "With être, the participle agrees: elle est alléE."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Il est venu” means…",
+    "options": ["He came", "He is coming", "He is seen", "He will come"],
+    "answer": 0,
+    "explain": "venir → venu, with être."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “We arrived yesterday.”",
+    "answer": ["nous sommes arrivés hier", "on est arrivés hier", "on est arrivé hier", "nous sommes arrivées hier"],
+    "hint": "arriver takes être too."
+  },
+  {
+    "type": "conjugate",
+    "verb": "être",
+    "pronoun": "nous",
+    "tense": "present",
+    "answer": ["sommes"]
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I came with a friend.”",
+    "answer": ["je suis venu avec un ami", "je suis venue avec un ami", "je suis venue avec une amie", "je suis venu avec une amie"],
+    "hint": "venir → venu(e)."
+  },
+  {
+    "type": "mc",
+    "prompt": "The past of “elle va” is…",
+    "options": ["elle est allée", "elle a allé", "elle est va", "elle a été allée"],
+    "answer": 0,
+    "explain": "aller takes être, and the participle agrees: allée."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “They went to the market.”",
+    "answer": ["ils sont allés au marché", "elles sont allées au marché"],
+    "hint": "ils sont allés / elles sont allées."
+  },
+  {
+    "type": "mc",
+    "prompt": "With être-past, the participle agrees with…",
+    "options": ["the subject (elle est alléE, ils sont alléS)", "the object", "nothing", "the weather"],
+    "answer": 0,
+    "explain": "That's the trade-off of the être club — participles dress to match the subject."
+  }
+]

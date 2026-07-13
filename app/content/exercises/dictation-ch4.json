@@ -1,0 +1,10 @@
+[
+  { "type": "dictation", "ttsText": "J'ai mangé à la maison.", "answer": ["j'ai mangé à la maison"] },
+  { "type": "dictation", "ttsText": "Tu as vu le film ?", "answer": ["tu as vu le film"] },
+  { "type": "dictation", "ttsText": "Je n'ai pas eu le temps.", "answer": ["je n'ai pas eu le temps"] },
+  { "type": "dictation", "ttsText": "Qu'est-ce que tu as fait hier ?", "answer": ["qu'est-ce que tu as fait hier"] },
+  { "type": "dictation", "ttsText": "Elle a pris le train hier.", "answer": ["elle a pris le train hier"] },
+  { "type": "dictation", "ttsText": "Je l'ai fait hier.", "answer": ["je l'ai fait hier"] },
+  { "type": "dictation", "ttsText": "Nous avons acheté le pain.", "answer": ["nous avons acheté le pain"] },
+  { "type": "dictation", "ttsText": "On a beaucoup travaillé.", "answer": ["on a beaucoup travaillé"] }
+]

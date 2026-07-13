@@ -1,0 +1,12 @@
+[
+  { "type": "speak", "target": "J'ai fait ça hier.", "en": "I did that yesterday." },
+  { "type": "speak", "target": "Tu as vu ça ?", "en": "Did you see that?" },
+  { "type": "speak", "target": "Je n'ai pas mangé.", "en": "I didn't eat." },
+  { "type": "speak", "target": "Qu'est-ce que tu as fait ?", "en": "What did you do?" },
+  { "type": "speak", "target": "J'ai pris le métro.", "en": "I took the metro." },
+  { "type": "speak", "target": "Elle a parlé avec moi.", "en": "She spoke with me." },
+  { "type": "speak", "target": "Je l'ai trouvé.", "en": "I found it." },
+  { "type": "speak", "target": "Nous avons regardé un film.", "en": "We watched a film. (liaison: nous‿avons)" },
+  { "type": "speak", "target": "Je n'ai pas eu le temps.", "en": "I didn't have time." },
+  { "type": "speak", "target": "On a acheté le pain.", "en": "We bought the bread." }
+]

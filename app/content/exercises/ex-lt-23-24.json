@@ -1,0 +1,72 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“Je viens de manger” means…",
+    "options": ["I just ate", "I come to eat", "I'm coming from eating out", "I eat on the way"],
+    "answer": 0,
+    "explain": "venir de + infinitive = to have JUST done something."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I just ate.”",
+    "answer": ["je viens de manger"],
+    "hint": "venir de + infinitive."
+  },
+  {
+    "type": "conjugate",
+    "verb": "venir",
+    "pronoun": "je",
+    "tense": "present",
+    "answer": ["viens"]
+  },
+  {
+    "type": "conjugate",
+    "verb": "venir",
+    "pronoun": "tu",
+    "tense": "present",
+    "answer": ["viens"]
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “We just arrived.”",
+    "answer": ["nous venons d'arriver", "on vient d'arriver"],
+    "hint": "de + arriver → d'arriver (vowel squeeze)."
+  },
+  {
+    "type": "mc",
+    "prompt": "“je vais manger” vs “je viens de manger” —",
+    "options": [
+      "going to eat vs just ate",
+      "both mean future",
+      "both mean past",
+      "the second is more polite"
+    ],
+    "answer": 0,
+    "explain": "aller + inf = near future; venir de + inf = immediate past. A matched pair."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I just found it.”",
+    "answer": ["je viens de le trouver"],
+    "hint": "Pronoun before the infinitive: de LE trouver."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I just watched a video.”",
+    "answer": ["je viens de regarder une vidéo"],
+    "hint": "vidéo is a cognate (feminine)."
+  },
+  {
+    "type": "mc",
+    "prompt": "After “venir de” comes…",
+    "options": ["the infinitive", "the participle", "a conjugated verb", "que"],
+    "answer": 0,
+    "explain": "je viens de manger, tu viens de parler — infinitive every time."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I just listened to the podcast.”",
+    "answer": ["je viens d'écouter le podcast"],
+    "hint": "de + écouter → d'écouter."
+  }
+]

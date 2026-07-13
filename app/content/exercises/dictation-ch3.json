@@ -1,0 +1,10 @@
+[
+  { "type": "dictation", "ttsText": "Je dois travailler demain.", "answer": ["je dois travailler demain"] },
+  { "type": "dictation", "ttsText": "Comment tu t'appelles ?", "answer": ["comment tu t'appelles"] },
+  { "type": "dictation", "ttsText": "Je viens de manger.", "answer": ["je viens de manger"] },
+  { "type": "dictation", "ttsText": "Tu peux me donner ça ?", "answer": ["tu peux me donner ça"] },
+  { "type": "dictation", "ttsText": "Je vais le faire maintenant.", "answer": ["je vais le faire maintenant"] },
+  { "type": "dictation", "ttsText": "Il faut parler français.", "answer": ["il faut parler français"] },
+  { "type": "dictation", "ttsText": "Je ne te comprends pas.", "answer": ["je ne te comprends pas"] },
+  { "type": "dictation", "ttsText": "Elle s'appelle Marie.", "answer": ["elle s'appelle marie"] }
+]

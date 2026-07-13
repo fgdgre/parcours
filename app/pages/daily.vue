@@ -54,8 +54,14 @@ const learned = computed<Card[]>(() =>
   Object.keys(progress.srs).map(id => cardsById[id]).filter((c): c is Card => c !== undefined),
 )
 
+const genOptions = computed(() => ({
+  ilFaut: progress.isDone('ex-lt-17-18'),
+  objectPronouns: progress.isDone('ex-lt-21-22'),
+  pastTense: progress.isDone('ex-lt-25-26'),
+}))
+
 const exercises = computed(() =>
-  dailySentences(learned.value, round.value === 0 ? dateSeed : `${dateSeed}-${round.value}`, 5),
+  dailySentences(learned.value, round.value === 0 ? dateSeed : `${dateSeed}-${round.value}`, 5, genOptions.value),
 )
 
 function onFinished() {

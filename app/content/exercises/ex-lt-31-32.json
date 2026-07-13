@@ -1,0 +1,65 @@
+[
+  {
+    "type": "type",
+    "prompt": "Say: “I did it.”",
+    "answer": ["je l'ai fait"],
+    "hint": "le + ai → l'ai."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je l'ai vu” means…",
+    "options": ["I saw him / it", "I have seen myself", "He saw me", "I see it"],
+    "answer": 0,
+    "explain": "l' = le/la squeezed before “ai”: je l'ai vu."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I saw her yesterday.”",
+    "answer": ["je l'ai vue hier", "je l'ai vu hier"],
+    "hint": "Both spellings accepted — with “la”, careful French adds -e: vue."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I didn't do it.”",
+    "answer": ["je ne l'ai pas fait", "je l'ai pas fait"],
+    "hint": "ne + l'ai + pas + fait."
+  },
+  {
+    "type": "mc",
+    "prompt": "In the past, the object pronoun goes…",
+    "options": ["before avoir: je L'ai fait", "after the participle: j'ai fait LE", "before je", "anywhere"],
+    "answer": 0,
+    "explain": "The pronoun always hugs the conjugated verb: je l'ai fait."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I just did it.”",
+    "answer": ["je viens de le faire"],
+    "hint": "venir de + le + infinitive."
+  },
+  {
+    "type": "type",
+    "prompt": "“Le billet” — ask: “Did you take it?” (informal)",
+    "answer": ["tu l'as pris", "est-ce que tu l'as pris"],
+    "hint": "tu l'as + pris."
+  },
+  {
+    "type": "mc",
+    "prompt": "“On l'a trouvé” means…",
+    "options": ["We found it", "They stole it", "Someone lost it", "We are finding it"],
+    "answer": 0,
+    "explain": "on = we; l' = it; trouvé = found."
+  },
+  {
+    "type": "type",
+    "prompt": "“Le pain” — say: “I bought it.”",
+    "answer": ["je l'ai acheté"],
+    "hint": "l'ai + acheté."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “We saw them at the market.” (capstone!)",
+    "answer": ["nous les avons vus au marché", "on les a vus au marché", "on les a vu au marché", "nous les avons vu au marché"],
+    "hint": "les before avons/a; au = à + le."
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "type": "mc",
+    "prompt": "Pick the auxiliary: “j'___ mangé”",
+    "options": ["ai", "suis", "es", "va"],
+    "answer": 0,
+    "explain": "manger is a normal avoir verb: j'ai mangé."
+  },
+  {
+    "type": "mc",
+    "prompt": "Pick the auxiliary: “je ___ allé”",
+    "options": ["suis", "ai", "as", "vais"],
+    "answer": 0,
+    "explain": "aller is in the être club: je suis allé."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “She came yesterday.”",
+    "answer": ["elle est venue hier"],
+    "hint": "venir → être + venue."
+  },
+  {
+    "type": "type",
+    "prompt": "Capstone: “I went to the station and took the train.”",
+    "answer": ["je suis allé à la gare et j'ai pris le train", "je suis allée à la gare et j'ai pris le train"],
+    "hint": "être for the going, avoir for the taking."
+  },
+  {
+    "type": "mc",
+    "prompt": "“On est allés au restaurant” means…",
+    "options": ["We went to the restaurant", "One goes to the restaurant", "They will go eat", "We are at the restaurant"],
+    "answer": 0,
+    "explain": "on + être-past = we went."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “We went to the restaurant yesterday.”",
+    "answer": ["nous sommes allés au restaurant hier", "on est allés au restaurant hier", "on est allé au restaurant hier"],
+    "hint": "aller → être."
+  },
+  {
+    "type": "type",
+    "prompt": "Ask: “Did you go to the bank?” (informal)",
+    "answer": ["tu es allé à la banque", "tu es allée à la banque", "est-ce que tu es allé à la banque"],
+    "hint": "tu es allé(e)… ?"
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I didn't go to work.”",
+    "answer": ["je ne suis pas allé au travail", "je ne suis pas allée au travail", "je suis pas allé au travail"],
+    "hint": "ne … pas around suis."
+  },
+  {
+    "type": "mc",
+    "prompt": "Negation in être-past wraps around…",
+    "options": ["être: je NE suis PAS allé", "the participle", "the subject", "the whole sentence"],
+    "answer": 0,
+    "explain": "Same rule as always: hug the conjugated verb."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I did it and I went home.”",
+    "answer": ["je l'ai fait et je suis allé à la maison", "je l'ai fait et je suis allée à la maison"],
+    "hint": "avoir for doing, être for going."
+  }
+]

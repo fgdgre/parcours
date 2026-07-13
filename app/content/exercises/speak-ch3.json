@@ -1,0 +1,12 @@
+[
+  { "type": "speak", "target": "Je m'appelle Dmytro.", "en": "My name is Dmytro." },
+  { "type": "speak", "target": "Comment tu t'appelles ?", "en": "What's your name?" },
+  { "type": "speak", "target": "Je dois aller au travail.", "en": "I have to go to work." },
+  { "type": "speak", "target": "Il faut faire ça maintenant.", "en": "We have to do that now." },
+  { "type": "speak", "target": "Je viens d'arriver.", "en": "I just arrived." },
+  { "type": "speak", "target": "Je le sais.", "en": "I know it." },
+  { "type": "speak", "target": "Tu me comprends ?", "en": "Do you understand me?" },
+  { "type": "speak", "target": "Nous venons de manger.", "en": "We just ate. (liaison: nous‿venons)" },
+  { "type": "speak", "target": "Je ne le veux pas.", "en": "I don't want it." },
+  { "type": "speak", "target": "Elle s'appelle Marie.", "en": "Her name is Marie." }
+]
