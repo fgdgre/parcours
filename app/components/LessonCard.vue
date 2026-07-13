@@ -43,7 +43,10 @@ const subtitle = computed(() => {
   gap: 12px;
   padding: 12px 14px;
   color: var(--fg);
+  transition: transform 0.1s ease, border-color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
 }
+.lesson:active { transform: scale(0.985); border-color: var(--accent); }
 .lesson.done { opacity: 0.62; }
 .icon { font-size: 1.1rem; width: 28px; text-align: center; flex-shrink: 0; }
 .body { display: flex; flex-direction: column; min-width: 0; }

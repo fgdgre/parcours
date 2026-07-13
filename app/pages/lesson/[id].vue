@@ -6,6 +6,12 @@
     </template>
 
     <template v-else>
+      <button class="back-btn" aria-label="Go back" @click="goBack">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+        Back
+      </button>
       <header>
         <p class="muted small">{{ chapter?.title }}</p>
         <h1>{{ lesson.title }}</h1>
@@ -100,7 +106,13 @@
 import { cardsById, chapterOf, exercisesByFile, lessonById, nextLessonAfter } from '~/content'
 
 const route = useRoute()
+const router = useRouter()
 const progress = useProgress()
+
+function goBack() {
+  if (window.history.length > 1) router.back()
+  else navigateTo('/path')
+}
 
 const lesson = computed(() => lessonById[route.params.id as string])
 const chapter = computed(() => (lesson.value ? chapterOf(lesson.value.id) : undefined))
@@ -152,6 +164,22 @@ const allChecked = computed(() => checks.value.length > 0 && checks.value.every(
 </script>
 
 <style scoped>
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  align-self: flex-start;
+  background: none;
+  border: 0;
+  padding: 4px 8px 4px 0;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.back-btn:active { opacity: 0.6; }
+.back-btn svg { width: 18px; height: 18px; }
 .check-row { align-items: flex-start; padding: 6px 0; }
 .check-row input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--accent); }
 .okline { color: var(--ok); font-weight: 600; }

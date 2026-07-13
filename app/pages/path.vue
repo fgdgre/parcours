@@ -2,14 +2,24 @@
   <div class="page stack">
     <h1>Path</h1>
     <section v-for="ch in curriculum" :key="ch.id" class="stack chapter">
-      <button class="chapter-head" @click="toggle(ch.id)">
+      <button
+        class="chapter-head"
+        :class="{ open: isOpen(ch.id) }"
+        :aria-expanded="isOpen(ch.id)"
+        @click="toggle(ch.id)"
+      >
         <span class="head-text">
           <span class="title">{{ ch.title }}</span>
           <span class="muted small">{{ ch.subtitle }}</span>
+          <ProgressBar class="head-bar" :value="ch.lessons.length ? doneIn(ch) / ch.lessons.length : 0" />
         </span>
-        <span class="muted small count">{{ doneIn(ch) }}/{{ ch.lessons.length }}</span>
+        <span class="head-meta">
+          <span class="muted small">{{ doneIn(ch) }}/{{ ch.lessons.length }}</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </span>
       </button>
-      <ProgressBar :value="ch.lessons.length ? doneIn(ch) / ch.lessons.length : 0" />
       <template v-if="isOpen(ch.id)">
         <LessonCard v-for="l in ch.lessons" :key="l.id" :lesson="l" />
       </template>
@@ -40,16 +50,24 @@ const toggle = (id: string) => { open.value[id] = !isOpen(id) }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  background: none;
-  border: 0;
-  padding: 0;
+  gap: 12px;
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
   color: var(--fg);
   text-align: left;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  transition: transform 0.1s ease, background 0.15s ease;
 }
-.head-text { display: flex; flex-direction: column; }
+.chapter-head:active { transform: scale(0.985); background: var(--accent-soft); }
+.chapter-head.open { border-color: var(--accent); }
+.head-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1; }
+.head-bar { margin-top: 4px; }
 .title { font-size: 1.05rem; font-weight: 650; }
-.count { flex-shrink: 0; }
+.head-meta { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.chev { width: 20px; height: 20px; color: var(--muted); transition: transform 0.2s ease; }
+.chapter-head.open .chev { transform: rotate(90deg); }
 </style>
