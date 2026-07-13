@@ -1,0 +1,42 @@
+[
+  {
+    "type": "dictation",
+    "ttsText": "Bonjour, ça va ?",
+    "answer": ["bonjour ça va"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Merci beaucoup.",
+    "answer": ["merci beaucoup"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "C'est une bonne question.",
+    "answer": ["c'est une bonne question"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Je veux parler français.",
+    "answer": ["je veux parler français"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Ce n'est pas possible.",
+    "answer": ["ce n'est pas possible"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Je vais manger maintenant.",
+    "answer": ["je vais manger maintenant"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Il y a un problème.",
+    "answer": ["il y a un problème"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Je voudrais un café, s'il vous plaît.",
+    "answer": ["je voudrais un café s'il vous plaît"]
+  }
+]

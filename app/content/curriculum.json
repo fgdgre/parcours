@@ -1,43 +1,2120 @@
 [
   {
     "id": "ch1",
-    "title": "Chapter 1 — Fondations",
-    "subtitle": "Weeks 1–2 · fixture data, replaced at content assembly",
+    "title": "Chapter 1 · Fondations",
+    "subtitle": "Weeks 1–2 — the sentence machine starts",
     "lessons": [
       {
-        "id": "ch1-lt-01",
+        "id": "lt-01",
         "type": "external",
-        "title": "Language Transfer — Track 1",
-        "provider": "link",
-        "url": "https://www.languagetransfer.org/french",
-        "durationMin": 10,
-        "instructions": "Listen actively: pause and answer aloud before the student does.",
-        "teaches": "How French and English share thousands of words."
+        "title": "Language Transfer · Track 1",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=LsG_0hyr_ro",
+        "embedId": "LsG_0hyr_ro",
+        "durationMin": 13,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Thousands of French words you already own: -tion/-sion words (all feminine), c’est."
+      },
+      {
+        "id": "dylane-01",
+        "type": "external",
+        "title": "Pronunciation 1/55 · The French alphabet for beginners",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=zzGVV5fG6Ec",
+        "embedId": "zzGVV5fG6Ec",
+        "durationMin": 5,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
       },
       {
         "id": "ch1-vocab-01",
         "type": "vocab",
-        "title": "First words · batch 1",
-        "cardIds": ["v1-01", "v1-02", "v1-03"],
-        "newCards": 3,
-        "durationMin": 5
+        "title": "First words · greetings & politeness",
+        "cardIds": [
+          "v1-01",
+          "v1-02",
+          "v1-03",
+          "v1-04",
+          "v1-05",
+          "v1-06",
+          "v1-07",
+          "v1-08",
+          "v1-09",
+          "v1-10"
+        ],
+        "newCards": 10,
+        "durationMin": 6
       },
       {
-        "id": "ch1-ex-01",
+        "id": "lt-02",
+        "type": "external",
+        "title": "Language Transfer · Track 2",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=VvsYM1S0tGg",
+        "embedId": "VvsYM1S0tGg",
+        "durationMin": 9,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "-ible/-able adjectives transfer from English; building “c’est + adjective” sentences."
+      },
+      {
+        "id": "dylane-02",
+        "type": "external",
+        "title": "Pronunciation 2/55 · The French ACCENT AIGU",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=pLEKDUPjANs",
+        "embedId": "pLEKDUPjANs",
+        "durationMin": 6,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ex-lt-01-02",
         "type": "exercises",
-        "title": "Practice — track 1",
-        "exerciseFile": "fixture",
-        "durationMin": 5
+        "title": "Practice · cognates & c’est",
+        "exerciseFile": "ex-lt-01-02",
+        "durationMin": 6
+      },
+      {
+        "id": "lt-03",
+        "type": "external",
+        "title": "Language Transfer · Track 3",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=R9MEnmxvqx8",
+        "embedId": "R9MEnmxvqx8",
+        "durationMin": 7,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "je veux — wanting things, and following it with a second verb (the infinitive)."
+      },
+      {
+        "id": "dylane-03",
+        "type": "external",
+        "title": "Pronunciation 3/55 · The French ACCENT GRAVE",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=RUOQxWz500g",
+        "embedId": "RUOQxWz500g",
+        "durationMin": 8,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch1-vocab-02",
+        "type": "vocab",
+        "title": "Power chunks · je veux, j’ai, je vais…",
+        "cardIds": [
+          "v1-11",
+          "v1-12",
+          "v1-13",
+          "v1-14",
+          "v1-15",
+          "v1-16",
+          "v1-17",
+          "v1-18",
+          "v1-19",
+          "v1-20"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
+        "id": "lt-04",
+        "type": "external",
+        "title": "Language Transfer · Track 4",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=csnZVhBzoMY",
+        "embedId": "csnZVhBzoMY",
+        "durationMin": 9,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Negation ne … pas, and asking simple spoken questions."
+      },
+      {
+        "id": "dylane-04",
+        "type": "external",
+        "title": "Pronunciation 4/55 · How to pronounce Â Ê Î Ô Û - French accent circonflexe",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=i0UjhQBadr0",
+        "embedId": "i0UjhQBadr0",
+        "durationMin": 9,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ex-lt-03-04",
+        "type": "exercises",
+        "title": "Practice · wanting, going, asking",
+        "exerciseFile": "ex-lt-03-04",
+        "durationMin": 6
+      },
+      {
+        "id": "dylane-05",
+        "type": "external",
+        "title": "Pronunciation 5/55 · TRÉMA Ë Ï and Ç CÉDILLE",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=krOkv7KoZu4",
+        "embedId": "krOkv7KoZu4",
+        "durationMin": 5,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "dictation-ch1",
+        "type": "exercises",
+        "title": "Dictation · first sentences",
+        "exerciseFile": "dictation-ch1",
+        "durationMin": 6
+      },
+      {
+        "id": "lt-05",
+        "type": "external",
+        "title": "Language Transfer · Track 5",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=phNTwU-3ZQ8",
+        "embedId": "phNTwU-3ZQ8",
+        "durationMin": 10,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "être — je suis / tu es / c’est; saying who and where you are."
+      },
+      {
+        "id": "dylane-06",
+        "type": "external",
+        "title": "Pronunciation 6/55 · How to spell in French + Test",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=SIUx1OF0zIY",
+        "embedId": "SIUx1OF0zIY",
+        "durationMin": 7,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch1-vocab-03",
+        "type": "vocab",
+        "title": "Core verbs",
+        "cardIds": [
+          "v1-21",
+          "v1-22",
+          "v1-23",
+          "v1-24",
+          "v1-25",
+          "v1-26",
+          "v1-27",
+          "v1-28",
+          "v1-29",
+          "v1-30"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
+        "id": "lt-06",
+        "type": "external",
+        "title": "Language Transfer · Track 6",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=Dmf5xpoHaXw",
+        "embedId": "Dmf5xpoHaXw",
+        "durationMin": 13,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "avoir — j’ai / tu as; il y a (there is / there are)."
+      },
+      {
+        "id": "dylane-07",
+        "type": "external",
+        "title": "Pronunciation 7/55 · Silent letters - What NOT to pronounce in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=7bjno3LPyfA",
+        "embedId": "7bjno3LPyfA",
+        "durationMin": 23,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ex-lt-05-06",
+        "type": "exercises",
+        "title": "Practice · être, avoir, il y a",
+        "exerciseFile": "ex-lt-05-06",
+        "durationMin": 6
+      },
+      {
+        "id": "lt-07",
+        "type": "external",
+        "title": "Language Transfer · Track 7",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=msrwAhGgHHk",
+        "embedId": "msrwAhGgHHk",
+        "durationMin": 13,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "-er verbs in the present: je parle / tu parles / il parle (endings silent)."
+      },
+      {
+        "id": "dylane-08",
+        "type": "external",
+        "title": "Pronunciation 8/55 · Contractions / Élision",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=7LKpZL_lHWU",
+        "embedId": "7LKpZL_lHWU",
+        "durationMin": 5,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch1-vocab-04",
+        "type": "vocab",
+        "title": "Question words & connectors",
+        "cardIds": [
+          "v1-31",
+          "v1-32",
+          "v1-33",
+          "v1-34",
+          "v1-35",
+          "v1-36",
+          "v1-37",
+          "v1-38",
+          "v1-39",
+          "v1-40"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
+        "id": "lt-08",
+        "type": "external",
+        "title": "Language Transfer · Track 8",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=OIQxwNP_Xwo",
+        "embedId": "OIQxwNP_Xwo",
+        "durationMin": 8,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "pouvoir & the polite je voudrais; combining everything into real sentences."
+      },
+      {
+        "id": "dylane-09",
+        "type": "external",
+        "title": "Pronunciation 9/55 · When to LINK words in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=SMxkYAoM6zs",
+        "embedId": "SMxkYAoM6zs",
+        "durationMin": 14,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ex-lt-07-08",
+        "type": "exercises",
+        "title": "Practice · -er verbs & politeness",
+        "exerciseFile": "ex-lt-07-08",
+        "durationMin": 6
+      },
+      {
+        "id": "dylane-10",
+        "type": "external",
+        "title": "Pronunciation 10/55 · 6 ways to get the sound É in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=dbD-A4SsvwI",
+        "embedId": "dbD-A4SsvwI",
+        "durationMin": 10,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch1-vocab-05",
+        "type": "vocab",
+        "title": "Small words that glue sentences",
+        "cardIds": [
+          "v1-41",
+          "v1-42",
+          "v1-43",
+          "v1-44",
+          "v1-45",
+          "v1-46",
+          "v1-47",
+          "v1-48",
+          "v1-49",
+          "v1-50"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
+        "id": "speak-ch1",
+        "type": "exercises",
+        "title": "Speaking · say it aloud",
+        "exerciseFile": "speak-ch1",
+        "durationMin": 6
       },
       {
         "id": "ch1-checkpoint",
         "type": "checkpoint",
         "title": "Chapter 1 checkpoint",
+        "durationMin": 3,
         "canDoStatements": [
-          "I can greet someone and say my name.",
-          "I can turn -tion words into French."
+          "I can greet someone, thank them, and say goodbye.",
+          "I can say what I want with “je veux / je voudrais” + verb.",
+          "I can make a sentence negative with ne … pas.",
+          "I can convert English -tion words into French without thinking."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ch2",
+    "title": "Chapter 2 · Rythme",
+    "subtitle": "Weeks 3–4 — daily life vocabulary joins in",
+    "lessons": [
+      {
+        "id": "lt-09",
+        "type": "external",
+        "title": "Language Transfer · Track 9",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=1VLfd9KOSfM",
+        "embedId": "1VLfd9KOSfM",
+        "durationMin": 11,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-11",
+        "type": "external",
+        "title": "Pronunciation 11/55 · Pronunciation of È in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=67cH_6oWKAQ",
+        "embedId": "67cH_6oWKAQ",
+        "durationMin": 17,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch2-vocab-01",
+        "type": "vocab",
+        "title": "Numbers 1–10",
+        "cardIds": [
+          "v2-01",
+          "v2-02",
+          "v2-03",
+          "v2-04",
+          "v2-05",
+          "v2-06",
+          "v2-07",
+          "v2-08",
+          "v2-09",
+          "v2-10"
         ],
-        "durationMin": 2
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
+        "id": "lt-10",
+        "type": "external",
+        "title": "Language Transfer · Track 10",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=3SpcMJy_2_8",
+        "embedId": "3SpcMJy_2_8",
+        "durationMin": 12,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-12",
+        "type": "external",
+        "title": "Pronunciation 12/55 · How to pronounce ON in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=7JHRPmFwjmA",
+        "embedId": "7JHRPmFwjmA",
+        "durationMin": 6,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "lt-11",
+        "type": "external",
+        "title": "Language Transfer · Track 11",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=BBlkdQp5v3c",
+        "embedId": "BBlkdQp5v3c",
+        "durationMin": 11,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-13",
+        "type": "external",
+        "title": "Pronunciation 13/55 · How to pronounce AN AM EN EM in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=PolfzaLGJns",
+        "embedId": "PolfzaLGJns",
+        "durationMin": 8,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch2-vocab-02",
+        "type": "vocab",
+        "title": "Days & time words",
+        "cardIds": [
+          "v2-11",
+          "v2-12",
+          "v2-13",
+          "v2-14",
+          "v2-15",
+          "v2-16",
+          "v2-17",
+          "v2-18",
+          "v2-19",
+          "v2-20"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
+        "id": "alice-01",
+        "type": "external",
+        "title": "Story listening · Une crêpe délicieuse",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=fDcOfwBVQsE",
+        "embedId": "fDcOfwBVQsE",
+        "durationMin": 20,
+        "instructions": "Watch, relax, follow the drawings. Do NOT translate in your head; guessing from pictures is the exercise.",
+        "teaches": "Comprehensible input — your brain acquiring French from context."
+      },
+      {
+        "id": "lt-12",
+        "type": "external",
+        "title": "Language Transfer · Track 12",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=hgi-Cp88Lls",
+        "embedId": "hgi-Cp88Lls",
+        "durationMin": 9,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-14",
+        "type": "external",
+        "title": "Pronunciation 14/55 · How to pronounce IN IM AIN EIN and more in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=R6fEqMYl0lg",
+        "embedId": "R6fEqMYl0lg",
+        "durationMin": 7,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch2-vocab-03",
+        "type": "vocab",
+        "title": "Evening, tomorrow, everyday nouns",
+        "cardIds": [
+          "v2-21",
+          "v2-22",
+          "v2-23",
+          "v2-24",
+          "v2-25",
+          "v2-26",
+          "v2-27",
+          "v2-28",
+          "v2-29",
+          "v2-30"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
+        "id": "lt-13",
+        "type": "external",
+        "title": "Language Transfer · Track 13",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=qe8s2yqWLmY",
+        "embedId": "qe8s2yqWLmY",
+        "durationMin": 7,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-15",
+        "type": "external",
+        "title": "Pronunciation 15/55 · How to pronounce UN UM in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=qJp9nvXTza8",
+        "embedId": "qJp9nvXTza8",
+        "durationMin": 6,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "lt-14",
+        "type": "external",
+        "title": "Language Transfer · Track 14",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=SjpHnhfdohY",
+        "embedId": "SjpHnhfdohY",
+        "durationMin": 10,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-16",
+        "type": "external",
+        "title": "Pronunciation 16/55 · How to pronounce IEN in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=vRa6kBfSnVk",
+        "embedId": "vRa6kBfSnVk",
+        "durationMin": 4,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch2-vocab-04",
+        "type": "vocab",
+        "title": "People & first -er verbs",
+        "cardIds": [
+          "v2-31",
+          "v2-32",
+          "v2-33",
+          "v2-34",
+          "v2-35",
+          "v2-36",
+          "v2-37",
+          "v2-38",
+          "v2-39",
+          "v2-40"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
+        "id": "alice-02",
+        "type": "external",
+        "title": "Story listening · Roland, un opéra de Jean-Baptiste Lully",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=43jIt3dlkdw",
+        "embedId": "43jIt3dlkdw",
+        "durationMin": 24,
+        "instructions": "Watch, relax, follow the drawings. Do NOT translate in your head; guessing from pictures is the exercise.",
+        "teaches": "Comprehensible input — your brain acquiring French from context."
+      },
+      {
+        "id": "lt-15",
+        "type": "external",
+        "title": "Language Transfer · Track 15",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=v32X8TWHG0k",
+        "embedId": "v32X8TWHG0k",
+        "durationMin": 9,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-17",
+        "type": "external",
+        "title": "Pronunciation 17/55 · How to pronounce OIN in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=M4vWyXDDeAk",
+        "embedId": "M4vWyXDDeAk",
+        "durationMin": 3,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch2-vocab-05",
+        "type": "vocab",
+        "title": "Verbs & adjectives",
+        "cardIds": [
+          "v2-41",
+          "v2-42",
+          "v2-43",
+          "v2-44",
+          "v2-45",
+          "v2-46",
+          "v2-47",
+          "v2-48",
+          "v2-49",
+          "v2-50"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
+        "id": "lt-16",
+        "type": "external",
+        "title": "Language Transfer · Track 16",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=iWMlLzVDYq0",
+        "embedId": "iWMlLzVDYq0",
+        "durationMin": 12,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-18",
+        "type": "external",
+        "title": "Pronunciation 18/55 · How French vowels change the pronunciation of a word",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=Upu_dXffWRE",
+        "embedId": "Upu_dXffWRE",
+        "durationMin": 8,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "dylane-19",
+        "type": "external",
+        "title": "Pronunciation 19/55 · Pronunciation of A À Â in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=pVSE1MihOek",
+        "embedId": "pVSE1MihOek",
+        "durationMin": 5,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "dylane-20",
+        "type": "external",
+        "title": "Pronunciation 20/55 · Pronunciation of E in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=9XnE0yBimbU",
+        "embedId": "9XnE0yBimbU",
+        "durationMin": 8,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch2-checkpoint",
+        "type": "checkpoint",
+        "title": "Chapter 2 checkpoint",
+        "durationMin": 3,
+        "canDoStatements": [
+          "I can count to ten and name the days of the week.",
+          "I can say where I live and what I do with -er verbs.",
+          "I followed a full drawn story in French without translating."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ch3",
+    "title": "Chapter 3 · Orientation",
+    "subtitle": "Weeks 5–6 — navigating places, people, survival French",
+    "lessons": [
+      {
+        "id": "lt-17",
+        "type": "external",
+        "title": "Language Transfer · Track 17",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=91IEUacY0eU",
+        "embedId": "91IEUacY0eU",
+        "durationMin": 11,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-21",
+        "type": "external",
+        "title": "Pronunciation 21/55 · Pronunciation of EU and ŒU in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=k2YxHJAmJG4",
+        "embedId": "k2YxHJAmJG4",
+        "durationMin": 6,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch3-vocab-01",
+        "type": "vocab",
+        "title": "Places in town",
+        "cardIds": [
+          "v3-01",
+          "v3-02",
+          "v3-03",
+          "v3-04",
+          "v3-05",
+          "v3-06",
+          "v3-07",
+          "v3-08",
+          "v3-09",
+          "v3-10"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
+        "id": "lt-18",
+        "type": "external",
+        "title": "Language Transfer · Track 18",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=S-oKAHzoLQ0",
+        "embedId": "S-oKAHzoLQ0",
+        "durationMin": 14,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-22",
+        "type": "external",
+        "title": "Pronunciation 22/55 · Pronunciation of I and Y in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=2CgN8BTMGGQ",
+        "embedId": "2CgN8BTMGGQ",
+        "durationMin": 9,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "fci-01",
+        "type": "external",
+        "title": "Comprehensible input · un train 🚉",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=SRgZr6587O4",
+        "embedId": "SRgZr6587O4",
+        "durationMin": 4,
+        "instructions": "Watch without subtitles first. Replay with French subtitles if lost.",
+        "teaches": "One high-frequency word explored from every angle, all in French."
+      },
+      {
+        "id": "lt-19",
+        "type": "external",
+        "title": "Language Transfer · Track 19",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=fmDF3MRr_BY",
+        "embedId": "fmDF3MRr_BY",
+        "durationMin": 9,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-23",
+        "type": "external",
+        "title": "Pronunciation 23/55 · Pronunciation of O - Ô - AU - EAU in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=oCkvHe5H3HE",
+        "embedId": "oCkvHe5H3HE",
+        "durationMin": 6,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch3-vocab-02",
+        "type": "vocab",
+        "title": "Transport & family",
+        "cardIds": [
+          "v3-11",
+          "v3-12",
+          "v3-13",
+          "v3-14",
+          "v3-15",
+          "v3-16",
+          "v3-17",
+          "v3-18",
+          "v3-19",
+          "v3-20"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
+        "id": "alice-03",
+        "type": "external",
+        "title": "Story listening · La toute petite bonne femme, un conte du bassin méditerranéen",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=bB6wT2Q6-R8",
+        "embedId": "bB6wT2Q6-R8",
+        "durationMin": 21,
+        "instructions": "Watch, relax, follow the drawings. Do NOT translate in your head; guessing from pictures is the exercise.",
+        "teaches": "Comprehensible input — your brain acquiring French from context."
+      },
+      {
+        "id": "lt-20",
+        "type": "external",
+        "title": "Language Transfer · Track 20",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=txIzMdh56vU",
+        "embedId": "txIzMdh56vU",
+        "durationMin": 7,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-24",
+        "type": "external",
+        "title": "Pronunciation 24/55 · Pronunciation of OI in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=UXHpF1T-2Gs",
+        "embedId": "UXHpF1T-2Gs",
+        "durationMin": 3,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "fci-02",
+        "type": "external",
+        "title": "Comprehensible input · accepter 👍🏽",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=4JUeJkoZ5VY",
+        "embedId": "4JUeJkoZ5VY",
+        "durationMin": 5,
+        "instructions": "Watch without subtitles first. Replay with French subtitles if lost.",
+        "teaches": "One high-frequency word explored from every angle, all in French."
+      },
+      {
+        "id": "lt-21",
+        "type": "external",
+        "title": "Language Transfer · Track 21",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=0VCOLln3vmI",
+        "embedId": "0VCOLln3vmI",
+        "durationMin": 11,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-25",
+        "type": "external",
+        "title": "Pronunciation 25/55 · Pronunciation of U and OU in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=a0qPvXdLkXs",
+        "embedId": "a0qPvXdLkXs",
+        "durationMin": 8,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch3-vocab-03",
+        "type": "vocab",
+        "title": "Family & prepositions of place",
+        "cardIds": [
+          "v3-21",
+          "v3-22",
+          "v3-23",
+          "v3-24",
+          "v3-25",
+          "v3-26",
+          "v3-27",
+          "v3-28",
+          "v3-29",
+          "v3-30"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
+        "id": "lt-22",
+        "type": "external",
+        "title": "Language Transfer · Track 22",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=gJLlPDeFCh4",
+        "embedId": "gJLlPDeFCh4",
+        "durationMin": 13,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-26",
+        "type": "external",
+        "title": "Pronunciation 26/55 · Pronunciation of UI in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=21uWox_O_00",
+        "embedId": "21uWox_O_00",
+        "durationMin": 2,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "fci-03",
+        "type": "external",
+        "title": "Comprehensible input · un cauchemar 👹",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=g6W_4I0gXTw",
+        "embedId": "g6W_4I0gXTw",
+        "durationMin": 4,
+        "instructions": "Watch without subtitles first. Replay with French subtitles if lost.",
+        "teaches": "One high-frequency word explored from every angle, all in French."
+      },
+      {
+        "id": "lt-23",
+        "type": "external",
+        "title": "Language Transfer · Track 23",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=JyFJofoQxH4",
+        "embedId": "JyFJofoQxH4",
+        "durationMin": 8,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-27",
+        "type": "external",
+        "title": "Pronunciation 27/55 · 2 ways to pronounce IL - ILLE in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=IwWnzxii4rI",
+        "embedId": "IwWnzxii4rI",
+        "durationMin": 6,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch3-vocab-04",
+        "type": "vocab",
+        "title": "Seasons & strong verbs",
+        "cardIds": [
+          "v3-31",
+          "v3-32",
+          "v3-33",
+          "v3-34",
+          "v3-35",
+          "v3-36",
+          "v3-37",
+          "v3-38",
+          "v3-39",
+          "v3-40"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
+        "id": "alice-04",
+        "type": "external",
+        "title": "Story listening · La cigale et le fourmi, une fable de Jean de La Fontaine",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=5XmwCBOmJhY",
+        "embedId": "5XmwCBOmJhY",
+        "durationMin": 23,
+        "instructions": "Watch, relax, follow the drawings. Do NOT translate in your head; guessing from pictures is the exercise.",
+        "teaches": "Comprehensible input — your brain acquiring French from context."
+      },
+      {
+        "id": "lt-24",
+        "type": "external",
+        "title": "Language Transfer · Track 24",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=lJRouF3uIdQ",
+        "embedId": "lJRouF3uIdQ",
+        "durationMin": 7,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-28",
+        "type": "external",
+        "title": "Pronunciation 28/55 · How to pronounce AIL - AILLE in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=-F2qAucP5EI",
+        "embedId": "-F2qAucP5EI",
+        "durationMin": 5,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "dylane-29",
+        "type": "external",
+        "title": "Pronunciation 29/55 · How to pronounce EIL - EILLE - AY in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=VsnBqibxOjQ",
+        "embedId": "VsnBqibxOjQ",
+        "durationMin": 5,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "dylane-30",
+        "type": "external",
+        "title": "Pronunciation 30/55 · How to pronounce OUILLE in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=J29bGpIOnIg",
+        "embedId": "J29bGpIOnIg",
+        "durationMin": 3,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "fci-04",
+        "type": "external",
+        "title": "Comprehensible input · 📢 announcement 📢 ·",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=0xJUeG-U2i8",
+        "embedId": "0xJUeG-U2i8",
+        "durationMin": 6,
+        "instructions": "Watch without subtitles first. Replay with French subtitles if lost.",
+        "teaches": "One high-frequency word explored from every angle, all in French."
+      },
+      {
+        "id": "ch3-vocab-05",
+        "type": "vocab",
+        "title": "Survival phrases",
+        "cardIds": [
+          "v3-41",
+          "v3-42",
+          "v3-43",
+          "v3-44",
+          "v3-45",
+          "v3-46",
+          "v3-47",
+          "v3-48",
+          "v3-49",
+          "v3-50"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
+        "id": "ch3-checkpoint",
+        "type": "checkpoint",
+        "title": "Chapter 3 checkpoint",
+        "durationMin": 3,
+        "canDoStatements": [
+          "I can ask where something is and understand a simple answer.",
+          "I can talk about my family in a few sentences.",
+          "I know my survival phrases (“je ne comprends pas”, “parlez lentement”…) cold."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ch4",
+    "title": "Chapter 4 · Vitesse",
+    "subtitle": "Weeks 7–8 — speed and listening stamina",
+    "lessons": [
+      {
+        "id": "lt-25",
+        "type": "external",
+        "title": "Language Transfer · Track 25",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=qUS3q62a9zA",
+        "embedId": "qUS3q62a9zA",
+        "durationMin": 13,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-31",
+        "type": "external",
+        "title": "Pronunciation 31/55 · The most difficult words to pronounce in French ‼️",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=luan5gRrHeU",
+        "embedId": "luan5gRrHeU",
+        "durationMin": 11,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "lt-26",
+        "type": "external",
+        "title": "Language Transfer · Track 26",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=WbO3aA_DcrU",
+        "embedId": "WbO3aA_DcrU",
+        "durationMin": 8,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-32",
+        "type": "external",
+        "title": "Pronunciation 32/55 · B in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=RASoa8e5ZZ4",
+        "embedId": "RASoa8e5ZZ4",
+        "durationMin": 5,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "fci-05",
+        "type": "external",
+        "title": "Comprehensible input · disponible 💺",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=2ROaZDyJu0U",
+        "embedId": "2ROaZDyJu0U",
+        "durationMin": 6,
+        "instructions": "Watch without subtitles first. Replay with French subtitles if lost.",
+        "teaches": "One high-frequency word explored from every angle, all in French."
+      },
+      {
+        "id": "lt-27",
+        "type": "external",
+        "title": "Language Transfer · Track 27",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=Y7RghOgkqgk",
+        "embedId": "Y7RghOgkqgk",
+        "durationMin": 7,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-33",
+        "type": "external",
+        "title": "Pronunciation 33/55 · When C is pronounced C / S / G",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=zk_JgOjOXFc",
+        "embedId": "zk_JgOjOXFc",
+        "durationMin": 11,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "lt-28",
+        "type": "external",
+        "title": "Language Transfer · Track 28",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=n4Rs7V_7BSo",
+        "embedId": "n4Rs7V_7BSo",
+        "durationMin": 10,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-34",
+        "type": "external",
+        "title": "Pronunciation 34/55 · Pronunciation of CH in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=E9tabNjTDas",
+        "embedId": "E9tabNjTDas",
+        "durationMin": 5,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "alice-05",
+        "type": "external",
+        "title": "Story listening · Le loup déguisé en agneau, une fable d'Esope",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=cJuKJ2SNhGA",
+        "embedId": "cJuKJ2SNhGA",
+        "durationMin": 19,
+        "instructions": "Watch, relax, follow the drawings. Do NOT translate in your head; guessing from pictures is the exercise.",
+        "teaches": "Comprehensible input — your brain acquiring French from context."
+      },
+      {
+        "id": "fci-06",
+        "type": "external",
+        "title": "Comprehensible input · l'énergie 🔥",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=xetDrYdPbN8",
+        "embedId": "xetDrYdPbN8",
+        "durationMin": 7,
+        "instructions": "Watch without subtitles first. Replay with French subtitles if lost.",
+        "teaches": "One high-frequency word explored from every angle, all in French."
+      },
+      {
+        "id": "lt-29",
+        "type": "external",
+        "title": "Language Transfer · Track 29",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=EMBupNL74Xk",
+        "embedId": "EMBupNL74Xk",
+        "durationMin": 10,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-35",
+        "type": "external",
+        "title": "Pronunciation 35/55 · Pronunciation of D in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=rIM_hnutc48",
+        "embedId": "rIM_hnutc48",
+        "durationMin": 7,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "lt-30",
+        "type": "external",
+        "title": "Language Transfer · Track 30",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=TZXXEdxxTeM",
+        "embedId": "TZXXEdxxTeM",
+        "durationMin": 8,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-36",
+        "type": "external",
+        "title": "Pronunciation 36/55 · Pronunciation of F and PH in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=P1EdE4aXmlA",
+        "embedId": "P1EdE4aXmlA",
+        "durationMin": 9,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "fci-07",
+        "type": "external",
+        "title": "Comprehensible input · une feuille 🍁",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=MoRERLDWc40",
+        "embedId": "MoRERLDWc40",
+        "durationMin": 8,
+        "instructions": "Watch without subtitles first. Replay with French subtitles if lost.",
+        "teaches": "One high-frequency word explored from every angle, all in French."
+      },
+      {
+        "id": "lt-31",
+        "type": "external",
+        "title": "Language Transfer · Track 31",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=EJF11i_MNSU",
+        "embedId": "EJF11i_MNSU",
+        "durationMin": 9,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-37",
+        "type": "external",
+        "title": "Pronunciation 37/55 · G in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=jQzYHHAoffk",
+        "embedId": "jQzYHHAoffk",
+        "durationMin": 12,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "lt-32",
+        "type": "external",
+        "title": "Language Transfer · Track 32",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=m8ogV6G_sZU",
+        "embedId": "m8ogV6G_sZU",
+        "durationMin": 9,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-38",
+        "type": "external",
+        "title": "Pronunciation 38/55 · How to pronounce J in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=mbfoFj1zOQ4",
+        "embedId": "mbfoFj1zOQ4",
+        "durationMin": 3,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "alice-06",
+        "type": "external",
+        "title": "Story listening · Le petit garçon qui ne parlait pas, une histoire de Jacqueline Pierre",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=7OcLQ71lh-Q",
+        "embedId": "7OcLQ71lh-Q",
+        "durationMin": 27,
+        "instructions": "Watch, relax, follow the drawings. Do NOT translate in your head; guessing from pictures is the exercise.",
+        "teaches": "Comprehensible input — your brain acquiring French from context."
+      },
+      {
+        "id": "fci-08",
+        "type": "external",
+        "title": "Comprehensible input · gêner 😬",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=7L3zkKa_v2E",
+        "embedId": "7L3zkKa_v2E",
+        "durationMin": 8,
+        "instructions": "Watch without subtitles first. Replay with French subtitles if lost.",
+        "teaches": "One high-frequency word explored from every angle, all in French."
+      },
+      {
+        "id": "dylane-39",
+        "type": "external",
+        "title": "Pronunciation 39/55 · H muet and H aspiré in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=1L8j3mJfsuU",
+        "embedId": "1L8j3mJfsuU",
+        "durationMin": 8,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "dylane-40",
+        "type": "external",
+        "title": "Pronunciation 40/55 · Pronunciation of K and Q in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=wVmKR0uvAko",
+        "embedId": "wVmKR0uvAko",
+        "durationMin": 6,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "dylane-41",
+        "type": "external",
+        "title": "Pronunciation 41/55 · L in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=XseAKnqYFM4",
+        "embedId": "XseAKnqYFM4",
+        "durationMin": 6,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "dylane-42",
+        "type": "external",
+        "title": "Pronunciation 42/55 · How to pronounce M in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=JGH4FKHhD6s",
+        "embedId": "JGH4FKHhD6s",
+        "durationMin": 6,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch4-checkpoint",
+        "type": "checkpoint",
+        "title": "Chapter 4 checkpoint",
+        "durationMin": 3,
+        "canDoStatements": [
+          "Language Transfer sentences come out faster than the student’s now.",
+          "I can watch an A1 video and follow it without subtitles."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ch5",
+    "title": "Chapter 5 · Sommet",
+    "subtitle": "Weeks 9–10 — finish the spine",
+    "lessons": [
+      {
+        "id": "lt-33",
+        "type": "external",
+        "title": "Language Transfer · Track 33",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=XJKvxgu5k4s",
+        "embedId": "XJKvxgu5k4s",
+        "durationMin": 15,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-43",
+        "type": "external",
+        "title": "Pronunciation 43/55 · Pronunciation of N and GN in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=XL7eDWU5d1E",
+        "embedId": "XL7eDWU5d1E",
+        "durationMin": 11,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "lt-34",
+        "type": "external",
+        "title": "Language Transfer · Track 34",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=sEUB2rIxtwE",
+        "embedId": "sEUB2rIxtwE",
+        "durationMin": 11,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-44",
+        "type": "external",
+        "title": "Pronunciation 44/55 · Pronunciation of P in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=Whz4Z2vTrac",
+        "embedId": "Whz4Z2vTrac",
+        "durationMin": 9,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "lt-35",
+        "type": "external",
+        "title": "Language Transfer · Track 35",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=3RSiHU49pBg",
+        "embedId": "3RSiHU49pBg",
+        "durationMin": 9,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-45",
+        "type": "external",
+        "title": "Pronunciation 45/55 · How to pronounce the French R",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=qJagrntKXbY",
+        "embedId": "qJagrntKXbY",
+        "durationMin": 12,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "alice-07",
+        "type": "external",
+        "title": "Story listening · Monsieur Tortie, un conte populaire cadien",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=cnHHkGZ3mxY",
+        "embedId": "cnHHkGZ3mxY",
+        "durationMin": 28,
+        "instructions": "Watch, relax, follow the drawings. Do NOT translate in your head; guessing from pictures is the exercise.",
+        "teaches": "Comprehensible input — your brain acquiring French from context."
+      },
+      {
+        "id": "lt-36",
+        "type": "external",
+        "title": "Language Transfer · Track 36",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=4vfMD_8nK6s",
+        "embedId": "4vfMD_8nK6s",
+        "durationMin": 9,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-46",
+        "type": "external",
+        "title": "Pronunciation 46/55 · All the pronunciations of S and Z in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=N80AlAmYl2s",
+        "embedId": "N80AlAmYl2s",
+        "durationMin": 13,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "lt-37",
+        "type": "external",
+        "title": "Language Transfer · Track 37",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=jkMXQdPe63U",
+        "embedId": "jkMXQdPe63U",
+        "durationMin": 13,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-47",
+        "type": "external",
+        "title": "Pronunciation 47/55 · Pronunciation of T - TIEN - TION in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=7Vu7oOLdKZU",
+        "embedId": "7Vu7oOLdKZU",
+        "durationMin": 9,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "lt-38",
+        "type": "external",
+        "title": "Language Transfer · Track 38",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=HiK511vyQ6s",
+        "embedId": "HiK511vyQ6s",
+        "durationMin": 12,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-48",
+        "type": "external",
+        "title": "Pronunciation 48/55 · Pronunciation of V in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=K68UNUL8arY",
+        "embedId": "K68UNUL8arY",
+        "durationMin": 4,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "sef-01",
+        "type": "external",
+        "title": "Street French · More simple sentences about animals",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=akcjpz7iZVY",
+        "embedId": "akcjpz7iZVY",
+        "durationMin": 3,
+        "instructions": "Real people, real speed (slowed). First pass: French subtitles. Second pass: none.",
+        "teaches": "Multiple native voices — the ear training exams reward."
+      },
+      {
+        "id": "lt-39",
+        "type": "external",
+        "title": "Language Transfer · Track 39",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=ZGSJwVkUGfE",
+        "embedId": "ZGSJwVkUGfE",
+        "durationMin": 13,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-49",
+        "type": "external",
+        "title": "Pronunciation 49/55 · Pronunciation of W in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=X2H0efIObNs",
+        "embedId": "X2H0efIObNs",
+        "durationMin": 3,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "lt-40",
+        "type": "external",
+        "title": "Language Transfer · Track 40",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=nRKFYukIm8Y",
+        "embedId": "nRKFYukIm8Y",
+        "durationMin": 16,
+        "instructions": "Pause after every question and answer OUT LOUD before the student does. Never just listen.",
+        "teaches": "Next step of the Thinking Method — keep building sentences aloud."
+      },
+      {
+        "id": "dylane-50",
+        "type": "external",
+        "title": "Pronunciation 50/55 · Pronunciation of X in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=rJCYCUnDPSI",
+        "embedId": "rJCYCUnDPSI",
+        "durationMin": 6,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "dylane-51",
+        "type": "external",
+        "title": "Pronunciation 51/55 · 25 unusual French pronunciations",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=9THCmhwHmGg",
+        "embedId": "9THCmhwHmGg",
+        "durationMin": 18,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "dylane-52",
+        "type": "external",
+        "title": "Pronunciation 52/55 · Let's talk about the WORD STRESS in French",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=RO6oP8gJBvU",
+        "embedId": "RO6oP8gJBvU",
+        "durationMin": 8,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "dylane-53",
+        "type": "external",
+        "title": "Pronunciation 53/55 · French Reading Practice 1 - Le printemps",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=J04D8H0RSGI",
+        "embedId": "J04D8H0RSGI",
+        "durationMin": 24,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "dylane-54",
+        "type": "external",
+        "title": "Pronunciation 54/55 · French Reading Practice 2 - Ma journée idéale",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=VuQU_eOdTiA",
+        "embedId": "VuQU_eOdTiA",
+        "durationMin": 22,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "dylane-55",
+        "type": "external",
+        "title": "Pronunciation 55/55 · French Reading Practice 3 - Le Canada",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=Lru_Y5NM-5c",
+        "embedId": "Lru_Y5NM-5c",
+        "durationMin": 18,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "dylane-56",
+        "type": "external",
+        "title": "Pronunciation test · French Pronunciation Test",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=TTWKSvgXeCI",
+        "embedId": "TTWKSvgXeCI",
+        "durationMin": 8,
+        "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
+        "teaches": "Check how much of the sound system stuck."
+      },
+      {
+        "id": "alice-08",
+        "type": "external",
+        "title": "Story listening · Narcisse, un mythe grec",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=ayvaXJoCrJE",
+        "embedId": "ayvaXJoCrJE",
+        "durationMin": 17,
+        "instructions": "Watch, relax, follow the drawings. Do NOT translate in your head; guessing from pictures is the exercise.",
+        "teaches": "Comprehensible input — your brain acquiring French from context."
+      },
+      {
+        "id": "sef-02",
+        "type": "external",
+        "title": "Street French · Extremely short sentences",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=Szq6lbadrZA",
+        "embedId": "Szq6lbadrZA",
+        "durationMin": 4,
+        "instructions": "Real people, real speed (slowed). First pass: French subtitles. Second pass: none.",
+        "teaches": "Multiple native voices — the ear training exams reward."
+      },
+      {
+        "id": "ch5-checkpoint",
+        "type": "checkpoint",
+        "title": "Milestone · Language Transfer complete",
+        "durationMin": 5,
+        "canDoStatements": [
+          "I finished all 40 Language Transfer tracks.",
+          "I finished the 55-lesson pronunciation course.",
+          "I can build sentences with vouloir / pouvoir / aller / être / avoir without stopping to think.",
+          "I understand the logic of French — now it’s about volume."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ch6",
+    "title": "Chapter 6 · Structure",
+    "subtitle": "Weeks 11–14 — the written grammar skeleton (book work)",
+    "lessons": [
+      {
+        "id": "gp-01",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 1: être and subject pronouns",
+        "canDoStatements": [
+          "I worked through unit 1 (être and subject pronouns) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-02",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 2: tu / vous",
+        "canDoStatements": [
+          "I worked through unit 2 (tu / vous) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-03",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 3: les articles (un, une, des)",
+        "canDoStatements": [
+          "I worked through unit 3 (les articles (un, une, des)) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-04",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 4: le, la, les",
+        "canDoStatements": [
+          "I worked through unit 4 (le, la, les) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-05",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 5: masculin / féminin",
+        "canDoStatements": [
+          "I worked through unit 5 (masculin / féminin) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "rfi-1",
+        "type": "external",
+        "title": "RFI · Le français facile — exercices A1",
+        "provider": "link",
+        "url": "https://francaisfacile.rfi.fr/fr/exercices/",
+        "durationMin": 15,
+        "instructions": "Open, pick one A1 exercise set, do it start to finish.",
+        "teaches": "Radio-style listening — the exact register TCF Canada tests."
+      },
+      {
+        "id": "gp-06",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 6: singulier / pluriel",
+        "canDoStatements": [
+          "I worked through unit 6 (singulier / pluriel) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-07",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 7: les adjectifs",
+        "canDoStatements": [
+          "I worked through unit 7 (les adjectifs) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-08",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 8: avoir",
+        "canDoStatements": [
+          "I worked through unit 8 (avoir) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-09",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 9: la négation",
+        "canDoStatements": [
+          "I worked through unit 9 (la négation) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-10",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 10: la question",
+        "canDoStatements": [
+          "I worked through unit 10 (la question) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "tv5-1",
+        "type": "external",
+        "title": "TV5Monde · Apprendre le français — A1",
+        "provider": "link",
+        "url": "https://apprendre.tv5monde.com/fr/exercices/a1-debutant",
+        "durationMin": 15,
+        "instructions": "Open, pick one A1 exercise set, do it start to finish.",
+        "teaches": "Real TV clips with self-correcting comprehension questions."
+      },
+      {
+        "id": "gp-11",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 11: les verbes en -er",
+        "canDoStatements": [
+          "I worked through unit 11 (les verbes en -er) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-12",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 12: les verbes en -er (suite)",
+        "canDoStatements": [
+          "I worked through unit 12 (les verbes en -er (suite)) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-13",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 13: aller + lieu",
+        "canDoStatements": [
+          "I worked through unit 13 (aller + lieu) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-14",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 14: venir de",
+        "canDoStatements": [
+          "I worked through unit 14 (venir de) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-15",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 15: les nombres",
+        "canDoStatements": [
+          "I worked through unit 15 (les nombres) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "sef-03",
+        "type": "external",
+        "title": "Street French · Easy sentences about nature",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=WAyK7qQ06Bc",
+        "embedId": "WAyK7qQ06Bc",
+        "durationMin": 4,
+        "instructions": "Real people, real speed (slowed). First pass: French subtitles. Second pass: none.",
+        "teaches": "Multiple native voices — the ear training exams reward."
+      },
+      {
+        "id": "gp-16",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 16: l’heure et le temps",
+        "canDoStatements": [
+          "I worked through unit 16 (l’heure et le temps) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-17",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 17: il y a",
+        "canDoStatements": [
+          "I worked through unit 17 (il y a) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-18",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 18: c’est / il est",
+        "canDoStatements": [
+          "I worked through unit 18 (c’est / il est) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-19",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 19: les possessifs",
+        "canDoStatements": [
+          "I worked through unit 19 (les possessifs) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-20",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 20: révision 1–19",
+        "canDoStatements": [
+          "I worked through unit 20 (révision 1–19) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "ch6-checkpoint",
+        "type": "checkpoint",
+        "title": "Chapter 6 checkpoint",
+        "durationMin": 3,
+        "canDoStatements": [
+          "I finished the first 20 units of Grammaire progressive with the answer key.",
+          "RFI / TV5Monde A1 exercises are part of my weekly routine."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ch7",
+    "title": "Chapter 7 · Décision",
+    "subtitle": "Weeks 15–18 — book work part 2, then the M3 gate from the master plan",
+    "lessons": [
+      {
+        "id": "gp-21",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 21: les démonstratifs",
+        "canDoStatements": [
+          "I worked through unit 21 (les démonstratifs) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-22",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 22: les prépositions de lieu",
+        "canDoStatements": [
+          "I worked through unit 22 (les prépositions de lieu) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-23",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 23: les partitifs (du, de la)",
+        "canDoStatements": [
+          "I worked through unit 23 (les partitifs (du, de la)) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-24",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 24: la quantité",
+        "canDoStatements": [
+          "I worked through unit 24 (la quantité) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-25",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 25: les verbes pronominaux",
+        "canDoStatements": [
+          "I worked through unit 25 (les verbes pronominaux) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-26",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 26: les verbes en -ir",
+        "canDoStatements": [
+          "I worked through unit 26 (les verbes en -ir) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-27",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 27: prendre, venir, faire",
+        "canDoStatements": [
+          "I worked through unit 27 (prendre, venir, faire) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "sef-04",
+        "type": "external",
+        "title": "Street French · How do I get to my accommodation?",
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=pGFvNYUwaEw",
+        "embedId": "pGFvNYUwaEw",
+        "durationMin": 6,
+        "instructions": "Real people, real speed (slowed). First pass: French subtitles. Second pass: none.",
+        "teaches": "Multiple native voices — the ear training exams reward."
+      },
+      {
+        "id": "gp-28",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 28: pouvoir, vouloir, devoir",
+        "canDoStatements": [
+          "I worked through unit 28 (pouvoir, vouloir, devoir) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-29",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 29: le futur proche",
+        "canDoStatements": [
+          "I worked through unit 29 (le futur proche) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-30",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 30: le passé composé (avoir)",
+        "canDoStatements": [
+          "I worked through unit 30 (le passé composé (avoir)) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-31",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 31: le passé composé (être)",
+        "canDoStatements": [
+          "I worked through unit 31 (le passé composé (être)) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-32",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 32: le passé composé (négation)",
+        "canDoStatements": [
+          "I worked through unit 32 (le passé composé (négation)) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-33",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 33: l’imparfait (découverte)",
+        "canDoStatements": [
+          "I worked through unit 33 (l’imparfait (découverte)) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-34",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 34: les pronoms COD",
+        "canDoStatements": [
+          "I worked through unit 34 (les pronoms COD) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "rfi-2",
+        "type": "external",
+        "title": "RFI · Journal en français facile (habit)",
+        "provider": "link",
+        "url": "https://francaisfacile.rfi.fr/fr/podcasts/journal-en-fran%C3%A7ais-facile/",
+        "durationMin": 15,
+        "instructions": "Open, pick one A1 exercise set, do it start to finish.",
+        "teaches": "The daily 10-min slow news bulletin — from here on, this is your commute audio."
+      },
+      {
+        "id": "gp-35",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 35: les pronoms COI",
+        "canDoStatements": [
+          "I worked through unit 35 (les pronoms COI) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-36",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 36: les comparatifs",
+        "canDoStatements": [
+          "I worked through unit 36 (les comparatifs) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-37",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 37: les adverbes",
+        "canDoStatements": [
+          "I worked through unit 37 (les adverbes) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-38",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 38: l’impératif",
+        "canDoStatements": [
+          "I worked through unit 38 (l’impératif) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-39",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 39: révision générale",
+        "canDoStatements": [
+          "I worked through unit 39 (révision générale) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "gp-40",
+        "type": "checkpoint",
+        "title": "Grammaire progressive · unit 40: test final du livre",
+        "canDoStatements": [
+          "I worked through unit 40 (test final du livre) — left page rule, right page exercises, checked with the corrigés."
+        ],
+        "durationMin": 15
+      },
+      {
+        "id": "checkpoint-m3",
+        "type": "checkpoint",
+        "title": "CHECKPOINT M3 · the go/no-go gate",
+        "durationMin": 10,
+        "canDoStatements": [
+          "I can hold a simple everyday dialogue in French (introduce myself, order, ask directions, small talk).",
+          "I am on trajectory to A2 — vocabulary, listening and grammar all moving.",
+          "Honest verdict made on a good day, not a bad one: CONTINUE to B2 (plan A)."
+        ]
       }
     ]
   }

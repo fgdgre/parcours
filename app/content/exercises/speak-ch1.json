@@ -1,0 +1,12 @@
+[
+  { "type": "speak", "target": "Bonjour !", "en": "Hello!" },
+  { "type": "speak", "target": "Merci beaucoup.", "en": "Thank you very much." },
+  { "type": "speak", "target": "Ça va bien.", "en": "I'm doing well." },
+  { "type": "speak", "target": "C'est possible.", "en": "It's possible." },
+  { "type": "speak", "target": "C'est une bonne idée.", "en": "It's a good idea." },
+  { "type": "speak", "target": "Je veux parler français.", "en": "I want to speak French." },
+  { "type": "speak", "target": "Vous avez une question ?", "en": "Do you have a question? (listen for the vous‿avez liaison)" },
+  { "type": "speak", "target": "Je vais à Paris demain.", "en": "I'm going to Paris tomorrow." },
+  { "type": "speak", "target": "Je ne comprends pas.", "en": "I don't understand." },
+  { "type": "speak", "target": "Je voudrais un café, s'il vous plaît.", "en": "I would like a coffee, please." }
+]

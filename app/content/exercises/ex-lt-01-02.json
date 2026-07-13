@@ -1,0 +1,71 @@
+[
+  {
+    "type": "mc",
+    "prompt": "English -tion words come straight into French. How do you say “the situation”?",
+    "options": ["la situation", "le situation", "la situazione", "le situatione"],
+    "answer": 0,
+    "explain": "-tion words are the same in French and always feminine: la situation."
+  },
+  {
+    "type": "type",
+    "prompt": "Turn it into French: “the decision”",
+    "answer": ["la décision", "la decision"],
+    "hint": "-tion words are feminine (la)."
+  },
+  {
+    "type": "type",
+    "prompt": "Turn it into French: “the question”",
+    "answer": ["la question"],
+    "hint": "Same trick: -tion."
+  },
+  {
+    "type": "mc",
+    "prompt": "What does “c'est” mean?",
+    "options": ["it is / this is", "I am", "there is", "he has"],
+    "answer": 0,
+    "explain": "c'est = “it is / this is”. You'll use it constantly."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “It's possible.”",
+    "answer": ["c'est possible"],
+    "hint": "c'est + adjective."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “It's for me.”",
+    "answer": ["c'est pour moi"],
+    "hint": "pour = for."
+  },
+  {
+    "type": "mc",
+    "prompt": "Adjectives like “possible”, “probable”, “confortable” in French are…",
+    "options": [
+      "spelled like English, said the French way",
+      "completely different words",
+      "only used in formal writing",
+      "always masculine"
+    ],
+    "answer": 0,
+    "explain": "-ible/-able adjectives transfer directly from English — you already know hundreds of French words."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “It's not possible.”",
+    "answer": ["ce n'est pas possible", "c'est pas possible"],
+    "hint": "ne … pas wraps around est. (In speech, French people often drop “ne”.)"
+  },
+  {
+    "type": "mc",
+    "prompt": "Which one is correct for “the conversation”?",
+    "options": ["la conversation", "le conversation", "la conversatione", "les conversation"],
+    "answer": 0,
+    "explain": "Another -tion word: same spelling as English, feminine."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “It's very important.”",
+    "answer": ["c'est très important"],
+    "hint": "très = very; “important” transfers from English."
+  }
+]
