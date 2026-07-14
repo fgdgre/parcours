@@ -1223,6 +1223,25 @@
         "teaches": "One building block of the French sound system."
       },
       {
+        "id": "ch4-vocab-01",
+        "type": "vocab",
+        "title": "Words · daily verbs",
+        "cardIds": [
+          "v4-01",
+          "v4-02",
+          "v4-03",
+          "v4-04",
+          "v4-05",
+          "v4-06",
+          "v4-07",
+          "v4-08",
+          "v4-09",
+          "v4-10"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
         "id": "lt-26",
         "type": "external",
         "title": "Language Transfer · Track 26",
@@ -1283,6 +1302,25 @@
         "durationMin": 11,
         "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
         "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch4-vocab-02",
+        "type": "vocab",
+        "title": "Words · describing things",
+        "cardIds": [
+          "v4-11",
+          "v4-12",
+          "v4-13",
+          "v4-14",
+          "v4-15",
+          "v4-16",
+          "v4-17",
+          "v4-18",
+          "v4-19",
+          "v4-20"
+        ],
+        "newCards": 10,
+        "durationMin": 6
       },
       {
         "id": "lt-28",
@@ -1358,6 +1396,25 @@
         "teaches": "One building block of the French sound system."
       },
       {
+        "id": "ch4-vocab-03",
+        "type": "vocab",
+        "title": "Words · how often, how fast",
+        "cardIds": [
+          "v4-21",
+          "v4-22",
+          "v4-23",
+          "v4-24",
+          "v4-25",
+          "v4-26",
+          "v4-27",
+          "v4-28",
+          "v4-29",
+          "v4-30"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
         "id": "lt-30",
         "type": "external",
         "title": "Language Transfer · Track 30",
@@ -1420,6 +1477,25 @@
         "teaches": "One building block of the French sound system."
       },
       {
+        "id": "ch4-vocab-04",
+        "type": "vocab",
+        "title": "Words · weather & habits",
+        "cardIds": [
+          "v4-31",
+          "v4-32",
+          "v4-33",
+          "v4-34",
+          "v4-35",
+          "v4-36",
+          "v4-37",
+          "v4-38",
+          "v4-39",
+          "v4-40"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
         "id": "lt-32",
         "type": "external",
         "title": "Language Transfer · Track 32",
@@ -1480,6 +1556,25 @@
         "durationMin": 8,
         "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
         "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch4-vocab-05",
+        "type": "vocab",
+        "title": "Words · food & home",
+        "cardIds": [
+          "v4-41",
+          "v4-42",
+          "v4-43",
+          "v4-44",
+          "v4-45",
+          "v4-46",
+          "v4-47",
+          "v4-48",
+          "v4-49",
+          "v4-50"
+        ],
+        "newCards": 10,
+        "durationMin": 6
       },
       {
         "id": "dylane-40",
@@ -1584,6 +1679,25 @@
         "teaches": "One building block of the French sound system."
       },
       {
+        "id": "ch5-vocab-01",
+        "type": "vocab",
+        "title": "Words · airport & directions",
+        "cardIds": [
+          "v5-01",
+          "v5-02",
+          "v5-03",
+          "v5-04",
+          "v5-05",
+          "v5-06",
+          "v5-07",
+          "v5-08",
+          "v5-09",
+          "v5-10"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
         "id": "lt-34",
         "type": "external",
         "title": "Language Transfer · Track 34",
@@ -1633,6 +1747,25 @@
         "durationMin": 12,
         "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
         "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch5-vocab-02",
+        "type": "vocab",
+        "title": "Words · money & shops",
+        "cardIds": [
+          "v5-11",
+          "v5-12",
+          "v5-13",
+          "v5-14",
+          "v5-15",
+          "v5-16",
+          "v5-17",
+          "v5-18",
+          "v5-19",
+          "v5-20"
+        ],
+        "newCards": 10,
+        "durationMin": 6
       },
       {
         "id": "alice-07",
@@ -1697,6 +1830,25 @@
         "teaches": "One building block of the French sound system."
       },
       {
+        "id": "ch5-vocab-03",
+        "type": "vocab",
+        "title": "Words · meals & time of day",
+        "cardIds": [
+          "v5-21",
+          "v5-22",
+          "v5-23",
+          "v5-24",
+          "v5-25",
+          "v5-26",
+          "v5-27",
+          "v5-28",
+          "v5-29",
+          "v5-30"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
         "id": "lt-38",
         "type": "external",
         "title": "Language Transfer · Track 38",
@@ -1759,6 +1911,25 @@
         "teaches": "One building block of the French sound system."
       },
       {
+        "id": "ch5-vocab-04",
+        "type": "vocab",
+        "title": "Words · numbers to 100",
+        "cardIds": [
+          "v5-31",
+          "v5-32",
+          "v5-33",
+          "v5-34",
+          "v5-35",
+          "v5-36",
+          "v5-37",
+          "v5-38",
+          "v5-39",
+          "v5-40"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
         "id": "lt-40",
         "type": "external",
         "title": "Language Transfer · Track 40",
@@ -1797,6 +1968,25 @@
         "durationMin": 18,
         "instructions": "Repeat every sound after Dylane, exaggerating. Your mouth is learning, not your eyes.",
         "teaches": "One building block of the French sound system."
+      },
+      {
+        "id": "ch5-vocab-05",
+        "type": "vocab",
+        "title": "Words · time expressions",
+        "cardIds": [
+          "v5-41",
+          "v5-42",
+          "v5-43",
+          "v5-44",
+          "v5-45",
+          "v5-46",
+          "v5-47",
+          "v5-48",
+          "v5-49",
+          "v5-50"
+        ],
+        "newCards": 10,
+        "durationMin": 6
       },
       {
         "id": "dylane-52",
@@ -1943,6 +2133,25 @@
         "durationMin": 15
       },
       {
+        "id": "ch6-vocab-01",
+        "type": "vocab",
+        "title": "Words · work & tech",
+        "cardIds": [
+          "v6-01",
+          "v6-02",
+          "v6-03",
+          "v6-04",
+          "v6-05",
+          "v6-06",
+          "v6-07",
+          "v6-08",
+          "v6-09",
+          "v6-10"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
         "id": "gp-03",
         "type": "checkpoint",
         "title": "Grammaire progressive · unit 3: les articles (un, une, des)",
@@ -1989,6 +2198,25 @@
         "durationMin": 15
       },
       {
+        "id": "ch6-vocab-02",
+        "type": "vocab",
+        "title": "Words · send, show, explain",
+        "cardIds": [
+          "v6-11",
+          "v6-12",
+          "v6-13",
+          "v6-14",
+          "v6-15",
+          "v6-16",
+          "v6-17",
+          "v6-18",
+          "v6-19",
+          "v6-20"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
         "id": "gp-07",
         "type": "checkpoint",
         "title": "Grammaire progressive · unit 7: les adjectifs",
@@ -2023,6 +2251,25 @@
           "I worked through unit 10 (la question) — left page rule, right page exercises, checked with the corrigés."
         ],
         "durationMin": 15
+      },
+      {
+        "id": "ch6-vocab-03",
+        "type": "vocab",
+        "title": "Words · home & needs",
+        "cardIds": [
+          "v6-21",
+          "v6-22",
+          "v6-23",
+          "v6-24",
+          "v6-25",
+          "v6-26",
+          "v6-27",
+          "v6-28",
+          "v6-29",
+          "v6-30"
+        ],
+        "newCards": 10,
+        "durationMin": 6
       },
       {
         "id": "tv5-1",
@@ -2071,6 +2318,25 @@
         "durationMin": 15
       },
       {
+        "id": "ch6-vocab-04",
+        "type": "vocab",
+        "title": "Words · feelings & people",
+        "cardIds": [
+          "v6-31",
+          "v6-32",
+          "v6-33",
+          "v6-34",
+          "v6-35",
+          "v6-36",
+          "v6-37",
+          "v6-38",
+          "v6-39",
+          "v6-40"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
         "id": "gp-15",
         "type": "checkpoint",
         "title": "Grammaire progressive · unit 15: les nombres",
@@ -2116,6 +2382,25 @@
           "I worked through unit 18 (c’est / il est) — left page rule, right page exercises, checked with the corrigés."
         ],
         "durationMin": 15
+      },
+      {
+        "id": "ch6-vocab-05",
+        "type": "vocab",
+        "title": "Words · learning French",
+        "cardIds": [
+          "v6-41",
+          "v6-42",
+          "v6-43",
+          "v6-44",
+          "v6-45",
+          "v6-46",
+          "v6-47",
+          "v6-48",
+          "v6-49",
+          "v6-50"
+        ],
+        "newCards": 10,
+        "durationMin": 6
       },
       {
         "id": "gp-19",
@@ -2179,6 +2464,25 @@
         "durationMin": 15
       },
       {
+        "id": "ch7-vocab-01",
+        "type": "vocab",
+        "title": "Words · papers & appointments",
+        "cardIds": [
+          "v7-01",
+          "v7-02",
+          "v7-03",
+          "v7-04",
+          "v7-05",
+          "v7-06",
+          "v7-07",
+          "v7-08",
+          "v7-09",
+          "v7-10"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
         "id": "gp-23",
         "type": "checkpoint",
         "title": "Grammaire progressive · unit 23: les partitifs (du, de la)",
@@ -2213,6 +2517,25 @@
           "I worked through unit 26 (les verbes en -ir) — left page rule, right page exercises, checked with the corrigés."
         ],
         "durationMin": 15
+      },
+      {
+        "id": "ch7-vocab-02",
+        "type": "vocab",
+        "title": "Words · sign, fill, receive",
+        "cardIds": [
+          "v7-11",
+          "v7-12",
+          "v7-13",
+          "v7-14",
+          "v7-15",
+          "v7-16",
+          "v7-17",
+          "v7-18",
+          "v7-19",
+          "v7-20"
+        ],
+        "newCards": 10,
+        "durationMin": 6
       },
       {
         "id": "gp-27",
@@ -2262,6 +2585,25 @@
         "durationMin": 15
       },
       {
+        "id": "ch7-vocab-03",
+        "type": "vocab",
+        "title": "Words · because, so, if",
+        "cardIds": [
+          "v7-21",
+          "v7-22",
+          "v7-23",
+          "v7-24",
+          "v7-25",
+          "v7-26",
+          "v7-27",
+          "v7-28",
+          "v7-29",
+          "v7-30"
+        ],
+        "newCards": 10,
+        "durationMin": 6
+      },
+      {
         "id": "gp-31",
         "type": "checkpoint",
         "title": "Grammaire progressive · unit 31: le passé composé (être)",
@@ -2296,6 +2638,25 @@
           "I worked through unit 34 (les pronoms COD) — left page rule, right page exercises, checked with the corrigés."
         ],
         "durationMin": 15
+      },
+      {
+        "id": "ch7-vocab-04",
+        "type": "vocab",
+        "title": "Words · more, less, enough",
+        "cardIds": [
+          "v7-31",
+          "v7-32",
+          "v7-33",
+          "v7-34",
+          "v7-35",
+          "v7-36",
+          "v7-37",
+          "v7-38",
+          "v7-39",
+          "v7-40"
+        ],
+        "newCards": 10,
+        "durationMin": 6
       },
       {
         "id": "rfi-2",
@@ -2342,6 +2703,25 @@
           "I worked through unit 38 (l’impératif) — left page rule, right page exercises, checked with the corrigés."
         ],
         "durationMin": 15
+      },
+      {
+        "id": "ch7-vocab-05",
+        "type": "vocab",
+        "title": "Words · health & survival phrases",
+        "cardIds": [
+          "v7-41",
+          "v7-42",
+          "v7-43",
+          "v7-44",
+          "v7-45",
+          "v7-46",
+          "v7-47",
+          "v7-48",
+          "v7-49",
+          "v7-50"
+        ],
+        "newCards": 10,
+        "durationMin": 6
       },
       {
         "id": "gp-39",

@@ -47,7 +47,7 @@ The app is a generic player; every lesson is data:
 
 Adding a chapter or deepening one = adding JSON + running `npm run validate`. No code changes, and existing progress is never affected because lesson/card ids are stable.
 
-**Current state (v1):** all 7 chapters present (187 lessons — every Language Transfer track, all 55 pronunciation lessons, story listening, Grammaire progressive units, RFI/TV5Monde). Chapter 1 has full depth (150 cards + 6 exercise sets). Chapters 2+ get their exercise sets in the next content iterations.
+**Current state (v1.5):** all 7 chapters at full depth — 243 lessons, 350 frequency cards (vocab batches through every chapter), 42 exercise sets (every LT track pair has practice; per-chapter dictation + speaking sets), 12 optional silent challenges (reading comprehension + translation sprints), progress-gated daily sentence generator, and the in-app guide at `/guide`. Remaining known iteration: a transcript-verification pass over chapter 3–5 exercises (authored from course-arc knowledge, self-reviewed only).
 
 ## Docs
 
