@@ -26,6 +26,62 @@
       </div>
     </div>
 
+    <h2>Insights</h2>
+    <div class="card stack">
+      <div class="spread">
+        <span>⏱ Study time today</span>
+        <strong>{{ minutesToday }} min</strong>
+      </div>
+      <div class="spread">
+        <span class="muted small">Last 7 days</span>
+        <span class="muted small">{{ minutes7 }} min</span>
+      </div>
+      <div class="trend" aria-label="minutes per day, last 14 days">
+        <div v-for="x in last14" :key="x.d" class="bar-wrap" :title="`${x.d}: ${x.min} min`">
+          <div class="bar" :style="{ height: `${trendMax ? Math.max(4, (x.min / trendMax) * 100) : 4}%` }" />
+        </div>
+      </div>
+      <p class="muted small">Minutes per day, last two weeks.</p>
+    </div>
+
+    <template v-if="skillRows.length > 0">
+      <h2>Skills</h2>
+      <div class="card stack">
+        <div v-for="s in skillRows" :key="s.type" class="stack skill">
+          <div class="spread">
+            <span class="small">{{ s.label }}</span>
+            <span class="small" :class="qualityClass(s.pct)">{{ s.pct }}% <span class="muted">({{ s.total }} answered)</span></span>
+          </div>
+          <ProgressBar :value="s.pct / 100" />
+        </div>
+        <p class="muted small">Your lowest bar is where the next week's accent belongs.</p>
+      </div>
+    </template>
+
+    <template v-if="progress.writingRatings.length > 0">
+      <h2>Writing ratings</h2>
+      <div class="card stack">
+        <div class="spread">
+          <span>Average (AI-rated, strict)</span>
+          <strong :class="qualityClass(writingAvg)">{{ writingAvg }}/100</strong>
+        </div>
+        <div v-for="(r, i) in progress.writingRatings.slice(0, 3)" :key="i" class="spread">
+          <span class="muted small rating-task">{{ r.task }}</span>
+          <span class="small">{{ r.score }}</span>
+        </div>
+      </div>
+    </template>
+
+    <template v-if="hardestWords.length > 0">
+      <h2>Hardest words</h2>
+      <div class="card stack">
+        <div v-for="w in hardestWords" :key="w.card.id" class="spread">
+          <span class="small"><strong>{{ w.card.fr }}</strong> — {{ w.card.en }}</span>
+          <span class="muted small">forgot ×{{ w.lapses }}</span>
+        </div>
+      </div>
+    </template>
+
     <h2>Chapters</h2>
     <div v-for="ch in curriculum" :key="ch.id" class="stack chapter">
       <div class="spread">
@@ -96,8 +152,9 @@
 
 <script setup lang="ts">
 import type { Chapter } from '~/types/content'
-import { allLessons, curriculum, isOptional } from '~/content'
+import { allLessons, cardsById, curriculum, isOptional } from '~/content'
 import { buildMistakesPrompt } from '~/utils/reviewPrompt'
+import { addDays, todayIso } from '~/utils/srs'
 
 const progress = useProgress()
 
@@ -120,6 +177,53 @@ function qualityOf(ch: Chapter): number | undefined {
 }
 
 const qualityClass = (p: number) => (p >= 80 ? 'q-ok' : p >= 60 ? 'q-warn' : 'q-err')
+
+// --- insights ---
+const minutesToday = computed(() =>
+  Math.round((progress.dayStats[todayIso()]?.seconds ?? 0) / 60),
+)
+const last14 = computed(() => {
+  const out: { d: string; min: number }[] = []
+  for (let i = 13; i >= 0; i--) {
+    const d = addDays(todayIso(), -i)
+    out.push({ d, min: Math.round((progress.dayStats[d]?.seconds ?? 0) / 60) })
+  }
+  return out
+})
+const minutes7 = computed(() => last14.value.slice(7).reduce((s, x) => s + x.min, 0))
+const trendMax = computed(() => Math.max(...last14.value.map(x => x.min)))
+
+const SKILLS = [
+  { type: 'mc', label: 'Recognition (quiz)' },
+  { type: 'type', label: 'Translation (typing)' },
+  { type: 'conjugate', label: 'Conjugation' },
+  { type: 'dictation', label: 'Listening (dictation)' },
+  { type: 'speak', label: 'Speaking' },
+]
+const skillRows = computed(() =>
+  SKILLS.flatMap((s) => {
+    const st = progress.skillStats[s.type]
+    if (!st || st.total < 5) return []
+    return [{ ...s, pct: Math.round((st.correct / st.total) * 100), total: st.total }]
+  }),
+)
+
+const writingAvg = computed(() => {
+  const r = progress.writingRatings
+  if (r.length === 0) return 0
+  return Math.round(r.reduce((s, x) => s + x.score, 0) / r.length)
+})
+
+const hardestWords = computed(() =>
+  Object.entries(progress.srs)
+    .filter(([, e]) => e.lapses > 0)
+    .sort((a, b) => b[1].lapses - a[1].lapses)
+    .slice(0, 5)
+    .flatMap(([id, e]) => {
+      const card = cardsById[id]
+      return card ? [{ card, lapses: e.lapses }] : []
+    }),
+)
 
 const mistakesCopied = ref(false)
 async function copyMistakes() {
@@ -185,6 +289,11 @@ function resetAll() {
 .q-ok { color: var(--ok); }
 .q-warn { color: var(--warn); }
 .q-err { color: var(--err); }
+.trend { display: flex; align-items: flex-end; gap: 3px; height: 48px; }
+.bar-wrap { flex: 1; height: 100%; display: flex; align-items: flex-end; }
+.bar { width: 100%; border-radius: 3px 3px 0 0; background: var(--accent); opacity: 0.75; }
+.skill { gap: 4px; }
+.rating-task { max-width: 70%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mistake { padding-bottom: 8px; border-bottom: 1px solid var(--border); }
 .mistake .q { margin: 0; color: var(--muted); }
 .mistake .a { margin: 2px 0 0; font-weight: 600; }

@@ -13,6 +13,9 @@ const sample = {
   examScores: { 'exam-ch1': 92 },
   lessonScores: { 'quiz-lt-01-02': { correct: 5, total: 6, date: '2026-07-13' } },
   mistakes: [{ q: '“Vous voulez” means…', a: 'you want (formal or plural)', date: '2026-07-13' }],
+  writingRatings: [{ task: 'Introduce yourself', score: 72, date: '2026-07-13' }],
+  skillStats: { mc: { correct: 12, total: 15 } },
+  dayStats: { '2026-07-13': { seconds: 1200, correct: 17, total: 21 } },
   settings: defaultSettings(),
 }
 

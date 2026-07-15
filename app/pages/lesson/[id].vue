@@ -100,16 +100,19 @@
             {{ done ? 'Retake exam' : 'Start exam' }}
           </button>
         </div>
-        <ExerciseRunner
-          v-else-if="examState === 'running'"
-          :key="examAttempt"
-          :exercises="examItems"
-          @finished="onExamFinished"
-        />
+        <template v-else-if="examState === 'running'">
+          <p class="muted small exam-clock">⏱ {{ examClock }}</p>
+          <ExerciseRunner
+            :key="examAttempt"
+            :exercises="examItems"
+            @finished="onExamFinished"
+          />
+        </template>
         <div v-else class="card stack">
           <p :class="examPassed ? 'okline' : ''" class="score">
             {{ examScore }}% — {{ examPassed ? 'passed ✓' : `below the ${lesson.passPercent}% pass mark` }}
           </p>
+          <p class="muted small">Time: {{ examClock }}</p>
           <p class="muted small">
             {{ examPassed
               ? 'The next lessons are unlocked. Onward.'
@@ -221,6 +224,25 @@ const bestScore = computed(() =>
   lesson.value ? (progress.examScores as Record<string, number>)[lesson.value.id] : undefined,
 )
 
+const examElapsed = ref(0)
+let examTicker: ReturnType<typeof setInterval> | null = null
+const examClock = computed(() => {
+  const m = Math.floor(examElapsed.value / 60)
+  const s = String(examElapsed.value % 60).padStart(2, '0')
+  return `${m}:${s}`
+})
+function startExamClock() {
+  examElapsed.value = 0
+  examTicker = setInterval(() => { examElapsed.value += 1 }, 1000)
+}
+function stopExamClock() {
+  if (examTicker) {
+    clearInterval(examTicker)
+    examTicker = null
+  }
+}
+onUnmounted(stopExamClock)
+
 function startExam() {
   if (lesson.value?.type !== 'exam' || !chapter.value) return
   const pool = [
@@ -234,9 +256,11 @@ function startExam() {
   examItems.value = items
   examAttempt.value += 1
   examState.value = 'running'
+  startExamClock()
 }
 
 function onExamFinished(result: { correct: number; total: number; missed: { q: string; a: string }[] }) {
+  stopExamClock()
   if (lesson.value?.type !== 'exam') return
   const pct = Math.round((result.correct / Math.max(1, result.total)) * 100)
   examScore.value = pct

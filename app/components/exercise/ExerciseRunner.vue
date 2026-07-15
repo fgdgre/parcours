@@ -36,10 +36,12 @@ interface RunResult {
 const props = defineProps<{ exercises: Exercise[] }>()
 const emit = defineEmits<{ finished: [result: RunResult] }>()
 
+const progress = useProgress()
 const idx = ref(0)
 const correctCount = ref(0)
 const gradableCount = ref(0)
 const missed = ref<{ q: string; a: string }[]>([])
+const perType: Record<string, { correct: number; total: number }> = {}
 const current = computed(() => props.exercises[idx.value])
 
 function describe(ex: Exercise): { q: string; a: string } {
@@ -72,8 +74,13 @@ function advance(correct?: boolean) {
     gradableCount.value += 1
     if (correct) correctCount.value += 1
     else missed.value.push(describe(ex))
+    const t = perType[ex.type] ?? { correct: 0, total: 0 }
+    t.total += 1
+    if (correct) t.correct += 1
+    perType[ex.type] = t
   }
   if (idx.value + 1 >= props.exercises.length) {
+    progress.recordRun(perType)
     emit('finished', {
       correct: correctCount.value,
       total: gradableCount.value,

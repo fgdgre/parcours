@@ -23,6 +23,23 @@ export interface Mistake {
   date: string
 }
 
+export interface WritingRating {
+  task: string
+  score: number
+  date: string
+}
+
+export interface SkillStat {
+  correct: number
+  total: number
+}
+
+export interface DayStat {
+  seconds: number
+  correct: number
+  total: number
+}
+
 export interface PersistedState {
   schemaVersion: number
   savedAt: string
@@ -32,6 +49,9 @@ export interface PersistedState {
   examScores: Record<string, number>
   lessonScores: Record<string, LessonScore>
   mistakes: Mistake[]
+  writingRatings: WritingRating[]
+  skillStats: Record<string, SkillStat>
+  dayStats: Record<string, DayStat>
   settings: Settings
 }
 
@@ -40,7 +60,7 @@ export function defaultSettings(): Settings {
 }
 
 export function serializeState(
-  s: Pick<PersistedState, 'completedLessons' | 'srs' | 'introduced' | 'examScores' | 'lessonScores' | 'mistakes' | 'settings'>,
+  s: Omit<PersistedState, 'schemaVersion' | 'savedAt'>,
 ): string {
   const payload: PersistedState = {
     schemaVersion: SCHEMA_VERSION,
@@ -51,6 +71,9 @@ export function serializeState(
     examScores: s.examScores,
     lessonScores: s.lessonScores,
     mistakes: s.mistakes,
+    writingRatings: s.writingRatings,
+    skillStats: s.skillStats,
+    dayStats: s.dayStats,
     settings: s.settings,
   }
   return JSON.stringify(payload, null, 2)
@@ -89,6 +112,9 @@ export function validateBackup(json: string): BackupValidation {
       examScores: (isRecord(parsed.examScores) ? parsed.examScores : {}) as Record<string, number>,
       lessonScores: (isRecord(parsed.lessonScores) ? parsed.lessonScores : {}) as Record<string, LessonScore>,
       mistakes: (Array.isArray(parsed.mistakes) ? parsed.mistakes : []) as Mistake[],
+      writingRatings: (Array.isArray(parsed.writingRatings) ? parsed.writingRatings : []) as WritingRating[],
+      skillStats: (isRecord(parsed.skillStats) ? parsed.skillStats : {}) as Record<string, SkillStat>,
+      dayStats: (isRecord(parsed.dayStats) ? parsed.dayStats : {}) as Record<string, DayStat>,
       settings: settings as Settings,
     },
   }
@@ -101,6 +127,9 @@ export const useProgress = defineStore('progress', () => {
   const examScores = ref<Record<string, number>>({})
   const lessonScores = ref<Record<string, LessonScore>>({})
   const mistakes = ref<Mistake[]>([])
+  const writingRatings = ref<WritingRating[]>([])
+  const skillStats = ref<Record<string, SkillStat>>({})
+  const dayStats = ref<Record<string, DayStat>>({})
   const settings = ref<Settings>(defaultSettings())
   const loaded = ref(false)
 
@@ -113,6 +142,9 @@ export const useProgress = defineStore('progress', () => {
       examScores: examScores.value,
       lessonScores: lessonScores.value,
       mistakes: mistakes.value,
+      writingRatings: writingRatings.value,
+      skillStats: skillStats.value,
+      dayStats: dayStats.value,
       settings: settings.value,
     }))
   }
@@ -130,6 +162,9 @@ export const useProgress = defineStore('progress', () => {
     examScores.value = data.examScores
     lessonScores.value = data.lessonScores
     mistakes.value = data.mistakes
+    writingRatings.value = data.writingRatings
+    skillStats.value = data.skillStats
+    dayStats.value = data.dayStats
     settings.value = data.settings
   }
 
@@ -141,7 +176,11 @@ export const useProgress = defineStore('progress', () => {
       if (v.ok) applyData(v.data)
     }
     loaded.value = true
-    watch([completedLessons, srs, introduced, examScores, lessonScores, mistakes, settings], persistSoon, { deep: true })
+    watch(
+      [completedLessons, srs, introduced, examScores, lessonScores, mistakes, writingRatings, skillStats, dayStats, settings],
+      persistSoon,
+      { deep: true },
+    )
   }
 
   const isDone = (id: string) => id in completedLessons.value
@@ -186,6 +225,30 @@ export const useProgress = defineStore('progress', () => {
     if (mistakes.value.length > 100) mistakes.value.length = 100
   }
 
+  function addWritingRating(task: string, score: number) {
+    writingRatings.value.unshift({ task: task.slice(0, 120), score, date: todayIso() })
+    if (writingRatings.value.length > 100) writingRatings.value.length = 100
+  }
+
+  function recordRun(perType: Record<string, { correct: number; total: number }>) {
+    const today = todayIso()
+    const day = dayStats.value[today] ?? { seconds: 0, correct: 0, total: 0 }
+    for (const [type, t] of Object.entries(perType)) {
+      const cur = skillStats.value[type] ?? { correct: 0, total: 0 }
+      skillStats.value[type] = { correct: cur.correct + t.correct, total: cur.total + t.total }
+      day.correct += t.correct
+      day.total += t.total
+    }
+    dayStats.value[today] = day
+  }
+
+  function addTime(seconds: number) {
+    const today = todayIso()
+    const day = dayStats.value[today] ?? { seconds: 0, correct: 0, total: 0 }
+    day.seconds += seconds
+    dayStats.value[today] = day
+  }
+
   function exportBackup(): string {
     return serializeState({
       completedLessons: completedLessons.value,
@@ -194,6 +257,9 @@ export const useProgress = defineStore('progress', () => {
       examScores: examScores.value,
       lessonScores: lessonScores.value,
       mistakes: mistakes.value,
+      writingRatings: writingRatings.value,
+      skillStats: skillStats.value,
+      dayStats: dayStats.value,
       settings: settings.value,
     })
   }
@@ -213,14 +279,19 @@ export const useProgress = defineStore('progress', () => {
     examScores.value = {}
     lessonScores.value = {}
     mistakes.value = []
+    writingRatings.value = []
+    skillStats.value = {}
+    dayStats.value = {}
     settings.value = defaultSettings()
     persistNow()
   }
 
   return {
-    completedLessons, srs, introduced, examScores, lessonScores, mistakes, settings, loaded,
+    completedLessons, srs, introduced, examScores, lessonScores, mistakes,
+    writingRatings, skillStats, dayStats, settings, loaded,
     load, isDone, markDone, unmarkDone,
     isIntroduced, introduceCard, reviewCard, recordExam, recordLesson, logMistakes,
+    addWritingRating, recordRun, addTime,
     dueIds, wordsSeen, wordsLearned,
     exportBackup, importBackup, resetAll,
   }

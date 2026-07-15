@@ -23,7 +23,27 @@
     <p class="muted small">
       Writing isn't graded here. The copy button packs your text with a tutor briefing —
       paste it into any AI chat to get corrections and keep the conversation going in French.
+      The AI ends with a strict <strong>RATING: NN/100</strong> — record it below.
     </p>
+
+    <div v-if="hasCopied" class="rating row">
+      <label class="small muted" for="ai-rating">AI rating:</label>
+      <input
+        id="ai-rating"
+        v-model.number="rating"
+        class="input rating-input"
+        type="number"
+        inputmode="numeric"
+        min="0"
+        max="100"
+        placeholder="NN"
+        :disabled="ratingSaved"
+      >
+      <span class="small muted">/100</span>
+      <button class="btn rating-save" :disabled="!ratingValid || ratingSaved" @click="saveRating">
+        {{ ratingSaved ? '✓ Saved' : 'Save' }}
+      </button>
+    </div>
 
     <button
       class="btn btn-primary btn-block"
@@ -43,13 +63,27 @@ const props = defineProps<{
 }>()
 defineEmits<{ done: [correct: boolean] }>()
 
+const progress = useProgress()
 const text = ref('')
 const copied = ref(false)
+const hasCopied = ref(false)
+const rating = ref<number | null>(null)
+const ratingSaved = ref(false)
 const minWords = computed(() => props.exercise.minWords ?? 10)
 const wordCount = computed(() => text.value.trim().split(/\s+/).filter(Boolean).length)
+const ratingValid = computed(() =>
+  typeof rating.value === 'number' && rating.value >= 0 && rating.value <= 100,
+)
+
+function saveRating() {
+  if (!ratingValid.value) return
+  progress.addWritingRating(props.exercise.prompt, rating.value!)
+  ratingSaved.value = true
+}
 
 async function copyForReview() {
   const payload = buildReviewPrompt(props.exercise.prompt, text.value.trim())
+  hasCopied.value = true
   try {
     await navigator.clipboard.writeText(payload)
     copied.value = true
@@ -70,4 +104,7 @@ async function copyForReview() {
 
 <style scoped>
 .area { min-height: 130px; resize: vertical; line-height: 1.5; }
+.rating { gap: 8px; }
+.rating-input { width: 76px; min-height: 40px; text-align: center; }
+.rating-save { min-height: 40px; padding: 6px 14px; }
 </style>
