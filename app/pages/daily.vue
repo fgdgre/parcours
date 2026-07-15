@@ -55,9 +55,9 @@ const learned = computed<Card[]>(() =>
 )
 
 const genOptions = computed(() => ({
-  ilFaut: progress.isDone('ex-lt-17-18'),
-  objectPronouns: progress.isDone('ex-lt-21-22'),
-  pastTense: progress.isDone('ex-lt-25-26'),
+  ilFaut: progress.isDone('practice-lt-17-18'),
+  objectPronouns: progress.isDone('practice-lt-21-22'),
+  pastTense: progress.isDone('practice-lt-25-26'),
 }))
 
 const exercises = computed(() =>

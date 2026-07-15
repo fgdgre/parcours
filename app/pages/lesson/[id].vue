@@ -17,8 +17,16 @@
         <h1>{{ lesson.title }}</h1>
       </header>
 
+      <!-- Locked behind an exam -->
+      <template v-if="locked">
+        <div class="card stack">
+          <p>🔒 This lesson unlocks after you pass the exam earlier in the path.</p>
+          <NuxtLink to="/path" class="btn btn-primary btn-block">Back to Path</NuxtLink>
+        </div>
+      </template>
+
       <!-- External resource lesson -->
-      <template v-if="lesson.type === 'external'">
+      <template v-else-if="lesson.type === 'external'">
         <div class="card stack">
           <p><span class="chip">You'll learn</span></p>
           <p>{{ lesson.teaches }}</p>
@@ -75,6 +83,44 @@
         </div>
       </template>
 
+      <!-- Exam -->
+      <template v-else-if="lesson.type === 'exam'">
+        <div v-if="examState === 'intro'" class="card stack">
+          <p>
+            <strong>{{ lesson.questions }} questions</strong>, sampled fresh from everything this
+            chapter taught — grammar exercises and vocabulary. Pass mark:
+            <strong>{{ lesson.passPercent }}%</strong>. No hints, no retries per question.
+          </p>
+          <p class="muted small">
+            Fail it? No problem — review, then retake it with a different set of questions.
+            Lessons after this exam unlock when you pass.
+          </p>
+          <p v-if="bestScore !== undefined" class="muted small">Best score so far: {{ bestScore }}%</p>
+          <button class="btn btn-primary btn-block" @click="startExam">
+            {{ done ? 'Retake exam' : 'Start exam' }}
+          </button>
+        </div>
+        <ExerciseRunner
+          v-else-if="examState === 'running'"
+          :key="examAttempt"
+          :exercises="examItems"
+          @finished="onExamFinished"
+        />
+        <div v-else class="card stack">
+          <p :class="examPassed ? 'okline' : ''" class="score">
+            {{ examScore }}% — {{ examPassed ? 'passed ✓' : `below the ${lesson.passPercent}% pass mark` }}
+          </p>
+          <p class="muted small">
+            {{ examPassed
+              ? 'The next lessons are unlocked. Onward.'
+              : 'Review the chapter exercises, then try again — the questions will be different.' }}
+          </p>
+          <button class="btn btn-block" :class="{ 'btn-primary': !examPassed }" @click="startExam">
+            {{ examPassed ? 'Retake for a better score' : 'Try again' }}
+          </button>
+        </div>
+      </template>
+
       <!-- Checkpoint -->
       <template v-else>
         <div class="card stack">
@@ -103,11 +149,18 @@
 </template>
 
 <script setup lang="ts">
-import { cardsById, chapterOf, exercisesByFile, lessonById, nextLessonAfter } from '~/content'
+import type { Exercise } from '~/types/content'
+import {
+  cardsById, chapterCards, chapterExercisePool, chapterOf,
+  exercisesByFile, lessonById, nextLessonAfter,
+} from '~/content'
+import { buildDrills, shuffle } from '~/utils/drills'
 
 const route = useRoute()
 const router = useRouter()
 const progress = useProgress()
+const { isLocked } = useLocking()
+const locked = computed(() => (lesson.value ? isLocked(lesson.value.id) : false))
 
 function goBack() {
   if (window.history.length > 1) router.back()
@@ -155,6 +208,41 @@ function restartExercises() {
   finished.value = false
 }
 
+// --- exam ---
+const examState = ref<'intro' | 'running' | 'result'>('intro')
+const examAttempt = ref(0)
+const examItems = ref<Exercise[]>([])
+const examScore = ref(0)
+const examPassed = ref(false)
+const bestScore = computed(() =>
+  lesson.value ? (progress.examScores as Record<string, number>)[lesson.value.id] : undefined,
+)
+
+function startExam() {
+  if (lesson.value?.type !== 'exam' || !chapter.value) return
+  const pool = [
+    ...chapterExercisePool(chapter.value),
+    ...buildDrills(chapterCards(chapter.value), Object.values(cardsById), 'mixed', 8),
+  ]
+  examItems.value = shuffle(pool).slice(0, Math.min(lesson.value.questions, pool.length))
+  examAttempt.value += 1
+  examState.value = 'running'
+}
+
+function onExamFinished(score: { correct: number; total: number }) {
+  if (lesson.value?.type !== 'exam') return
+  const pct = Math.round((score.correct / Math.max(1, score.total)) * 100)
+  examScore.value = pct
+  examPassed.value = pct >= lesson.value.passPercent
+  progress.recordExam(lesson.value.id, pct)
+  if (examPassed.value) progress.markDone(lesson.value.id)
+  examState.value = 'result'
+}
+
+watch(lesson, () => {
+  examState.value = 'intro'
+})
+
 // --- checkpoint ---
 const checks = ref<boolean[]>([])
 watch(lesson, (l) => {
@@ -183,4 +271,5 @@ const allChecked = computed(() => checks.value.length > 0 && checks.value.every(
 .check-row { align-items: flex-start; padding: 6px 0; }
 .check-row input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--accent); }
 .okline { color: var(--ok); font-weight: 600; }
+.score { font-size: 1.3rem; font-weight: 700; }
 </style>

@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“Je m'appelle Dmytro” literally means…",
+    "options": [
+      "I call myself Dmytro",
+      "I am called by Dmytro",
+      "My call is Dmytro",
+      "I name Dmytro"
+    ],
+    "answer": 0,
+    "explain": "s'appeler = to call oneself — that's how French says “my name is”."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Tu me comprends ?” means…",
+    "options": [
+      "Do you understand me?",
+      "Do I understand you?",
+      "You take me?",
+      "Are you with me now?"
+    ],
+    "answer": 0,
+    "explain": "me = me; it sits BEFORE the verb: tu me comprends."
+  },
+  {
+    "type": "mc",
+    "prompt": "Where do “me / te” go in the sentence?",
+    "options": [
+      "before the verb",
+      "after the verb",
+      "at the end",
+      "anywhere"
+    ],
+    "answer": 0,
+    "explain": "French object pronouns come before the verb: je TE comprends, tu ME donnes…"
+  },
+  {
+    "type": "mc",
+    "prompt": "“Elle s'appelle comment ?” means…",
+    "options": [
+      "What's her name?",
+      "How is she called here?",
+      "Is she calling?",
+      "Whom does she call?"
+    ],
+    "answer": 0,
+    "explain": "Spoken word order: elle s'appelle comment ? = what's her name?"
+  },
+  {
+    "type": "mc",
+    "prompt": "“Il me comprend” means…",
+    "options": [
+      "he understands me",
+      "I understand him",
+      "he takes me along",
+      "he hears himself"
+    ],
+    "answer": 0,
+    "explain": "me before the verb."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je t'aime” — the t' is…",
+    "options": [
+      "te squeezed before a vowel",
+      "tu shortened",
+      "a spelling mistake",
+      "the word “you all”"
+    ],
+    "answer": 0,
+    "explain": "te + aime → t'aime."
+  }
+]

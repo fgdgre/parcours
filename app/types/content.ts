@@ -39,7 +39,18 @@ export interface CheckpointLesson {
   durationMin: number
 }
 
-export type Lesson = ExternalLesson | VocabLesson | ExerciseLesson | CheckpointLesson
+export interface ExamLesson {
+  id: string
+  type: 'exam'
+  title: string
+  durationMin: number
+  /** minimum score (0-100) to pass; lessons after an unpassed exam are locked */
+  passPercent: number
+  /** how many questions to sample from the chapter pool per attempt */
+  questions: number
+}
+
+export type Lesson = ExternalLesson | VocabLesson | ExerciseLesson | CheckpointLesson | ExamLesson
 
 export interface Chapter {
   id: string

@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“Je dois travailler” means…",
+    "options": [
+      "I have to work",
+      "I want to work",
+      "I just worked",
+      "I can work"
+    ],
+    "answer": 0,
+    "explain": "devoir = to have to / must."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Il faut…” means…",
+    "options": [
+      "it's necessary / we have to (impersonal)",
+      "he does",
+      "it's missing",
+      "he must (only him)"
+    ],
+    "answer": 0,
+    "explain": "il faut is impersonal — “one must / we have to”, no specific person."
+  },
+  {
+    "type": "mc",
+    "prompt": "After “il faut” comes…",
+    "options": [
+      "the infinitive",
+      "the past participle",
+      "a conjugated verb",
+      "que + nothing"
+    ],
+    "answer": 0,
+    "explain": "il faut manger, il faut parler — always the infinitive at this stage."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je dois” vs “il faut”:",
+    "options": [
+      "I personally must vs it's necessary (in general)",
+      "same meaning exactly",
+      "present vs future",
+      "polite vs rude"
+    ],
+    "answer": 0,
+    "explain": "il faut has no specific person."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Tu dois venir” means…",
+    "options": [
+      "you have to come",
+      "you can come",
+      "you just came",
+      "you want to come"
+    ],
+    "answer": 0,
+    "explain": "devoir = must/have to."
+  },
+  {
+    "type": "mc",
+    "prompt": "After “devoir” comes…",
+    "options": [
+      "the infinitive — je dois partir",
+      "the participle",
+      "que",
+      "a second subject"
+    ],
+    "answer": 0,
+    "explain": "Same pattern as vouloir/pouvoir."
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“pour + infinitive” means…",
+    "options": [
+      "in order to",
+      "for the",
+      "because",
+      "before"
+    ],
+    "answer": 0,
+    "explain": "je parle français POUR travailler = I speak French in order to work."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Il ne faut pas…” means…",
+    "options": [
+      "one must not…",
+      "it's not enough…",
+      "he doesn't need…",
+      "there isn't…"
+    ],
+    "answer": 0,
+    "explain": "il ne faut pas faire ça = you mustn't do that."
+  },
+  {
+    "type": "mc",
+    "prompt": "Why “AU Canada” and not “à Canada”?",
+    "options": [
+      "à + le squeezes into au (Canada is masculine)",
+      "Canada starts with C",
+      "it's an exception to memorize",
+      "both are correct"
+    ],
+    "answer": 0,
+    "explain": "à + le = au. Le Canada → au Canada, le travail → au travail."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je le fais pour toi” means…",
+    "options": [
+      "I do it for you",
+      "I make you do it",
+      "I do it with you",
+      "I did it near you"
+    ],
+    "answer": 0,
+    "explain": "pour = for."
+  },
+  {
+    "type": "mc",
+    "prompt": "“au” is…",
+    "options": [
+      "à + le squeezed together",
+      "a separate word",
+      "plural of à",
+      "informal à"
+    ],
+    "answer": 0,
+    "explain": "au travail, au Canada, au marché."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Il ne faut pas” means…",
+    "options": [
+      "one must not / you shouldn't",
+      "it's not necessary to bother",
+      "he doesn't need",
+      "nothing is missing"
+    ],
+    "answer": 0,
+    "explain": "The forbidding version of il faut."
+  }
+]

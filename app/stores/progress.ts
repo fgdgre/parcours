@@ -17,6 +17,7 @@ export interface PersistedState {
   completedLessons: Record<string, string>
   srs: Record<string, SrsEntry>
   introduced: Record<string, string>
+  examScores: Record<string, number>
   settings: Settings
 }
 
@@ -25,7 +26,7 @@ export function defaultSettings(): Settings {
 }
 
 export function serializeState(
-  s: Pick<PersistedState, 'completedLessons' | 'srs' | 'introduced' | 'settings'>,
+  s: Pick<PersistedState, 'completedLessons' | 'srs' | 'introduced' | 'examScores' | 'settings'>,
 ): string {
   const payload: PersistedState = {
     schemaVersion: SCHEMA_VERSION,
@@ -33,6 +34,7 @@ export function serializeState(
     completedLessons: s.completedLessons,
     srs: s.srs,
     introduced: s.introduced,
+    examScores: s.examScores,
     settings: s.settings,
   }
   return JSON.stringify(payload, null, 2)
@@ -68,6 +70,7 @@ export function validateBackup(json: string): BackupValidation {
       completedLessons: parsed.completedLessons as Record<string, string>,
       srs: parsed.srs as Record<string, SrsEntry>,
       introduced: parsed.introduced as Record<string, string>,
+      examScores: (isRecord(parsed.examScores) ? parsed.examScores : {}) as Record<string, number>,
       settings: settings as Settings,
     },
   }
@@ -77,6 +80,7 @@ export const useProgress = defineStore('progress', () => {
   const completedLessons = ref<Record<string, string>>({})
   const srs = ref<Record<string, SrsEntry>>({})
   const introduced = ref<Record<string, string>>({})
+  const examScores = ref<Record<string, number>>({})
   const settings = ref<Settings>(defaultSettings())
   const loaded = ref(false)
 
@@ -86,6 +90,7 @@ export const useProgress = defineStore('progress', () => {
       completedLessons: completedLessons.value,
       srs: srs.value,
       introduced: introduced.value,
+      examScores: examScores.value,
       settings: settings.value,
     }))
   }
@@ -100,6 +105,7 @@ export const useProgress = defineStore('progress', () => {
     completedLessons.value = data.completedLessons
     srs.value = data.srs
     introduced.value = data.introduced
+    examScores.value = data.examScores
     settings.value = data.settings
   }
 
@@ -111,7 +117,7 @@ export const useProgress = defineStore('progress', () => {
       if (v.ok) applyData(v.data)
     }
     loaded.value = true
-    watch([completedLessons, srs, introduced, settings], persistSoon, { deep: true })
+    watch([completedLessons, srs, introduced, examScores, settings], persistSoon, { deep: true })
   }
 
   const isDone = (id: string) => id in completedLessons.value
@@ -139,11 +145,17 @@ export const useProgress = defineStore('progress', () => {
     () => Object.values(srs.value).filter(e => e.intervalDays >= 21).length,
   )
 
+  function recordExam(id: string, percent: number) {
+    const prev = examScores.value[id] ?? 0
+    examScores.value[id] = Math.max(prev, percent)
+  }
+
   function exportBackup(): string {
     return serializeState({
       completedLessons: completedLessons.value,
       srs: srs.value,
       introduced: introduced.value,
+      examScores: examScores.value,
       settings: settings.value,
     })
   }
@@ -160,14 +172,15 @@ export const useProgress = defineStore('progress', () => {
     completedLessons.value = {}
     srs.value = {}
     introduced.value = {}
+    examScores.value = {}
     settings.value = defaultSettings()
     persistNow()
   }
 
   return {
-    completedLessons, srs, introduced, settings, loaded,
+    completedLessons, srs, introduced, examScores, settings, loaded,
     load, isDone, markDone, unmarkDone,
-    isIntroduced, introduceCard, reviewCard,
+    isIntroduced, introduceCard, reviewCard, recordExam,
     dueIds, wordsSeen, wordsLearned,
     exportBackup, importBackup, resetAll,
   }

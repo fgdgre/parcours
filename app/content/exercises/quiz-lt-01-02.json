@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "English -tion words come straight into French. How do you say “the situation”?",
+    "options": [
+      "la situation",
+      "le situation",
+      "la situazione",
+      "le situatione"
+    ],
+    "answer": 0,
+    "explain": "-tion words are the same in French and always feminine: la situation."
+  },
+  {
+    "type": "mc",
+    "prompt": "What does “c'est” mean?",
+    "options": [
+      "it is / this is",
+      "I am",
+      "there is",
+      "he has"
+    ],
+    "answer": 0,
+    "explain": "c'est = “it is / this is”. You'll use it constantly."
+  },
+  {
+    "type": "mc",
+    "prompt": "Adjectives like “possible”, “probable”, “confortable” in French are…",
+    "options": [
+      "spelled like English, said the French way",
+      "completely different words",
+      "only used in formal writing",
+      "always masculine"
+    ],
+    "answer": 0,
+    "explain": "-ible/-able adjectives transfer directly from English — you already know hundreds of French words."
+  },
+  {
+    "type": "mc",
+    "prompt": "Which one is correct for “the conversation”?",
+    "options": [
+      "la conversation",
+      "le conversation",
+      "la conversatione",
+      "les conversation"
+    ],
+    "answer": 0,
+    "explain": "Another -tion word: same spelling as English, feminine."
+  },
+  {
+    "type": "mc",
+    "prompt": "English -tion words in French are always…",
+    "options": [
+      "feminine — la situation, la nation",
+      "masculine — le situation",
+      "either gender",
+      "plural only"
+    ],
+    "answer": 0,
+    "explain": "Every -tion word takes la."
+  },
+  {
+    "type": "mc",
+    "prompt": "“C'est pour moi” means…",
+    "options": [
+      "It's for me",
+      "It's me",
+      "This is mine to keep",
+      "It's near me"
+    ],
+    "answer": 0,
+    "explain": "pour = for."
+  }
+]

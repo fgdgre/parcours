@@ -26,9 +26,10 @@ import DictationExercise from './DictationExercise.vue'
 import SpeakExercise from './SpeakExercise.vue'
 
 const props = defineProps<{ exercises: Exercise[] }>()
-const emit = defineEmits<{ finished: [] }>()
+const emit = defineEmits<{ finished: [score: { correct: number; total: number }] }>()
 
 const idx = ref(0)
+const correctCount = ref(0)
 const current = computed(() => props.exercises[idx.value]!)
 
 function componentFor(ex: Exercise) {
@@ -41,9 +42,13 @@ function componentFor(ex: Exercise) {
   }
 }
 
-function advance() {
-  if (idx.value + 1 >= props.exercises.length) emit('finished')
-  else idx.value += 1
+function advance(correct?: boolean) {
+  if (correct) correctCount.value += 1
+  if (idx.value + 1 >= props.exercises.length) {
+    emit('finished', { correct: correctCount.value, total: props.exercises.length })
+  } else {
+    idx.value += 1
+  }
 }
 </script>
 

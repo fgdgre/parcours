@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“Je viens de manger” means…",
+    "options": [
+      "I just ate",
+      "I come to eat",
+      "I'm coming from eating out",
+      "I eat on the way"
+    ],
+    "answer": 0,
+    "explain": "venir de + infinitive = to have JUST done something."
+  },
+  {
+    "type": "mc",
+    "prompt": "“je vais manger” vs “je viens de manger” —",
+    "options": [
+      "going to eat vs just ate",
+      "both mean future",
+      "both mean past",
+      "the second is more polite"
+    ],
+    "answer": 0,
+    "explain": "aller + inf = near future; venir de + inf = immediate past. A matched pair."
+  },
+  {
+    "type": "mc",
+    "prompt": "After “venir de” comes…",
+    "options": [
+      "the infinitive",
+      "the participle",
+      "a conjugated verb",
+      "que"
+    ],
+    "answer": 0,
+    "explain": "je viens de manger, tu viens de parler — infinitive every time."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Elle vient de partir” means…",
+    "options": [
+      "she just left",
+      "she comes to leave",
+      "she's about to leave",
+      "she leaves often"
+    ],
+    "answer": 0,
+    "explain": "venir de + infinitive = just did."
+  },
+  {
+    "type": "mc",
+    "prompt": "On its own, “venir” means…",
+    "options": [
+      "to come",
+      "to leave",
+      "to see",
+      "to become"
+    ],
+    "answer": 0,
+    "explain": "je viens = I come/I'm coming."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je viens !” shouted across a room means…",
+    "options": [
+      "I'm coming!",
+      "I just did!",
+      "I want it!",
+      "I agree!"
+    ],
+    "answer": 0,
+    "explain": "Present tense of venir."
+  }
+]

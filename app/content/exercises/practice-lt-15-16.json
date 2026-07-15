@@ -1,0 +1,66 @@
+[
+  {
+    "type": "conjugate",
+    "verb": "vouloir",
+    "pronoun": "ils",
+    "tense": "present",
+    "answer": [
+      "veulent"
+    ]
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “She wants to come with us.”",
+    "answer": [
+      "elle veut venir avec nous"
+    ],
+    "hint": "elle veut + infinitive."
+  },
+  {
+    "type": "conjugate",
+    "verb": "être",
+    "pronoun": "ils",
+    "tense": "present",
+    "answer": [
+      "sont"
+    ]
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “They are here now.”",
+    "answer": [
+      "ils sont ici maintenant",
+      "elles sont ici maintenant",
+      "ils sont là maintenant",
+      "elles sont là maintenant"
+    ],
+    "hint": "ils sont / elles sont."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I don't have bread.”",
+    "answer": [
+      "je n'ai pas de pain",
+      "j'ai pas de pain"
+    ],
+    "hint": "pas de + noun."
+  },
+  {
+    "type": "conjugate",
+    "verb": "avoir",
+    "pronoun": "ils",
+    "tense": "present",
+    "answer": [
+      "ont"
+    ]
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “They have two children.”",
+    "answer": [
+      "ils ont deux enfants",
+      "elles ont deux enfants"
+    ],
+    "hint": "Liaison alert: ils‿ont with a Z sound."
+  }
+]

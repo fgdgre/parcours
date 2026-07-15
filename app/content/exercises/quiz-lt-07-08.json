@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "For “je / tu / il” with -er verbs like “parler”, the endings sound…",
+    "options": [
+      "all the same — je parle, tu parles, il parle",
+      "all different",
+      "like English -s endings",
+      "different only for “je”"
+    ],
+    "answer": 0,
+    "explain": "je parle, tu parles, il parle — the endings are silent and identical in speech."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je pense que c'est une bonne idée” means…",
+    "options": [
+      "I think it's a good idea",
+      "I know it's a good idea",
+      "I hope it's a good idea",
+      "I said it's a good idea"
+    ],
+    "answer": 0,
+    "explain": "penser que = to think that. “Idée” transfers from English (idea)."
+  },
+  {
+    "type": "mc",
+    "prompt": "The three ways to ask a question in French are…",
+    "options": [
+      "intonation, est-ce que, inversion",
+      "only inversion",
+      "only est-ce que",
+      "adding “quoi” always"
+    ],
+    "answer": 0,
+    "explain": "Tu veux ? / Est-ce que tu veux ? / Veux-tu ?"
+  },
+  {
+    "type": "mc",
+    "prompt": "“Est-ce que tu veux… ?” sounds…",
+    "options": [
+      "neutral, everyday spoken French",
+      "very formal",
+      "rude",
+      "old-fashioned"
+    ],
+    "answer": 0,
+    "explain": "The workhorse question starter."
+  },
+  {
+    "type": "mc",
+    "prompt": "“J'ai” means…",
+    "options": [
+      "I have",
+      "I am",
+      "I go",
+      "I do"
+    ],
+    "answer": 0,
+    "explain": "avoir = to have; j'ai = I have."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Il y a” means…",
+    "options": [
+      "there is / there are",
+      "he has",
+      "it goes",
+      "here it is"
+    ],
+    "answer": 0,
+    "explain": "The most useful three letters in French."
+  }
+]

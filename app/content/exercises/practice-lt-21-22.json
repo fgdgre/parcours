@@ -1,0 +1,51 @@
+[
+  {
+    "type": "type",
+    "prompt": "“Le café” — now say: “I want it.”",
+    "answer": [
+      "je le veux"
+    ],
+    "hint": "le before veux."
+  },
+  {
+    "type": "type",
+    "prompt": "“La maison” — now say: “I want it.”",
+    "answer": [
+      "je la veux"
+    ],
+    "hint": "Feminine thing → la."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I'm going to do it.”",
+    "answer": [
+      "je vais le faire"
+    ],
+    "hint": "aller + le + infinitive."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I want to see them.”",
+    "answer": [
+      "je veux les voir"
+    ],
+    "hint": "les before voir."
+  },
+  {
+    "type": "type",
+    "prompt": "“Le billet” — say: “I don't want it.”",
+    "answer": [
+      "je ne le veux pas",
+      "je le veux pas"
+    ],
+    "hint": "ne + le + verb + pas."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I know it.”",
+    "answer": [
+      "je le sais"
+    ],
+    "hint": "le before sais."
+  }
+]

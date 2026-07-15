@@ -1,4 +1,4 @@
-import type { Card, Chapter, Exercise, Lesson } from '~/types/content'
+import type { Card, Chapter, Exercise, ExerciseLesson, Lesson, VocabLesson } from '~/types/content'
 import curriculumJson from './curriculum.json'
 
 export const curriculum = curriculumJson as Chapter[]
@@ -27,6 +27,23 @@ export const lessonById: Record<string, Lesson> = Object.fromEntries(
 )
 
 export const isOptional = (l: Lesson): boolean => l.type === 'exercises' && !!l.optional
+
+/** All non-speaking exercise items authored for a chapter — the exam sampling pool. */
+export function chapterExercisePool(ch: Chapter): Exercise[] {
+  return ch.lessons
+    .filter((l): l is ExerciseLesson => l.type === 'exercises')
+    .flatMap(l => exercisesByFile[l.exerciseFile] ?? [])
+    .filter(e => e.type !== 'speak')
+}
+
+/** All flashcards introduced by a chapter's vocab lessons. */
+export function chapterCards(ch: Chapter): Card[] {
+  return ch.lessons
+    .filter((l): l is VocabLesson => l.type === 'vocab')
+    .flatMap(l => l.cardIds)
+    .map(id => cardsById[id])
+    .filter((c): c is Card => c !== undefined)
+}
 
 export function chapterOf(lessonId: string): Chapter | undefined {
   return curriculum.find(c => c.lessons.some(l => l.id === lessonId))

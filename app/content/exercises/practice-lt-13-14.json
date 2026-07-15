@@ -1,0 +1,63 @@
+[
+  {
+    "type": "type",
+    "prompt": "Say: “I like coffee.”",
+    "answer": [
+      "j'aime le café"
+    ],
+    "hint": "le café — the article is required."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I don't like winter.”",
+    "answer": [
+      "je n'aime pas l'hiver",
+      "j'aime pas l'hiver"
+    ],
+    "hint": "ne … pas around aime; hiver starts with a vowel sound → l'hiver."
+  },
+  {
+    "type": "type",
+    "prompt": "Ask: “What do you want to do?” (informal)",
+    "answer": [
+      "qu'est-ce que tu veux faire",
+      "tu veux faire quoi"
+    ],
+    "hint": "Qu'est-ce que + normal sentence — or the casual “… quoi ?” at the end."
+  },
+  {
+    "type": "conjugate",
+    "verb": "aimer",
+    "pronoun": "tu",
+    "tense": "present",
+    "answer": [
+      "aimes"
+    ]
+  },
+  {
+    "type": "type",
+    "prompt": "Ask: “What is that?”",
+    "answer": [
+      "qu'est-ce que c'est",
+      "c'est quoi"
+    ],
+    "hint": "The single most useful question in a new country."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I like children.”",
+    "answer": [
+      "j'aime les enfants"
+    ],
+    "hint": "Plural likes → les. Listen for the liaison: les‿enfants."
+  },
+  {
+    "type": "type",
+    "prompt": "Ask: “What are you going to do tomorrow?” (informal)",
+    "answer": [
+      "qu'est-ce que tu vas faire demain",
+      "tu vas faire quoi demain"
+    ],
+    "hint": "qu'est-ce que + tu vas + infinitive."
+  }
+]

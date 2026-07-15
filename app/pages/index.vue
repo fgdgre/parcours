@@ -39,13 +39,14 @@ import { allLessons, isOptional } from '~/content'
 import { todayIso } from '~/utils/srs'
 
 const progress = useProgress()
+const { isLocked } = useLocking()
 
 const dateLabel = new Date().toLocaleDateString('en-GB', {
   weekday: 'long', day: 'numeric', month: 'long',
 })
 
 const session = computed(() => {
-  const incomplete = allLessons.filter(l => !progress.isDone(l.id) && !isOptional(l))
+  const incomplete = allLessons.filter(l => !progress.isDone(l.id) && !isOptional(l) && !isLocked(l.id))
   const picked = []
   let minutes = 0
   for (const lesson of incomplete) {

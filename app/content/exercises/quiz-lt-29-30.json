@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "To say “I didn't eat”, ne…pas wraps around…",
+    "options": [
+      "avoir: je N'ai PAS mangé",
+      "the participle: j'ai ne mangé pas",
+      "the whole thing: ne j'ai mangé pas",
+      "nothing — impossible"
+    ],
+    "answer": 0,
+    "explain": "Negation hugs the conjugated verb: je n'ai pas mangé."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Tu as mangé ?” means…",
+    "options": [
+      "Did you eat?",
+      "Are you eating?",
+      "Will you eat?",
+      "You have food?"
+    ],
+    "answer": 0,
+    "explain": "Same rising intonation trick works in the past."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je n'ai pas eu le temps” means…",
+    "options": [
+      "I didn't have time",
+      "I don't have time",
+      "I won't have time",
+      "I never had money"
+    ],
+    "answer": 0,
+    "explain": "avoir → eu, in the negative past."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Tu n'as pas vu ?” means…",
+    "options": [
+      "you didn't see?",
+      "you never look?",
+      "don't you want to see?",
+      "you saw, right?"
+    ],
+    "answer": 0,
+    "explain": "Negative past question."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Qu'est-ce que vous avez fait ?” means…",
+    "options": [
+      "what did you (formal) do?",
+      "what are you doing?",
+      "what will you do?",
+      "why did you do it?"
+    ],
+    "answer": 0,
+    "explain": "Past + qu'est-ce que."
+  },
+  {
+    "type": "mc",
+    "prompt": "Spoken “j'ai pas” is…",
+    "options": [
+      "informal spoken French for “je n'ai pas”",
+      "a serious error",
+      "a different tense",
+      "Canadian only"
+    ],
+    "answer": 0,
+    "explain": "The “ne” often disappears in speech — recognize it."
+  }
+]

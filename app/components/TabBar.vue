@@ -12,6 +12,11 @@
           <circle cx="19" cy="19" r="1.6" fill="currentColor" stroke="none" />
           <circle cx="12" cy="7" r="2.2" />
         </template>
+        <template v-else-if="item.icon === 'practice'">
+          <path d="M12 20l8-8-4-4-8 8z" />
+          <path d="M15 7l2 2" />
+          <path d="M4 20l4-1-3-3z" fill="currentColor" stroke="none" />
+        </template>
         <template v-else-if="item.icon === 'cards'">
           <rect x="4" y="7" width="13" height="13" rx="2.5" />
           <path d="M8 4h10a2.5 2.5 0 0 1 2.5 2.5V16" />
@@ -31,6 +36,7 @@
 const items = [
   { to: '/', label: 'Today', icon: 'today' },
   { to: '/path', label: 'Path', icon: 'path' },
+  { to: '/practice', label: 'Practice', icon: 'practice' },
   { to: '/cards', label: 'Cards', icon: 'cards' },
   { to: '/progress', label: 'Progress', icon: 'progress' },
 ]

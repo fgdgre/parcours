@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "After “j'aime”, French needs the article: how do you say “I like coffee”?",
+    "options": [
+      "J'aime le café",
+      "J'aime café",
+      "J'aime un café",
+      "J'aime de café"
+    ],
+    "answer": 0,
+    "explain": "Likes and dislikes take le/la/les: j'aime LE café, j'aime LES enfants."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Qu'est-ce que…” at the start of a question means…",
+    "options": [
+      "What…",
+      "Who…",
+      "When…",
+      "Why…"
+    ],
+    "answer": 0,
+    "explain": "Qu'est-ce que tu veux ? = What do you want?"
+  },
+  {
+    "type": "mc",
+    "prompt": "“les” is…",
+    "options": [
+      "“the” for plural — any gender",
+      "“the” for feminine only",
+      "“some”",
+      "“them” only"
+    ],
+    "answer": 0,
+    "explain": "le (m), la (f), les (plural for both)."
+  },
+  {
+    "type": "mc",
+    "prompt": "After “je n'aime pas” you still use…",
+    "options": [
+      "le / la / les — je n'aime pas LE café",
+      "de",
+      "un / une",
+      "no article"
+    ],
+    "answer": 0,
+    "explain": "Likes AND dislikes keep the article."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Qu'est-ce que c'est ?” asks…",
+    "options": [
+      "What is it / what is that?",
+      "Who is it?",
+      "Where is it?",
+      "How is it?"
+    ],
+    "answer": 0,
+    "explain": "The tourist's favourite question."
+  },
+  {
+    "type": "mc",
+    "prompt": "“J'aime” vs “je veux”:",
+    "options": [
+      "like (in general) vs want (right now)",
+      "identical",
+      "love vs like",
+      "formal vs informal"
+    ],
+    "answer": 0,
+    "explain": "J'aime le café — je veux un café."
+  }
+]

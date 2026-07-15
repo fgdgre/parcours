@@ -1,0 +1,54 @@
+[
+  {
+    "type": "type",
+    "prompt": "Say: “My name is Dmytro.”",
+    "answer": [
+      "je m'appelle dmytro"
+    ],
+    "hint": "je m'appelle + name."
+  },
+  {
+    "type": "type",
+    "prompt": "Ask: “What's your name?” (informal)",
+    "answer": [
+      "comment tu t'appelles",
+      "tu t'appelles comment",
+      "comment t'appelles-tu"
+    ],
+    "hint": "comment + tu t'appelles."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I understand you.” (informal)",
+    "answer": [
+      "je te comprends"
+    ],
+    "hint": "te before the verb."
+  },
+  {
+    "type": "type",
+    "prompt": "Ask: “Can you give me that?” (informal)",
+    "answer": [
+      "tu peux me donner ça",
+      "est-ce que tu peux me donner ça"
+    ],
+    "hint": "me goes before donner."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “His name is Marc.”",
+    "answer": [
+      "il s'appelle marc"
+    ],
+    "hint": "il s'appelle + name."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I don't understand you.” (informal)",
+    "answer": [
+      "je ne te comprends pas",
+      "je te comprends pas"
+    ],
+    "hint": "ne … pas wraps around “te comprends”."
+  }
+]

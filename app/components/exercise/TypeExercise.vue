@@ -40,7 +40,10 @@
         <strong>{{ correct ? 'Correct.' : 'Not quite.' }}</strong>
         Answer: <em>{{ exercise.answer[0] }}</em>
       </div>
-      <button class="btn btn-primary btn-block" @click="$emit('done')">Continue</button>
+      <button class="btn tts-btn" @click="tts.speak(exercise.answer[0]!, progress.settings.ttsRate)">
+        🔊 Hear it
+      </button>
+      <button class="btn btn-primary btn-block" @click="$emit('done', correct)">Continue</button>
     </template>
   </div>
 </template>
@@ -53,9 +56,10 @@ import WordBank from './WordBank.vue'
 const props = defineProps<{
   exercise: { type: 'type'; prompt: string; answer: string[]; hint?: string; passage?: string }
 }>()
-const emit = defineEmits<{ done: [] }>()
+const emit = defineEmits<{ done: [correct: boolean] }>()
 
 const progress = useProgress()
+const tts = useTts()
 const input = ref('')
 const submitted = ref(false)
 const correct = ref(false)
@@ -102,13 +106,14 @@ function submit() {
 
 function onEnter() {
   if (!submitted.value) submit()
-  else emit('done')
+  else emit('done', correct.value)
 }
 </script>
 
 <style scoped>
 .passage { font-size: 1.05rem; line-height: 1.7; white-space: pre-line; }
-.mode-toggle {
+.mode-toggle,
+.tts-btn {
   min-height: 38px;
   padding: 6px 12px;
   align-self: flex-start;

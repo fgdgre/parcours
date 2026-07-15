@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "Pick the auxiliary: “j'___ mangé”",
+    "options": [
+      "ai",
+      "suis",
+      "es",
+      "va"
+    ],
+    "answer": 0,
+    "explain": "manger is a normal avoir verb: j'ai mangé."
+  },
+  {
+    "type": "mc",
+    "prompt": "Pick the auxiliary: “je ___ allé”",
+    "options": [
+      "suis",
+      "ai",
+      "as",
+      "vais"
+    ],
+    "answer": 0,
+    "explain": "aller is in the être club: je suis allé."
+  },
+  {
+    "type": "mc",
+    "prompt": "“On est allés au restaurant” means…",
+    "options": [
+      "We went to the restaurant",
+      "One goes to the restaurant",
+      "They will go eat",
+      "We are at the restaurant"
+    ],
+    "answer": 0,
+    "explain": "on + être-past = we went."
+  },
+  {
+    "type": "mc",
+    "prompt": "Negation in être-past wraps around…",
+    "options": [
+      "être: je NE suis PAS allé",
+      "the participle",
+      "the subject",
+      "the whole sentence"
+    ],
+    "answer": 0,
+    "explain": "Same rule as always: hug the conjugated verb."
+  },
+  {
+    "type": "mc",
+    "prompt": "“J'ai allé” is…",
+    "options": [
+      "wrong — aller takes être: je suis allé",
+      "correct",
+      "formal",
+      "Canadian French"
+    ],
+    "answer": 0,
+    "explain": "The être club strikes again."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Nous sommes venus” means…",
+    "options": [
+      "we came",
+      "we are coming",
+      "we will come",
+      "we were seen"
+    ],
+    "answer": 0,
+    "explain": "venir → être + venus."
+  }
+]

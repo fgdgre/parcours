@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“J'ai parlé” means…",
+    "options": [
+      "I spoke / I have spoken",
+      "I speak",
+      "I will speak",
+      "I was speaking right now"
+    ],
+    "answer": 0,
+    "explain": "The past: avoir + participle. J'ai parlé = I spoke."
+  },
+  {
+    "type": "mc",
+    "prompt": "The French past you'll use 90% of the time is built with…",
+    "options": [
+      "avoir + past participle",
+      "être + infinitive",
+      "a special ending on the verb",
+      "aller + infinitive"
+    ],
+    "answer": 0,
+    "explain": "j'ai mangé, tu as parlé, il a regardé — avoir does the heavy lifting."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Il a regardé la vidéo” means…",
+    "options": [
+      "He watched the video",
+      "He is watching the video",
+      "He will watch the video",
+      "He has the video"
+    ],
+    "answer": 0,
+    "explain": "il a + regardé = he watched."
+  },
+  {
+    "type": "mc",
+    "prompt": "Good news about -er participles: “parlé” sounds…",
+    "options": [
+      "exactly like the infinitive “parler”",
+      "completely different",
+      "like English -ed",
+      "like the je-form"
+    ],
+    "answer": 0,
+    "explain": "parler / parlé — same sound /paʁle/. In speech you already know all of them."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Nous avons mangé” means…",
+    "options": [
+      "we ate / we have eaten",
+      "we are eating",
+      "we will eat",
+      "we must eat"
+    ],
+    "answer": 0,
+    "explain": "avoir + participle."
+  },
+  {
+    "type": "mc",
+    "prompt": "The participle of “travailler” is…",
+    "options": [
+      "travaillé",
+      "travaillu",
+      "travaillait",
+      "travailler-ed"
+    ],
+    "answer": 0,
+    "explain": "-er → -é, same sound."
+  }
+]

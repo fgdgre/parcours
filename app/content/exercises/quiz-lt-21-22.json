@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“Je le veux” means…",
+    "options": [
+      "I want it (a masculine thing)",
+      "I want the",
+      "He wants me",
+      "I want him to"
+    ],
+    "answer": 0,
+    "explain": "le/la/les also work as “it/them”, placed before the verb."
+  },
+  {
+    "type": "mc",
+    "prompt": "With two verbs — “I'm going to do it” — where does “le” go?",
+    "options": [
+      "before the infinitive: je vais LE faire",
+      "before vais: je le vais faire",
+      "at the end: je vais faire le",
+      "anywhere"
+    ],
+    "answer": 0,
+    "explain": "The pronoun sticks to the verb it belongs to: je vais le faire."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je l'aime” — the l' is…",
+    "options": [
+      "le or la squeezed before a vowel",
+      "always “him”",
+      "always “her”",
+      "a mistake"
+    ],
+    "answer": 0,
+    "explain": "le/la lose their vowel before another vowel: je l'aime = I love him/her/it."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Tu le sais ?” means…",
+    "options": [
+      "You know it?",
+      "You know him personally?",
+      "Do you taste it?",
+      "Is it known?"
+    ],
+    "answer": 0,
+    "explain": "le = it (the fact); savoir = to know facts."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je les vois” means…",
+    "options": [
+      "I see them",
+      "I see the",
+      "they see me",
+      "I go see"
+    ],
+    "answer": 0,
+    "explain": "les = them, before the verb."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Tu l'as ?” means…",
+    "options": [
+      "Do you have it?",
+      "Are you there?",
+      "Did you go?",
+      "Is it yours forever?"
+    ],
+    "answer": 0,
+    "explain": "le/la + as → l'as."
+  }
+]

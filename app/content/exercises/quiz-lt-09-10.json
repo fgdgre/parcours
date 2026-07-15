@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“Vous voulez” means…",
+    "options": [
+      "you want (formal or plural)",
+      "we want",
+      "they want",
+      "you wanted"
+    ],
+    "answer": 0,
+    "explain": "vous = the polite “you”, and also “you” for several people."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Quelque chose” means…",
+    "options": [
+      "something",
+      "someone",
+      "somewhere",
+      "sometimes"
+    ],
+    "answer": 0,
+    "explain": "quelque chose = something. “Je veux quelque chose” — I want something."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Voulez-vous… ?” compared to “Vous voulez… ?” is…",
+    "options": [
+      "the same question, more formal (inversion)",
+      "a different tense",
+      "wrong in French",
+      "only used in writing"
+    ],
+    "answer": 0,
+    "explain": "Swapping verb and pronoun (inversion) is the more formal way to ask."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Vous” is used for…",
+    "options": [
+      "formal address AND several people",
+      "formal only",
+      "plural only",
+      "women only"
+    ],
+    "answer": 0,
+    "explain": "One pronoun, two jobs."
+  },
+  {
+    "type": "mc",
+    "prompt": "“S'il vous plaît” vs “s'il te plaît”:",
+    "options": [
+      "formal please vs informal please",
+      "same register",
+      "written vs spoken",
+      "old vs modern"
+    ],
+    "answer": 0,
+    "explain": "Match it to tu/vous."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Répéter” means…",
+    "options": [
+      "to repeat",
+      "to answer",
+      "to read",
+      "to rest"
+    ],
+    "answer": 0,
+    "explain": "A cognate — your best friend in class."
+  }
+]

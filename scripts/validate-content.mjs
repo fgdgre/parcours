@@ -75,6 +75,10 @@ for (const ch of curriculum) {
       case 'checkpoint':
         if (!Array.isArray(l.canDoStatements) || l.canDoStatements.length === 0) errors.push(`${l.id}: checkpoint needs canDoStatements`)
         break
+      case 'exam':
+        if (!Number.isInteger(l.passPercent) || l.passPercent < 1 || l.passPercent > 100) errors.push(`${l.id}: exam passPercent must be 1-100`)
+        if (!Number.isInteger(l.questions) || l.questions < 1) errors.push(`${l.id}: exam needs questions count`)
+        break
       default:
         errors.push(`${l.id}: unknown lesson type "${l.type}"`)
     }

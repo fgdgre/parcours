@@ -49,6 +49,17 @@
     </div>
 
     <div class="card stack">
+      <h2>🎓 Final exams</h2>
+      <p>Every chapter ends with an exam: <strong>12 questions sampled fresh from the whole chapter</strong> (grammar + vocabulary), pass mark 80%. Lessons after the exam stay locked until you pass. Failing is part of the design — review, retake, and the questions will be different. Your best score is kept.</p>
+    </div>
+
+    <div class="card stack">
+      <h2>🎲 The Practice tab</h2>
+      <p>Unlimited extra drills built from the words you've learned: meaning quizzes, translations, dictations, or a mix. Every run is freshly generated, so it never repeats — this is your "I want more practice today" button. Also perfect for silent sessions.</p>
+      <p class="muted small">Tap 🔊 anywhere in exercises to hear the French — every answer can be listened to.</p>
+    </div>
+
+    <div class="card stack">
       <h2>📖 Chapters 6–7: the grammar book, without paper</h2>
       <p>These chapters track <em>Grammaire progressive du français (débutant)</em>. You do NOT need the paper book: buy the <strong>e-book / digital edition</strong> (CLE International's version includes a web app with self-correcting exercises — usable in your phone browser). Do a unit there, then tick it here.</p>
       <p class="muted small">If the digital book route doesn't suit you when you get there (~week 11), tell Claude — those units can be replaced with in-app exercise sets like the other chapters.</p>

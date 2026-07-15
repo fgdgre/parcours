@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“Je n'ai pas le temps” means…",
+    "options": [
+      "I don't have time",
+      "I don't have money",
+      "I'm not on time",
+      "I don't want time"
+    ],
+    "answer": 0,
+    "explain": "ne … pas around “ai”: je n'ai pas = I don't have."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je vais manger” means…",
+    "options": [
+      "I'm going to eat",
+      "I eat well",
+      "I went eating",
+      "I must eat"
+    ],
+    "answer": 0,
+    "explain": "aller + infinitive = near future."
+  },
+  {
+    "type": "mc",
+    "prompt": "French negation wraps…",
+    "options": [
+      "around the verb: je NE veux PAS",
+      "before the verb only",
+      "after the verb only",
+      "around the subject"
+    ],
+    "answer": 0,
+    "explain": "ne … pas hugs the conjugated verb."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je ne veux pas” means…",
+    "options": [
+      "I don't want",
+      "I don't go",
+      "I can't",
+      "I never want"
+    ],
+    "answer": 0,
+    "explain": "vouloir in the negative."
+  },
+  {
+    "type": "mc",
+    "prompt": "Besides “to go”, aller also builds…",
+    "options": [
+      "the near future — je vais parler",
+      "the past",
+      "questions",
+      "negation"
+    ],
+    "answer": 0,
+    "explain": "Same trick as English “going to”."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Ça ne va pas” means…",
+    "options": [
+      "it's not going well / something's wrong",
+      "it never moves",
+      "it doesn't fit me",
+      "no thank you"
+    ],
+    "answer": 0,
+    "explain": "The negative of ça va."
+  }
+]

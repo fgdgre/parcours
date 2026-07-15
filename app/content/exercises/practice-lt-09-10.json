@@ -1,0 +1,68 @@
+[
+  {
+    "type": "conjugate",
+    "verb": "vouloir",
+    "pronoun": "vous",
+    "tense": "present",
+    "answer": [
+      "voulez"
+    ]
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I want to eat something.”",
+    "answer": [
+      "je veux manger quelque chose"
+    ],
+    "hint": "je veux + infinitive + quelque chose."
+  },
+  {
+    "type": "type",
+    "prompt": "Ask formally: “Do you want to eat something?”",
+    "answer": [
+      "vous voulez manger quelque chose",
+      "est-ce que vous voulez manger quelque chose",
+      "voulez-vous manger quelque chose"
+    ],
+    "hint": "Three ways work: intonation, est-ce que, or inversion."
+  },
+  {
+    "type": "conjugate",
+    "verb": "pouvoir",
+    "pronoun": "vous",
+    "tense": "present",
+    "answer": [
+      "pouvez"
+    ]
+  },
+  {
+    "type": "type",
+    "prompt": "Ask: “Can you repeat, please?” (formal)",
+    "answer": [
+      "vous pouvez répéter s'il vous plaît",
+      "pouvez-vous répéter s'il vous plaît",
+      "est-ce que vous pouvez répéter s'il vous plaît",
+      "vous pouvez répéter"
+    ],
+    "hint": "répéter is a cognate — repeat."
+  },
+  {
+    "type": "conjugate",
+    "verb": "être",
+    "pronoun": "vous",
+    "tense": "present",
+    "answer": [
+      "êtes",
+      "etes"
+    ]
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “You are here.” (formal)",
+    "answer": [
+      "vous êtes ici",
+      "vous êtes là"
+    ],
+    "hint": "Listen for the liaison: vous‿êtes."
+  }
+]

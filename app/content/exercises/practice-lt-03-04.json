@@ -1,0 +1,63 @@
+[
+  {
+    "type": "type",
+    "prompt": "Say: “I want to speak French.”",
+    "answer": [
+      "je veux parler français",
+      "je veux parler le français"
+    ],
+    "hint": "je veux + verb in the infinitive (-er form)."
+  },
+  {
+    "type": "conjugate",
+    "verb": "vouloir",
+    "pronoun": "tu",
+    "tense": "present",
+    "answer": [
+      "veux"
+    ]
+  },
+  {
+    "type": "conjugate",
+    "verb": "vouloir",
+    "pronoun": "il",
+    "tense": "present",
+    "answer": [
+      "veut"
+    ]
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I don't want to eat now.”",
+    "answer": [
+      "je ne veux pas manger maintenant",
+      "je veux pas manger maintenant"
+    ],
+    "hint": "ne … pas wraps around “veux”."
+  },
+  {
+    "type": "type",
+    "prompt": "Ask: “Do you want to come?” (informal, with est-ce que)",
+    "answer": [
+      "est-ce que tu veux venir",
+      "tu veux venir"
+    ],
+    "hint": "est-ce que + normal sentence."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I'm going to Paris.”",
+    "answer": [
+      "je vais à paris"
+    ],
+    "hint": "je vais = I go / I'm going."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I'm going to eat.” (near future — aller + infinitive)",
+    "answer": [
+      "je vais manger"
+    ],
+    "hint": "Just like English “going to”."
+  }
+]

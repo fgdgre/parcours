@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "In spoken French, “on” usually means…",
+    "options": [
+      "we",
+      "one (impersonal only)",
+      "you",
+      "they (far away)"
+    ],
+    "answer": 0,
+    "explain": "“On va manger” = “We're going to eat” — the everyday way to say “nous”."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Comment allez-vous ?” means…",
+    "options": [
+      "How are you? (formal)",
+      "Where are you going?",
+      "How do you go there?",
+      "What are you doing?"
+    ],
+    "answer": 0,
+    "explain": "Literally “how go you” — the formal “how are you”."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Ça va aller” means…",
+    "options": [
+      "It's going to be okay",
+      "It goes and goes",
+      "Let's go now",
+      "It already went"
+    ],
+    "answer": 0,
+    "explain": "aller + infinitive again — “it is going to go (fine)”."
+  },
+  {
+    "type": "mc",
+    "prompt": "“On” takes the same verb form as…",
+    "options": [
+      "il / elle — on va, on veut",
+      "nous",
+      "ils",
+      "je"
+    ],
+    "answer": 0,
+    "explain": "That's why spoken French loves it."
+  },
+  {
+    "type": "mc",
+    "prompt": "“On y va !” means…",
+    "options": [
+      "Let's go!",
+      "We see it!",
+      "One goes there rarely",
+      "Go away!"
+    ],
+    "answer": 0,
+    "explain": "Set phrase — memorize whole."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Nous allons” means…",
+    "options": [
+      "we go / we are going",
+      "we want",
+      "we came",
+      "you all go"
+    ],
+    "answer": 0,
+    "explain": "aller with nous."
+  }
+]

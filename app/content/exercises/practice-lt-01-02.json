@@ -1,0 +1,52 @@
+[
+  {
+    "type": "type",
+    "prompt": "Turn it into French: “the decision”",
+    "answer": [
+      "la décision",
+      "la decision"
+    ],
+    "hint": "-tion words are feminine (la)."
+  },
+  {
+    "type": "type",
+    "prompt": "Turn it into French: “the question”",
+    "answer": [
+      "la question"
+    ],
+    "hint": "Same trick: -tion."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “It's possible.”",
+    "answer": [
+      "c'est possible"
+    ],
+    "hint": "c'est + adjective."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “It's for me.”",
+    "answer": [
+      "c'est pour moi"
+    ],
+    "hint": "pour = for."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “It's not possible.”",
+    "answer": [
+      "ce n'est pas possible",
+      "c'est pas possible"
+    ],
+    "hint": "ne … pas wraps around est. (In speech, French people often drop “ne”.)"
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “It's very important.”",
+    "answer": [
+      "c'est très important"
+    ],
+    "hint": "très = very; “important” transfers from English."
+  }
+]

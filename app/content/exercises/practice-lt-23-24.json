@@ -1,0 +1,61 @@
+[
+  {
+    "type": "type",
+    "prompt": "Say: “I just ate.”",
+    "answer": [
+      "je viens de manger"
+    ],
+    "hint": "venir de + infinitive."
+  },
+  {
+    "type": "conjugate",
+    "verb": "venir",
+    "pronoun": "je",
+    "tense": "present",
+    "answer": [
+      "viens"
+    ]
+  },
+  {
+    "type": "conjugate",
+    "verb": "venir",
+    "pronoun": "tu",
+    "tense": "present",
+    "answer": [
+      "viens"
+    ]
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “We just arrived.”",
+    "answer": [
+      "nous venons d'arriver",
+      "on vient d'arriver"
+    ],
+    "hint": "de + arriver → d'arriver (vowel squeeze)."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I just found it.”",
+    "answer": [
+      "je viens de le trouver"
+    ],
+    "hint": "Pronoun before the infinitive: de LE trouver."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I just watched a video.”",
+    "answer": [
+      "je viens de regarder une vidéo"
+    ],
+    "hint": "vidéo is a cognate (feminine)."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I just listened to the podcast.”",
+    "answer": [
+      "je viens d'écouter le podcast"
+    ],
+    "hint": "de + écouter → d'écouter."
+  }
+]

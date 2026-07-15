@@ -4,26 +4,35 @@
     "verb": "être",
     "pronoun": "je",
     "tense": "present",
-    "answer": ["suis"]
+    "answer": [
+      "suis"
+    ]
   },
   {
     "type": "conjugate",
     "verb": "être",
     "pronoun": "tu",
     "tense": "present",
-    "answer": ["es"]
+    "answer": [
+      "es"
+    ]
   },
   {
     "type": "conjugate",
     "verb": "être",
     "pronoun": "il",
     "tense": "present",
-    "answer": ["est"]
+    "answer": [
+      "est"
+    ]
   },
   {
     "type": "type",
     "prompt": "Say: “I am here.”",
-    "answer": ["je suis ici", "je suis là"],
+    "answer": [
+      "je suis ici",
+      "je suis là"
+    ],
     "hint": "ici = here."
   },
   {
@@ -31,38 +40,46 @@
     "verb": "avoir",
     "pronoun": "je",
     "tense": "present",
-    "answer": ["ai", "j'ai"]
+    "answer": [
+      "ai",
+      "j'ai"
+    ]
   },
   {
     "type": "conjugate",
     "verb": "avoir",
     "pronoun": "tu",
     "tense": "present",
-    "answer": ["as"]
+    "answer": [
+      "as"
+    ]
   },
   {
     "type": "type",
     "prompt": "Say: “I have a question.”",
-    "answer": ["j'ai une question"],
+    "answer": [
+      "j'ai une question"
+    ],
     "hint": "question is feminine → une."
   },
   {
     "type": "type",
     "prompt": "Say: “There is a problem.”",
-    "answer": ["il y a un problème", "il y a un probleme"],
+    "answer": [
+      "il y a un problème",
+      "il y a un probleme"
+    ],
     "hint": "il y a = there is / there are."
-  },
-  {
-    "type": "mc",
-    "prompt": "“Je n'ai pas le temps” means…",
-    "options": ["I don't have time", "I don't have money", "I'm not on time", "I don't want time"],
-    "answer": 0,
-    "explain": "ne … pas around “ai”: je n'ai pas = I don't have."
   },
   {
     "type": "type",
     "prompt": "Say: “I'm not here tomorrow.”",
-    "answer": ["je ne suis pas ici demain", "je ne suis pas là demain", "je suis pas ici demain", "je suis pas là demain"],
+    "answer": [
+      "je ne suis pas ici demain",
+      "je ne suis pas là demain",
+      "je suis pas ici demain",
+      "je suis pas là demain"
+    ],
     "hint": "ne … pas around “suis”."
   }
 ]

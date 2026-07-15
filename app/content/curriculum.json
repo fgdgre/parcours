@@ -68,10 +68,17 @@
         "teaches": "One building block of the French sound system."
       },
       {
-        "id": "ex-lt-01-02",
+        "id": "quiz-lt-01-02",
+        "type": "exercises",
+        "title": "Quiz · cognates & c’est",
+        "exerciseFile": "quiz-lt-01-02",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-01-02",
         "type": "exercises",
         "title": "Practice · cognates & c’est",
-        "exerciseFile": "ex-lt-01-02",
+        "exerciseFile": "practice-lt-01-02",
         "durationMin": 6
       },
       {
@@ -138,10 +145,17 @@
         "teaches": "One building block of the French sound system."
       },
       {
-        "id": "ex-lt-03-04",
+        "id": "quiz-lt-03-04",
+        "type": "exercises",
+        "title": "Quiz · wanting, going, asking",
+        "exerciseFile": "quiz-lt-03-04",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-03-04",
         "type": "exercises",
         "title": "Practice · wanting, going, asking",
-        "exerciseFile": "ex-lt-03-04",
+        "exerciseFile": "practice-lt-03-04",
         "durationMin": 6
       },
       {
@@ -226,10 +240,17 @@
         "teaches": "One building block of the French sound system."
       },
       {
-        "id": "ex-lt-05-06",
+        "id": "quiz-lt-05-06",
+        "type": "exercises",
+        "title": "Quiz · être, avoir, il y a",
+        "exerciseFile": "quiz-lt-05-06",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-05-06",
         "type": "exercises",
         "title": "Practice · être, avoir, il y a",
-        "exerciseFile": "ex-lt-05-06",
+        "exerciseFile": "practice-lt-05-06",
         "durationMin": 6
       },
       {
@@ -296,10 +317,17 @@
         "teaches": "One building block of the French sound system."
       },
       {
-        "id": "ex-lt-07-08",
+        "id": "quiz-lt-07-08",
+        "type": "exercises",
+        "title": "Quiz · -er verbs & politeness",
+        "exerciseFile": "quiz-lt-07-08",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-07-08",
         "type": "exercises",
         "title": "Practice · -er verbs & politeness",
-        "exerciseFile": "ex-lt-07-08",
+        "exerciseFile": "practice-lt-07-08",
         "durationMin": 6
       },
       {
@@ -354,6 +382,14 @@
         "exerciseFile": "challenge-ch1-sprint",
         "durationMin": 8,
         "optional": true
+      },
+      {
+        "id": "exam-ch1",
+        "type": "exam",
+        "title": "Final exam · Chapter 1",
+        "durationMin": 10,
+        "passPercent": 80,
+        "questions": 12
       },
       {
         "id": "ch1-checkpoint",
@@ -438,10 +474,17 @@
         "teaches": "One building block of the French sound system."
       },
       {
-        "id": "ex-lt-09-10",
+        "id": "quiz-lt-09-10",
+        "type": "exercises",
+        "title": "Quiz · vous & polite questions",
+        "exerciseFile": "quiz-lt-09-10",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-09-10",
         "type": "exercises",
         "title": "Practice · vous & polite questions",
-        "exerciseFile": "ex-lt-09-10",
+        "exerciseFile": "practice-lt-09-10",
         "durationMin": 6
       },
       {
@@ -519,10 +562,17 @@
         "teaches": "One building block of the French sound system."
       },
       {
-        "id": "ex-lt-11-12",
+        "id": "quiz-lt-11-12",
+        "type": "exercises",
+        "title": "Quiz · nous, on & near future",
+        "exerciseFile": "quiz-lt-11-12",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-11-12",
         "type": "exercises",
         "title": "Practice · nous, on & near future",
-        "exerciseFile": "ex-lt-11-12",
+        "exerciseFile": "practice-lt-11-12",
         "durationMin": 6
       },
       {
@@ -596,10 +646,17 @@
         "teaches": "One building block of the French sound system."
       },
       {
-        "id": "ex-lt-13-14",
+        "id": "quiz-lt-13-14",
+        "type": "exercises",
+        "title": "Quiz · likes & qu'est-ce que",
+        "exerciseFile": "quiz-lt-13-14",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-13-14",
         "type": "exercises",
         "title": "Practice · likes & qu'est-ce que",
-        "exerciseFile": "ex-lt-13-14",
+        "exerciseFile": "practice-lt-13-14",
         "durationMin": 6
       },
       {
@@ -696,10 +753,17 @@
         "teaches": "One building block of the French sound system."
       },
       {
-        "id": "ex-lt-15-16",
+        "id": "quiz-lt-15-16",
+        "type": "exercises",
+        "title": "Quiz · they, liaisons & pas de",
+        "exerciseFile": "quiz-lt-15-16",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-15-16",
         "type": "exercises",
         "title": "Practice · they, liaisons & pas de",
-        "exerciseFile": "ex-lt-15-16",
+        "exerciseFile": "practice-lt-15-16",
         "durationMin": 6
       },
       {
@@ -746,6 +810,14 @@
         "exerciseFile": "challenge-ch2-sprint",
         "durationMin": 8,
         "optional": true
+      },
+      {
+        "id": "exam-ch2",
+        "type": "exam",
+        "title": "Final exam · Chapter 2",
+        "durationMin": 10,
+        "passPercent": 80,
+        "questions": 12
       },
       {
         "id": "ch2-checkpoint",
@@ -840,10 +912,17 @@
         "teaches": "One high-frequency word explored from every angle, all in French."
       },
       {
-        "id": "ex-lt-17-18",
+        "id": "quiz-lt-17-18",
+        "type": "exercises",
+        "title": "Quiz · devoir & il faut",
+        "exerciseFile": "quiz-lt-17-18",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-17-18",
         "type": "exercises",
         "title": "Practice · devoir & il faut",
-        "exerciseFile": "ex-lt-17-18",
+        "exerciseFile": "practice-lt-17-18",
         "durationMin": 6
       },
       {
@@ -932,10 +1011,17 @@
         "teaches": "One high-frequency word explored from every angle, all in French."
       },
       {
-        "id": "ex-lt-19-20",
+        "id": "quiz-lt-19-20",
+        "type": "exercises",
+        "title": "Quiz · me, te & names (s’appeler)",
+        "exerciseFile": "quiz-lt-19-20",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-19-20",
         "type": "exercises",
         "title": "Practice · me, te & names (s’appeler)",
-        "exerciseFile": "ex-lt-19-20",
+        "exerciseFile": "practice-lt-19-20",
         "durationMin": 6
       },
       {
@@ -1013,10 +1099,17 @@
         "teaches": "One high-frequency word explored from every angle, all in French."
       },
       {
-        "id": "ex-lt-21-22",
+        "id": "quiz-lt-21-22",
+        "type": "exercises",
+        "title": "Quiz · le, la, les as “it”",
+        "exerciseFile": "quiz-lt-21-22",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-21-22",
         "type": "exercises",
         "title": "Practice · le, la, les as “it”",
-        "exerciseFile": "ex-lt-21-22",
+        "exerciseFile": "practice-lt-21-22",
         "durationMin": 6
       },
       {
@@ -1101,10 +1194,17 @@
         "teaches": "One building block of the French sound system."
       },
       {
-        "id": "ex-lt-23-24",
+        "id": "quiz-lt-23-24",
+        "type": "exercises",
+        "title": "Quiz · venir de (just did)",
+        "exerciseFile": "quiz-lt-23-24",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-23-24",
         "type": "exercises",
         "title": "Practice · venir de (just did)",
-        "exerciseFile": "ex-lt-23-24",
+        "exerciseFile": "practice-lt-23-24",
         "durationMin": 6
       },
       {
@@ -1181,6 +1281,14 @@
         "exerciseFile": "challenge-ch3-sprint",
         "durationMin": 8,
         "optional": true
+      },
+      {
+        "id": "exam-ch3",
+        "type": "exam",
+        "title": "Final exam · Chapter 3",
+        "durationMin": 10,
+        "passPercent": 80,
+        "questions": 12
       },
       {
         "id": "ch3-checkpoint",
@@ -1275,10 +1383,17 @@
         "teaches": "One high-frequency word explored from every angle, all in French."
       },
       {
-        "id": "ex-lt-25-26",
+        "id": "quiz-lt-25-26",
+        "type": "exercises",
+        "title": "Quiz · the past with avoir",
+        "exerciseFile": "quiz-lt-25-26",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-25-26",
         "type": "exercises",
         "title": "Practice · the past with avoir",
-        "exerciseFile": "ex-lt-25-26",
+        "exerciseFile": "practice-lt-25-26",
         "durationMin": 6
       },
       {
@@ -1367,10 +1482,17 @@
         "teaches": "One high-frequency word explored from every angle, all in French."
       },
       {
-        "id": "ex-lt-27-28",
+        "id": "quiz-lt-27-28",
+        "type": "exercises",
+        "title": "Quiz · fait, vu, pris, eu",
+        "exerciseFile": "quiz-lt-27-28",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-27-28",
         "type": "exercises",
         "title": "Practice · fait, vu, pris, eu",
-        "exerciseFile": "ex-lt-27-28",
+        "exerciseFile": "practice-lt-27-28",
         "durationMin": 6
       },
       {
@@ -1448,10 +1570,17 @@
         "teaches": "One high-frequency word explored from every angle, all in French."
       },
       {
-        "id": "ex-lt-29-30",
+        "id": "quiz-lt-29-30",
+        "type": "exercises",
+        "title": "Quiz · past: negation & questions",
+        "exerciseFile": "quiz-lt-29-30",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-29-30",
         "type": "exercises",
         "title": "Practice · past: negation & questions",
-        "exerciseFile": "ex-lt-29-30",
+        "exerciseFile": "practice-lt-29-30",
         "durationMin": 6
       },
       {
@@ -1540,10 +1669,17 @@
         "teaches": "One high-frequency word explored from every angle, all in French."
       },
       {
-        "id": "ex-lt-31-32",
+        "id": "quiz-lt-31-32",
+        "type": "exercises",
+        "title": "Quiz · past + pronouns",
+        "exerciseFile": "quiz-lt-31-32",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-31-32",
         "type": "exercises",
         "title": "Practice · past + pronouns",
-        "exerciseFile": "ex-lt-31-32",
+        "exerciseFile": "practice-lt-31-32",
         "durationMin": 6
       },
       {
@@ -1640,6 +1776,14 @@
         "optional": true
       },
       {
+        "id": "exam-ch4",
+        "type": "exam",
+        "title": "Final exam · Chapter 4",
+        "durationMin": 10,
+        "passPercent": 80,
+        "questions": 12
+      },
+      {
         "id": "ch4-checkpoint",
         "type": "checkpoint",
         "title": "Chapter 4 checkpoint",
@@ -1720,10 +1864,17 @@
         "teaches": "One building block of the French sound system."
       },
       {
-        "id": "ex-lt-33-34",
+        "id": "quiz-lt-33-34",
+        "type": "exercises",
+        "title": "Quiz · past with être (allé, venu)",
+        "exerciseFile": "quiz-lt-33-34",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-33-34",
         "type": "exercises",
         "title": "Practice · past with être (allé, venu)",
-        "exerciseFile": "ex-lt-33-34",
+        "exerciseFile": "practice-lt-33-34",
         "durationMin": 6
       },
       {
@@ -1801,10 +1952,17 @@
         "teaches": "One building block of the French sound system."
       },
       {
-        "id": "ex-lt-35-36",
+        "id": "quiz-lt-35-36",
+        "type": "exercises",
+        "title": "Quiz · mixing avoir & être",
+        "exerciseFile": "quiz-lt-35-36",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-35-36",
         "type": "exercises",
         "title": "Practice · mixing avoir & être",
-        "exerciseFile": "ex-lt-35-36",
+        "exerciseFile": "practice-lt-35-36",
         "durationMin": 6
       },
       {
@@ -1871,10 +2029,17 @@
         "teaches": "One building block of the French sound system."
       },
       {
-        "id": "ex-lt-37-38",
+        "id": "quiz-lt-37-38",
+        "type": "exercises",
+        "title": "Quiz · il faut & pour",
+        "exerciseFile": "quiz-lt-37-38",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-37-38",
         "type": "exercises",
         "title": "Practice · il faut & pour",
-        "exerciseFile": "ex-lt-37-38",
+        "exerciseFile": "practice-lt-37-38",
         "durationMin": 6
       },
       {
@@ -1952,10 +2117,17 @@
         "teaches": "One building block of the French sound system."
       },
       {
-        "id": "ex-lt-39-40",
+        "id": "quiz-lt-39-40",
+        "type": "exercises",
+        "title": "Quiz · grand review",
+        "exerciseFile": "quiz-lt-39-40",
+        "durationMin": 4
+      },
+      {
+        "id": "practice-lt-39-40",
         "type": "exercises",
         "title": "Practice · grand review",
-        "exerciseFile": "ex-lt-39-40",
+        "exerciseFile": "practice-lt-39-40",
         "durationMin": 6
       },
       {
@@ -2094,6 +2266,14 @@
         "exerciseFile": "challenge-ch5-sprint",
         "durationMin": 8,
         "optional": true
+      },
+      {
+        "id": "exam-ch5",
+        "type": "exam",
+        "title": "Final exam · Chapter 5",
+        "durationMin": 10,
+        "passPercent": 80,
+        "questions": 12
       },
       {
         "id": "ch5-checkpoint",
@@ -2429,6 +2609,14 @@
         "optional": true
       },
       {
+        "id": "exam-ch6",
+        "type": "exam",
+        "title": "Final exam · Chapter 6",
+        "durationMin": 10,
+        "passPercent": 80,
+        "questions": 12
+      },
+      {
         "id": "ch6-checkpoint",
         "type": "checkpoint",
         "title": "Chapter 6 checkpoint",
@@ -2748,6 +2936,14 @@
         "exerciseFile": "challenge-ch7-reading",
         "durationMin": 10,
         "optional": true
+      },
+      {
+        "id": "exam-ch7",
+        "type": "exam",
+        "title": "Final exam · Chapter 7",
+        "durationMin": 10,
+        "passPercent": 80,
+        "questions": 12
       },
       {
         "id": "checkpoint-m3",

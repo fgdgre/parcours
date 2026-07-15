@@ -1,6 +1,9 @@
 <template>
   <div class="stack">
     <p v-if="exercise.passage" class="card passage" lang="fr">{{ exercise.passage }}</p>
+    <button v-if="exercise.passage" class="btn tts-btn" @click="tts.speak(exercise.passage!, progress.settings.ttsRate)">
+      🔊 Listen to the text
+    </button>
     <h2>{{ exercise.prompt }}</h2>
     <button
       v-for="(opt, i) in shuffled"
@@ -16,7 +19,8 @@
         <strong>{{ correct ? 'Correct.' : 'Not quite.' }}</strong>
         <span v-if="exercise.explain">&nbsp;{{ exercise.explain }}</span>
       </div>
-      <button class="btn btn-primary btn-block" @click="$emit('done')">Continue</button>
+      <button class="btn tts-btn" @click="sayAnswer">🔊 Hear the answer</button>
+      <button class="btn btn-primary btn-block" @click="$emit('done', correct)">Continue</button>
     </template>
   </div>
 </template>
@@ -25,7 +29,14 @@
 const props = defineProps<{
   exercise: { type: 'mc'; prompt: string; options: string[]; answer: number; explain?: string; passage?: string }
 }>()
-defineEmits<{ done: [] }>()
+defineEmits<{ done: [correct: boolean] }>()
+
+const progress = useProgress()
+const tts = useTts()
+
+function sayAnswer() {
+  tts.speak(props.exercise.options[props.exercise.answer]!, progress.settings.ttsRate)
+}
 
 const shuffled = ref(
   props.exercise.options
@@ -52,6 +63,7 @@ function optionClass(i: number) {
 
 <style scoped>
 .passage { font-size: 1.05rem; line-height: 1.7; font-style: normal; white-space: pre-line; }
+.tts-btn { min-height: 38px; padding: 6px 12px; align-self: flex-start; font-size: 0.85rem; color: var(--muted); }
 .option { justify-content: flex-start; text-align: left; }
 .opt-ok { border-color: var(--ok); background: var(--ok-soft); color: var(--ok); }
 .opt-err { border-color: var(--err); background: var(--err-soft); color: var(--err); }

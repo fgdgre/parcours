@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“Je l'ai vu” means…",
+    "options": [
+      "I saw him / it",
+      "I have seen myself",
+      "He saw me",
+      "I see it"
+    ],
+    "answer": 0,
+    "explain": "l' = le/la squeezed before “ai”: je l'ai vu."
+  },
+  {
+    "type": "mc",
+    "prompt": "In the past, the object pronoun goes…",
+    "options": [
+      "before avoir: je L'ai fait",
+      "after the participle: j'ai fait LE",
+      "before je",
+      "anywhere"
+    ],
+    "answer": 0,
+    "explain": "The pronoun always hugs the conjugated verb: je l'ai fait."
+  },
+  {
+    "type": "mc",
+    "prompt": "“On l'a trouvé” means…",
+    "options": [
+      "We found it",
+      "They stole it",
+      "Someone lost it",
+      "We are finding it"
+    ],
+    "answer": 0,
+    "explain": "on = we; l' = it; trouvé = found."
+  },
+  {
+    "type": "mc",
+    "prompt": "In “je l'ai acheté”, the l' stands for…",
+    "options": [
+      "a thing already mentioned — “it”",
+      "the article “the”",
+      "him only",
+      "nothing, it's decorative"
+    ],
+    "answer": 0,
+    "explain": "Context tells you what “it” is."
+  },
+  {
+    "type": "mc",
+    "prompt": "“On les a vus” means…",
+    "options": [
+      "we saw them",
+      "they saw us",
+      "we have the seen ones",
+      "one sees them"
+    ],
+    "answer": 0,
+    "explain": "on = we, les = them."
+  },
+  {
+    "type": "mc",
+    "prompt": "In the past, object pronouns go before…",
+    "options": [
+      "the helper verb: je L'ai fait",
+      "the participle",
+      "the subject",
+      "nothing — at the end"
+    ],
+    "answer": 0,
+    "explain": "Pronoun hugs the conjugated verb."
+  }
+]

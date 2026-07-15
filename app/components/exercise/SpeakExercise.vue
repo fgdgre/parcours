@@ -37,8 +37,8 @@
       <audio v-if="recordingUrl" :src="recordingUrl" controls class="playback" />
     </template>
 
-    <button v-if="attempted" class="btn btn-primary btn-block" @click="$emit('done')">Continue</button>
-    <button v-else class="btn btn-block" @click="$emit('done')">Skip</button>
+    <button v-if="attempted" class="btn btn-primary btn-block" @click="$emit('done', passed)">Continue</button>
+    <button v-else class="btn btn-block" @click="$emit('done', false)">Skip</button>
   </div>
 </template>
 
@@ -48,7 +48,7 @@ import { wordDiff } from '~/utils/grading'
 const props = defineProps<{
   exercise: { type: 'speak'; target: string; en: string }
 }>()
-defineEmits<{ done: [] }>()
+defineEmits<{ done: [correct: boolean] }>()
 
 const progress = useProgress()
 const tts = useTts()

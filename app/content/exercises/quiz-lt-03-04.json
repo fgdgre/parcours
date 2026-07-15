@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“Je veux” means…",
+    "options": [
+      "I want",
+      "I go",
+      "I can",
+      "I know"
+    ],
+    "answer": 0,
+    "explain": "je veux = I want (from vouloir)."
+  },
+  {
+    "type": "mc",
+    "prompt": "How do you make a spoken sentence into a yes/no question, the everyday way?",
+    "options": [
+      "Keep the word order, raise your voice at the end",
+      "Always swap the verb and pronoun",
+      "Add “quoi” at the start",
+      "You can't ask questions without “est-ce que”"
+    ],
+    "answer": 0,
+    "explain": "“Tu veux manger ?” with rising intonation is the most common spoken question. “Est-ce que tu veux manger ?” also works."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Tu vas parler” means…",
+    "options": [
+      "You are going to speak",
+      "You spoke",
+      "You must speak",
+      "You like speaking"
+    ],
+    "answer": 0,
+    "explain": "aller + infinitive = near future, exactly like English “going to”."
+  },
+  {
+    "type": "mc",
+    "prompt": "After “je veux” comes…",
+    "options": [
+      "the infinitive — je veux manger",
+      "a conjugated verb",
+      "the participle",
+      "que + nothing"
+    ],
+    "answer": 0,
+    "explain": "vouloir + infinitive."
+  },
+  {
+    "type": "mc",
+    "prompt": "“possible” and “impossible” are…",
+    "options": [
+      "cognates — same meaning as English",
+      "false friends",
+      "slang",
+      "formal only"
+    ],
+    "answer": 0,
+    "explain": "Thousands of -ible/-able words come free."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je voudrais” compared to “je veux” is…",
+    "options": [
+      "more polite — “I would like”",
+      "more direct",
+      "past tense",
+      "plural"
+    ],
+    "answer": 0,
+    "explain": "Use it in cafés and offices."
+  }
+]

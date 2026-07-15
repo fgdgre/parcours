@@ -1,0 +1,63 @@
+[
+  {
+    "type": "type",
+    "prompt": "Say: “We have to take the bus.” (three ways accepted)",
+    "answer": [
+      "il faut prendre le bus",
+      "on doit prendre le bus",
+      "nous devons prendre le bus"
+    ],
+    "hint": "il faut + infinitive."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I speak French to work in Canada.”",
+    "answer": [
+      "je parle français pour travailler au canada"
+    ],
+    "hint": "pour + infinitive; au Canada."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “It's necessary to speak French.”",
+    "answer": [
+      "il faut parler français"
+    ],
+    "hint": "il faut …"
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “You mustn't do that.”",
+    "answer": [
+      "il ne faut pas faire ça",
+      "il faut pas faire ça"
+    ],
+    "hint": "il ne faut pas + infinitive."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I want to go to Canada to work.” (your actual plan)",
+    "answer": [
+      "je veux aller au canada pour travailler"
+    ],
+    "hint": "aller au Canada + pour + infinitive."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “We have to find the tickets.”",
+    "answer": [
+      "il faut trouver les billets",
+      "on doit trouver les billets",
+      "nous devons trouver les billets"
+    ],
+    "hint": "les billets = the tickets."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I have to know it.”",
+    "answer": [
+      "je dois le savoir"
+    ],
+    "hint": "le before savoir."
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "type": "conjugate",
+    "verb": "aller",
+    "pronoun": "nous",
+    "tense": "present",
+    "answer": [
+      "allons"
+    ]
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “We are going to eat.” (two ways are accepted)",
+    "answer": [
+      "nous allons manger",
+      "on va manger"
+    ],
+    "hint": "nous allons… or the spoken favourite: on va…"
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “We can come tomorrow.”",
+    "answer": [
+      "nous pouvons venir demain",
+      "on peut venir demain"
+    ],
+    "hint": "pouvoir: nous pouvons / on peut."
+  },
+  {
+    "type": "conjugate",
+    "verb": "aller",
+    "pronoun": "vous",
+    "tense": "present",
+    "answer": [
+      "allez"
+    ]
+  },
+  {
+    "type": "type",
+    "prompt": "Ask: “Where are you going?” (formal)",
+    "answer": [
+      "où allez-vous",
+      "vous allez où",
+      "où est-ce que vous allez"
+    ],
+    "hint": "où + aller."
+  },
+  {
+    "type": "conjugate",
+    "verb": "vouloir",
+    "pronoun": "nous",
+    "tense": "present",
+    "answer": [
+      "voulons"
+    ]
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “We want to speak French.”",
+    "answer": [
+      "nous voulons parler français",
+      "on veut parler français"
+    ],
+    "hint": "Both the nous and the on version count."
+  }
+]

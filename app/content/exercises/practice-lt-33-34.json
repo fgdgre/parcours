@@ -1,0 +1,59 @@
+[
+  {
+    "type": "type",
+    "prompt": "Say: “I went to Paris.”",
+    "answer": [
+      "je suis allé à paris",
+      "je suis allée à paris"
+    ],
+    "hint": "être + allé (add -e if you're speaking as a woman)."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “She went home.”",
+    "answer": [
+      "elle est allée à la maison"
+    ],
+    "hint": "With être, the participle agrees: elle est alléE."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “We arrived yesterday.”",
+    "answer": [
+      "nous sommes arrivés hier",
+      "on est arrivés hier",
+      "on est arrivé hier",
+      "nous sommes arrivées hier"
+    ],
+    "hint": "arriver takes être too."
+  },
+  {
+    "type": "conjugate",
+    "verb": "être",
+    "pronoun": "nous",
+    "tense": "present",
+    "answer": [
+      "sommes"
+    ]
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I came with a friend.”",
+    "answer": [
+      "je suis venu avec un ami",
+      "je suis venue avec un ami",
+      "je suis venue avec une amie",
+      "je suis venu avec une amie"
+    ],
+    "hint": "venir → venu(e)."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “They went to the market.”",
+    "answer": [
+      "ils sont allés au marché",
+      "elles sont allées au marché"
+    ],
+    "hint": "ils sont allés / elles sont allées."
+  }
+]

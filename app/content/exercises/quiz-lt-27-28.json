@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "The past participle of “faire” is…",
+    "options": [
+      "fait",
+      "fairé",
+      "fais",
+      "faisé"
+    ],
+    "answer": 0,
+    "explain": "j'ai fait = I did / I made."
+  },
+  {
+    "type": "mc",
+    "prompt": "The past participle of “voir” is…",
+    "options": [
+      "vu",
+      "voyé",
+      "vois",
+      "vué"
+    ],
+    "answer": 0,
+    "explain": "j'ai vu = I saw."
+  },
+  {
+    "type": "mc",
+    "prompt": "The past participle of “prendre” is…",
+    "options": [
+      "pris",
+      "prendé",
+      "prendu",
+      "prené"
+    ],
+    "answer": 0,
+    "explain": "j'ai pris = I took."
+  },
+  {
+    "type": "mc",
+    "prompt": "“J'ai eu” (avoir's own participle) means…",
+    "options": [
+      "I had",
+      "I have",
+      "I am",
+      "I got it wrong"
+    ],
+    "answer": 0,
+    "explain": "avoir → eu (sounds like “u”): j'ai eu = I had."
+  },
+  {
+    "type": "mc",
+    "prompt": "The participle of “comprendre” is…",
+    "options": [
+      "compris",
+      "comprendé",
+      "comprendu",
+      "compru"
+    ],
+    "answer": 0,
+    "explain": "Like pris — j'ai compris = I understood."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Elle a fait ça” means…",
+    "options": [
+      "she did that",
+      "she does that",
+      "she made herself",
+      "she will do that"
+    ],
+    "answer": 0,
+    "explain": "faire → fait."
+  }
+]

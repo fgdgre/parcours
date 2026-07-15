@@ -25,7 +25,7 @@
         <strong>{{ correct ? 'Correct.' : 'Not quite.' }}</strong>
         It said: <em>{{ exercise.ttsText }}</em>
       </div>
-      <button class="btn btn-primary btn-block" @click="$emit('done')">Continue</button>
+      <button class="btn btn-primary btn-block" @click="$emit('done', correct)">Continue</button>
     </template>
   </div>
 </template>
@@ -36,7 +36,7 @@ import { matchAnswer } from '~/utils/grading'
 const props = defineProps<{
   exercise: { type: 'dictation'; ttsText: string; answer: string[] }
 }>()
-const emit = defineEmits<{ done: [] }>()
+const emit = defineEmits<{ done: [correct: boolean] }>()
 
 const progress = useProgress()
 const tts = useTts()
@@ -61,6 +61,6 @@ function submit() {
 
 function onEnter() {
   if (!submitted.value) submit()
-  else emit('done')
+  else emit('done', correct.value)
 }
 </script>

@@ -24,7 +24,10 @@
         <strong>{{ correct ? 'Correct.' : 'Not quite.' }}</strong>
         {{ exercise.pronoun }} <em>{{ exercise.answer[0] }}</em>
       </div>
-      <button class="btn btn-primary btn-block" @click="$emit('done')">Continue</button>
+      <button class="btn tts-btn" @click="tts.speak(`${exercise.pronoun} ${exercise.answer[0]}`, progress.settings.ttsRate)">
+        🔊 Hear it
+      </button>
+      <button class="btn btn-primary btn-block" @click="$emit('done', correct)">Continue</button>
     </template>
   </div>
 </template>
@@ -35,9 +38,10 @@ import { matchAnswer } from '~/utils/grading'
 const props = defineProps<{
   exercise: { type: 'conjugate'; verb: string; pronoun: string; tense: string; answer: string[] }
 }>()
-const emit = defineEmits<{ done: [] }>()
+const emit = defineEmits<{ done: [correct: boolean] }>()
 
 const progress = useProgress()
+const tts = useTts()
 const input = ref('')
 const submitted = ref(false)
 const correct = ref(false)
@@ -55,10 +59,11 @@ function submit() {
 
 function onEnter() {
   if (!submitted.value) submit()
-  else emit('done')
+  else emit('done', correct.value)
 }
 </script>
 
 <style scoped>
 .sentence { font-size: 1.2rem; }
+.tts-btn { min-height: 38px; padding: 6px 12px; align-self: flex-start; font-size: 0.85rem; color: var(--muted); }
 </style>

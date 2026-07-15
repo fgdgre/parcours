@@ -1,0 +1,64 @@
+[
+  {
+    "type": "type",
+    "prompt": "Say: “I did it.”",
+    "answer": [
+      "je l'ai fait"
+    ],
+    "hint": "le + ai → l'ai."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I saw her yesterday.”",
+    "answer": [
+      "je l'ai vue hier",
+      "je l'ai vu hier"
+    ],
+    "hint": "Both spellings accepted — with “la”, careful French adds -e: vue."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I didn't do it.”",
+    "answer": [
+      "je ne l'ai pas fait",
+      "je l'ai pas fait"
+    ],
+    "hint": "ne + l'ai + pas + fait."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I just did it.”",
+    "answer": [
+      "je viens de le faire"
+    ],
+    "hint": "venir de + le + infinitive."
+  },
+  {
+    "type": "type",
+    "prompt": "“Le billet” — ask: “Did you take it?” (informal)",
+    "answer": [
+      "tu l'as pris",
+      "est-ce que tu l'as pris"
+    ],
+    "hint": "tu l'as + pris."
+  },
+  {
+    "type": "type",
+    "prompt": "“Le pain” — say: “I bought it.”",
+    "answer": [
+      "je l'ai acheté"
+    ],
+    "hint": "l'ai + acheté."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “We saw them at the market.” (capstone!)",
+    "answer": [
+      "nous les avons vus au marché",
+      "on les a vus au marché",
+      "on les a vu au marché",
+      "nous les avons vu au marché"
+    ],
+    "hint": "les before avons/a; au = à + le."
+  }
+]

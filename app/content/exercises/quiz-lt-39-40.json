@@ -1,0 +1,74 @@
+[
+  {
+    "type": "mc",
+    "prompt": "Ear check: “ils‿ont” (Z sound) vs “ils sont” (S sound) —",
+    "options": [
+      "Z = they have, S = they are",
+      "Z = they are, S = they have",
+      "identical",
+      "depends on region"
+    ],
+    "answer": 0,
+    "explain": "The liaison consonant carries the meaning. TCF loves this."
+  },
+  {
+    "type": "mc",
+    "prompt": "Track 40 done. What can you now do?",
+    "options": [
+      "Build real sentences in present, near future and past — the logic of French is yours",
+      "Nothing much",
+      "Only order coffee",
+      "Read Proust"
+    ],
+    "answer": 0,
+    "explain": "This was the whole point of the spine. From here it's volume: input, book work, speaking."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Venir de + infinitive” expresses…",
+    "options": [
+      "the immediate past — just did",
+      "the future",
+      "a habit",
+      "an order"
+    ],
+    "answer": 0,
+    "explain": "je viens de finir = I just finished."
+  },
+  {
+    "type": "mc",
+    "prompt": "The two past-tense helper verbs are…",
+    "options": [
+      "avoir and être",
+      "aller and faire",
+      "vouloir and pouvoir",
+      "only avoir"
+    ],
+    "answer": 0,
+    "explain": "avoir for most, être for the movement club."
+  },
+  {
+    "type": "mc",
+    "prompt": "“On” conjugates like…",
+    "options": [
+      "il / elle",
+      "nous",
+      "ils / elles",
+      "vous"
+    ],
+    "answer": 0,
+    "explain": "on va, on a, on est."
+  },
+  {
+    "type": "mc",
+    "prompt": "The negation of “j'ai le temps” is…",
+    "options": [
+      "je n'ai pas le temps",
+      "je n'ai pas de temps le",
+      "j'ai le pas temps",
+      "ne j'ai temps pas"
+    ],
+    "answer": 0,
+    "explain": "ne … pas around ai; le stays."
+  }
+]

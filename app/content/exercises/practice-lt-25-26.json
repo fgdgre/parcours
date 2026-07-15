@@ -1,0 +1,52 @@
+[
+  {
+    "type": "type",
+    "prompt": "Say: “I ate at home.”",
+    "answer": [
+      "j'ai mangé à la maison"
+    ],
+    "hint": "j'ai + mangé."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I worked yesterday.”",
+    "answer": [
+      "j'ai travaillé hier"
+    ],
+    "hint": "hier = yesterday."
+  },
+  {
+    "type": "type",
+    "prompt": "What is the past participle of “parler”?",
+    "answer": [
+      "parlé",
+      "parle"
+    ],
+    "hint": "-er verbs: swap -er for -é (sounds the same!)."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “You spoke with Marie.” (informal)",
+    "answer": [
+      "tu as parlé avec marie"
+    ],
+    "hint": "tu as + participle."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “We bought the bread.” (two ways accepted)",
+    "answer": [
+      "nous avons acheté le pain",
+      "on a acheté le pain"
+    ],
+    "hint": "nous avons / on a + acheté."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I listened to the podcast yesterday.”",
+    "answer": [
+      "j'ai écouté le podcast hier"
+    ],
+    "hint": "écouter → écouté."
+  }
+]
