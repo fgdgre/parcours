@@ -11,6 +11,8 @@ const sample = {
   srs: { 'v1-01': { ease: 2.5, intervalDays: 1, due: '2026-07-14', reps: 1, lapses: 0 } },
   introduced: { 'v1-01': '2026-07-13' },
   examScores: { 'exam-ch1': 92 },
+  lessonScores: { 'quiz-lt-01-02': { correct: 5, total: 6, date: '2026-07-13' } },
+  mistakes: [{ q: '“Vous voulez” means…', a: 'you want (formal or plural)', date: '2026-07-13' }],
   settings: defaultSettings(),
 }
 

@@ -48,5 +48,11 @@
       "j'ai eu un probleme"
     ],
     "hint": "avoir → eu."
+  },
+  {
+    "type": "open",
+    "prompt": "What did you do, see and take this week? Use fait, vu, pris or eu.",
+    "hint": "j'ai fait…, j'ai vu…, j'ai pris…",
+    "minWords": 12
   }
 ]

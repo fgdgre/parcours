@@ -59,5 +59,11 @@
       "tu vas faire quoi demain"
     ],
     "hint": "qu'est-ce que + tu vas + infinitive."
+  },
+  {
+    "type": "open",
+    "prompt": "Write what you like and don't like, plus one “qu'est-ce que” question.",
+    "hint": "j'aime le/la…, je n'aime pas…, qu'est-ce que… ?",
+    "minWords": 12
   }
 ]

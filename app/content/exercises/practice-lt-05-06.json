@@ -81,5 +81,11 @@
       "je suis pas là demain"
     ],
     "hint": "ne … pas around “suis”."
+  },
+  {
+    "type": "open",
+    "prompt": "Write 3 sentences about tonight: two things you're going to do and one you're NOT going to do.",
+    "hint": "je vais…, je ne vais pas…",
+    "minWords": 12
   }
 ]

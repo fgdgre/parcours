@@ -20,3 +20,19 @@ THE TASK: ${task}
 MY ANSWER:
 ${answer}`
 }
+
+/** Packs the recent mistake log into a tutor prompt for pattern analysis + a mini-drill. */
+export function buildMistakesPrompt(mistakes: { q: string; a: string }[]): string {
+  const list = mistakes
+    .map((m, i) => `${i + 1}. Question: ${m.q}\n   Correct answer: ${m.a}`)
+    .join('\n')
+  return `You are a friendly, precise French tutor. I am an absolute beginner (A0–A1), \
+native Ukrainian speaker with B2 English, learning French for Canadian immigration. \
+Below are exercise questions I recently got WRONG in my learning app, with the correct answers. Please:
+1. Group them into 2–3 underlying error patterns (what am I systematically confusing?).
+2. Explain each pattern in one short paragraph of simple English.
+3. Give me a mini-drill: 5 new questions targeting exactly these patterns, one at a time — wait for my answer before the next one.
+
+MY RECENT MISTAKES:
+${list}`
+}

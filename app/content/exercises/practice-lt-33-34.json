@@ -55,5 +55,11 @@
       "elles sont allées au marché"
     ],
     "hint": "ils sont allés / elles sont allées."
+  },
+  {
+    "type": "open",
+    "prompt": "Where did you go recently? 3 sentences with the être-past.",
+    "hint": "je suis allé(e)…, on est allés…",
+    "minWords": 12
   }
 ]

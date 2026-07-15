@@ -48,5 +48,11 @@
       "c'est très important"
     ],
     "hint": "très = very; “important” transfers from English."
+  },
+  {
+    "type": "open",
+    "prompt": "Now use it: write 2–3 sentences about a situation or decision in your life (use a -tion word and c'est).",
+    "hint": "C'est une situation… la décision est…",
+    "minWords": 12
   }
 ]

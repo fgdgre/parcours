@@ -54,5 +54,11 @@
       "je l'ai fait et je suis allée à la maison"
     ],
     "hint": "avoir for doing, être for going."
+  },
+  {
+    "type": "open",
+    "prompt": "A tiny story mixing both pasts: where you went AND what you did there.",
+    "hint": "je suis allé(e)… et j'ai…",
+    "minWords": 12
   }
 ]

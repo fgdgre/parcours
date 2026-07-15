@@ -62,5 +62,11 @@
       "est-ce qu'elle a parlé avec toi"
     ],
     "hint": "avec toi = with you."
+  },
+  {
+    "type": "open",
+    "prompt": "Write two things you did NOT do yesterday, and one past question for a friend.",
+    "hint": "je n'ai pas…, tu as… ?",
+    "minWords": 12
   }
 ]

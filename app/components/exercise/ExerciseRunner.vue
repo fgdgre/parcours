@@ -27,12 +27,31 @@ import DictationExercise from './DictationExercise.vue'
 import SpeakExercise from './SpeakExercise.vue'
 import OpenExercise from './OpenExercise.vue'
 
+interface RunResult {
+  correct: number
+  total: number
+  missed: { q: string; a: string }[]
+}
+
 const props = defineProps<{ exercises: Exercise[] }>()
-const emit = defineEmits<{ finished: [score: { correct: number; total: number }] }>()
+const emit = defineEmits<{ finished: [result: RunResult] }>()
 
 const idx = ref(0)
 const correctCount = ref(0)
+const gradableCount = ref(0)
+const missed = ref<{ q: string; a: string }[]>([])
 const current = computed(() => props.exercises[idx.value])
+
+function describe(ex: Exercise): { q: string; a: string } {
+  switch (ex.type) {
+    case 'mc': return { q: ex.prompt, a: ex.options[ex.answer]! }
+    case 'type': return { q: ex.prompt, a: ex.answer[0]! }
+    case 'conjugate': return { q: `Conjugate ${ex.verb} with “${ex.pronoun}”`, a: `${ex.pronoun} ${ex.answer[0]}` }
+    case 'dictation': return { q: 'Dictation (writing what you hear)', a: ex.ttsText }
+    case 'speak': return { q: `Say aloud: ${ex.en}`, a: ex.target }
+    case 'open': return { q: ex.prompt, a: '(free writing)' }
+  }
+}
 
 function componentFor(ex: Exercise) {
   switch (ex.type) {
@@ -46,9 +65,20 @@ function componentFor(ex: Exercise) {
 }
 
 function advance(correct?: boolean) {
-  if (correct) correctCount.value += 1
+  const ex = current.value
+  // 'open' writing is never auto-graded — it neither counts toward the
+  // score nor appears in the mistake log.
+  if (ex && ex.type !== 'open') {
+    gradableCount.value += 1
+    if (correct) correctCount.value += 1
+    else missed.value.push(describe(ex))
+  }
   if (idx.value + 1 >= props.exercises.length) {
-    emit('finished', { correct: correctCount.value, total: props.exercises.length })
+    emit('finished', {
+      correct: correctCount.value,
+      total: gradableCount.value,
+      missed: missed.value,
+    })
   } else {
     idx.value += 1
   }

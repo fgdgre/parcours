@@ -47,5 +47,11 @@
       "je le sais"
     ],
     "hint": "le before sais."
+  },
+  {
+    "type": "open",
+    "prompt": "Write 3 sentences about a thing you want / see / know — using le, la or les as “it”.",
+    "hint": "je le veux…, je la vois…, je le sais…",
+    "minWords": 12
   }
 ]

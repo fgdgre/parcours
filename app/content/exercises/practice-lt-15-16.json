@@ -62,5 +62,11 @@
       "elles ont deux enfants"
     ],
     "hint": "Liaison alert: ils‿ont with a Z sound."
+  },
+  {
+    "type": "open",
+    "prompt": "Describe two people you know: what they want, what they have — and one “pas de” sentence.",
+    "hint": "ils veulent…, elles ont…, il n'y a pas de…",
+    "minWords": 12
   }
 ]

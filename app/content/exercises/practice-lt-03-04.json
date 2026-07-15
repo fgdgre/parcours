@@ -59,5 +59,11 @@
       "je vais manger"
     ],
     "hint": "Just like English “going to”."
+  },
+  {
+    "type": "open",
+    "prompt": "Write 2–3 sentences: what you want today and what you would like politely.",
+    "hint": "je veux…, je voudrais…, pour…",
+    "minWords": 12
   }
 ]

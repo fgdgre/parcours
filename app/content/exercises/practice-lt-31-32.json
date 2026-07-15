@@ -60,5 +60,11 @@
       "nous les avons vu au marché"
     ],
     "hint": "les before avons/a; au = à + le."
+  },
+  {
+    "type": "open",
+    "prompt": "Write about something you did — using it/them as pronouns.",
+    "hint": "je l'ai fait…, je les ai vus…",
+    "minWords": 12
   }
 ]

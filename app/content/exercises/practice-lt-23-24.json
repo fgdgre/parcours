@@ -57,5 +57,11 @@
       "je viens d'écouter le podcast"
     ],
     "hint": "de + écouter → d'écouter."
+  },
+  {
+    "type": "open",
+    "prompt": "What did you just do? Write 3 sentences with “je viens de”.",
+    "hint": "je viens de manger…, je viens d'arriver…",
+    "minWords": 12
   }
 ]

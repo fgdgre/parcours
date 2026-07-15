@@ -64,5 +64,11 @@
       "vous êtes là"
     ],
     "hint": "Listen for the liaison: vous‿êtes."
+  },
+  {
+    "type": "open",
+    "prompt": "Write a polite exchange with a stranger (vous): ask if they want something and ask them to repeat.",
+    "hint": "vous voulez… ?, vous pouvez répéter… ?",
+    "minWords": 12
   }
 ]

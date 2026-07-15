@@ -24,7 +24,9 @@
         <template v-for="(day, di) in daysFor(ch)" :key="`${ch.id}-day-${di}`">
           <div class="day-head" :class="{ 'day-done': day.done, 'day-current': day.current }">
             <span>{{ day.label }}</span>
-            <span class="muted small">{{ day.done ? '✓ done' : `~${day.minutes} min` }}</span>
+            <span class="muted small">
+              {{ day.done ? '✓ done' : `~${day.minutes} min` }}<template v-if="day.score !== undefined"> · {{ day.score }}%</template>
+            </span>
           </div>
           <LessonCard v-for="l in day.lessons" :key="l.id" :lesson="l" />
         </template>
@@ -48,6 +50,18 @@ interface Day {
   minutes: number
   done: boolean
   current: boolean
+  score?: number
+}
+
+function dayScore(lessons: Lesson[]): number | undefined {
+  const pcts: number[] = []
+  for (const l of lessons) {
+    const s = progress.lessonScores[l.id]
+    if (s && s.total > 0) pcts.push((s.correct / s.total) * 100)
+    else if (l.type === 'exam' && progress.examScores[l.id] !== undefined) pcts.push(progress.examScores[l.id]!)
+  }
+  if (pcts.length === 0) return undefined
+  return Math.round(pcts.reduce((a, b) => a + b, 0) / pcts.length)
 }
 
 // Groups a chapter's lessons into ~25-minute study days (optional lessons ride
@@ -80,6 +94,7 @@ function daysFor(ch: Chapter): Day[] {
       minutes: req.reduce((s, l) => s + l.durationMin, 0),
       done,
       current,
+      score: dayScore(lessons),
     }
   })
 }

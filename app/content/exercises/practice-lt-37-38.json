@@ -59,5 +59,11 @@
       "je dois le savoir"
     ],
     "hint": "le before savoir."
+  },
+  {
+    "type": "open",
+    "prompt": "Why are you learning French? Use “pour + infinitive” and “il faut”.",
+    "hint": "j'apprends le français pour…, il faut…",
+    "minWords": 12
   }
 ]

@@ -23,10 +23,12 @@
 
     <div v-else class="card stack">
       <p class="score" :class="{ okline: result.correct === result.total }">
-        {{ result.correct }}/{{ result.total }}
+        {{ result.total === 0 ? '✓ Done' : `${result.correct}/${result.total}` }}
       </p>
       <p class="muted small">
-        {{ result.correct === result.total ? 'Flawless. One more round?' : 'Every miss just met its future review. Again?' }}
+        {{ result.total === 0
+          ? 'Now paste your writing into a Claude chat and keep the conversation going.'
+          : result.correct === result.total ? 'Flawless. One more round?' : 'Every miss just met its future review. Again?' }}
       </p>
       <button class="btn btn-primary btn-block" @click="start(mode!)">Another 10</button>
       <button class="btn btn-block" @click="mode = null">Choose a different drill</button>

@@ -73,5 +73,11 @@
       "qu'est-ce que tu as fait hier"
     ],
     "hint": "hier soir = yesterday evening."
+  },
+  {
+    "type": "open",
+    "prompt": "Grand finale: your best 4–5 French sentences using everything Language Transfer taught you.",
+    "hint": "Everything is allowed. Show off.",
+    "minWords": 20
   }
 ]

@@ -48,5 +48,11 @@
       "j'ai écouté le podcast hier"
     ],
     "hint": "écouter → écouté."
+  },
+  {
+    "type": "open",
+    "prompt": "Yesterday in 3–4 sentences, in the past.",
+    "hint": "j'ai travaillé…, j'ai mangé…, j'ai regardé…",
+    "minWords": 12
   }
 ]

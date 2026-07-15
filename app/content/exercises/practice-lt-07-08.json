@@ -71,5 +71,11 @@
       "je vais travailler avec vous demain"
     ],
     "hint": "aller + infinitive, avec toi = with you."
+  },
+  {
+    "type": "open",
+    "prompt": "Write 3 questions for a new French friend, then answer one of them yourself.",
+    "hint": "est-ce que tu… ?, tu as… ?, il y a… ?",
+    "minWords": 12
   }
 ]

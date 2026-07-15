@@ -30,10 +30,31 @@
     <div v-for="ch in curriculum" :key="ch.id" class="stack chapter">
       <div class="spread">
         <span>{{ ch.title }}</span>
-        <span class="muted small">{{ doneIn(ch) }}/{{ required(ch).length }}</span>
+        <span class="muted small">
+          {{ doneIn(ch) }}/{{ required(ch).length }}<template v-if="qualityOf(ch) !== undefined">
+            · <span :class="qualityClass(qualityOf(ch)!)">{{ qualityOf(ch) }}% correct</span>
+          </template>
+        </span>
       </div>
       <ProgressBar :value="required(ch).length ? doneIn(ch) / required(ch).length : 0" />
     </div>
+
+    <template v-if="progress.mistakes.length > 0">
+      <h2>Recent mistakes</h2>
+      <div class="card stack">
+        <div v-for="(m, i) in progress.mistakes.slice(0, 8)" :key="i" class="mistake">
+          <p class="small q">{{ m.q }}</p>
+          <p class="small a">→ {{ m.a }}</p>
+        </div>
+        <p v-if="progress.mistakes.length > 8" class="muted small">
+          +{{ progress.mistakes.length - 8 }} more in the log (last 100 kept)
+        </p>
+        <button class="btn btn-block" @click="copyMistakes">
+          {{ mistakesCopied ? '✓ Copied — paste into a Claude chat' : '📋 Copy mistakes for AI review' }}
+        </button>
+        <p class="muted small">Gets your errors grouped into patterns, explained, and turned into a mini-drill.</p>
+      </div>
+    </template>
 
     <h2>Backup</h2>
     <div class="card stack">
@@ -76,6 +97,7 @@
 <script setup lang="ts">
 import type { Chapter } from '~/types/content'
 import { allLessons, curriculum, isOptional } from '~/content'
+import { buildMistakesPrompt } from '~/utils/reviewPrompt'
 
 const progress = useProgress()
 
@@ -85,6 +107,36 @@ const lessonsDone = computed(() => allLessons.filter(l => progress.isDone(l.id))
 const minutesDone = computed(() =>
   allLessons.filter(l => progress.isDone(l.id)).reduce((s, l) => s + l.durationMin, 0),
 )
+
+function qualityOf(ch: Chapter): number | undefined {
+  const pcts: number[] = []
+  for (const l of ch.lessons) {
+    const s = progress.lessonScores[l.id]
+    if (s && s.total > 0) pcts.push((s.correct / s.total) * 100)
+    else if (l.type === 'exam' && progress.examScores[l.id] !== undefined) pcts.push(progress.examScores[l.id]!)
+  }
+  if (pcts.length === 0) return undefined
+  return Math.round(pcts.reduce((a, b) => a + b, 0) / pcts.length)
+}
+
+const qualityClass = (p: number) => (p >= 80 ? 'q-ok' : p >= 60 ? 'q-warn' : 'q-err')
+
+const mistakesCopied = ref(false)
+async function copyMistakes() {
+  const payload = buildMistakesPrompt(progress.mistakes.slice(0, 30))
+  try {
+    await navigator.clipboard.writeText(payload)
+  } catch {
+    const ta = document.createElement('textarea')
+    ta.value = payload
+    document.body.appendChild(ta)
+    ta.select()
+    document.execCommand('copy')
+    document.body.removeChild(ta)
+  }
+  mistakesCopied.value = true
+  setTimeout(() => { mistakesCopied.value = false }, 4000)
+}
 
 const ioMessage = ref('')
 const ioOk = ref(true)
@@ -130,4 +182,10 @@ function resetAll() {
 .rate input { width: 100%; accent-color: var(--accent); }
 .danger { border-color: var(--err); }
 .reset { color: var(--err); border-color: var(--err); }
+.q-ok { color: var(--ok); }
+.q-warn { color: var(--warn); }
+.q-err { color: var(--err); }
+.mistake { padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.mistake .q { margin: 0; color: var(--muted); }
+.mistake .a { margin: 2px 0 0; font-weight: 600; }
 </style>

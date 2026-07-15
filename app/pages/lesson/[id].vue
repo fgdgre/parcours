@@ -199,9 +199,12 @@ const exercises = computed(() =>
   lesson.value?.type === 'exercises' ? exercisesByFile[lesson.value.exerciseFile] ?? [] : [],
 )
 const finished = ref(false)
-function finishExercises() {
+function finishExercises(result: { correct: number; total: number; missed: { q: string; a: string }[] }) {
   finished.value = true
-  if (lesson.value) progress.markDone(lesson.value.id)
+  if (!lesson.value) return
+  progress.markDone(lesson.value.id)
+  progress.recordLesson(lesson.value.id, result.correct, result.total)
+  progress.logMistakes(result.missed)
 }
 function restartExercises() {
   if (lesson.value) progress.unmarkDone(lesson.value.id)
@@ -233,12 +236,13 @@ function startExam() {
   examState.value = 'running'
 }
 
-function onExamFinished(score: { correct: number; total: number }) {
+function onExamFinished(result: { correct: number; total: number; missed: { q: string; a: string }[] }) {
   if (lesson.value?.type !== 'exam') return
-  const pct = Math.round((score.correct / Math.max(1, score.total)) * 100)
+  const pct = Math.round((result.correct / Math.max(1, result.total)) * 100)
   examScore.value = pct
   examPassed.value = pct >= lesson.value.passPercent
   progress.recordExam(lesson.value.id, pct)
+  progress.logMistakes(result.missed)
   if (examPassed.value) progress.markDone(lesson.value.id)
   examState.value = 'result'
 }

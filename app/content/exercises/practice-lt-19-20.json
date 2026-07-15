@@ -50,5 +50,11 @@
       "je te comprends pas"
     ],
     "hint": "ne … pas wraps around “te comprends”."
+  },
+  {
+    "type": "open",
+    "prompt": "Write a mini dialogue: someone asks your name, you answer and ask theirs.",
+    "hint": "comment tu t'appelles ?, je m'appelle…, et toi ?",
+    "minWords": 12
   }
 ]

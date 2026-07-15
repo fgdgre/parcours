@@ -11,6 +11,18 @@ export interface Settings {
   preferKeyboard: boolean
 }
 
+export interface LessonScore {
+  correct: number
+  total: number
+  date: string
+}
+
+export interface Mistake {
+  q: string
+  a: string
+  date: string
+}
+
 export interface PersistedState {
   schemaVersion: number
   savedAt: string
@@ -18,6 +30,8 @@ export interface PersistedState {
   srs: Record<string, SrsEntry>
   introduced: Record<string, string>
   examScores: Record<string, number>
+  lessonScores: Record<string, LessonScore>
+  mistakes: Mistake[]
   settings: Settings
 }
 
@@ -26,7 +40,7 @@ export function defaultSettings(): Settings {
 }
 
 export function serializeState(
-  s: Pick<PersistedState, 'completedLessons' | 'srs' | 'introduced' | 'examScores' | 'settings'>,
+  s: Pick<PersistedState, 'completedLessons' | 'srs' | 'introduced' | 'examScores' | 'lessonScores' | 'mistakes' | 'settings'>,
 ): string {
   const payload: PersistedState = {
     schemaVersion: SCHEMA_VERSION,
@@ -35,6 +49,8 @@ export function serializeState(
     srs: s.srs,
     introduced: s.introduced,
     examScores: s.examScores,
+    lessonScores: s.lessonScores,
+    mistakes: s.mistakes,
     settings: s.settings,
   }
   return JSON.stringify(payload, null, 2)
@@ -71,6 +87,8 @@ export function validateBackup(json: string): BackupValidation {
       srs: parsed.srs as Record<string, SrsEntry>,
       introduced: parsed.introduced as Record<string, string>,
       examScores: (isRecord(parsed.examScores) ? parsed.examScores : {}) as Record<string, number>,
+      lessonScores: (isRecord(parsed.lessonScores) ? parsed.lessonScores : {}) as Record<string, LessonScore>,
+      mistakes: (Array.isArray(parsed.mistakes) ? parsed.mistakes : []) as Mistake[],
       settings: settings as Settings,
     },
   }
@@ -81,6 +99,8 @@ export const useProgress = defineStore('progress', () => {
   const srs = ref<Record<string, SrsEntry>>({})
   const introduced = ref<Record<string, string>>({})
   const examScores = ref<Record<string, number>>({})
+  const lessonScores = ref<Record<string, LessonScore>>({})
+  const mistakes = ref<Mistake[]>([])
   const settings = ref<Settings>(defaultSettings())
   const loaded = ref(false)
 
@@ -91,6 +111,8 @@ export const useProgress = defineStore('progress', () => {
       srs: srs.value,
       introduced: introduced.value,
       examScores: examScores.value,
+      lessonScores: lessonScores.value,
+      mistakes: mistakes.value,
       settings: settings.value,
     }))
   }
@@ -106,6 +128,8 @@ export const useProgress = defineStore('progress', () => {
     srs.value = data.srs
     introduced.value = data.introduced
     examScores.value = data.examScores
+    lessonScores.value = data.lessonScores
+    mistakes.value = data.mistakes
     settings.value = data.settings
   }
 
@@ -117,7 +141,7 @@ export const useProgress = defineStore('progress', () => {
       if (v.ok) applyData(v.data)
     }
     loaded.value = true
-    watch([completedLessons, srs, introduced, examScores, settings], persistSoon, { deep: true })
+    watch([completedLessons, srs, introduced, examScores, lessonScores, mistakes, settings], persistSoon, { deep: true })
   }
 
   const isDone = (id: string) => id in completedLessons.value
@@ -150,12 +174,26 @@ export const useProgress = defineStore('progress', () => {
     examScores.value[id] = Math.max(prev, percent)
   }
 
+  function recordLesson(id: string, correct: number, total: number) {
+    if (total <= 0) return
+    lessonScores.value[id] = { correct, total, date: todayIso() }
+  }
+
+  function logMistakes(items: { q: string; a: string }[]) {
+    if (items.length === 0) return
+    const today = todayIso()
+    mistakes.value.unshift(...items.map(m => ({ ...m, date: today })))
+    if (mistakes.value.length > 100) mistakes.value.length = 100
+  }
+
   function exportBackup(): string {
     return serializeState({
       completedLessons: completedLessons.value,
       srs: srs.value,
       introduced: introduced.value,
       examScores: examScores.value,
+      lessonScores: lessonScores.value,
+      mistakes: mistakes.value,
       settings: settings.value,
     })
   }
@@ -173,14 +211,16 @@ export const useProgress = defineStore('progress', () => {
     srs.value = {}
     introduced.value = {}
     examScores.value = {}
+    lessonScores.value = {}
+    mistakes.value = []
     settings.value = defaultSettings()
     persistNow()
   }
 
   return {
-    completedLessons, srs, introduced, examScores, settings, loaded,
+    completedLessons, srs, introduced, examScores, lessonScores, mistakes, settings, loaded,
     load, isDone, markDone, unmarkDone,
-    isIntroduced, introduceCard, reviewCard, recordExam,
+    isIntroduced, introduceCard, reviewCard, recordExam, recordLesson, logMistakes,
     dueIds, wordsSeen, wordsLearned,
     exportBackup, importBackup, resetAll,
   }

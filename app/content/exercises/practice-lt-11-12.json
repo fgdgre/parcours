@@ -62,5 +62,11 @@
       "on veut parler français"
     ],
     "hint": "Both the nous and the on version count."
+  },
+  {
+    "type": "open",
+    "prompt": "Write 3 sentences about plans with friends — use both “on” and “nous”.",
+    "hint": "on va…, nous allons…, on peut…",
+    "minWords": 12
   }
 ]

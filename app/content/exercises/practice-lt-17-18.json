@@ -62,5 +62,11 @@
       "nous devons faire ça"
     ],
     "hint": "ça = that."
+  },
+  {
+    "type": "open",
+    "prompt": "Your obligations today: two sentences with “je dois” and one with “il faut”.",
+    "hint": "je dois…, il faut…",
+    "minWords": 12
   }
 ]
