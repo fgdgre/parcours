@@ -36,6 +36,11 @@
 
 * { box-sizing: border-box; }
 
+button {
+  font: inherit;
+  color: inherit;
+}
+
 html { -webkit-text-size-adjust: 100%; }
 
 body {
@@ -119,6 +124,8 @@ a { color: var(--accent); text-decoration: none; }
   font-weight: 600;
   background: var(--accent-soft);
   color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .feedback-ok { background: var(--ok-soft); color: var(--ok); border-radius: 12px; padding: 12px 14px; }
