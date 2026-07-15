@@ -18,6 +18,20 @@
       <span class="chip">{{ dailyDone ? 'again →' : '5 fresh →' }}</span>
     </NuxtLink>
 
+    <div class="workouts">
+      <NuxtLink
+        v-for="w in workouts"
+        :key="w.kind"
+        :to="`/workout/${w.kind}`"
+        class="card workout"
+        :class="{ 'daily-done': w.done }"
+      >
+        <span class="w-icon">{{ w.icon }}</span>
+        <span class="small w-label">{{ w.label }}</span>
+        <span class="small" :class="w.done ? 'done-check' : 'muted'">{{ w.done ? '✓ done' : w.sub }}</span>
+      </NuxtLink>
+    </div>
+
     <template v-if="session.length > 0">
       <div class="spread">
         <h2>Your session</h2>
@@ -61,6 +75,12 @@ const session = computed(() => {
 const totalMin = computed(() => session.value.reduce((s, l) => s + l.durationMin, 0))
 
 const dailyDone = computed(() => progress.isDone(`daily-${todayIso()}`))
+
+const workouts = computed(() => ([
+  { kind: 'quiz', icon: '🧠', label: 'Quiz', sub: '10 q' },
+  { kind: 'writing', icon: '📝', label: 'Writing', sub: '1 task' },
+  { kind: 'speaking', icon: '🎙', label: 'Speaking', sub: '5 phrases' },
+].map(w => ({ ...w, done: progress.isDone(`workout-${w.kind}-${todayIso()}`) }))))
 </script>
 
 <style scoped>
@@ -68,4 +88,18 @@ const dailyDone = computed(() => progress.isDone(`daily-${todayIso()}`))
 .due { border-color: var(--accent); }
 .daily-done { opacity: 0.7; }
 .done-check { color: var(--ok); font-weight: 700; }
+.guide-link { flex-shrink: 0; padding-top: 6px; }
+.workouts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.workout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 12px 6px;
+  color: var(--fg);
+  -webkit-tap-highlight-color: transparent;
+}
+.workout:active { transform: scale(0.97); border-color: var(--accent); }
+.w-icon { font-size: 1.3rem; }
+.w-label { font-weight: 650; }
 </style>

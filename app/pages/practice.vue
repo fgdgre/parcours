@@ -48,6 +48,7 @@ const modes: { kind: DrillKind; icon: string; title: string; desc: string }[] = 
   { kind: 'type', icon: '✍️', title: 'Translate', desc: 'English → French, word bank or keyboard.' },
   { kind: 'dictation', icon: '👂', title: 'Dictation', desc: 'Hear a real example sentence, type what you heard.' },
   { kind: 'writing', icon: '📝', title: 'Writing', desc: 'Compose sentences from your words, then “Copy to check” with AI.' },
+  { kind: 'speaking', icon: '🎙', title: 'Speaking', desc: 'Say real example sentences aloud — the recognizer listens.' },
 ]
 
 const allCards = Object.values(cardsById)

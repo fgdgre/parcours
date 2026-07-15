@@ -60,7 +60,28 @@ export function writingPrompts(cards: Card[], count: number): Exercise[] {
   return out
 }
 
-export type DrillKind = 'mixed' | 'mc' | 'type' | 'dictation' | 'writing'
+export function cardSpeak(card: Card): Exercise | null {
+  if (!card.exFr) return null
+  return { type: 'speak', target: card.exFr, en: card.exEn ?? card.en }
+}
+
+/** Generated free-writing prompts: compose sentences from the learner's own words. */
+export function writingPrompts(cards: Card[], count: number): Exercise[] {
+  const out: Exercise[] = []
+  const pool = shuffle(cards)
+  for (let i = 0; i < count && pool.length >= 3; i++) {
+    const picked = pool.splice(0, 3)
+    out.push({
+      type: 'open',
+      prompt: `Write 2–3 French sentences using all of these words: ${picked.map(c => `“${c.fr}”`).join(', ')}.`,
+      minWords: 10,
+      hint: picked.map(c => `${c.fr} = ${c.en.split(';')[0]}`).join(' · '),
+    })
+  }
+  return out
+}
+
+export type DrillKind = 'mixed' | 'mc' | 'type' | 'dictation' | 'speaking' | 'writing' | 'writing'
 
 /** Builds auto-generated drills from cards — every card yields an MC, a translation and (if it has an example) a dictation. */
 export function buildDrills(cards: Card[], deck: Card[], kind: DrillKind, count: number): Exercise[] {
@@ -74,6 +95,9 @@ export function buildDrills(cards: Card[], deck: Card[], kind: DrillKind, count:
     else if (kind === 'dictation') {
       const d = cardDictation(card)
       if (d) out.push(d)
+    } else if (kind === 'speaking') {
+      const s = cardSpeak(card)
+      if (s) out.push(s)
     } else {
       const roll = Math.random()
       if (roll < 0.34) out.push(cardMc(card, deck))

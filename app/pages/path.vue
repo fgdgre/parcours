@@ -21,20 +21,68 @@
         </span>
       </button>
       <template v-if="isOpen(ch.id)">
-        <LessonCard v-for="l in ch.lessons" :key="l.id" :lesson="l" />
+        <template v-for="(day, di) in daysFor(ch)" :key="`${ch.id}-day-${di}`">
+          <div class="day-head" :class="{ 'day-done': day.done, 'day-current': day.current }">
+            <span>{{ day.label }}</span>
+            <span class="muted small">{{ day.done ? '✓ done' : `~${day.minutes} min` }}</span>
+          </div>
+          <LessonCard v-for="l in day.lessons" :key="l.id" :lesson="l" />
+        </template>
       </template>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { Chapter } from '~/types/content'
+import type { Chapter, Lesson } from '~/types/content'
 import { curriculum, isOptional } from '~/content'
 
 const progress = useProgress()
 
 const required = (ch: Chapter) => ch.lessons.filter(l => !isOptional(l))
 const doneIn = (ch: Chapter) => required(ch).filter(l => progress.isDone(l.id)).length
+
+interface Day {
+  label: string
+  lessons: Lesson[]
+  minutes: number
+  done: boolean
+  current: boolean
+}
+
+// Groups a chapter's lessons into ~25-minute study days (optional lessons ride
+// along with their day but don't count toward its minutes).
+function daysFor(ch: Chapter): Day[] {
+  const chunks: Lesson[][] = []
+  let cur: Lesson[] = []
+  let minutes = 0
+  for (const l of ch.lessons) {
+    const opt = isOptional(l)
+    if (!opt && minutes >= 25 && cur.some(x => !isOptional(x))) {
+      chunks.push(cur)
+      cur = []
+      minutes = 0
+    }
+    cur.push(l)
+    if (!opt) minutes += l.durationMin
+  }
+  if (cur.length > 0) chunks.push(cur)
+
+  let currentFound = false
+  return chunks.map((lessons, i) => {
+    const req = lessons.filter(l => !isOptional(l))
+    const done = req.every(l => progress.isDone(l.id))
+    const current = !done && !currentFound
+    if (current) currentFound = true
+    return {
+      label: `Day ${i + 1}`,
+      lessons,
+      minutes: req.reduce((s, l) => s + l.durationMin, 0),
+      done,
+      current,
+    }
+  })
+}
 
 const currentChapterId = computed(
   () => curriculum.find(ch => doneIn(ch) < ch.lessons.length)?.id ?? curriculum[0]?.id,
@@ -71,4 +119,18 @@ const toggle = (id: string) => { open.value[id] = !isOpen(id) }
 .head-meta { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
 .chev { width: 20px; height: 20px; color: var(--muted); transition: transform 0.2s ease; }
 .chapter-head.open .chev { transform: rotate(90deg); }
+.day-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 10px 2px 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.day-head.day-current { color: var(--accent); }
+.day-head.day-done { opacity: 0.6; }
 </style>
