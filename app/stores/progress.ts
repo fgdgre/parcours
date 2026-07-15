@@ -25,7 +25,15 @@ export interface Mistake {
 
 export interface WritingRating {
   task: string
-  score: number
+  score: number | null
+  text: string
+  date: string
+}
+
+export interface ExamAttempt {
+  id: string
+  pct: number
+  seconds: number
   date: string
 }
 
@@ -50,6 +58,7 @@ export interface PersistedState {
   lessonScores: Record<string, LessonScore>
   mistakes: Mistake[]
   writingRatings: WritingRating[]
+  examHistory: ExamAttempt[]
   skillStats: Record<string, SkillStat>
   dayStats: Record<string, DayStat>
   settings: Settings
@@ -72,6 +81,7 @@ export function serializeState(
     lessonScores: s.lessonScores,
     mistakes: s.mistakes,
     writingRatings: s.writingRatings,
+    examHistory: s.examHistory,
     skillStats: s.skillStats,
     dayStats: s.dayStats,
     settings: s.settings,
@@ -113,6 +123,7 @@ export function validateBackup(json: string): BackupValidation {
       lessonScores: (isRecord(parsed.lessonScores) ? parsed.lessonScores : {}) as Record<string, LessonScore>,
       mistakes: (Array.isArray(parsed.mistakes) ? parsed.mistakes : []) as Mistake[],
       writingRatings: (Array.isArray(parsed.writingRatings) ? parsed.writingRatings : []) as WritingRating[],
+      examHistory: (Array.isArray(parsed.examHistory) ? parsed.examHistory : []) as ExamAttempt[],
       skillStats: (isRecord(parsed.skillStats) ? parsed.skillStats : {}) as Record<string, SkillStat>,
       dayStats: (isRecord(parsed.dayStats) ? parsed.dayStats : {}) as Record<string, DayStat>,
       settings: settings as Settings,
@@ -128,6 +139,7 @@ export const useProgress = defineStore('progress', () => {
   const lessonScores = ref<Record<string, LessonScore>>({})
   const mistakes = ref<Mistake[]>([])
   const writingRatings = ref<WritingRating[]>([])
+  const examHistory = ref<ExamAttempt[]>([])
   const skillStats = ref<Record<string, SkillStat>>({})
   const dayStats = ref<Record<string, DayStat>>({})
   const settings = ref<Settings>(defaultSettings())
@@ -143,6 +155,7 @@ export const useProgress = defineStore('progress', () => {
       lessonScores: lessonScores.value,
       mistakes: mistakes.value,
       writingRatings: writingRatings.value,
+      examHistory: examHistory.value,
       skillStats: skillStats.value,
       dayStats: dayStats.value,
       settings: settings.value,
@@ -163,6 +176,7 @@ export const useProgress = defineStore('progress', () => {
     lessonScores.value = data.lessonScores
     mistakes.value = data.mistakes
     writingRatings.value = data.writingRatings
+    examHistory.value = data.examHistory
     skillStats.value = data.skillStats
     dayStats.value = data.dayStats
     settings.value = data.settings
@@ -177,7 +191,7 @@ export const useProgress = defineStore('progress', () => {
     }
     loaded.value = true
     watch(
-      [completedLessons, srs, introduced, examScores, lessonScores, mistakes, writingRatings, skillStats, dayStats, settings],
+      [completedLessons, srs, introduced, examScores, lessonScores, mistakes, writingRatings, examHistory, skillStats, dayStats, settings],
       persistSoon,
       { deep: true },
     )
@@ -208,9 +222,11 @@ export const useProgress = defineStore('progress', () => {
     () => Object.values(srs.value).filter(e => e.intervalDays >= 21).length,
   )
 
-  function recordExam(id: string, percent: number) {
+  function recordExam(id: string, percent: number, seconds = 0) {
     const prev = examScores.value[id] ?? 0
     examScores.value[id] = Math.max(prev, percent)
+    examHistory.value.unshift({ id, pct: percent, seconds, date: todayIso() })
+    if (examHistory.value.length > 50) examHistory.value.length = 50
   }
 
   function recordLesson(id: string, correct: number, total: number) {
@@ -225,8 +241,13 @@ export const useProgress = defineStore('progress', () => {
     if (mistakes.value.length > 100) mistakes.value.length = 100
   }
 
-  function addWritingRating(task: string, score: number) {
-    writingRatings.value.unshift({ task: task.slice(0, 120), score, date: todayIso() })
+  function addWriting(task: string, text: string, score: number | null) {
+    writingRatings.value.unshift({
+      task: task.slice(0, 120),
+      text: text.slice(0, 1500),
+      score,
+      date: todayIso(),
+    })
     if (writingRatings.value.length > 100) writingRatings.value.length = 100
   }
 
@@ -258,6 +279,7 @@ export const useProgress = defineStore('progress', () => {
       lessonScores: lessonScores.value,
       mistakes: mistakes.value,
       writingRatings: writingRatings.value,
+      examHistory: examHistory.value,
       skillStats: skillStats.value,
       dayStats: dayStats.value,
       settings: settings.value,
@@ -280,6 +302,7 @@ export const useProgress = defineStore('progress', () => {
     lessonScores.value = {}
     mistakes.value = []
     writingRatings.value = []
+    examHistory.value = []
     skillStats.value = {}
     dayStats.value = {}
     settings.value = defaultSettings()
@@ -288,10 +311,10 @@ export const useProgress = defineStore('progress', () => {
 
   return {
     completedLessons, srs, introduced, examScores, lessonScores, mistakes,
-    writingRatings, skillStats, dayStats, settings, loaded,
+    writingRatings, examHistory, skillStats, dayStats, settings, loaded,
     load, isDone, markDone, unmarkDone,
     isIntroduced, introduceCard, reviewCard, recordExam, recordLesson, logMistakes,
-    addWritingRating, recordRun, addTime,
+    addWriting, recordRun, addTime,
     dueIds, wordsSeen, wordsLearned,
     exportBackup, importBackup, resetAll,
   }

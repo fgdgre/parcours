@@ -265,7 +265,7 @@ function onExamFinished(result: { correct: number; total: number; missed: { q: s
   const pct = Math.round((result.correct / Math.max(1, result.total)) * 100)
   examScore.value = pct
   examPassed.value = pct >= lesson.value.passPercent
-  progress.recordExam(lesson.value.id, pct)
+  progress.recordExam(lesson.value.id, pct, examElapsed.value)
   progress.logMistakes(result.missed)
   if (examPassed.value) progress.markDone(lesson.value.id)
   examState.value = 'result'

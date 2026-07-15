@@ -7,6 +7,20 @@
       <span class="chip">Guide →</span>
     </NuxtLink>
 
+    <div class="card stack review-card">
+      <div class="spread">
+        <span><strong>🧭 Check my progress</strong></span>
+      </div>
+      <p class="muted small">
+        Copies your complete learning data (scores, mistakes, writing samples, study time) with a
+        coach briefing. Paste into a new Claude chat for an honest level assessment, weak-side
+        analysis, and an adaptive plan — including a spec for an extra focus chapter if you need one.
+      </p>
+      <button class="btn btn-primary btn-block" @click="copyProgressReview">
+        {{ reviewCopied ? '✓ Copied — paste into a new Claude chat' : '📋 Copy for AI deep review' }}
+      </button>
+    </div>
+
     <div class="stats">
       <div class="card stat">
         <span class="num">{{ progress.wordsSeen }}</span>
@@ -67,7 +81,7 @@
         </div>
         <div v-for="(r, i) in progress.writingRatings.slice(0, 3)" :key="i" class="spread">
           <span class="muted small rating-task">{{ r.task }}</span>
-          <span class="small">{{ r.score }}</span>
+          <span class="small">{{ r.score ?? '—' }}</span>
         </div>
       </div>
     </template>
@@ -153,7 +167,7 @@
 <script setup lang="ts">
 import type { Chapter } from '~/types/content'
 import { allLessons, cardsById, curriculum, isOptional } from '~/content'
-import { buildMistakesPrompt } from '~/utils/reviewPrompt'
+import { buildMistakesPrompt, buildProgressReviewPrompt } from '~/utils/reviewPrompt'
 import { addDays, todayIso } from '~/utils/srs'
 
 const progress = useProgress()
@@ -209,9 +223,9 @@ const skillRows = computed(() =>
 )
 
 const writingAvg = computed(() => {
-  const r = progress.writingRatings
-  if (r.length === 0) return 0
-  return Math.round(r.reduce((s, x) => s + x.score, 0) / r.length)
+  const rated = progress.writingRatings.filter(r => r.score !== null)
+  if (rated.length === 0) return 0
+  return Math.round(rated.reduce((s, x) => s + (x.score ?? 0), 0) / rated.length)
 })
 
 const hardestWords = computed(() =>
@@ -224,6 +238,52 @@ const hardestWords = computed(() =>
       return card ? [{ card, lapses: e.lapses }] : []
     }),
 )
+
+const reviewCopied = ref(false)
+
+async function copyToClipboard(payload: string): Promise<void> {
+  try {
+    await navigator.clipboard.writeText(payload)
+  } catch {
+    const ta = document.createElement('textarea')
+    ta.value = payload
+    document.body.appendChild(ta)
+    ta.select()
+    document.execCommand('copy')
+    document.body.removeChild(ta)
+  }
+}
+
+async function copyProgressReview() {
+  const payload = {
+    exportedAt: todayIso(),
+    chapters: curriculum.map(ch => ({
+      id: ch.id,
+      title: ch.title,
+      lessonsDone: doneIn(ch),
+      lessonsTotal: required(ch).length,
+      qualityPct: qualityOf(ch) ?? null,
+    })),
+    vocabulary: {
+      wordsSeen: progress.wordsSeen,
+      wordsLearned: progress.wordsLearned,
+      hardestWords: hardestWords.value.map(w => ({ fr: w.card.fr, en: w.card.en, lapses: w.lapses })),
+    },
+    skills: Object.fromEntries(
+      Object.entries(progress.skillStats).map(([type, s]) => [
+        type, { correct: s.correct, total: s.total, pct: Math.round((s.correct / Math.max(1, s.total)) * 100) },
+      ]),
+    ),
+    examHistory: progress.examHistory,
+    recentMistakes: progress.mistakes.slice(0, 50),
+    writings: progress.writingRatings.slice(0, 30),
+    studyTime: progress.dayStats,
+    settings: progress.settings,
+  }
+  await copyToClipboard(buildProgressReviewPrompt(payload))
+  reviewCopied.value = true
+  setTimeout(() => { reviewCopied.value = false }, 4000)
+}
 
 const mistakesCopied = ref(false)
 async function copyMistakes() {

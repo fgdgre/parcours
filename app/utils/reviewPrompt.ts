@@ -38,3 +38,30 @@ Below are exercise questions I recently got WRONG in my learning app, with the c
 MY RECENT MISTAKES:
 ${list}`
 }
+
+/**
+ * Packs the learner's full progress picture into a deep-review prompt:
+ * honest level assessment, weak-side analysis, adaptive recommendations for
+ * the rest of the program, and — if warranted — a spec for an extra focus
+ * chapter that the app's developer-assistant can implement as content.
+ */
+export function buildProgressReviewPrompt(payload: object): string {
+  return `You are a strict, experienced French teacher and learning coach. I am an absolute beginner \
+(A0–A1), native Ukrainian speaker with B2 English, learning French for Canadian immigration \
+(long-term target: TCF Canada, B2 in all four skills). I study with a self-built app that follows \
+Language Transfer (40 tracks), a 55-lesson pronunciation course, comprehensible input, SRS vocabulary \
+(350 words), exercises, chapter exams, and daily writing/speaking workouts.
+
+Below is my COMPLETE progress data exported from the app. Analyze it honestly — do not flatter me; \
+inflated praise costs me real immigration points later. Please give me:
+
+1. HONEST LEVEL ASSESSMENT — where am I really, in CEFR terms, based on scores, writing samples and pace.
+2. WEAK SIDES — my top 3 weaknesses, each backed by specific evidence from the data (skill percentages, repeated mistake patterns, hardest words, writing errors in my saved texts).
+3. WHAT'S WORKING — 1-2 things I should keep doing exactly as is.
+4. ADAPTIVE PLAN — concrete adjustments for the REST of the program: what to repeat before moving on, what to drill daily for the next 2 weeks, whether my pace (time per day, days active) matches my 15-18-month exam goal.
+5. FOCUS CHAPTER SPEC (only if the data justifies it) — a specification for one extra remedial chapter targeting my weak sides, in this exact format so my developer-assistant can build it into the app: title, 8-12 lessons, each lesson = { type: quiz/practice/dictation/speaking/writing, topic, 8-10 example items in French }.
+6. ONE QUESTION in simple French for me to answer right now, so we start practicing immediately.
+
+MY PROGRESS DATA (JSON):
+${JSON.stringify(payload, null, 1)}`
+}

@@ -48,7 +48,7 @@
     <button
       class="btn btn-primary btn-block"
       :disabled="wordCount < minWords"
-      @click="$emit('done', true)"
+      @click="finish"
     >
       Done writing
     </button>
@@ -61,7 +61,7 @@ import { buildReviewPrompt } from '~/utils/reviewPrompt'
 const props = defineProps<{
   exercise: { type: 'open'; prompt: string; minWords?: number; hint?: string }
 }>()
-defineEmits<{ done: [correct: boolean] }>()
+const emit = defineEmits<{ done: [correct: boolean] }>()
 
 const progress = useProgress()
 const text = ref('')
@@ -75,10 +75,22 @@ const ratingValid = computed(() =>
   typeof rating.value === 'number' && rating.value >= 0 && rating.value <= 100,
 )
 
+const stored = ref(false)
+
 function saveRating() {
   if (!ratingValid.value) return
-  progress.addWritingRating(props.exercise.prompt, rating.value!)
+  progress.addWriting(props.exercise.prompt, text.value.trim(), rating.value!)
   ratingSaved.value = true
+  stored.value = true
+}
+
+function finish() {
+  // keep the text for analytics even when no rating was recorded
+  if (!stored.value && text.value.trim().length > 0) {
+    progress.addWriting(props.exercise.prompt, text.value.trim(), null)
+    stored.value = true
+  }
+  emit('done', true)
 }
 
 async function copyForReview() {
