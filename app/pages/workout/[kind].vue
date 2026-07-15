@@ -15,7 +15,7 @@
 
     <template v-else-if="!finished">
       <p class="muted small">{{ meta.desc }}</p>
-      <ExerciseRunner :key="runKey" :exercises="items" @finished="onFinished" />
+      <ExerciseRunner v-if="items.length > 0" :key="runKey" :exercises="items" @finished="onFinished" />
     </template>
 
     <div v-else class="card stack">

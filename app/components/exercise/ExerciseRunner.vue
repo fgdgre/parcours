@@ -10,6 +10,7 @@
     </div>
     <component
       :is="componentFor(current)"
+      v-if="current"
       :key="idx"
       :exercise="current"
       @done="advance"
@@ -31,7 +32,7 @@ const emit = defineEmits<{ finished: [score: { correct: number; total: number }]
 
 const idx = ref(0)
 const correctCount = ref(0)
-const current = computed(() => props.exercises[idx.value]!)
+const current = computed(() => props.exercises[idx.value])
 
 function componentFor(ex: Exercise) {
   switch (ex.type) {
