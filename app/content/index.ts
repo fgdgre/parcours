@@ -28,12 +28,20 @@ export const lessonById: Record<string, Lesson> = Object.fromEntries(
 
 export const isOptional = (l: Lesson): boolean => l.type === 'exercises' && !!l.optional
 
-/** All non-speaking exercise items authored for a chapter — the exam sampling pool. */
+/** All auto-gradable exercise items authored for a chapter — the exam sampling pool. */
 export function chapterExercisePool(ch: Chapter): Exercise[] {
   return ch.lessons
     .filter((l): l is ExerciseLesson => l.type === 'exercises')
     .flatMap(l => exercisesByFile[l.exerciseFile] ?? [])
-    .filter(e => e.type !== 'speak')
+    .filter(e => e.type !== 'speak' && e.type !== 'open')
+}
+
+/** The chapter's open writing prompts — one gets appended to every exam attempt. */
+export function chapterOpenPool(ch: Chapter): Exercise[] {
+  return ch.lessons
+    .filter((l): l is ExerciseLesson => l.type === 'exercises')
+    .flatMap(l => exercisesByFile[l.exerciseFile] ?? [])
+    .filter(e => e.type === 'open')
 }
 
 /** All flashcards introduced by a chapter's vocab lessons. */

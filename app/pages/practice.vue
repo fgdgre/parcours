@@ -12,7 +12,7 @@
           <span class="mode-title">{{ m.icon }} {{ m.title }}</span><br>
           <span class="muted small">{{ m.desc }}</span>
         </span>
-        <span class="chip">10 →</span>
+        <span class="chip">{{ m.kind === 'writing' ? '3 →' : '10 →' }}</span>
       </button>
     </template>
 
@@ -47,6 +47,7 @@ const modes: { kind: DrillKind; icon: string; title: string; desc: string }[] = 
   { kind: 'mc', icon: '🧠', title: 'Meaning quiz', desc: 'What does this French word mean? Four options.' },
   { kind: 'type', icon: '✍️', title: 'Translate', desc: 'English → French, word bank or keyboard.' },
   { kind: 'dictation', icon: '👂', title: 'Dictation', desc: 'Hear a real example sentence, type what you heard.' },
+  { kind: 'writing', icon: '📝', title: 'Writing', desc: 'Compose sentences from your words, then “Copy to check” with AI.' },
 ]
 
 const allCards = Object.values(cardsById)
@@ -64,7 +65,7 @@ const result = ref<{ correct: number; total: number } | null>(null)
 function start(kind: DrillKind) {
   mode.value = kind
   result.value = null
-  items.value = buildDrills(pool.value, allCards, kind, 10)
+  items.value = buildDrills(pool.value, allCards, kind, kind === 'writing' ? 3 : 10)
   runKey.value += 1
 }
 

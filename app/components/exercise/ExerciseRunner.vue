@@ -24,6 +24,7 @@ import TypeExercise from './TypeExercise.vue'
 import ConjugateExercise from './ConjugateExercise.vue'
 import DictationExercise from './DictationExercise.vue'
 import SpeakExercise from './SpeakExercise.vue'
+import OpenExercise from './OpenExercise.vue'
 
 const props = defineProps<{ exercises: Exercise[] }>()
 const emit = defineEmits<{ finished: [score: { correct: number; total: number }] }>()
@@ -39,6 +40,7 @@ function componentFor(ex: Exercise) {
     case 'conjugate': return ConjugateExercise
     case 'dictation': return DictationExercise
     case 'speak': return SpeakExercise
+    case 'open': return OpenExercise
   }
 }
 

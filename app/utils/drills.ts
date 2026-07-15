@@ -44,10 +44,27 @@ export function cardDictation(card: Card): Exercise | null {
   }
 }
 
-export type DrillKind = 'mixed' | 'mc' | 'type' | 'dictation'
+/** Generated open writing prompts: compose sentences from your own learned words. */
+export function writingPrompts(cards: Card[], count: number): Exercise[] {
+  const out: Exercise[] = []
+  const pool = shuffle(cards.filter(c => !c.fr.includes(' ') || c.fr.split(' ').length <= 3))
+  for (let i = 0; i < count && pool.length >= 3; i++) {
+    const picks = pool.splice(0, 3)
+    out.push({
+      type: 'open',
+      prompt: `Write 2–3 French sentences that use all of these: ${picks.map(c => `“${c.fr}”`).join(', ')}.`,
+      minWords: 12,
+      hint: picks.map(c => `${c.fr} = ${c.en.split(';')[0]}`).join(' · '),
+    })
+  }
+  return out
+}
+
+export type DrillKind = 'mixed' | 'mc' | 'type' | 'dictation' | 'writing'
 
 /** Builds auto-generated drills from cards — every card yields an MC, a translation and (if it has an example) a dictation. */
 export function buildDrills(cards: Card[], deck: Card[], kind: DrillKind, count: number): Exercise[] {
+  if (kind === 'writing') return writingPrompts(cards, count)
   const picked = shuffle(cards)
   const out: Exercise[] = []
   for (const card of picked) {

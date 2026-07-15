@@ -47,6 +47,10 @@ for (const f of readdirSync(join(contentDir, 'exercises')).filter(f => f.endsWit
       case 'speak':
         if (!ex.target || !ex.en) errors.push(`${at}: speak needs target and en`)
         break
+      case 'open':
+        if (!ex.prompt) errors.push(`${at}: open needs a prompt`)
+        if (ex.minWords !== undefined && (!Number.isInteger(ex.minWords) || ex.minWords < 1)) errors.push(`${at}: open minWords invalid`)
+        break
       default:
         errors.push(`${at}: unknown type "${ex.type}"`)
     }

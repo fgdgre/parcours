@@ -75,3 +75,4 @@ export type Exercise =
   | { type: 'conjugate'; verb: string; pronoun: string; tense: string; answer: string[] }
   | { type: 'dictation'; ttsText: string; answer: string[] }
   | { type: 'speak'; target: string; en: string }
+  | { type: 'open'; prompt: string; minWords?: number; hint?: string }

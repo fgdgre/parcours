@@ -1,0 +1,20 @@
+[
+  {
+    "type": "open",
+    "prompt": "Describe your work in 5–6 sentences: what you are, what you do each day, one thing you like and one thing that's difficult.",
+    "minWords": 25,
+    "hint": "je suis développeur…, chaque jour je…, j'aime…, c'est difficile de…"
+  },
+  {
+    "type": "open",
+    "prompt": "Describe your flat (or dream flat): the rooms, what there is and isn't, why you like it.",
+    "minWords": 20,
+    "hint": "il y a…, il n'y a pas de…, la cuisine…, j'aime… parce que…"
+  },
+  {
+    "type": "open",
+    "prompt": "Write a message to a colleague: you need their help with a project, explain what doesn't work, propose a meeting.",
+    "minWords": 20,
+    "hint": "j'ai besoin de…, ça ne marche pas…, on peut faire une réunion… ?"
+  }
+]

@@ -384,6 +384,13 @@
         "optional": true
       },
       {
+        "id": "writing-ch1",
+        "type": "exercises",
+        "title": "Writing · say it in your own words",
+        "exerciseFile": "writing-ch1",
+        "durationMin": 10
+      },
+      {
         "id": "exam-ch1",
         "type": "exam",
         "title": "Final exam · Chapter 1",
@@ -810,6 +817,13 @@
         "exerciseFile": "challenge-ch2-sprint",
         "durationMin": 8,
         "optional": true
+      },
+      {
+        "id": "writing-ch2",
+        "type": "exercises",
+        "title": "Writing · say it in your own words",
+        "exerciseFile": "writing-ch2",
+        "durationMin": 10
       },
       {
         "id": "exam-ch2",
@@ -1281,6 +1295,13 @@
         "exerciseFile": "challenge-ch3-sprint",
         "durationMin": 8,
         "optional": true
+      },
+      {
+        "id": "writing-ch3",
+        "type": "exercises",
+        "title": "Writing · say it in your own words",
+        "exerciseFile": "writing-ch3",
+        "durationMin": 10
       },
       {
         "id": "exam-ch3",
@@ -1776,6 +1797,13 @@
         "optional": true
       },
       {
+        "id": "writing-ch4",
+        "type": "exercises",
+        "title": "Writing · say it in your own words",
+        "exerciseFile": "writing-ch4",
+        "durationMin": 10
+      },
+      {
         "id": "exam-ch4",
         "type": "exam",
         "title": "Final exam · Chapter 4",
@@ -2268,6 +2296,13 @@
         "optional": true
       },
       {
+        "id": "writing-ch5",
+        "type": "exercises",
+        "title": "Writing · say it in your own words",
+        "exerciseFile": "writing-ch5",
+        "durationMin": 10
+      },
+      {
         "id": "exam-ch5",
         "type": "exam",
         "title": "Final exam · Chapter 5",
@@ -2609,6 +2644,13 @@
         "optional": true
       },
       {
+        "id": "writing-ch6",
+        "type": "exercises",
+        "title": "Writing · say it in your own words",
+        "exerciseFile": "writing-ch6",
+        "durationMin": 10
+      },
+      {
         "id": "exam-ch6",
         "type": "exam",
         "title": "Final exam · Chapter 6",
@@ -2936,6 +2978,13 @@
         "exerciseFile": "challenge-ch7-reading",
         "durationMin": 10,
         "optional": true
+      },
+      {
+        "id": "writing-ch7",
+        "type": "exercises",
+        "title": "Writing · say it in your own words",
+        "exerciseFile": "writing-ch7",
+        "durationMin": 10
       },
       {
         "id": "exam-ch7",

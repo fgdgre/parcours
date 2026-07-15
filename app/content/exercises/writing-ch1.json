@@ -1,0 +1,20 @@
+[
+  {
+    "type": "open",
+    "prompt": "Introduce yourself in 3–4 sentences: greet, say who you are, where you are, and one thing you want.",
+    "minWords": 12,
+    "hint": "Bonjour… je suis… je suis ici… je veux…"
+  },
+  {
+    "type": "open",
+    "prompt": "Write a tiny café dialogue (both sides): greet, order something politely, ask the price, say thanks and goodbye.",
+    "minWords": 15,
+    "hint": "je voudrais…, c'est combien ?, merci beaucoup, au revoir."
+  },
+  {
+    "type": "open",
+    "prompt": "Write 3 sentences about what you want to do today and one thing that's not possible.",
+    "minWords": 12,
+    "hint": "je veux + infinitive; ce n'est pas possible…"
+  }
+]

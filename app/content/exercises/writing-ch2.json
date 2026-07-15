@@ -1,0 +1,20 @@
+[
+  {
+    "type": "open",
+    "prompt": "Describe your week in 4–5 sentences: which days you work, what you do in the morning and evening, what you like.",
+    "minWords": 20,
+    "hint": "le lundi…, le matin…, le soir…, j'aime le/la…"
+  },
+  {
+    "type": "open",
+    "prompt": "Text a friend: suggest eating together, propose a day and time, ask what they want to do after.",
+    "minWords": 15,
+    "hint": "on va manger ensemble ?, qu'est-ce que tu veux faire… ?"
+  },
+  {
+    "type": "open",
+    "prompt": "Write 4 questions you could ask a new colleague (formal — use vous).",
+    "minWords": 15,
+    "hint": "vous voulez… ?, où allez-vous… ?, est-ce que vous… ?"
+  }
+]

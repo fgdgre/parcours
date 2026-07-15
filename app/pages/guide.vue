@@ -50,7 +50,12 @@
 
     <div class="card stack">
       <h2>🎓 Final exams</h2>
-      <p>Every chapter ends with an exam: <strong>12 questions sampled fresh from the whole chapter</strong> (grammar + vocabulary), pass mark 80%. Lessons after the exam stay locked until you pass. Failing is part of the design — review, retake, and the questions will be different. Your best score is kept.</p>
+      <p>Every chapter ends with an exam: <strong>12 questions sampled fresh from the whole chapter</strong> (grammar + vocabulary) <strong>plus one open writing task</strong>, pass mark 80%. Lessons after the exam stay locked until you pass. Failing is part of the design — review, retake, and the questions will be different. Your best score is kept.</p>
+    </div>
+
+    <div class="card stack">
+      <h2>📝 Writing & “Copy to check”</h2>
+      <p>Each chapter has a Writing lesson (and every exam ends with one writing task). The app doesn't grade free writing — instead, tap <strong>“📋 Copy to check”</strong>: your text gets packed with a tutor briefing and copied to the clipboard. Paste it into a <strong>new Claude chat</strong> — you'll get corrections, a natural rewrite, and a follow-up question in French to keep the conversation going. That conversation IS the real practice; don't skip it.</p>
     </div>
 
     <div class="card stack">

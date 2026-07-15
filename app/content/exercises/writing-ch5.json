@@ -1,0 +1,20 @@
+[
+  {
+    "type": "open",
+    "prompt": "Tell a mini story (5–6 sentences): where you went last weekend, with whom, what you did there, when you came home.",
+    "minWords": 25,
+    "hint": "je suis allé(e)…, on a…, nous sommes… — mix être and avoir pasts."
+  },
+  {
+    "type": "open",
+    "prompt": "Your Canada plan, in French: why you're learning French, what you have to do first, what you're going to do after.",
+    "minWords": 20,
+    "hint": "j'apprends le français pour…, d'abord il faut…, après je vais…"
+  },
+  {
+    "type": "open",
+    "prompt": "Write a short message cancelling a meeting: apologize, say you can't come, explain what happened (past), propose tomorrow.",
+    "minWords": 18,
+    "hint": "pardon…, je ne peux pas venir…, j'ai eu…, on peut… demain ?"
+  }
+]

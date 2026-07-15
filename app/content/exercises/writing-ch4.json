@@ -1,0 +1,20 @@
+[
+  {
+    "type": "open",
+    "prompt": "Write about yesterday in 4–5 sentences: what you did, what you ate, one thing you didn't do.",
+    "minWords": 20,
+    "hint": "j'ai travaillé…, j'ai mangé…, je n'ai pas eu le temps de…"
+  },
+  {
+    "type": "open",
+    "prompt": "Message a friend about a film or video you watched: what you saw, if you liked it, ask if they saw it.",
+    "minWords": 15,
+    "hint": "j'ai vu…, j'aime beaucoup…, tu as vu… ?"
+  },
+  {
+    "type": "open",
+    "prompt": "Write 4 questions in the past to ask a friend about their weekend.",
+    "minWords": 15,
+    "hint": "qu'est-ce que tu as fait… ?, tu as vu… ?, tu es… ? (careful: aller takes être!)"
+  }
+]

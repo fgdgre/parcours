@@ -1,0 +1,20 @@
+[
+  {
+    "type": "open",
+    "prompt": "Introduce a friend or family member: their name, where they live, what they do, one thing they want.",
+    "minWords": 15,
+    "hint": "il/elle s'appelle…, il/elle habite…, il/elle veut…"
+  },
+  {
+    "type": "open",
+    "prompt": "Write your to-do message for today: 3 things you have to do and 1 thing you mustn't forget.",
+    "minWords": 15,
+    "hint": "je dois…, il faut…, il ne faut pas oublier… (oublier = to forget)"
+  },
+  {
+    "type": "open",
+    "prompt": "You just arrived in a new city. Write 3–4 sentences: what you just did, what you can't find, and ask someone for help.",
+    "minWords": 18,
+    "hint": "je viens de…, je ne trouve pas…, vous pouvez m'aider ?"
+  }
+]

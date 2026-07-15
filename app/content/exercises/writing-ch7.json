@@ -1,0 +1,26 @@
+[
+  {
+    "type": "open",
+    "prompt": "Write a short formal message asking for an appointment: greet, say what you need, ask when it's possible, thank them.",
+    "minWords": 20,
+    "hint": "Bonjour, je voudrais un rendez-vous pour…, c'est possible… ?, merci beaucoup."
+  },
+  {
+    "type": "open",
+    "prompt": "Why are you learning French? Write 5–6 sentences with structure: first the reason, then what you do every day, finally your goal.",
+    "minWords": 25,
+    "hint": "j'apprends le français parce que…, d'abord…, ensuite…, enfin je veux…"
+  },
+  {
+    "type": "open",
+    "prompt": "You lost something important (passport? keys?). Write what happened, where you went, what you have to do now.",
+    "minWords": 20,
+    "hint": "j'ai perdu…, je suis allé(e)…, maintenant il faut…"
+  },
+  {
+    "type": "open",
+    "prompt": "Free writing: your life in five years, in French. Keep it simple — where you live, what you do, what you have.",
+    "minWords": 20,
+    "hint": "Dream in simple French: j'habite…, je travaille…, j'ai…, nous sommes…"
+  }
+]
