@@ -82,7 +82,7 @@ export function useSpeech() {
       }
       error.value = code === 'no-speech'
         ? "Didn't catch anything — try again, closer to the microphone."
-        : 'Speech recognition is blocked in this browser.'
+        : 'Speech recognition is blocked. iPhone: turn ON Settings → General → Keyboard → Enable Dictation, then use a Safari tab. Or just record yourself below.'
       listening.value = false
     }
     recognition.onend = () => {
