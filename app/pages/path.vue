@@ -37,7 +37,7 @@
 
 <script setup lang="ts">
 import type { Chapter, Lesson } from '~/types/content'
-import { curriculum, isOptional } from '~/content'
+import { curriculum, isOptional, programDays } from '~/content'
 
 const progress = useProgress()
 
@@ -64,39 +64,26 @@ function dayScore(lessons: Lesson[]): number | undefined {
   return Math.round(pcts.reduce((a, b) => a + b, 0) / pcts.length)
 }
 
-// Groups a chapter's lessons into ~25-minute study days (optional lessons ride
-// along with their day but don't count toward its minutes).
-function daysFor(ch: Chapter): Day[] {
-  const chunks: Lesson[][] = []
-  let cur: Lesson[] = []
-  let minutes = 0
-  for (const l of ch.lessons) {
-    const opt = isOptional(l)
-    if (!opt && minutes >= 25 && cur.some(x => !isOptional(x))) {
-      chunks.push(cur)
-      cur = []
-      minutes = 0
-    }
-    cur.push(l)
-    if (!opt) minutes += l.durationMin
-  }
-  if (cur.length > 0) chunks.push(cur)
+// Chapter days come from the shared program-day model (globally numbered,
+// same numbers the Today tab uses).
+const globalCurrentDay = computed(() =>
+  programDays.find(d => d.lessons.some(l => !isOptional(l) && !progress.isDone(l.id))),
+)
 
-  let currentFound = false
-  return chunks.map((lessons, i) => {
-    const req = lessons.filter(l => !isOptional(l))
-    const done = req.every(l => progress.isDone(l.id))
-    const current = !done && !currentFound
-    if (current) currentFound = true
-    return {
-      label: `Day ${i + 1}`,
-      lessons,
-      minutes: req.reduce((s, l) => s + l.durationMin, 0),
-      done,
-      current,
-      score: dayScore(lessons),
-    }
-  })
+function daysFor(ch: Chapter): Day[] {
+  return programDays
+    .filter(d => d.chapterId === ch.id)
+    .map((d) => {
+      const req = d.lessons.filter(l => !isOptional(l))
+      return {
+        label: `Day ${d.number}`,
+        lessons: d.lessons,
+        minutes: req.reduce((s, l) => s + l.durationMin, 0),
+        done: req.every(l => progress.isDone(l.id)),
+        current: d === globalCurrentDay.value,
+        score: dayScore(d.lessons),
+      }
+    })
 }
 
 const currentChapterId = computed(

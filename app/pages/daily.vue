@@ -8,10 +8,10 @@
     </button>
     <h1>Daily sentences</h1>
 
-    <div v-if="learned.length < 15" class="card stack">
+    <div v-if="learned.length < 10 || exercises.length === 0" class="card stack">
       <p class="muted">
         Daily sentences are built from words you've already learned.
-        Learn at least 15 words on the Path first — then fresh sentences appear here every day.
+        Learn a few more words on the Path — fresh sentences appear here every day.
       </p>
       <NuxtLink to="/path" class="btn btn-block">Go to Path</NuxtLink>
     </div>

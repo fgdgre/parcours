@@ -209,7 +209,8 @@ const trendMax = computed(() => Math.max(...last14.value.map(x => x.min)))
 
 const SKILLS = [
   { type: 'mc', label: 'Recognition (quiz)' },
-  { type: 'type', label: 'Translation (typing)' },
+  { type: 'type', label: 'Translation (word bank)' },
+  { type: 'spelling', label: 'Spelling (keyboard, strict accents)' },
   { type: 'conjugate', label: 'Conjugation' },
   { type: 'dictation', label: 'Listening (dictation)' },
   { type: 'speak', label: 'Speaking' },

@@ -14,8 +14,9 @@ Please review my writing below:
 2. Show the fully corrected version.
 3. Rewrite it once more the way a native would casually say it — staying within my grammar level.
 4. Give me ONE short tip to improve, and ONE follow-up question in simple French for me to answer, so we can keep practicing in this chat.
-5. Finally, rate my answer STRICTLY and honestly — do not inflate to be nice; I track these numbers to find my weak sides, so flattery hurts me. Judge against what a solid A1 learner should produce: grammar accuracy, spelling/accents, and naturalness. End with exactly one line in this format so I can record it:
+5. Finally, rate my answer STRICTLY and honestly — do not inflate to be nice; I track these numbers to find my weak sides, so flattery hurts me. Judge against what a solid A1 learner should produce: grammar accuracy, spelling/accents, and naturalness. End with exactly two lines in this format so I can record them in my app:
 RATING: NN/100
+NOTE: <one short line naming my main weakness in this answer>
 
 THE TASK: ${task}
 

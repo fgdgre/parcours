@@ -66,7 +66,7 @@ function componentFor(ex: Exercise) {
   }
 }
 
-function advance(correct?: boolean) {
+function advance(correct?: boolean, meta?: { skill?: string; skillCorrect?: boolean }) {
   const ex = current.value
   // 'open' writing is never auto-graded — it neither counts toward the
   // score nor appears in the mistake log.
@@ -74,10 +74,14 @@ function advance(correct?: boolean) {
     gradableCount.value += 1
     if (correct) correctCount.value += 1
     else missed.value.push(describe(ex))
-    const t = perType[ex.type] ?? { correct: 0, total: 0 }
+    // skill stats may differ from flow grading: keyboard answers count as
+    // 'spelling' and are judged with strict accents
+    const key = meta?.skill ?? ex.type
+    const skillCorrect = meta?.skillCorrect ?? correct
+    const t = perType[key] ?? { correct: 0, total: 0 }
     t.total += 1
-    if (correct) t.correct += 1
-    perType[ex.type] = t
+    if (skillCorrect) t.correct += 1
+    perType[key] = t
   }
   if (idx.value + 1 >= props.exercises.length) {
     progress.recordRun(perType)

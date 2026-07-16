@@ -28,6 +28,39 @@ export const lessonById: Record<string, Lesson> = Object.fromEntries(
 
 export const isOptional = (l: Lesson): boolean => l.type === 'exercises' && !!l.optional
 
+/** Splits a chapter into ~25-minute study days (optional lessons ride along uncounted). */
+export function lessonChunks(ch: Chapter): Lesson[][] {
+  const chunks: Lesson[][] = []
+  let cur: Lesson[] = []
+  let minutes = 0
+  for (const l of ch.lessons) {
+    const opt = isOptional(l)
+    if (!opt && minutes >= 25 && cur.some(x => !isOptional(x))) {
+      chunks.push(cur)
+      cur = []
+      minutes = 0
+    }
+    cur.push(l)
+    if (!opt) minutes += l.durationMin
+  }
+  if (cur.length > 0) chunks.push(cur)
+  return chunks
+}
+
+export interface ProgramDay {
+  number: number
+  chapterId: string
+  lessons: Lesson[]
+}
+
+/** The whole program as globally numbered study days. */
+export const programDays: ProgramDay[] = (() => {
+  let n = 0
+  return curriculum.flatMap(ch =>
+    lessonChunks(ch).map(lessons => ({ number: ++n, chapterId: ch.id, lessons })),
+  )
+})()
+
 /** All auto-gradable exercise items authored for a chapter — the exam sampling pool. */
 export function chapterExercisePool(ch: Chapter): Exercise[] {
   return ch.lessons

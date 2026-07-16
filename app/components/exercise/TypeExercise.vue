@@ -56,13 +56,15 @@ import WordBank from './WordBank.vue'
 const props = defineProps<{
   exercise: { type: 'type'; prompt: string; answer: string[]; hint?: string; passage?: string }
 }>()
-const emit = defineEmits<{ done: [correct: boolean] }>()
+const emit = defineEmits<{ done: [correct: boolean, meta?: { skill: string; skillCorrect: boolean }] }>()
 
 const progress = useProgress()
 const tts = useTts()
 const input = ref('')
 const submitted = ref(false)
 const correct = ref(false)
+const strictCorrect = ref(false)
+const accentSlip = ref(false)
 const inputEl = ref<HTMLInputElement>()
 const bankMode = ref(!progress.settings.preferKeyboard)
 
@@ -98,15 +100,27 @@ onMounted(() => {
 
 function submit() {
   if (!input.value.trim()) return
-  correct.value = matchAnswer(input.value, props.exercise.answer, {
-    strictAccents: progress.settings.strictAccents,
-  })
+  const lenient = matchAnswer(input.value, props.exercise.answer, { strictAccents: false })
+  strictCorrect.value = matchAnswer(input.value, props.exercise.answer, { strictAccents: true })
+  correct.value = progress.settings.strictAccents ? strictCorrect.value : lenient
+  // keyboard-typed answers are real spelling tests — surface accent slips
+  accentSlip.value = !bankMode.value && lenient && !strictCorrect.value
+  if (accentSlip.value) {
+    progress.logMistakes([{ q: `Accents: ${props.exercise.prompt}`, a: props.exercise.answer[0]! }])
+  }
   submitted.value = true
+}
+
+function finish() {
+  emit('done', correct.value, {
+    skill: bankMode.value ? 'type' : 'spelling',
+    skillCorrect: bankMode.value ? correct.value : strictCorrect.value,
+  })
 }
 
 function onEnter() {
   if (!submitted.value) submit()
-  else emit('done', correct.value)
+  else finish()
 }
 </script>
 

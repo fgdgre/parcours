@@ -26,6 +26,15 @@
       The AI ends with a strict <strong>RATING: NN/100</strong> — record it below.
     </p>
 
+    <div v-if="hasCopied" class="stack rating-block">
+      <input
+        v-model="note"
+        class="input"
+        type="text"
+        :disabled="ratingSaved"
+        placeholder="AI's main feedback in one line (optional)"
+      >
+    </div>
     <div v-if="hasCopied" class="rating row">
       <label class="small muted" for="ai-rating">AI rating:</label>
       <input
@@ -76,10 +85,11 @@ const ratingValid = computed(() =>
 )
 
 const stored = ref(false)
+const note = ref('')
 
 function saveRating() {
   if (!ratingValid.value) return
-  progress.addWriting(props.exercise.prompt, text.value.trim(), rating.value!)
+  progress.addWriting(props.exercise.prompt, text.value.trim(), rating.value!, note.value.trim())
   ratingSaved.value = true
   stored.value = true
 }
@@ -87,7 +97,7 @@ function saveRating() {
 function finish() {
   // keep the text for analytics even when no rating was recorded
   if (!stored.value && text.value.trim().length > 0) {
-    progress.addWriting(props.exercise.prompt, text.value.trim(), null)
+    progress.addWriting(props.exercise.prompt, text.value.trim(), null, note.value.trim())
     stored.value = true
   }
   emit('done', true)

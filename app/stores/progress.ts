@@ -9,6 +9,7 @@ export interface Settings {
   strictAccents: boolean
   ttsRate: number
   preferKeyboard: boolean
+  lastBackupAt: string
 }
 
 export interface LessonScore {
@@ -27,6 +28,7 @@ export interface WritingRating {
   task: string
   score: number | null
   text: string
+  note?: string
   date: string
 }
 
@@ -65,7 +67,7 @@ export interface PersistedState {
 }
 
 export function defaultSettings(): Settings {
-  return { strictAccents: false, ttsRate: 0.95, preferKeyboard: false }
+  return { strictAccents: false, ttsRate: 0.95, preferKeyboard: false, lastBackupAt: '' }
 }
 
 export function serializeState(
@@ -241,11 +243,12 @@ export const useProgress = defineStore('progress', () => {
     if (mistakes.value.length > 100) mistakes.value.length = 100
   }
 
-  function addWriting(task: string, text: string, score: number | null) {
+  function addWriting(task: string, text: string, score: number | null, note = '') {
     writingRatings.value.unshift({
       task: task.slice(0, 120),
       text: text.slice(0, 1500),
       score,
+      note: note.slice(0, 300) || undefined,
       date: todayIso(),
     })
     if (writingRatings.value.length > 100) writingRatings.value.length = 100
@@ -271,6 +274,7 @@ export const useProgress = defineStore('progress', () => {
   }
 
   function exportBackup(): string {
+    settings.value.lastBackupAt = todayIso()
     return serializeState({
       completedLessons: completedLessons.value,
       srs: srs.value,

@@ -71,6 +71,17 @@ export function dailySentences(learned: Card[], seed: string, count = 5, opts: G
   const timeWords = learned.filter(c => ['maintenant', 'demain', "aujourd'hui"].includes(c.fr))
 
   const templates: (() => GenSentence | null)[] = [
+    // Fallback that works from day 1: translate a learned card's example sentence.
+    () => {
+      const withExamples = learned.filter(c => c.exFr && c.exEn)
+      if (withExamples.length === 0) return null
+      const c = pick(rnd, withExamples)
+      return {
+        type: 'type',
+        prompt: `Translate: “${c.exEn}”`,
+        answer: [c.exFr!],
+      }
+    },
     () => {
       if (infinitives.length === 0) return null
       const v = pick(rnd, infinitives)

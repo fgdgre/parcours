@@ -33,6 +33,19 @@
     </div>
 
     <div class="card stack">
+      <h2>´ Accents in 60 seconds</h2>
+      <p>French uses the same 26 letters as English — accents are <strong>marks on top that change the sound</strong>, not separate alphabet letters (unlike Ukrainian і/ї). The ones that matter:</p>
+      <p>
+        <strong>é</strong> (accent aigu) — closed “ay” sound: caf<strong>é</strong>, parl<strong>é</strong> ·
+        <strong>è / ê</strong> (grave/circonflexe) — open “eh” like in “bed”: tr<strong>è</strong>s, f<strong>ê</strong>te ·
+        plain <strong>e</strong> — often a weak “uh” or silent: l<strong>e</strong>, tabl<strong>e</strong> ·
+        <strong>ç</strong> — makes c sound like s: fran<strong>ç</strong>ais ·
+        <strong>à / ù</strong> — same sound, they distinguish words in writing (a = has, à = to).
+      </p>
+      <p class="muted small">Accents are part of correct spelling — “cafe” is a mistake in an exam. On iPhone, long-press a letter to pick its accented forms. The app grades leniently while you learn, but tracks strict-accent spelling as its own skill.</p>
+    </div>
+
+    <div class="card stack">
       <h2>🃏 Cards (SRS)</h2>
       <p>Tap to reveal, then grade <em>honestly</em>: <strong>Again</strong> = didn't know · <strong>Hard</strong> = barely · <strong>Good</strong> = knew with effort · <strong>Easy</strong> = instant. Honest grading is what makes the algorithm work.</p>
       <p class="muted small">Reviews are the highest-value 5 minutes of the day. Do them even on days you skip everything else.</p>
@@ -82,7 +95,8 @@
 
     <div class="card stack">
       <h2>💾 Your data</h2>
-      <p>Progress lives only in this browser. Once a week: <strong>Progress → Export backup</strong>. That file restores everything on any device.</p>
+      <p>Progress lives only in this browser. Once a week: <strong>Progress → Export backup</strong>. That file restores everything on any device — the Today screen reminds you when a backup is overdue.</p>
+      <p class="muted small">On iPhone, add the app to your Home Screen from <strong>Safari</strong> — installed apps are protected from Safari's automatic storage cleanup (a plain browser tab left unvisited for weeks isn't). Using the app daily also keeps storage safe; the backup file is the belt to that suspenders.</p>
     </div>
   </div>
 </template>

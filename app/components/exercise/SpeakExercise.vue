@@ -7,7 +7,7 @@
       <button class="btn" @click="hear">🔊 Hear it</button>
     </div>
 
-    <template v-if="speech.supported.value">
+    <template v-if="speech.supported.value && !speech.failed.value">
       <button
         class="btn btn-block"
         :class="{ 'btn-primary': !heard, listening: speech.listening.value }"
@@ -29,7 +29,9 @@
 
     <template v-else>
       <p class="muted small">
-        Speech recognition isn't available in this browser. Record yourself and compare with the model audio.
+        Speech recognition isn't available in this browser — on iPhone, only Safari can use it
+        (Chrome and other browsers are blocked by Apple). Record yourself instead and compare
+        with the model audio, or open the app in Safari for automatic checking.
       </p>
       <button class="btn btn-block" @click="toggleRecording">
         {{ recording ? '■ Stop recording' : '⏺ Record yourself' }}

@@ -14,6 +14,9 @@ export function useSpeech() {
   const supported = ref(false)
   const listening = ref(false)
   const error = ref<string | null>(null)
+  /** Recognition exists but doesn't actually work (e.g. Chrome/Firefox on iOS,
+   * where Apple only lets Safari use the speech engine). */
+  const failed = ref(false)
   let recognition: SpeechRecognitionLike | null = null
 
   onMounted(() => {
@@ -39,9 +42,14 @@ export function useSpeech() {
       onResult(transcript)
     }
     recognition.onerror = (e: any) => {
-      error.value = e?.error === 'not-allowed'
-        ? 'Microphone access was denied.'
-        : `Recognition error: ${e?.error ?? 'unknown'}`
+      const code = e?.error ?? 'unknown'
+      if (['not-allowed', 'service-not-allowed', 'audio-capture', 'language-not-supported'].includes(code)) {
+        // Recognition is effectively unusable in this browser — fall back.
+        failed.value = true
+      }
+      error.value = code === 'not-allowed' || code === 'service-not-allowed'
+        ? 'Speech recognition is blocked in this browser.'
+        : `Recognition error: ${code}`
       listening.value = false
     }
     recognition.onend = () => {
@@ -58,5 +66,5 @@ export function useSpeech() {
     recognition?.stop()
   }
 
-  return { supported, listening, error, start, stop }
+  return { supported, listening, error, failed, start, stop }
 }

@@ -8,12 +8,47 @@
       <NuxtLink to="/guide" class="muted small guide-link">How this works →</NuxtLink>
     </header>
 
+    <NuxtLink v-if="backupOverdue" to="/progress" class="card backup-nudge spread">
+      <span class="small">💾 It's been a while — export a backup of your progress.</span>
+      <span class="chip">Backup →</span>
+    </NuxtLink>
+
+    <!-- 1. Learn new things first -->
+    <template v-if="dayFinishedToday">
+      <div class="card stack">
+        <h2>✓ Day {{ finishedDayNumber }} complete</h2>
+        <p class="muted">
+          That's today's plan done. Practice below if you want more —
+          or start Day {{ finishedDayNumber + 1 }} early from the Path.
+        </p>
+      </div>
+    </template>
+
+    <template v-else-if="currentDay && session.length > 0">
+      <div class="spread">
+        <h2>Day {{ currentDay.number }} <span class="muted small">of {{ programDays.length }}</span></h2>
+        <span class="muted small">~{{ totalMin }} min left</span>
+      </div>
+      <LessonCard v-for="l in session" :key="l.id" :lesson="l" />
+      <NuxtLink :to="`/lesson/${session[0]!.id}`" class="btn btn-primary btn-block">
+        {{ dayStarted ? 'Continue' : 'Start' }}
+      </NuxtLink>
+    </template>
+
+    <div v-else class="card">
+      <h2>All caught up</h2>
+      <p class="muted">Every lesson on the path is done. Practice below, or revisit anything from the Path tab.</p>
+    </div>
+
+    <!-- 2. Then use what you learned -->
+    <h2 class="practice-head">Practice what you learned</h2>
+
     <NuxtLink v-if="progress.dueIds.length > 0" to="/cards" class="card due spread">
       <span><strong>{{ progress.dueIds.length }}</strong> card{{ progress.dueIds.length === 1 ? '' : 's' }} to review</span>
       <span class="chip">Review →</span>
     </NuxtLink>
 
-    <NuxtLink v-if="progress.wordsSeen >= 15" to="/daily" class="card spread" :class="{ 'daily-done': dailyDone }">
+    <NuxtLink v-if="progress.wordsSeen >= 10" to="/daily" class="card spread" :class="{ 'daily-done': dailyDone }">
       <span>✍️ Daily sentences <span v-if="dailyDone" class="done-check">✓</span></span>
       <span class="chip">{{ dailyDone ? 'again →' : '5 fresh →' }}</span>
     </NuxtLink>
@@ -31,25 +66,11 @@
         <span class="small" :class="w.done ? 'done-check' : 'muted'">{{ w.done ? '✓ done' : w.sub }}</span>
       </NuxtLink>
     </div>
-
-    <template v-if="session.length > 0">
-      <div class="spread">
-        <h2>Your session</h2>
-        <span class="muted small">~{{ totalMin }} min</span>
-      </div>
-      <LessonCard v-for="l in session" :key="l.id" :lesson="l" />
-      <NuxtLink :to="`/lesson/${session[0]!.id}`" class="btn btn-primary btn-block">Start</NuxtLink>
-    </template>
-
-    <div v-else class="card">
-      <h2>All caught up</h2>
-      <p class="muted">Every lesson on the path is done. Review your cards, or revisit anything from the Path tab.</p>
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { allLessons, isOptional } from '~/content'
+import { isOptional, programDays } from '~/content'
 import { todayIso } from '~/utils/srs'
 
 const progress = useProgress()
@@ -59,18 +80,39 @@ const dateLabel = new Date().toLocaleDateString('en-GB', {
   weekday: 'long', day: 'numeric', month: 'long',
 })
 
-const session = computed(() => {
-  const incomplete = allLessons.filter(l => !progress.isDone(l.id) && !isOptional(l) && !isLocked(l.id))
-  const picked = []
-  let minutes = 0
-  for (const lesson of incomplete) {
-    if (picked.length >= 4) break
-    if (picked.length > 0 && minutes + lesson.durationMin > 25) break
-    picked.push(lesson)
-    minutes += lesson.durationMin
-  }
-  return picked
+const requiredOf = (lessons: { id: string }[]) =>
+  (lessons as any[]).filter(l => !isOptional(l))
+
+/** First day that still has an incomplete required lesson. */
+const currentDay = computed(() =>
+  programDays.find(d => requiredOf(d.lessons).some(l => !progress.isDone(l.id))),
+)
+
+/** The day just before the current one — used to detect "finished today". */
+const previousDay = computed(() => {
+  const idx = currentDay.value ? programDays.indexOf(currentDay.value) : programDays.length
+  return idx > 0 ? programDays[idx - 1] : undefined
 })
+
+/** True when the most recently completed day was finished TODAY — then Today rests. */
+const dayFinishedToday = computed(() => {
+  const prev = previousDay.value
+  if (!prev) return false
+  const dates = requiredOf(prev.lessons).map(l => progress.completedLessons[l.id])
+  return dates.length > 0 && dates.every(Boolean) && dates.some(d => d === todayIso())
+})
+
+const finishedDayNumber = computed(() => previousDay.value?.number ?? 0)
+
+const session = computed(() =>
+  currentDay.value
+    ? requiredOf(currentDay.value.lessons).filter(l => !progress.isDone(l.id) && !isLocked(l.id))
+    : [],
+)
+
+const dayStarted = computed(() =>
+  currentDay.value ? requiredOf(currentDay.value.lessons).some(l => progress.isDone(l.id)) : false,
+)
 
 const totalMin = computed(() => session.value.reduce((s, l) => s + l.durationMin, 0))
 
@@ -81,6 +123,14 @@ const workouts = computed(() => ([
   { kind: 'writing', icon: '📝', label: 'Writing', sub: '1 task' },
   { kind: 'speaking', icon: '🎙', label: 'Speaking', sub: '5 phrases' },
 ].map(w => ({ ...w, done: progress.isDone(`workout-${w.kind}-${todayIso()}`) }))))
+
+const backupOverdue = computed(() => {
+  if (progress.wordsSeen === 0) return false
+  const last = progress.settings.lastBackupAt
+  if (!last) return Object.keys(progress.completedLessons).length >= 15
+  const days = (new Date(todayIso()).getTime() - new Date(last).getTime()) / 86400000
+  return days >= 7
+})
 </script>
 
 <style scoped>
@@ -88,7 +138,8 @@ const workouts = computed(() => ([
 .due { border-color: var(--accent); }
 .daily-done { opacity: 0.7; }
 .done-check { color: var(--ok); font-weight: 700; }
-.guide-link { flex-shrink: 0; padding-top: 6px; }
+.practice-head { margin-top: 6px; }
+.backup-nudge { border-color: var(--warn); }
 .workouts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .workout {
   display: flex;
