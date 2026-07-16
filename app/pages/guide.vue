@@ -54,6 +54,7 @@
     <div class="card stack">
       <h2>✏️ Practice, dictation, speaking</h2>
       <p><strong>Practice:</strong> start with the word bank; switch to keyboard when it feels easy — typing is harder and teaches spelling. <strong>Dictation:</strong> play up to 3 times before typing. <strong>Speaking:</strong> any quiet corner, phone near your mouth; the app checks whether a French speech engine understands you. In public? Skip guilt-free and reopen the lesson later — everything is repeatable.</p>
+      <p class="muted small"><strong>iPhone note:</strong> Apple only allows automatic speech checking in a regular Safari tab — not in Chrome, and not inside installed home-screen apps. Everywhere else the app switches to record-and-compare: record yourself, play it back next to 🔊 Hear it, and judge by ear (surprisingly effective — trained listening is half of pronunciation). Once it detects the block, it goes straight to the recorder and stops bothering you.</p>
     </div>
 
     <div class="card stack">

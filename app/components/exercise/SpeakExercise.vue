@@ -16,6 +16,9 @@
         {{ speech.listening.value ? '● Listening…' : heard ? '🎙 Try again' : '🎙 Speak' }}
       </button>
       <p v-if="speech.error.value" class="feedback-err small">{{ speech.error.value }}</p>
+      <button class="btn switch-btn" @click="speech.markFailed()">
+        Recognition not working? Record yourself instead →
+      </button>
       <div v-if="heard" class="card">
         <div class="diff">
           <span v-for="(w, i) in diff" :key="i" class="chip word" :class="w.status">{{ w.word }}</span>
@@ -29,14 +32,20 @@
 
     <template v-else>
       <p class="muted small">
-        Speech recognition isn't available in this browser — on iPhone, only Safari can use it
-        (Chrome and other browsers are blocked by Apple). Record yourself instead and compare
-        with the model audio, or open the app in Safari for automatic checking.
+        Recording mode: tap record, say the phrase, then compare your playback against 🔊 Hear it.
+        Your own ear catching the difference IS the exercise.
       </p>
-      <button class="btn btn-block" @click="toggleRecording">
+      <p class="muted small">
+        (Automatic checking is blocked here — on iPhone, Apple only allows it in a regular Safari tab,
+        not in Chrome and not inside installed home-screen apps.)
+      </p>
+      <button class="btn btn-block" :class="{ 'btn-primary': !recordingUrl }" @click="toggleRecording">
         {{ recording ? '■ Stop recording' : '⏺ Record yourself' }}
       </button>
       <audio v-if="recordingUrl" :src="recordingUrl" controls class="playback" />
+      <button v-if="speech.supported.value" class="btn switch-btn" @click="speech.retryRecognition()">
+        Try automatic recognition again
+      </button>
     </template>
 
     <button v-if="attempted" class="btn btn-primary btn-block" @click="$emit('done', passed)">Continue</button>
@@ -110,6 +119,15 @@ onUnmounted(() => {
 .target { font-size: 1.35rem; font-weight: 650; margin-bottom: 2px; }
 .target-card { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
 .listening { border-color: var(--err); color: var(--err); }
+.switch-btn {
+  min-height: 36px;
+  padding: 4px 10px;
+  align-self: flex-start;
+  border: 0;
+  background: none;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
 .diff { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
 .word.ok { background: var(--ok-soft); color: var(--ok); }
 .word.near { background: var(--warn-soft); color: var(--warn); }
