@@ -6,7 +6,9 @@
     "tense": "present",
     "answer": [
       "suis"
-    ]
+    ],
+    "hint": "être = to be (irregular — memorize)",
+    "explain": "être: je suis, tu es, il/elle est. Fully irregular — this trio just has to live in your fingers."
   },
   {
     "type": "conjugate",
@@ -15,7 +17,9 @@
     "tense": "present",
     "answer": [
       "es"
-    ]
+    ],
+    "hint": "être = to be (irregular — memorize)",
+    "explain": "être: je suis, tu es, il/elle est. Fully irregular — this trio just has to live in your fingers."
   },
   {
     "type": "conjugate",
@@ -24,7 +28,9 @@
     "tense": "present",
     "answer": [
       "est"
-    ]
+    ],
+    "hint": "être = to be (irregular — memorize)",
+    "explain": "être: je suis, tu es, il/elle est. Fully irregular — this trio just has to live in your fingers."
   },
   {
     "type": "type",
@@ -43,7 +49,9 @@
     "answer": [
       "ai",
       "j'ai"
-    ]
+    ],
+    "hint": "avoir = to have (irregular)",
+    "explain": "avoir: j'ai, tu as, il/elle a. Irregular like être — the two most-used verbs in French."
   },
   {
     "type": "conjugate",
@@ -52,7 +60,9 @@
     "tense": "present",
     "answer": [
       "as"
-    ]
+    ],
+    "hint": "avoir = to have (irregular)",
+    "explain": "avoir: j'ai, tu as, il/elle a. Irregular like être — the two most-used verbs in French."
   },
   {
     "type": "type",
@@ -60,7 +70,7 @@
     "answer": [
       "j'ai une question"
     ],
-    "hint": "question is feminine → une."
+    "hint": "question is feminine → une. une question = a question (cognate)."
   },
   {
     "type": "type",
@@ -69,7 +79,7 @@
       "il y a un problème",
       "il y a un probleme"
     ],
-    "hint": "il y a = there is / there are."
+    "hint": "il y a = there is / there are. un problème = a problem (cognate)."
   },
   {
     "type": "type",
@@ -80,7 +90,7 @@
       "je suis pas ici demain",
       "je suis pas là demain"
     ],
-    "hint": "ne … pas around “suis”."
+    "hint": "ne … pas around “suis”. demain = tomorrow."
   },
   {
     "type": "open",

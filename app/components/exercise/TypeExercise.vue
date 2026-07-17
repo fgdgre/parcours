@@ -39,22 +39,31 @@
       <div :class="correct ? 'feedback-ok' : 'feedback-err'">
         <strong>{{ correct ? 'Correct.' : 'Not quite.' }}</strong>
         Answer: <em>{{ exercise.answer[0] }}</em>
+        <span v-if="exercise.explain" class="explain-text">{{ exercise.explain }}</span>
+      </div>
+      <div v-if="accentSlip" class="accent-note small">
+        ⚠️ Right word, wrong accents — it's <em>{{ exercise.answer[0] }}</em>. Accents change the sound; this counts against your Spelling stat.
       </div>
       <button class="btn tts-btn" @click="tts.speak(exercise.answer[0]!, progress.settings.ttsRate)">
         🔊 Hear it
       </button>
-      <button class="btn btn-primary btn-block" @click="$emit('done', correct)">Continue</button>
+      <button class="btn tts-btn" @click="explainIt">
+        {{ explained ? '✓ Copied — paste into a Claude chat' : '🤔 Explain this to me (AI)' }}
+      </button>
+      <button class="btn btn-primary btn-block" @click="finish">Continue</button>
     </template>
   </div>
 </template>
 
 <script setup lang="ts">
 import { matchAnswer, normalizeFr } from '~/utils/grading'
+import { buildExplainPrompt } from '~/utils/reviewPrompt'
+import { copyText } from '~/utils/clipboard'
 import { cardsById } from '~/content'
 import WordBank from './WordBank.vue'
 
 const props = defineProps<{
-  exercise: { type: 'type'; prompt: string; answer: string[]; hint?: string; passage?: string }
+  exercise: { type: 'type'; prompt: string; answer: string[]; hint?: string; passage?: string; explain?: string }
 }>()
 const emit = defineEmits<{ done: [correct: boolean, meta?: { skill: string; skillCorrect: boolean }] }>()
 
@@ -111,6 +120,13 @@ function submit() {
   submitted.value = true
 }
 
+const explained = ref(false)
+async function explainIt() {
+  await copyText(buildExplainPrompt(props.exercise.prompt, props.exercise.answer[0]!, input.value))
+  explained.value = true
+  setTimeout(() => { explained.value = false }, 3500)
+}
+
 function finish() {
   emit('done', correct.value, {
     skill: bankMode.value ? 'type' : 'spelling',
@@ -134,4 +150,6 @@ function onEnter() {
   font-size: 0.85rem;
   color: var(--muted);
 }
+.explain-text { display: block; margin-top: 4px; font-size: 0.85rem; }
+.accent-note { background: var(--warn-soft); color: var(--warn); border-radius: 12px; padding: 10px 14px; }
 </style>

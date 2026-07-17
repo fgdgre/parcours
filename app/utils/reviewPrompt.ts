@@ -24,6 +24,25 @@ MY ANSWER:
 ${answer}`
 }
 
+/**
+ * "Explain this to me" — packs one exercise into a prompt that teaches the
+ * rule behind the answer instead of just showing it.
+ */
+export function buildExplainPrompt(question: string, correct: string, mine?: string): string {
+  return `You are a friendly, precise French tutor. I am an absolute beginner (A0–A1), \
+native Ukrainian speaker with B2 English. I just did this exercise in my learning app and I want to \
+UNDERSTAND it, not memorize it.
+
+THE EXERCISE: ${question}
+CORRECT ANSWER: ${correct}${mine ? `\nMY ANSWER WAS: ${mine}` : ''}
+
+Please:
+1. Explain the rule or pattern behind the correct answer in simple English (2-4 sentences). If it's a verb form, show the pattern for je/tu/il so I see the system, not one form.
+2. ${mine ? 'Tell me exactly what my answer got wrong and why a French speaker would notice.' : 'Point out the most common mistake beginners make here.'}
+3. Give 3 more short examples using the same rule (French + English).
+4. Ask me ONE new question that tests the same rule — then wait for my answer and correct it.`
+}
+
 /** Packs the recent mistake log into a tutor prompt for pattern analysis + a mini-drill. */
 export function buildMistakesPrompt(mistakes: { q: string; a: string }[]): string {
   const list = mistakes

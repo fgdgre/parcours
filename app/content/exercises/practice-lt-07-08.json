@@ -6,7 +6,9 @@
     "tense": "present",
     "answer": [
       "parle"
-    ]
+    ],
+    "hint": "parler = to speak. Regular -er verb",
+    "explain": "Regular -er verbs: je parlE, tu parlES, il parlE. The endings are silent — all three sound exactly the same!"
   },
   {
     "type": "conjugate",
@@ -15,7 +17,9 @@
     "tense": "present",
     "answer": [
       "parles"
-    ]
+    ],
+    "hint": "parler = to speak. Regular -er verb",
+    "explain": "Regular -er verbs: je parlE, tu parlES, il parlE. The endings are silent — all three sound exactly the same!"
   },
   {
     "type": "conjugate",
@@ -24,7 +28,9 @@
     "tense": "present",
     "answer": [
       "aime"
-    ]
+    ],
+    "hint": "aimer = to like / to love. Regular -er, like parler",
+    "explain": "aimer: j'aime, tu aimes, il aime — regular -er endings (e, es, e), all silent."
   },
   {
     "type": "type",
@@ -34,7 +40,7 @@
       "je parle un peu le français",
       "je parle un peu de français"
     ],
-    "hint": "un peu = a little."
+    "hint": "un peu = a little. parler = to speak."
   },
   {
     "type": "conjugate",
@@ -43,7 +49,9 @@
     "tense": "present",
     "answer": [
       "peux"
-    ]
+    ],
+    "hint": "pouvoir = can / to be able. Same pattern as vouloir",
+    "explain": "pouvoir: je peuX, tu peuX, il peuT — the same x/x/t family as vouloir. Identical sound /pø/."
   },
   {
     "type": "type",
@@ -52,7 +60,7 @@
       "je ne peux pas venir aujourd'hui",
       "je peux pas venir aujourd'hui"
     ],
-    "hint": "ne … pas around “peux”, then the infinitive."
+    "hint": "ne … pas around “peux”, then the infinitive. venir = to come."
   },
   {
     "type": "type",
@@ -70,7 +78,7 @@
       "je vais travailler avec toi demain",
       "je vais travailler avec vous demain"
     ],
-    "hint": "aller + infinitive, avec toi = with you."
+    "hint": "aller + infinitive, avec toi = with you. travailler = to work."
   },
   {
     "type": "open",

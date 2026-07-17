@@ -6,7 +6,9 @@
     "tense": "present",
     "answer": [
       "voulez"
-    ]
+    ],
+    "hint": "vouloir = to want. Pattern: -x, -x, -t",
+    "explain": "vouloir: je veuX, tu veuX, il veuT. All three sound identical /vø/ — only the spelling changes."
   },
   {
     "type": "type",
@@ -33,7 +35,9 @@
     "tense": "present",
     "answer": [
       "pouvez"
-    ]
+    ],
+    "hint": "pouvoir = can / to be able. Same pattern as vouloir",
+    "explain": "pouvoir: je peuX, tu peuX, il peuT — the same x/x/t family as vouloir. Identical sound /pø/."
   },
   {
     "type": "type",
@@ -54,7 +58,9 @@
     "answer": [
       "êtes",
       "etes"
-    ]
+    ],
+    "hint": "être = to be (irregular — memorize)",
+    "explain": "être: je suis, tu es, il/elle est. Fully irregular — this trio just has to live in your fingers."
   },
   {
     "type": "type",

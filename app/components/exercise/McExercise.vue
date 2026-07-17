@@ -20,6 +20,9 @@
         <span v-if="exercise.explain">&nbsp;{{ exercise.explain }}</span>
       </div>
       <button class="btn tts-btn" @click="sayAnswer">🔊 Hear the answer</button>
+      <button class="btn explain-btn" @click="explainIt">
+        {{ explained ? '✓ Copied — paste into a Claude chat' : '🤔 Explain this to me (AI)' }}
+      </button>
       <button class="btn btn-primary btn-block" @click="$emit('done', correct)">Continue</button>
     </template>
   </div>
@@ -36,6 +39,18 @@ const tts = useTts()
 
 function sayAnswer() {
   tts.speak(props.exercise.options[props.exercise.answer]!, progress.settings.ttsRate)
+}
+
+import { buildExplainPrompt } from '~/utils/reviewPrompt'
+import { copyText } from '~/utils/clipboard'
+
+const explained = ref(false)
+async function explainIt() {
+  const correctText = shuffled.value.find(o => o.correct)!.text
+  const mine = picked.value !== null ? shuffled.value[picked.value]!.text : undefined
+  await copyText(buildExplainPrompt(props.exercise.prompt, correctText, mine))
+  explained.value = true
+  setTimeout(() => { explained.value = false }, 3500)
 }
 
 const shuffled = ref(
@@ -63,6 +78,7 @@ function optionClass(i: number) {
 
 <style scoped>
 .passage { font-size: 1.05rem; line-height: 1.7; font-style: normal; white-space: pre-line; }
+.explain-btn { min-height: 38px; padding: 6px 12px; align-self: flex-start; font-size: 0.85rem; color: var(--muted); }
 .tts-btn { min-height: 38px; padding: 6px 12px; align-self: flex-start; font-size: 0.85rem; color: var(--muted); }
 .option { justify-content: flex-start; text-align: left; }
 .opt-ok { border-color: var(--ok); background: var(--ok-soft); color: var(--ok); }

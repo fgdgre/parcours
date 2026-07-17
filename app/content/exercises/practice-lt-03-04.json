@@ -15,7 +15,9 @@
     "tense": "present",
     "answer": [
       "veux"
-    ]
+    ],
+    "hint": "vouloir = to want. Pattern: -x, -x, -t",
+    "explain": "vouloir: je veuX, tu veuX, il veuT. All three sound identical /vø/ — only the spelling changes."
   },
   {
     "type": "conjugate",
@@ -24,7 +26,9 @@
     "tense": "present",
     "answer": [
       "veut"
-    ]
+    ],
+    "hint": "vouloir = to want. Pattern: -x, -x, -t",
+    "explain": "vouloir: je veuX, tu veuX, il veuT. All three sound identical /vø/ — only the spelling changes."
   },
   {
     "type": "type",
@@ -42,7 +46,7 @@
       "est-ce que tu veux venir",
       "tu veux venir"
     ],
-    "hint": "est-ce que + normal sentence."
+    "hint": "est-ce que + normal sentence. venir = to come."
   },
   {
     "type": "type",
