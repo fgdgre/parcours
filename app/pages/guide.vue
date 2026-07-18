@@ -73,6 +73,11 @@
     </div>
 
     <div class="card stack">
+      <h2>🔁 Retry mistakes</h2>
+      <p>Every wrong answer is remembered and comes back for a retry <strong>2 days later</strong>, then again <strong>about a week after</strong> — a mistake only closes after two clean retries, and failing one reopens it. Today shows a card when retries are due; the full list (with a 📖 grammar link for each gap) lives at Progress → Retry tab. This is where gaps actually close — don't skip retry days.</p>
+    </div>
+
+    <div class="card stack">
       <h2>🎲 The Practice tab</h2>
       <p>Unlimited extra drills built from the words you've learned: meaning quizzes, translations, dictations, or a mix. Every run is freshly generated, so it never repeats — this is your "I want more practice today" button. Also perfect for silent sessions.</p>
       <p class="muted small">Tap 🔊 anywhere in exercises to hear the French — every answer can be listened to.</p>

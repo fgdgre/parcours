@@ -110,7 +110,10 @@
     </div>
 
     <template v-if="progress.mistakes.length > 0">
-      <h2>Recent mistakes</h2>
+      <div class="spread">
+        <h2>Recent mistakes</h2>
+        <NuxtLink to="/mistakes" class="chip">🔁 Retry tab →</NuxtLink>
+      </div>
       <div class="card stack">
         <div v-for="(m, i) in progress.mistakes.slice(0, 8)" :key="i" class="mistake">
           <p class="small q">{{ m.q }}</p>

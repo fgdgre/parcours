@@ -30,7 +30,7 @@ import OpenExercise from './OpenExercise.vue'
 interface RunResult {
   correct: number
   total: number
-  missed: { q: string; a: string }[]
+  missed: { q: string; a: string; ex?: Exercise }[]
 }
 
 const props = defineProps<{ exercises: Exercise[] }>()
@@ -40,7 +40,7 @@ const progress = useProgress()
 const idx = ref(0)
 const correctCount = ref(0)
 const gradableCount = ref(0)
-const missed = ref<{ q: string; a: string }[]>([])
+const missed = ref<{ q: string; a: string; ex?: Exercise }[]>([])
 const perType: Record<string, { correct: number; total: number }> = {}
 const current = computed(() => props.exercises[idx.value])
 
@@ -73,7 +73,7 @@ function advance(correct?: boolean, meta?: { skill?: string; skillCorrect?: bool
   if (ex && ex.type !== 'open') {
     gradableCount.value += 1
     if (correct) correctCount.value += 1
-    else missed.value.push(describe(ex))
+    else missed.value.push({ ...describe(ex), ex })
     // skill stats may differ from flow grading: keyboard answers count as
     // 'spelling' and are judged with strict accents
     const key = meta?.skill ?? ex.type

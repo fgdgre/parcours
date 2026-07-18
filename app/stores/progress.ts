@@ -1,6 +1,8 @@
 import { defineStore } from 'pinia'
 import type { Grade, SrsEntry } from '~/utils/srs'
 import { dueCardIds, freshEntry, gradeCard, todayIso } from '~/utils/srs'
+import type { MistakeEntry } from '~/utils/retries'
+import { applyRetry, isDue } from '~/utils/retries'
 
 export const SCHEMA_VERSION = 1
 export const STORAGE_KEY = 'parcours.v1'
@@ -18,11 +20,7 @@ export interface LessonScore {
   date: string
 }
 
-export interface Mistake {
-  q: string
-  a: string
-  date: string
-}
+export type Mistake = MistakeEntry
 
 export interface WritingRating {
   task: string
@@ -236,12 +234,30 @@ export const useProgress = defineStore('progress', () => {
     lessonScores.value[id] = { correct, total, date: todayIso() }
   }
 
-  function logMistakes(items: { q: string; a: string }[]) {
+  function logMistakes(items: { q: string; a: string; ex?: Mistake['ex'] }[]) {
     if (items.length === 0) return
     const today = todayIso()
-    mistakes.value.unshift(...items.map(m => ({ ...m, date: today })))
+    for (const item of items) {
+      const i = mistakes.value.findIndex(m => m.q === item.q)
+      if (i !== -1) {
+        // relapse of a known mistake: reopen it and reset its retry clock
+        const prev = mistakes.value[i]!
+        mistakes.value.splice(i, 1)
+        mistakes.value.unshift({ ...prev, ...item, date: today, r1: undefined, r2: undefined, closed: false })
+      } else {
+        mistakes.value.unshift({ ...item, date: today })
+      }
+    }
     if (mistakes.value.length > 100) mistakes.value.length = 100
   }
+
+  function recordRetry(q: string, ok: boolean) {
+    const i = mistakes.value.findIndex(m => m.q === q && !m.closed)
+    if (i === -1) return
+    mistakes.value[i] = applyRetry(mistakes.value[i]!, ok, todayIso())
+  }
+
+  const dueRetries = computed(() => mistakes.value.filter(m => isDue(m, todayIso())))
 
   function addWriting(task: string, text: string, score: number | null, note = '') {
     writingRatings.value.unshift({
@@ -318,6 +334,7 @@ export const useProgress = defineStore('progress', () => {
     writingRatings, examHistory, skillStats, dayStats, settings, loaded,
     load, isDone, markDone, unmarkDone,
     isIntroduced, introduceCard, reviewCard, recordExam, recordLesson, logMistakes,
+    recordRetry, dueRetries,
     addWriting, recordRun, addTime,
     dueIds, wordsSeen, wordsLearned,
     exportBackup, importBackup, resetAll,

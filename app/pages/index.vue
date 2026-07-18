@@ -48,6 +48,11 @@
       <span class="chip">Review →</span>
     </NuxtLink>
 
+    <NuxtLink v-if="progress.dueRetries.length > 0" to="/mistakes" class="card retry-due spread">
+      <span>🔁 <strong>{{ progress.dueRetries.length }}</strong> mistake{{ progress.dueRetries.length === 1 ? '' : 's' }} due for retry</span>
+      <span class="chip">Fix →</span>
+    </NuxtLink>
+
     <NuxtLink v-if="progress.wordsSeen >= 10" to="/daily" class="card spread" :class="{ 'daily-done': dailyDone }">
       <span>✍️ Daily sentences <span v-if="dailyDone" class="done-check">✓</span></span>
       <span class="chip">{{ dailyDone ? 'again →' : '5 fresh →' }}</span>
@@ -136,6 +141,7 @@ const backupOverdue = computed(() => {
 <style scoped>
 .guide-link { flex-shrink: 0; padding-top: 6px; }
 .due { border-color: var(--accent); }
+.retry-due { border-color: var(--warn); }
 .daily-done { opacity: 0.7; }
 .done-check { color: var(--ok); font-weight: 700; }
 .practice-head { margin-top: 6px; }
