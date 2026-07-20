@@ -10,6 +10,7 @@ export interface ExternalLesson {
   durationMin: number
   instructions: string
   teaches: string
+  optional?: boolean
 }
 
 export interface VocabLesson {
@@ -66,6 +67,8 @@ export interface Card {
   ipa?: string
   exFr?: string
   exEn?: string
+  exFr2?: string
+  exEn2?: string
   tags: string[]
 }
 

@@ -13,6 +13,10 @@
           {{ card.exFr }}<br>
           <span class="muted small">{{ card.exEn }}</span>
         </p>
+        <p v-if="card.exFr2" class="ex">
+          {{ card.exFr2 }}<br>
+          <span class="muted small">{{ card.exEn2 }}</span>
+        </p>
       </template>
       <p v-else class="muted small">Tap to reveal</p>
     </div>

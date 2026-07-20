@@ -22,9 +22,9 @@
     </div>
 
     <div class="card stack">
-      <h2>👄 Pronunciation lessons (Dylane)</h2>
-      <p>Repeat every sound after her, out loud, exaggerated — your mouth muscles are learning, not your eyes. One 5-minute video a day.</p>
-      <p class="muted small">Silent mode: mouth the shapes without voice (this genuinely works), redo aloud when you can.</p>
+      <h2>👄 Pronunciation (video course now optional)</h2>
+      <p>The video pronunciation course is <strong>optional</strong> — open one when a specific sound puzzles you. Your daily pronunciation training comes from Language Transfer (answer OUT LOUD, always), the 🔊 buttons on every card and exercise, and the speaking workouts.</p>
+      <p class="muted small"><strong>🎬 Cartoon lessons</strong> took the required slot: one episode of Peppa Pig / Trotro / T'choupi in French — no subtitles, no pausing, no translating. That's your listening gym, and listening needs more hours than any other skill.</p>
     </div>
 
     <div class="card stack">

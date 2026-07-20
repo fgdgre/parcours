@@ -1,52 +1,660 @@
 [
-  { "id": "v1-01", "fr": "bonjour", "en": "hello, good day", "ipa": "/bɔ̃.ʒuʁ/", "exFr": "Bonjour, ça va ?", "exEn": "Hello, how are you?", "tags": ["greetings"] },
-  { "id": "v1-02", "fr": "bonsoir", "en": "good evening", "ipa": "/bɔ̃.swaʁ/", "exFr": "Bonsoir, monsieur.", "exEn": "Good evening, sir.", "tags": ["greetings"] },
-  { "id": "v1-03", "fr": "salut", "en": "hi (informal)", "ipa": "/sa.ly/", "exFr": "Salut ! Ça va ?", "exEn": "Hi! How's it going?", "tags": ["greetings"] },
-  { "id": "v1-04", "fr": "au revoir", "en": "goodbye", "ipa": "/o ʁə.vwaʁ/", "exFr": "Au revoir et merci !", "exEn": "Goodbye and thank you!", "tags": ["greetings"] },
-  { "id": "v1-05", "fr": "merci", "en": "thank you", "ipa": "/mɛʁ.si/", "exFr": "Merci beaucoup !", "exEn": "Thank you very much!", "tags": ["politeness"] },
-  { "id": "v1-06", "fr": "s'il vous plaît", "en": "please (formal)", "ipa": "/sil vu plɛ/", "exFr": "Un café, s'il vous plaît.", "exEn": "A coffee, please.", "tags": ["politeness"] },
-  { "id": "v1-07", "fr": "pardon", "en": "sorry, excuse me", "ipa": "/paʁ.dɔ̃/", "exFr": "Pardon, je ne comprends pas.", "exEn": "Sorry, I don't understand.", "tags": ["politeness"] },
-  { "id": "v1-08", "fr": "oui", "en": "yes", "ipa": "/wi/", "exFr": "Oui, c'est possible.", "exEn": "Yes, it's possible.", "tags": ["core"] },
-  { "id": "v1-09", "fr": "non", "en": "no", "ipa": "/nɔ̃/", "exFr": "Non, merci.", "exEn": "No, thank you.", "tags": ["core"] },
-  { "id": "v1-10", "fr": "peut-être", "en": "maybe", "ipa": "/pø.tɛtʁ/", "exFr": "Peut-être demain.", "exEn": "Maybe tomorrow.", "tags": ["core"] },
-  { "id": "v1-11", "fr": "ça va", "en": "how are you / I'm fine", "ipa": "/sa va/", "exFr": "Ça va bien, merci.", "exEn": "I'm fine, thanks.", "tags": ["greetings"] },
-  { "id": "v1-12", "fr": "d'accord", "en": "okay, agreed", "ipa": "/da.kɔʁ/", "exFr": "D'accord, pas de problème.", "exEn": "Okay, no problem.", "tags": ["core"] },
-  { "id": "v1-13", "fr": "c'est", "en": "it is, this is", "ipa": "/sɛ/", "exFr": "C'est une bonne question.", "exEn": "It's a good question.", "tags": ["chunks"] },
-  { "id": "v1-14", "fr": "ce n'est pas", "en": "it is not", "ipa": "/sə nɛ pɑ/", "exFr": "Ce n'est pas possible.", "exEn": "It's not possible.", "tags": ["chunks", "negation"] },
-  { "id": "v1-15", "fr": "je suis", "en": "I am", "ipa": "/ʒə sɥi/", "exFr": "Je suis ici.", "exEn": "I am here.", "tags": ["chunks", "être"] },
-  { "id": "v1-16", "fr": "j'ai", "en": "I have", "ipa": "/ʒe/", "exFr": "J'ai une question.", "exEn": "I have a question.", "tags": ["chunks", "avoir"] },
-  { "id": "v1-17", "fr": "je vais", "en": "I go, I am going", "ipa": "/ʒə vɛ/", "exFr": "Je vais à Paris.", "exEn": "I'm going to Paris.", "tags": ["chunks", "aller"] },
-  { "id": "v1-18", "fr": "je veux", "en": "I want", "ipa": "/ʒə vø/", "exFr": "Je veux parler français.", "exEn": "I want to speak French.", "tags": ["chunks", "vouloir"] },
-  { "id": "v1-19", "fr": "je voudrais", "en": "I would like (polite)", "ipa": "/ʒə vu.dʁɛ/", "exFr": "Je voudrais un café.", "exEn": "I would like a coffee.", "tags": ["chunks", "politeness"] },
-  { "id": "v1-20", "fr": "je peux", "en": "I can", "ipa": "/ʒə pø/", "exFr": "Je peux venir demain.", "exEn": "I can come tomorrow.", "tags": ["chunks", "pouvoir"] },
-  { "id": "v1-21", "fr": "je sais", "en": "I know", "ipa": "/ʒə sɛ/", "exFr": "Je sais pourquoi.", "exEn": "I know why.", "tags": ["chunks", "savoir"] },
-  { "id": "v1-22", "fr": "il y a", "en": "there is, there are", "ipa": "/i.li.a/", "exFr": "Il y a un problème.", "exEn": "There is a problem.", "tags": ["chunks"] },
-  { "id": "v1-23", "fr": "être", "en": "to be", "ipa": "/ɛtʁ/", "exFr": "Je veux être ici.", "exEn": "I want to be here.", "tags": ["verbs"] },
-  { "id": "v1-24", "fr": "avoir", "en": "to have", "ipa": "/a.vwaʁ/", "exFr": "Je vais avoir le temps.", "exEn": "I'm going to have time.", "tags": ["verbs"] },
-  { "id": "v1-25", "fr": "aller", "en": "to go", "ipa": "/a.le/", "exFr": "Je veux aller au café.", "exEn": "I want to go to the café.", "tags": ["verbs"] },
-  { "id": "v1-26", "fr": "faire", "en": "to do, to make", "ipa": "/fɛʁ/", "exFr": "Je veux faire ça.", "exEn": "I want to do that.", "tags": ["verbs"] },
-  { "id": "v1-27", "fr": "vouloir", "en": "to want", "ipa": "/vu.lwaʁ/", "exFr": "Vouloir, c'est pouvoir.", "exEn": "Where there's a will, there's a way.", "tags": ["verbs"] },
-  { "id": "v1-28", "fr": "pouvoir", "en": "to be able to, can", "ipa": "/pu.vwaʁ/", "exFr": "Tu vas pouvoir venir ?", "exEn": "Will you be able to come?", "tags": ["verbs"] },
-  { "id": "v1-29", "fr": "parler", "en": "to speak", "ipa": "/paʁ.le/", "exFr": "Je veux parler avec toi.", "exEn": "I want to speak with you.", "tags": ["verbs"] },
-  { "id": "v1-30", "fr": "manger", "en": "to eat", "ipa": "/mɑ̃.ʒe/", "exFr": "Je vais manger maintenant.", "exEn": "I'm going to eat now.", "tags": ["verbs"] },
-  { "id": "v1-31", "fr": "qui", "en": "who", "ipa": "/ki/", "exFr": "Qui est là ?", "exEn": "Who is there?", "tags": ["questions"] },
-  { "id": "v1-32", "fr": "quoi", "en": "what", "ipa": "/kwa/", "exFr": "C'est quoi, ça ?", "exEn": "What is that?", "tags": ["questions"] },
-  { "id": "v1-33", "fr": "où", "en": "where", "ipa": "/u/", "exFr": "Où est la gare ?", "exEn": "Where is the station?", "tags": ["questions"] },
-  { "id": "v1-34", "fr": "quand", "en": "when", "ipa": "/kɑ̃/", "exFr": "Quand est-ce que tu vas venir ?", "exEn": "When are you going to come?", "tags": ["questions"] },
-  { "id": "v1-35", "fr": "comment", "en": "how", "ipa": "/kɔ.mɑ̃/", "exFr": "Comment ça va ?", "exEn": "How is it going?", "tags": ["questions"] },
-  { "id": "v1-36", "fr": "pourquoi", "en": "why", "ipa": "/puʁ.kwa/", "exFr": "Pourquoi pas ?", "exEn": "Why not?", "tags": ["questions"] },
-  { "id": "v1-37", "fr": "combien", "en": "how much, how many", "ipa": "/kɔ̃.bjɛ̃/", "exFr": "C'est combien ?", "exEn": "How much is it?", "tags": ["questions"] },
-  { "id": "v1-38", "fr": "et", "en": "and", "ipa": "/e/", "exFr": "Toi et moi.", "exEn": "You and me.", "tags": ["connectors"] },
-  { "id": "v1-39", "fr": "ou", "en": "or", "ipa": "/u/", "exFr": "Café ou thé ?", "exEn": "Coffee or tea?", "tags": ["connectors"] },
-  { "id": "v1-40", "fr": "mais", "en": "but", "ipa": "/mɛ/", "exFr": "Oui, mais pas maintenant.", "exEn": "Yes, but not now.", "tags": ["connectors"] },
-  { "id": "v1-41", "fr": "avec", "en": "with", "ipa": "/a.vɛk/", "exFr": "Je vais avec toi.", "exEn": "I'm going with you.", "tags": ["prepositions"] },
-  { "id": "v1-42", "fr": "pour", "en": "for, in order to", "ipa": "/puʁ/", "exFr": "C'est pour moi ?", "exEn": "Is it for me?", "tags": ["prepositions"] },
-  { "id": "v1-43", "fr": "très", "en": "very", "ipa": "/tʁɛ/", "exFr": "C'est très bien.", "exEn": "That's very good.", "tags": ["adverbs"] },
-  { "id": "v1-44", "fr": "bien", "en": "well, good", "ipa": "/bjɛ̃/", "exFr": "Très bien, merci.", "exEn": "Very well, thank you.", "tags": ["adverbs"] },
-  { "id": "v1-45", "fr": "beaucoup", "en": "a lot, much", "ipa": "/bo.ku/", "exFr": "Merci beaucoup.", "exEn": "Thanks a lot.", "tags": ["adverbs"] },
-  { "id": "v1-46", "fr": "aussi", "en": "also, too", "ipa": "/o.si/", "exFr": "Moi aussi !", "exEn": "Me too!", "tags": ["adverbs"] },
-  { "id": "v1-47", "fr": "maintenant", "en": "now", "ipa": "/mɛ̃t.nɑ̃/", "exFr": "Je veux manger maintenant.", "exEn": "I want to eat now.", "tags": ["time"] },
-  { "id": "v1-48", "fr": "aujourd'hui", "en": "today", "ipa": "/o.ʒuʁ.dɥi/", "exFr": "Aujourd'hui, ça va bien.", "exEn": "Today it's going well.", "tags": ["time"] },
-  { "id": "v1-49", "fr": "ici", "en": "here", "ipa": "/i.si/", "exFr": "C'est ici.", "exEn": "It's here.", "tags": ["place"] },
-  { "id": "v1-50", "fr": "monsieur / madame", "en": "sir / madam", "ipa": "/mə.sjø/ /ma.dam/", "exFr": "Bonjour, madame.", "exEn": "Good day, madam.", "tags": ["politeness"] }
+  {
+    "id": "v1-01",
+    "fr": "bonjour",
+    "en": "hello, good day",
+    "ipa": "/bɔ̃.ʒuʁ/",
+    "exFr": "Bonjour, ça va ?",
+    "exEn": "Hello, how are you?",
+    "tags": [
+      "greetings"
+    ],
+    "exFr2": "Bonjour ! Vous allez bien ?",
+    "exEn2": "Hello! Are you well?"
+  },
+  {
+    "id": "v1-02",
+    "fr": "bonsoir",
+    "en": "good evening",
+    "ipa": "/bɔ̃.swaʁ/",
+    "exFr": "Bonsoir, monsieur.",
+    "exEn": "Good evening, sir.",
+    "tags": [
+      "greetings"
+    ],
+    "exFr2": "Bonsoir, ça va ?",
+    "exEn2": "Good evening, how's it going?"
+  },
+  {
+    "id": "v1-03",
+    "fr": "salut",
+    "en": "hi (informal)",
+    "ipa": "/sa.ly/",
+    "exFr": "Salut ! Ça va ?",
+    "exEn": "Hi! How's it going?",
+    "tags": [
+      "greetings"
+    ],
+    "exFr2": "Salut, à demain !",
+    "exEn2": "Hi — see you tomorrow!"
+  },
+  {
+    "id": "v1-04",
+    "fr": "au revoir",
+    "en": "goodbye",
+    "ipa": "/o ʁə.vwaʁ/",
+    "exFr": "Au revoir et merci !",
+    "exEn": "Goodbye and thank you!",
+    "tags": [
+      "greetings"
+    ],
+    "exFr2": "Au revoir, à bientôt !",
+    "exEn2": "Goodbye, see you soon!"
+  },
+  {
+    "id": "v1-05",
+    "fr": "merci",
+    "en": "thank you",
+    "ipa": "/mɛʁ.si/",
+    "exFr": "Merci beaucoup !",
+    "exEn": "Thank you very much!",
+    "tags": [
+      "politeness"
+    ],
+    "exFr2": "Merci pour le café.",
+    "exEn2": "Thanks for the coffee."
+  },
+  {
+    "id": "v1-06",
+    "fr": "s'il vous plaît",
+    "en": "please (formal)",
+    "ipa": "/sil vu plɛ/",
+    "exFr": "Un café, s'il vous plaît.",
+    "exEn": "A coffee, please.",
+    "tags": [
+      "politeness"
+    ],
+    "exFr2": "L'addition, s'il vous plaît.",
+    "exEn2": "The bill, please."
+  },
+  {
+    "id": "v1-07",
+    "fr": "pardon",
+    "en": "sorry, excuse me",
+    "ipa": "/paʁ.dɔ̃/",
+    "exFr": "Pardon, je ne comprends pas.",
+    "exEn": "Sorry, I don't understand.",
+    "tags": [
+      "politeness"
+    ],
+    "exFr2": "Pardon, vous pouvez répéter ?",
+    "exEn2": "Sorry, can you repeat?"
+  },
+  {
+    "id": "v1-08",
+    "fr": "oui",
+    "en": "yes",
+    "ipa": "/wi/",
+    "exFr": "Oui, c'est possible.",
+    "exEn": "Yes, it's possible.",
+    "tags": [
+      "core"
+    ],
+    "exFr2": "Oui, d'accord.",
+    "exEn2": "Yes, okay."
+  },
+  {
+    "id": "v1-09",
+    "fr": "non",
+    "en": "no",
+    "ipa": "/nɔ̃/",
+    "exFr": "Non, merci.",
+    "exEn": "No, thank you.",
+    "tags": [
+      "core"
+    ],
+    "exFr2": "Non, ce n'est pas possible.",
+    "exEn2": "No, it's not possible."
+  },
+  {
+    "id": "v1-10",
+    "fr": "peut-être",
+    "en": "maybe",
+    "ipa": "/pø.tɛtʁ/",
+    "exFr": "Peut-être demain.",
+    "exEn": "Maybe tomorrow.",
+    "tags": [
+      "core"
+    ],
+    "exFr2": "Peut-être, je ne sais pas.",
+    "exEn2": "Maybe, I don't know."
+  },
+  {
+    "id": "v1-11",
+    "fr": "ça va",
+    "en": "how are you / I'm fine",
+    "ipa": "/sa va/",
+    "exFr": "Ça va bien, merci.",
+    "exEn": "I'm fine, thanks.",
+    "tags": [
+      "greetings"
+    ],
+    "exFr2": "Ça va, et toi ?",
+    "exEn2": "I'm fine, and you?"
+  },
+  {
+    "id": "v1-12",
+    "fr": "d'accord",
+    "en": "okay, agreed",
+    "ipa": "/da.kɔʁ/",
+    "exFr": "D'accord, pas de problème.",
+    "exEn": "Okay, no problem.",
+    "tags": [
+      "core"
+    ],
+    "exFr2": "D'accord, à demain.",
+    "exEn2": "Okay, see you tomorrow."
+  },
+  {
+    "id": "v1-13",
+    "fr": "c'est",
+    "en": "it is, this is",
+    "ipa": "/sɛ/",
+    "exFr": "C'est une bonne question.",
+    "exEn": "It's a good question.",
+    "tags": [
+      "chunks"
+    ],
+    "exFr2": "C'est pour toi.",
+    "exEn2": "It's for you."
+  },
+  {
+    "id": "v1-14",
+    "fr": "ce n'est pas",
+    "en": "it is not",
+    "ipa": "/sə nɛ pɑ/",
+    "exFr": "Ce n'est pas possible.",
+    "exEn": "It's not possible.",
+    "tags": [
+      "chunks",
+      "negation"
+    ],
+    "exFr2": "Ce n'est pas un problème.",
+    "exEn2": "It's not a problem."
+  },
+  {
+    "id": "v1-15",
+    "fr": "je suis",
+    "en": "I am",
+    "ipa": "/ʒə sɥi/",
+    "exFr": "Je suis ici.",
+    "exEn": "I am here.",
+    "tags": [
+      "chunks",
+      "être"
+    ],
+    "exFr2": "Je suis avec toi.",
+    "exEn2": "I'm with you."
+  },
+  {
+    "id": "v1-16",
+    "fr": "j'ai",
+    "en": "I have",
+    "ipa": "/ʒe/",
+    "exFr": "J'ai une question.",
+    "exEn": "I have a question.",
+    "tags": [
+      "chunks",
+      "avoir"
+    ],
+    "exFr2": "J'ai le temps aujourd'hui.",
+    "exEn2": "I have time today."
+  },
+  {
+    "id": "v1-17",
+    "fr": "je vais",
+    "en": "I go, I am going",
+    "ipa": "/ʒə vɛ/",
+    "exFr": "Je vais à Paris.",
+    "exEn": "I'm going to Paris.",
+    "tags": [
+      "chunks",
+      "aller"
+    ],
+    "exFr2": "Je vais très bien.",
+    "exEn2": "I'm doing very well."
+  },
+  {
+    "id": "v1-18",
+    "fr": "je veux",
+    "en": "I want",
+    "ipa": "/ʒə vø/",
+    "exFr": "Je veux parler français.",
+    "exEn": "I want to speak French.",
+    "tags": [
+      "chunks",
+      "vouloir"
+    ],
+    "exFr2": "Je veux ça, s'il vous plaît.",
+    "exEn2": "I want that, please."
+  },
+  {
+    "id": "v1-19",
+    "fr": "je voudrais",
+    "en": "I would like (polite)",
+    "ipa": "/ʒə vu.dʁɛ/",
+    "exFr": "Je voudrais un café.",
+    "exEn": "I would like a coffee.",
+    "tags": [
+      "chunks",
+      "politeness"
+    ],
+    "exFr2": "Je voudrais parler avec vous.",
+    "exEn2": "I'd like to speak with you."
+  },
+  {
+    "id": "v1-20",
+    "fr": "je peux",
+    "en": "I can",
+    "ipa": "/ʒə pø/",
+    "exFr": "Je peux venir demain.",
+    "exEn": "I can come tomorrow.",
+    "tags": [
+      "chunks",
+      "pouvoir"
+    ],
+    "exFr2": "Je peux venir maintenant.",
+    "exEn2": "I can come now."
+  },
+  {
+    "id": "v1-21",
+    "fr": "je sais",
+    "en": "I know",
+    "ipa": "/ʒə sɛ/",
+    "exFr": "Je sais pourquoi.",
+    "exEn": "I know why.",
+    "tags": [
+      "chunks",
+      "savoir"
+    ],
+    "exFr2": "Je sais, merci.",
+    "exEn2": "I know, thanks."
+  },
+  {
+    "id": "v1-22",
+    "fr": "il y a",
+    "en": "there is, there are",
+    "ipa": "/i.li.a/",
+    "exFr": "Il y a un problème.",
+    "exEn": "There is a problem.",
+    "tags": [
+      "chunks"
+    ],
+    "exFr2": "Il y a un café ici ?",
+    "exEn2": "Is there a café here?"
+  },
+  {
+    "id": "v1-23",
+    "fr": "être",
+    "en": "to be",
+    "ipa": "/ɛtʁ/",
+    "exFr": "Je veux être ici.",
+    "exEn": "I want to be here.",
+    "tags": [
+      "verbs"
+    ],
+    "exFr2": "Tu vas être content.",
+    "exEn2": "You're going to BE happy — être hides after aller."
+  },
+  {
+    "id": "v1-24",
+    "fr": "avoir",
+    "en": "to have",
+    "ipa": "/a.vwaʁ/",
+    "exFr": "Je vais avoir le temps.",
+    "exEn": "I'm going to have time.",
+    "tags": [
+      "verbs"
+    ],
+    "exFr2": "Tu peux avoir un café.",
+    "exEn2": "You can HAVE a coffee — avoir after peux."
+  },
+  {
+    "id": "v1-25",
+    "fr": "aller",
+    "en": "to go",
+    "ipa": "/a.le/",
+    "exFr": "Je veux aller au café.",
+    "exEn": "I want to go to the café.",
+    "tags": [
+      "verbs"
+    ],
+    "exFr2": "Tu veux aller où ?",
+    "exEn2": "Where do you want to GO? — aller after veux."
+  },
+  {
+    "id": "v1-26",
+    "fr": "faire",
+    "en": "to do, to make",
+    "ipa": "/fɛʁ/",
+    "exFr": "Je veux faire ça.",
+    "exEn": "I want to do that.",
+    "tags": [
+      "verbs"
+    ],
+    "exFr2": "Je peux faire ça demain.",
+    "exEn2": "I can DO that tomorrow — faire after peux."
+  },
+  {
+    "id": "v1-27",
+    "fr": "vouloir",
+    "en": "to want",
+    "ipa": "/vu.lwaʁ/",
+    "exFr": "Vouloir, c'est pouvoir.",
+    "exEn": "Where there's a will, there's a way.",
+    "tags": [
+      "verbs"
+    ],
+    "exFr2": "Tu vas vouloir venir aussi !",
+    "exEn2": "You're going to WANT to come too — vouloir is the 'to want' behind je veux."
+  },
+  {
+    "id": "v1-28",
+    "fr": "pouvoir",
+    "en": "to be able to, can",
+    "ipa": "/pu.vwaʁ/",
+    "exFr": "Tu vas pouvoir venir ?",
+    "exEn": "Will you be able to come?",
+    "tags": [
+      "verbs"
+    ],
+    "exFr2": "C'est bien de pouvoir parler français.",
+    "exEn2": "It's nice to BE ABLE to speak French — pouvoir is behind je peux."
+  },
+  {
+    "id": "v1-29",
+    "fr": "parler",
+    "en": "to speak",
+    "ipa": "/paʁ.le/",
+    "exFr": "Je veux parler avec toi.",
+    "exEn": "I want to speak with you.",
+    "tags": [
+      "verbs"
+    ],
+    "exFr2": "On peut parler maintenant ?",
+    "exEn2": "Can we TALK now?"
+  },
+  {
+    "id": "v1-30",
+    "fr": "manger",
+    "en": "to eat",
+    "ipa": "/mɑ̃.ʒe/",
+    "exFr": "Je vais manger maintenant.",
+    "exEn": "I'm going to eat now.",
+    "tags": [
+      "verbs"
+    ],
+    "exFr2": "Tu veux manger quelque chose ?",
+    "exEn2": "Do you want to EAT something?"
+  },
+  {
+    "id": "v1-31",
+    "fr": "qui",
+    "en": "who",
+    "ipa": "/ki/",
+    "exFr": "Qui est là ?",
+    "exEn": "Who is there?",
+    "tags": [
+      "questions"
+    ],
+    "exFr2": "C'est qui ?",
+    "exEn2": "Who is that?"
+  },
+  {
+    "id": "v1-32",
+    "fr": "quoi",
+    "en": "what",
+    "ipa": "/kwa/",
+    "exFr": "C'est quoi, ça ?",
+    "exEn": "What is that?",
+    "tags": [
+      "questions"
+    ],
+    "exFr2": "Tu fais quoi ?",
+    "exEn2": "What are you doing?"
+  },
+  {
+    "id": "v1-33",
+    "fr": "où",
+    "en": "where",
+    "ipa": "/u/",
+    "exFr": "Où est la gare ?",
+    "exEn": "Where is the station?",
+    "tags": [
+      "questions"
+    ],
+    "exFr2": "Tu vas où ?",
+    "exEn2": "Where are you going?"
+  },
+  {
+    "id": "v1-34",
+    "fr": "quand",
+    "en": "when",
+    "ipa": "/kɑ̃/",
+    "exFr": "Quand est-ce que tu vas venir ?",
+    "exEn": "When are you going to come?",
+    "tags": [
+      "questions"
+    ],
+    "exFr2": "C'est quand ?",
+    "exEn2": "When is it?"
+  },
+  {
+    "id": "v1-35",
+    "fr": "comment",
+    "en": "how",
+    "ipa": "/kɔ.mɑ̃/",
+    "exFr": "Comment ça va ?",
+    "exEn": "How is it going?",
+    "tags": [
+      "questions"
+    ],
+    "exFr2": "Comment ça va aujourd'hui ?",
+    "exEn2": "How's it going today?"
+  },
+  {
+    "id": "v1-36",
+    "fr": "pourquoi",
+    "en": "why",
+    "ipa": "/puʁ.kwa/",
+    "exFr": "Pourquoi pas ?",
+    "exEn": "Why not?",
+    "tags": [
+      "questions"
+    ],
+    "exFr2": "Pourquoi tu veux ça ?",
+    "exEn2": "Why do you want that?"
+  },
+  {
+    "id": "v1-37",
+    "fr": "combien",
+    "en": "how much, how many",
+    "ipa": "/kɔ̃.bjɛ̃/",
+    "exFr": "C'est combien ?",
+    "exEn": "How much is it?",
+    "tags": [
+      "questions"
+    ],
+    "exFr2": "C'est combien pour deux ?",
+    "exEn2": "How much for two?"
+  },
+  {
+    "id": "v1-38",
+    "fr": "et",
+    "en": "and",
+    "ipa": "/e/",
+    "exFr": "Toi et moi.",
+    "exEn": "You and me.",
+    "tags": [
+      "connectors"
+    ],
+    "exFr2": "Un café et un thé.",
+    "exEn2": "A coffee and a tea."
+  },
+  {
+    "id": "v1-39",
+    "fr": "ou",
+    "en": "or",
+    "ipa": "/u/",
+    "exFr": "Café ou thé ?",
+    "exEn": "Coffee or tea?",
+    "tags": [
+      "connectors"
+    ],
+    "exFr2": "Maintenant ou demain ?",
+    "exEn2": "Now or tomorrow?"
+  },
+  {
+    "id": "v1-40",
+    "fr": "mais",
+    "en": "but",
+    "ipa": "/mɛ/",
+    "exFr": "Oui, mais pas maintenant.",
+    "exEn": "Yes, but not now.",
+    "tags": [
+      "connectors"
+    ],
+    "exFr2": "Je veux bien, mais je ne peux pas.",
+    "exEn2": "I'd love to, but I can't."
+  },
+  {
+    "id": "v1-41",
+    "fr": "avec",
+    "en": "with",
+    "ipa": "/a.vɛk/",
+    "exFr": "Je vais avec toi.",
+    "exEn": "I'm going with you.",
+    "tags": [
+      "prepositions"
+    ],
+    "exFr2": "Avec plaisir !",
+    "exEn2": "With pleasure!"
+  },
+  {
+    "id": "v1-42",
+    "fr": "pour",
+    "en": "for, in order to",
+    "ipa": "/puʁ/",
+    "exFr": "C'est pour moi ?",
+    "exEn": "Is it for me?",
+    "tags": [
+      "prepositions"
+    ],
+    "exFr2": "C'est pour demain.",
+    "exEn2": "It's for tomorrow."
+  },
+  {
+    "id": "v1-43",
+    "fr": "très",
+    "en": "very",
+    "ipa": "/tʁɛ/",
+    "exFr": "C'est très bien.",
+    "exEn": "That's very good.",
+    "tags": [
+      "adverbs"
+    ],
+    "exFr2": "C'est très possible.",
+    "exEn2": "It's very possible."
+  },
+  {
+    "id": "v1-44",
+    "fr": "bien",
+    "en": "well, good",
+    "ipa": "/bjɛ̃/",
+    "exFr": "Très bien, merci.",
+    "exEn": "Very well, thank you.",
+    "tags": [
+      "adverbs"
+    ],
+    "exFr2": "C'est bien !",
+    "exEn2": "That's good!"
+  },
+  {
+    "id": "v1-45",
+    "fr": "beaucoup",
+    "en": "a lot, much",
+    "ipa": "/bo.ku/",
+    "exFr": "Merci beaucoup.",
+    "exEn": "Thanks a lot.",
+    "tags": [
+      "adverbs"
+    ],
+    "exFr2": "Il y a beaucoup de questions.",
+    "exEn2": "There are a lot of questions."
+  },
+  {
+    "id": "v1-46",
+    "fr": "aussi",
+    "en": "also, too",
+    "ipa": "/o.si/",
+    "exFr": "Moi aussi !",
+    "exEn": "Me too!",
+    "tags": [
+      "adverbs"
+    ],
+    "exFr2": "Toi aussi ?",
+    "exEn2": "You too?"
+  },
+  {
+    "id": "v1-47",
+    "fr": "maintenant",
+    "en": "now",
+    "ipa": "/mɛ̃t.nɑ̃/",
+    "exFr": "Je veux manger maintenant.",
+    "exEn": "I want to eat now.",
+    "tags": [
+      "time"
+    ],
+    "exFr2": "On peut faire ça maintenant.",
+    "exEn2": "We can do that now."
+  },
+  {
+    "id": "v1-48",
+    "fr": "aujourd'hui",
+    "en": "today",
+    "ipa": "/o.ʒuʁ.dɥi/",
+    "exFr": "Aujourd'hui, ça va bien.",
+    "exEn": "Today it's going well.",
+    "tags": [
+      "time"
+    ],
+    "exFr2": "C'est pour aujourd'hui ?",
+    "exEn2": "Is it for today?"
+  },
+  {
+    "id": "v1-49",
+    "fr": "ici",
+    "en": "here",
+    "ipa": "/i.si/",
+    "exFr": "C'est ici.",
+    "exEn": "It's here.",
+    "tags": [
+      "place"
+    ],
+    "exFr2": "Tu es ici aussi ?",
+    "exEn2": "You're here too?"
+  },
+  {
+    "id": "v1-50",
+    "fr": "monsieur / madame",
+    "en": "sir / madam",
+    "ipa": "/mə.sjø/ /ma.dam/",
+    "exFr": "Bonjour, madame.",
+    "exEn": "Good day, madam.",
+    "tags": [
+      "politeness"
+    ],
+    "exFr2": "Pardon, madame.",
+    "exEn2": "Excuse me, madam."
+  }
 ]

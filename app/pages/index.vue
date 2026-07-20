@@ -18,19 +18,21 @@
       <div class="card stack">
         <h2>✓ Day {{ finishedDayNumber }} complete</h2>
         <p class="muted">
-          That's today's plan done. Practice below if you want more —
-          or start Day {{ finishedDayNumber + 1 }} early from the Path.
+          That's today's plan done. Practice below if you want more — or keep going.
         </p>
+        <button class="btn btn-block" @click="continueNextDay">
+          Continue with Day {{ finishedDayNumber + 1 }} →
+        </button>
       </div>
     </template>
 
-    <template v-else-if="currentDay && session.length > 0">
+    <template v-else-if="currentDay && dayLessons.length > 0">
       <div class="spread">
         <h2>Day {{ currentDay.number }} <span class="muted small">of {{ programDays.length }}</span></h2>
-        <span class="muted small">~{{ totalMin }} min left</span>
+        <span class="muted small">~{{ minutesLeft }} min left</span>
       </div>
-      <LessonCard v-for="l in session" :key="l.id" :lesson="l" />
-      <NuxtLink :to="`/lesson/${session[0]!.id}`" class="btn btn-primary btn-block">
+      <LessonCard v-for="l in dayLessons" :key="l.id" :lesson="l" />
+      <NuxtLink v-if="firstIncomplete" :to="`/lesson/${firstIncomplete.id}`" class="btn btn-primary btn-block">
         {{ dayStarted ? 'Continue' : 'Start' }}
       </NuxtLink>
     </template>
@@ -99,27 +101,36 @@ const previousDay = computed(() => {
   return idx > 0 ? programDays[idx - 1] : undefined
 })
 
-/** True when the most recently completed day was finished TODAY — then Today rests. */
+/** True when the most recently completed day was finished TODAY — then Today
+ * rests, unless the user explicitly chose to continue with the next day. */
 const dayFinishedToday = computed(() => {
+  if (progress.isDone(`continue-${todayIso()}`)) return false
   const prev = previousDay.value
   if (!prev) return false
   const dates = requiredOf(prev.lessons).map(l => progress.completedLessons[l.id])
   return dates.length > 0 && dates.every(Boolean) && dates.some(d => d === todayIso())
 })
 
+function continueNextDay() {
+  progress.markDone(`continue-${todayIso()}`)
+}
+
 const finishedDayNumber = computed(() => previousDay.value?.number ?? 0)
 
-const session = computed(() =>
-  currentDay.value
-    ? requiredOf(currentDay.value.lessons).filter(l => !progress.isDone(l.id) && !isLocked(l.id))
-    : [],
+// the whole day stays visible — done lessons show their checkmark like on Path
+const dayLessons = computed(() =>
+  currentDay.value ? requiredOf(currentDay.value.lessons) : [],
 )
 
-const dayStarted = computed(() =>
-  currentDay.value ? requiredOf(currentDay.value.lessons).some(l => progress.isDone(l.id)) : false,
+const firstIncomplete = computed(() =>
+  dayLessons.value.find(l => !progress.isDone(l.id) && !isLocked(l.id)),
 )
 
-const totalMin = computed(() => session.value.reduce((s, l) => s + l.durationMin, 0))
+const dayStarted = computed(() => dayLessons.value.some(l => progress.isDone(l.id)))
+
+const minutesLeft = computed(() =>
+  dayLessons.value.filter(l => !progress.isDone(l.id)).reduce((s, l) => s + l.durationMin, 0),
+)
 
 const dailyDone = computed(() => progress.isDone(`daily-${todayIso()}`))
 

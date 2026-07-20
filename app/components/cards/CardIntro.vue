@@ -1,12 +1,12 @@
 <template>
   <div v-if="card" class="stack">
-    <p class="muted small">New word {{ idx + 1 }} of {{ queue.length }}</p>
-
-    <template v-if="phase === 'show'">
+    <!-- Pass 1: meet every word -->
+    <template v-if="phase === 'intro'">
+      <p class="muted small">New word {{ idx + 1 }} of {{ queue.length }}</p>
       <div class="card word-card">
         <div class="row">
           <span class="fr">{{ card.fr }}</span>
-          <button class="btn tts" aria-label="Hear it" @click="hear">🔊</button>
+          <button class="btn tts" aria-label="Hear it" @click="hear(card)">🔊</button>
         </div>
         <p v-if="card.ipa" class="muted ipa">{{ card.ipa }}</p>
         <p class="en">{{ card.en }}</p>
@@ -14,19 +14,25 @@
           {{ card.exFr }}<br>
           <span class="muted small">{{ card.exEn }}</span>
         </p>
+        <p v-if="card.exFr2" class="ex">
+          {{ card.exFr2 }}<br>
+          <span class="muted small">{{ card.exEn2 }}</span>
+        </p>
       </div>
-      <button class="btn btn-primary btn-block" @click="gotIt">
-        {{ typable ? 'Got it — now type it' : 'Got it' }}
+      <button class="btn btn-primary btn-block" @click="nextIntro">
+        {{ idx + 1 < queue.length ? 'Got it — next word' : (typables.length > 0 ? 'Got it — now spell them all' : 'Got it') }}
       </button>
     </template>
 
+    <!-- Pass 2: spell every (single-word) card from memory -->
     <template v-else>
+      <p class="muted small">Spelling {{ spellIdx + 1 }} of {{ typables.length }} — from memory</p>
       <div class="card word-card">
         <div class="row">
-          <span class="en">{{ card.en }}</span>
-          <button class="btn tts" aria-label="Hear it" @click="hear">🔊</button>
+          <span class="en">{{ spellCard!.en }}</span>
+          <button class="btn tts" aria-label="Hear it" @click="hear(spellCard!)">🔊</button>
         </div>
-        <p class="muted small">Type the French word from memory (tap 🔊 to hear it again):</p>
+        <p class="muted small">Type the French word (tap 🔊 to hear it):</p>
         <input
           ref="spellEl"
           v-model="spelling"
@@ -42,15 +48,17 @@
           @keydown.enter="onEnter"
         >
         <template v-if="checked">
-          <p v-if="spellOk && !accentSlip" class="small okline">✓ {{ card.fr }}</p>
+          <p v-if="spellOk && !accentSlip" class="small okline">✓ {{ spellCard!.fr }}</p>
           <p v-else-if="accentSlip" class="small warn-note">
-            ⚠️ Almost — accents matter: <strong>{{ card.fr }}</strong>
+            ⚠️ Almost — accents matter: <strong>{{ spellCard!.fr }}</strong>
           </p>
-          <p v-else class="small err-note">✗ It's <strong>{{ card.fr }}</strong></p>
+          <p v-else class="small err-note">✗ It's <strong>{{ spellCard!.fr }}</strong></p>
         </template>
       </div>
       <button v-if="!checked" class="btn btn-primary btn-block" :disabled="!spelling.trim()" @click="check">Check</button>
-      <button v-else class="btn btn-primary btn-block" @click="next">Next word</button>
+      <button v-else class="btn btn-primary btn-block" @click="nextSpell">
+        {{ spellIdx + 1 < typables.length ? 'Next word' : 'Finish' }}
+      </button>
     </template>
   </div>
 </template>
@@ -66,64 +74,74 @@ const progress = useProgress()
 const tts = useTts()
 const queue = ref<Card[]>([...props.cards])
 const idx = ref(0)
-const card = computed(() => queue.value[idx.value])
+const phase = ref<'intro' | 'spell'>('intro')
+const card = computed(() =>
+  phase.value === 'intro' ? queue.value[idx.value] : spellCard.value,
+)
 
-const phase = ref<'show' | 'type'>('show')
+/** Only single words get the spelling pass — phrases stay tap-through. */
+const typables = computed(() =>
+  queue.value.filter(c => !c.fr.includes(' ') && !c.fr.includes('/')),
+)
+const spellIdx = ref(0)
+const spellCard = computed(() => typables.value[spellIdx.value])
+
 const spelling = ref('')
 const checked = ref(false)
 const spellOk = ref(false)
 const accentSlip = ref(false)
 const spellEl = ref<HTMLInputElement>()
 
-/** Only single words get the typing step — phrases stay tap-through. */
-const typable = computed(() =>
-  !!card.value && !card.value.fr.includes(' ') && !card.value.fr.includes('/'),
-)
+watch(card, c => c && phase.value === 'intro' && tts.speak(c.fr, progress.settings.ttsRate))
 
-watch(card, c => c && tts.speak(c.fr, progress.settings.ttsRate), { immediate: false })
-
-function hear() {
-  if (card.value) tts.speak(card.value.fr, progress.settings.ttsRate)
+function hear(c: Card) {
+  tts.speak(c.fr, progress.settings.ttsRate)
 }
 
-function gotIt() {
-  if (!card.value) return
-  if (typable.value) {
-    phase.value = 'type'
+function nextIntro() {
+  const c = queue.value[idx.value]
+  if (!c) return
+  emit('introduced', c.id)
+  if (idx.value + 1 < queue.value.length) {
+    idx.value += 1
+  } else if (typables.value.length > 0) {
+    phase.value = 'spell'
     nextTick(() => spellEl.value?.focus())
   } else {
-    next()
+    emit('finished')
   }
 }
 
 function check() {
-  if (!card.value || !spelling.value.trim()) return
-  const lenient = matchAnswer(spelling.value, [card.value.fr], { strictAccents: false })
-  const strict = matchAnswer(spelling.value, [card.value.fr], { strictAccents: true })
+  const c = spellCard.value
+  if (!c || !spelling.value.trim()) return
+  const lenient = matchAnswer(spelling.value, [c.fr], { strictAccents: false })
+  const strict = matchAnswer(spelling.value, [c.fr], { strictAccents: true })
   spellOk.value = lenient
   accentSlip.value = lenient && !strict
   progress.recordRun({ spelling: { correct: strict ? 1 : 0, total: 1 } })
   if (!strict) {
-    progress.logMistakes([{ q: `Spell: ${card.value.en}`, a: card.value.fr }])
+    progress.logMistakes([{ q: `Spell: ${c.en}`, a: c.fr }])
   }
   checked.value = true
 }
 
 function onEnter() {
   if (!checked.value) check()
-  else next()
+  else nextSpell()
 }
 
-function next() {
-  if (!card.value) return
-  emit('introduced', card.value.id)
-  phase.value = 'show'
+function nextSpell() {
   spelling.value = ''
   checked.value = false
   spellOk.value = false
   accentSlip.value = false
-  if (idx.value + 1 >= queue.value.length) emit('finished')
-  else idx.value += 1
+  if (spellIdx.value + 1 < typables.value.length) {
+    spellIdx.value += 1
+    nextTick(() => spellEl.value?.focus())
+  } else {
+    emit('finished')
+  }
 }
 </script>
 

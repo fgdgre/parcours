@@ -43,6 +43,32 @@ Please:
 4. Ask me ONE new question that tests the same rule — then wait for my answer and correct it.`
 }
 
+/**
+ * "Continue with AI" — packs a just-finished lesson into a prompt that keeps
+ * teaching exactly that topic, at the learner's level, one question at a time.
+ */
+export function buildContinuePrompt(opts: {
+  lessonTitle: string
+  topic?: string
+  items?: { q: string; a: string }[]
+  missed?: { q: string; a: string }[]
+}): string {
+  const items = (opts.items ?? []).slice(0, 12)
+    .map((x, i) => `${i + 1}. ${x.q} → ${x.a}`).join('\n')
+  const missed = (opts.missed ?? [])
+    .map(x => `- ${x.q} → ${x.a}`).join('\n')
+  return `You are a friendly, precise French tutor. I am an absolute beginner (A0–A1), \
+native Ukrainian speaker with B2 English, learning French for Canadian immigration. \
+I just finished a lesson in my app and I want to KEEP practicing exactly this topic — it felt \
+important and I'm not solid on it yet.
+
+THE LESSON: ${opts.lessonTitle}${opts.topic ? `\nWHAT IT COVERED: ${opts.topic}` : ''}${items ? `\n\nITS QUESTIONS AND ANSWERS:\n${items}` : ''}${missed ? `\n\nTHE ONES I GOT WRONG:\n${missed}` : ''}
+
+Please:
+1. Briefly explain the core idea of this topic in simple English (3-5 sentences), especially anything my wrong answers reveal I misunderstood.
+2. Then drill me: ask me ONE new question at a time on exactly this topic, wait for my answer, correct it kindly but precisely, and slowly increase difficulty. Stay within beginner grammar. Keep going until I say stop.`
+}
+
 /** Packs the recent mistake log into a tutor prompt for pattern analysis + a mini-drill. */
 export function buildMistakesPrompt(mistakes: { q: string; a: string }[]): string {
   const list = mistakes

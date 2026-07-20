@@ -26,7 +26,8 @@ export const lessonById: Record<string, Lesson> = Object.fromEntries(
   allLessons.map(l => [l.id, l]),
 )
 
-export const isOptional = (l: Lesson): boolean => l.type === 'exercises' && !!l.optional
+export const isOptional = (l: Lesson): boolean =>
+  (l.type === 'exercises' || l.type === 'external') && !!l.optional
 
 /** Splits a chapter into ~25-minute study days (optional lessons ride along uncounted). */
 export function lessonChunks(ch: Chapter): Lesson[][] {

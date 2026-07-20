@@ -22,13 +22,19 @@
       </button>
       <template v-if="isOpen(ch.id)">
         <template v-for="(day, di) in daysFor(ch)" :key="`${ch.id}-day-${di}`">
-          <div class="day-head" :class="{ 'day-done': day.done, 'day-current': day.current }">
-            <span>{{ day.label }}</span>
+          <button
+            class="day-head"
+            :class="{ 'day-done': day.done, 'day-current': day.current }"
+            @click="toggleDay(day)"
+          >
+            <span>{{ day.label }} <span v-if="day.done && !isDayOpen(day)" class="collapsed-hint">▸</span></span>
             <span class="muted small">
               {{ day.done ? '✓ done' : `~${day.minutes} min` }}<template v-if="day.score !== undefined"> · {{ day.score }}%</template>
             </span>
-          </div>
-          <LessonCard v-for="l in day.lessons" :key="l.id" :lesson="l" />
+          </button>
+          <template v-if="isDayOpen(day)">
+            <LessonCard v-for="l in day.lessons" :key="l.id" :lesson="l" />
+          </template>
         </template>
       </template>
     </section>
@@ -93,6 +99,13 @@ const currentChapterId = computed(
 const open = ref<Record<string, boolean>>({})
 const isOpen = (id: string) => open.value[id] ?? id === currentChapterId.value
 const toggle = (id: string) => { open.value[id] = !isOpen(id) }
+
+// completed days fold into their header; current & future days stay expanded
+const dayOpen = ref<Record<string, boolean>>({})
+const isDayOpen = (day: Day) => dayOpen.value[day.label] ?? !day.done
+const toggleDay = (day: Day) => {
+  dayOpen.value[day.label] = !isDayOpen(day)
+}
 </script>
 
 <style scoped>
@@ -127,12 +140,19 @@ const toggle = (id: string) => { open.value[id] = !isOpen(id) }
   justify-content: space-between;
   gap: 10px;
   margin: 10px 2px 0;
+  padding: 4px 0;
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--muted);
+  background: none;
+  border: 0;
+  width: 100%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
+.collapsed-hint { font-weight: 400; }
 .day-head.day-current { color: var(--accent); }
 .day-head.day-done { opacity: 0.6; }
 </style>

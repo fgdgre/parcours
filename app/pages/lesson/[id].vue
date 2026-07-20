@@ -40,6 +40,9 @@
         >
           {{ done ? '✓ Done — tap to undo' : 'Mark as done' }}
         </button>
+        <button v-if="done" class="btn btn-block" @click="continueWithAi">
+          {{ aiCopied ? '✓ Copied — paste into a Claude chat' : '🤖 Continue this topic with AI' }}
+        </button>
       </template>
 
       <!-- Vocab lesson -->
@@ -60,6 +63,9 @@
         </template>
         <div v-else class="card stack">
           <p>{{ done ? 'This batch is learned. Reviews now appear in the Cards tab as they come due.' : 'All words here are already introduced.' }}</p>
+          <button class="btn btn-block" @click="continueWithAi">
+            {{ aiCopied ? '✓ Copied — paste into a Claude chat' : '🤖 Practice these words with AI' }}
+          </button>
           <button v-if="!done" class="btn btn-primary btn-block" @click="progress.markDone(lesson.id)">
             Mark as done
           </button>
@@ -79,6 +85,9 @@
         </template>
         <div v-else class="card stack">
           <p class="okline">✓ Exercises complete.</p>
+          <button class="btn btn-block" @click="continueWithAi">
+            {{ aiCopied ? '✓ Copied — paste into a Claude chat' : '🤖 Continue this topic with AI' }}
+          </button>
           <button class="btn btn-block" @click="restartExercises">Practice again</button>
         </div>
       </template>
@@ -158,6 +167,8 @@ import {
   exercisesByFile, lessonById, nextLessonAfter,
 } from '~/content'
 import { buildDrills, shuffle } from '~/utils/drills'
+import { buildContinuePrompt } from '~/utils/reviewPrompt'
+import { copyText } from '~/utils/clipboard'
 
 const route = useRoute()
 const router = useRouter()
@@ -202,12 +213,49 @@ const exercises = computed(() =>
   lesson.value?.type === 'exercises' ? exercisesByFile[lesson.value.exerciseFile] ?? [] : [],
 )
 const finished = ref(false)
+const lastResult = ref<{ correct: number; total: number; missed: { q: string; a: string }[] } | null>(null)
 function finishExercises(result: { correct: number; total: number; missed: { q: string; a: string }[] }) {
   finished.value = true
+  lastResult.value = result
   if (!lesson.value) return
   progress.markDone(lesson.value.id)
   progress.recordLesson(lesson.value.id, result.correct, result.total)
   progress.logMistakes(result.missed)
+}
+
+// --- continue with AI ---
+const aiCopied = ref(false)
+function describeItem(ex: Exercise): { q: string; a: string } {
+  switch (ex.type) {
+    case 'mc': return { q: ex.prompt, a: ex.options[ex.answer]! }
+    case 'type': return { q: ex.prompt, a: ex.answer[0]! }
+    case 'conjugate': return { q: `Conjugate ${ex.verb} with “${ex.pronoun}”`, a: `${ex.pronoun} ${ex.answer[0]}` }
+    case 'dictation': return { q: 'Dictation', a: ex.ttsText }
+    case 'speak': return { q: `Say aloud: ${ex.en}`, a: ex.target }
+    case 'open': return { q: ex.prompt, a: '(free writing)' }
+  }
+}
+async function continueWithAi() {
+  if (!lesson.value) return
+  const l = lesson.value
+  let items: { q: string; a: string }[] = []
+  let topic: string | undefined
+  if (l.type === 'exercises') {
+    items = (exercisesByFile[l.exerciseFile] ?? []).map(describeItem)
+  } else if (l.type === 'vocab') {
+    items = lessonCards.value.map(c => ({ q: c.en, a: c.fr }))
+    topic = 'New vocabulary — I want to anchor these words in memory with usage, not just translation.'
+  } else if (l.type === 'external') {
+    topic = l.teaches
+  }
+  await copyText(buildContinuePrompt({
+    lessonTitle: l.title,
+    topic,
+    items,
+    missed: lastResult.value?.missed ?? [],
+  }))
+  aiCopied.value = true
+  setTimeout(() => { aiCopied.value = false }, 3500)
 }
 function restartExercises() {
   if (lesson.value) progress.unmarkDone(lesson.value.id)
