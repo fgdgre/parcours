@@ -19,10 +19,12 @@
         <strong>{{ correct ? 'Correct.' : 'Not quite.' }}</strong>
         <span v-if="exercise.explain">&nbsp;{{ exercise.explain }}</span>
       </div>
-      <button class="btn tts-btn" @click="sayAnswer">🔊 Hear the answer</button>
-      <button class="btn explain-btn" @click="explainIt">
-        {{ explained ? '✓ Copied — paste into a Claude chat' : '🤔 Explain this to me (AI)' }}
-      </button>
+      <div class="feedback-actions">
+        <button class="btn tts-btn" @click="sayAnswer">🔊 Hear it</button>
+        <button class="btn explain-btn" @click="explainIt">
+          {{ explained ? '✓ Copied' : '🤔 Explain (AI)' }}
+        </button>
+      </div>
       <button class="btn btn-primary btn-block" @click="$emit('done', correct)">Continue</button>
     </template>
   </div>

@@ -1,0 +1,81 @@
+[
+  {
+    "type": "mc",
+    "passage": "English verbs change a little with the person: I speak, you speak, he speakS.\nFrench does the same thing, just more visibly:\nje parle · tu parles · il parle · nous parlons · vous parlez · ils parlent\n(the first three SOUND identical — only spelling changes!)\nThis changing is called CONJUGATION.\nSurprise: you already know many conjugated forms as chunks — je suis (I am), j'ai (I have), je vais (I go), je veux (I want), je peux (I can). You've been conjugating for a week without knowing it.",
+    "prompt": "So what is conjugation?",
+    "options": [
+      "The verb changing its form to match the person (je / tu / il…)",
+      "A list of words to memorize alphabetically",
+      "A special French punctuation rule",
+      "Something only formal writing uses"
+    ],
+    "answer": 0,
+    "explain": "That's all it is. When a drill says “je ___ (être)”, it asks: what's the je-form of être? You already know it: suis."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je suis” (I am) is the je-form of which verb?",
+    "options": ["être — to be", "avoir — to have", "aller — to go", "savoir — to know"],
+    "answer": 0,
+    "explain": "je suis = the “I” shape of être. The chunk you know IS the conjugation."
+  },
+  {
+    "type": "mc",
+    "prompt": "“J'ai” (I have) is the je-form of which verb?",
+    "options": ["avoir — to have", "être — to be", "faire — to do", "aller — to go"],
+    "answer": 0,
+    "explain": "je + ai squeezes into j'ai. Infinitive: avoir."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je vais” (I go / I'm going) is the je-form of which verb?",
+    "options": ["aller — to go", "venir — to come", "vouloir — to want", "faire — to do"],
+    "answer": 0,
+    "explain": "aller is very irregular: je vais, tu vas, il va. But you already own all three sounds from ça va !"
+  },
+  {
+    "type": "type",
+    "prompt": "Fill the je-form: je ___ (être, present)",
+    "answer": ["suis"],
+    "hint": "You say it every day: je suis ici.",
+    "explain": "être: je suis, tu es, il est — fully irregular, but these three are the most heard words in French."
+  },
+  {
+    "type": "type",
+    "prompt": "Fill the je-form: j'___ (avoir, present)",
+    "answer": ["ai"],
+    "hint": "The chunk: j'ai une question.",
+    "explain": "avoir: j'ai, tu as, il a. Also irregular — also everywhere."
+  },
+  {
+    "type": "type",
+    "prompt": "Fill the je-form: je ___ (aller, present)",
+    "answer": ["vais"],
+    "hint": "The chunk: je vais à Paris.",
+    "explain": "aller: je vais, tu vas, il va."
+  },
+  {
+    "type": "mc",
+    "prompt": "Why do il/elle forms feel sneaky? il parle vs je parle…",
+    "options": [
+      "They often SOUND the same as the je-form — only the spelling shifts",
+      "They are always totally different words",
+      "il-forms are only used in writing",
+      "They aren't real conjugations"
+    ],
+    "answer": 0,
+    "explain": "For -er verbs, je/tu/il forms all sound identical. Your EAR already knows them; your fingers are just learning the spelling."
+  },
+  {
+    "type": "mc",
+    "prompt": "From now on, when a drill asks for a form you haven't met…",
+    "options": [
+      "read the hint above the box — every conjugation drill shows the verb's pattern first",
+      "guess randomly and move on",
+      "skip all conjugation drills",
+      "memorize full tables before continuing"
+    ],
+    "answer": 0,
+    "explain": "The hint carries the pattern (je veuX, tu veuX, il veuT), and Language Transfer will keep teaching these forms track by track. Drills are practice, not ambush — and now you know the word for what they practice."
+  }
+]

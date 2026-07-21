@@ -27,12 +27,14 @@
         <button class="tts-inline" aria-label="Hear it" @click="tts.speak(`${exercise.pronoun} ${exercise.answer[0]}`, progress.settings.ttsRate)">🔊</button>
         <span v-if="exercise.explain" class="explain-text">{{ exercise.explain }}</span>
       </div>
-      <button class="btn tts-btn" @click="tts.speak(`${exercise.pronoun} ${exercise.answer[0]}`, progress.settings.ttsRate)">
-        🔊 Hear it
-      </button>
-      <button class="btn explain-btn" @click="explainIt">
-        {{ explained ? '✓ Copied — paste into a Claude chat' : '🤔 Explain this to me (AI)' }}
-      </button>
+      <div class="feedback-actions">
+        <button class="btn tts-btn" @click="tts.speak(`${exercise.pronoun} ${exercise.answer[0]}`, progress.settings.ttsRate)">
+          🔊 Hear it
+        </button>
+        <button class="btn explain-btn" @click="explainIt">
+          {{ explained ? '✓ Copied' : '🤔 Explain (AI)' }}
+        </button>
+      </div>
       <button class="btn btn-primary btn-block" @click="$emit('done', correct)">Continue</button>
     </template>
   </div>

@@ -25,9 +25,11 @@
         <strong>{{ correct ? 'Correct.' : 'Not quite.' }}</strong>
         It said: <em>{{ exercise.ttsText }}</em>
       </div>
-      <button class="btn explain-btn" @click="explainIt">
-        {{ explained ? '✓ Copied — paste into a Claude chat' : '🤔 Explain this to me (AI)' }}
-      </button>
+      <div class="feedback-actions">
+        <button class="btn explain-btn" @click="explainIt">
+          {{ explained ? '✓ Copied' : '🤔 Explain (AI)' }}
+        </button>
+      </div>
       <button class="btn btn-primary btn-block" @click="$emit('done', correct)">Continue</button>
     </template>
   </div>

@@ -64,7 +64,7 @@
         "provider": "link",
         "url": "https://www.youtube.com/results?search_query=peppa+pig+en+fran%C3%A7ais+%C3%A9pisodes+officiel",
         "durationMin": 10,
-        "instructions": "Watch ONE episode. No subtitles, no pausing, no translating — the pictures carry the meaning. Confusion is normal and useful.",
+        "instructions": "The goal is NOT understanding — it's exposure. Watch once without subtitles and count the words you catch (2–3 is a WIN in early chapters). Then rewatch WITH French subtitles ON — watching sounds become spelling is exactly the dictation training you need.",
         "teaches": "Your ear meeting real French rhythm at kid speed — pure listening training."
       },
       {
@@ -251,7 +251,7 @@
         "provider": "link",
         "url": "https://www.youtube.com/results?search_query=trotro+officiel+%C3%A9pisodes",
         "durationMin": 10,
-        "instructions": "Watch ONE episode. No subtitles, no pausing, no translating — the pictures carry the meaning. Confusion is normal and useful.",
+        "instructions": "The goal is NOT understanding — it's exposure. Watch once without subtitles and count the words you catch (2–3 is a WIN in early chapters). Then rewatch WITH French subtitles ON — watching sounds become spelling is exactly the dictation training you need.",
         "teaches": "Short, slow, repetitive French — ideal first listening."
       },
       {
@@ -265,6 +265,13 @@
         "instructions": "Optional now — watch when you enjoy it. Pronunciation also comes from LT (speak along!) and the app's 🔊 buttons.",
         "teaches": "One building block of the French sound system.",
         "optional": true
+      },
+      {
+        "id": "primer-conjugation",
+        "type": "exercises",
+        "title": "Primer · what is conjugation?",
+        "exerciseFile": "primer-conjugation",
+        "durationMin": 5
       },
       {
         "id": "quiz-lt-05-06",
@@ -507,7 +514,7 @@
         "provider": "link",
         "url": "https://www.youtube.com/results?search_query=peppa+pig+en+fran%C3%A7ais+%C3%A9pisodes+officiel",
         "durationMin": 10,
-        "instructions": "Watch ONE episode. No subtitles, no pausing, no translating — the pictures carry the meaning. Confusion is normal and useful.",
+        "instructions": "The goal is NOT understanding — it's exposure. Watch once without subtitles and count the words you catch (2–3 is a WIN in early chapters). Then rewatch WITH French subtitles ON — watching sounds become spelling is exactly the dictation training you need.",
         "teaches": "Daily-life vocabulary in context: family, food, playing."
       },
       {
@@ -693,7 +700,7 @@
         "provider": "link",
         "url": "https://www.youtube.com/results?search_query=tchoupi+dessin+anim%C3%A9+officiel",
         "durationMin": 10,
-        "instructions": "Watch ONE episode. No subtitles, no pausing, no translating — the pictures carry the meaning. Confusion is normal and useful.",
+        "instructions": "The goal is NOT understanding — it's exposure. Watch once without subtitles and count the words you catch (2–3 is a WIN in early chapters). Then rewatch WITH French subtitles ON — watching sounds become spelling is exactly the dictation training you need.",
         "teaches": "Simple dialogues between kid and parents — the tu-form in action."
       },
       {
@@ -971,7 +978,7 @@
         "provider": "link",
         "url": "https://www.youtube.com/results?search_query=trotro+officiel+%C3%A9pisodes",
         "durationMin": 10,
-        "instructions": "Watch ONE episode. No subtitles, no pausing, no translating — the pictures carry the meaning. Confusion is normal and useful.",
+        "instructions": "The goal is NOT understanding — it's exposure. Watch once without subtitles and count the words you catch (2–3 is a WIN in early chapters). Then rewatch WITH French subtitles ON — watching sounds become spelling is exactly the dictation training you need.",
         "teaches": "Start catching whole phrases, not just words."
       },
       {
@@ -1172,7 +1179,7 @@
         "provider": "link",
         "url": "https://www.youtube.com/results?search_query=peppa+pig+en+fran%C3%A7ais+%C3%A9pisodes+officiel",
         "durationMin": 10,
-        "instructions": "Watch ONE episode. No subtitles, no pausing, no translating — the pictures carry the meaning. Confusion is normal and useful.",
+        "instructions": "The goal is NOT understanding — it's exposure. Watch once without subtitles and count the words you catch (2–3 is a WIN in early chapters). Then rewatch WITH French subtitles ON — watching sounds become spelling is exactly the dictation training you need.",
         "teaches": "Notice question intonation — Peppa asks constantly."
       },
       {
@@ -1479,7 +1486,7 @@
         "provider": "link",
         "url": "https://www.youtube.com/results?search_query=tchoupi+dessin+anim%C3%A9+officiel",
         "durationMin": 10,
-        "instructions": "Watch ONE episode. No subtitles, no pausing, no translating — the pictures carry the meaning. Confusion is normal and useful.",
+        "instructions": "The goal is NOT understanding — it's exposure. Watch once without subtitles and count the words you catch (2–3 is a WIN in early chapters). Then rewatch WITH French subtitles ON — watching sounds become spelling is exactly the dictation training you need.",
         "teaches": "Listen for past-tense forms — they narrate what happened."
       },
       {
@@ -1680,7 +1687,7 @@
         "provider": "link",
         "url": "https://www.youtube.com/results?search_query=peppa+pig+en+fran%C3%A7ais+%C3%A9pisodes+officiel",
         "durationMin": 10,
-        "instructions": "Watch ONE episode. No subtitles, no pausing, no translating — the pictures carry the meaning. Confusion is normal and useful.",
+        "instructions": "The goal is NOT understanding — it's exposure. Watch once without subtitles and count the words you catch (2–3 is a WIN in early chapters). Then rewatch WITH French subtitles ON — watching sounds become spelling is exactly the dictation training you need.",
         "teaches": "You should understand noticeably more than in chapter 1. Check."
       },
       {
@@ -2010,7 +2017,7 @@
         "provider": "link",
         "url": "https://www.youtube.com/results?search_query=trotro+officiel+%C3%A9pisodes",
         "durationMin": 10,
-        "instructions": "Watch ONE episode. No subtitles, no pausing, no translating — the pictures carry the meaning. Confusion is normal and useful.",
+        "instructions": "The goal is NOT understanding — it's exposure. Watch once without subtitles and count the words you catch (2–3 is a WIN in early chapters). Then rewatch WITH French subtitles ON — watching sounds become spelling is exactly the dictation training you need.",
         "teaches": "Near-full comprehension of simple cartoons is an A1 milestone."
       },
       {
@@ -2189,7 +2196,7 @@
         "provider": "link",
         "url": "https://www.youtube.com/results?search_query=peppa+pig+en+fran%C3%A7ais+%C3%A9pisodes+officiel",
         "durationMin": 10,
-        "instructions": "Watch ONE episode. No subtitles, no pausing, no translating — the pictures carry the meaning. Confusion is normal and useful.",
+        "instructions": "The goal is NOT understanding — it's exposure. Watch once without subtitles and count the words you catch (2–3 is a WIN in early chapters). Then rewatch WITH French subtitles ON — watching sounds become spelling is exactly the dictation training you need.",
         "teaches": "Last one before the book phase — enjoy how far your ear has come."
       },
       {

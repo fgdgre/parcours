@@ -132,5 +132,7 @@ a { color: var(--accent); text-decoration: none; }
 .feedback-err { background: var(--err-soft); color: var(--err); border-radius: 12px; padding: 12px 14px; }
 
 .stack { display: flex; flex-direction: column; gap: 12px; }
+.feedback-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.feedback-actions .btn { flex: 0 1 auto; }
 .row { display: flex; align-items: center; gap: 10px; }
 .spread { display: flex; align-items: center; justify-content: space-between; gap: 10px; }

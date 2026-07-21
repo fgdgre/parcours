@@ -40,8 +40,17 @@ export function applyRetry(m: MistakeEntry, ok: boolean, today: string): Mistake
   return { ...m, r2: { date: today, ok: true }, closed: true }
 }
 
-/** Builds the exercise to replay for a mistake — the original when we have it. */
+/** Builds the exercise to replay for a mistake — the original when we have it.
+ * Legacy entries (no snapshot) are reconstructed from the question shape so a
+ * dictation retry actually plays audio and a speaking retry uses the mic. */
 export function retryExercise(m: MistakeEntry): Exercise {
   if (m.ex) return m.ex
+  if (/^dictation/i.test(m.q)) {
+    return { type: 'dictation', ttsText: m.a, answer: [m.a] }
+  }
+  const say = m.q.match(/^Say aloud: (.+)$/)
+  if (say) {
+    return { type: 'speak', target: m.a, en: say[1]! }
+  }
   return { type: 'type', prompt: m.q, answer: [m.a] }
 }

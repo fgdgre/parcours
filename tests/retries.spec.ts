@@ -48,4 +48,16 @@ describe('retryExercise', () => {
     expect(ex.type).toBe('type')
     if (ex.type === 'type') expect(ex.answer).toEqual(['je veux manger'])
   })
+
+  it('legacy dictation mistakes retry as real dictations with audio', () => {
+    const ex = retryExercise({ q: 'Dictation (writing what you hear)', a: 'Bonjour, ça va ?', date: '2026-07-18' })
+    expect(ex.type).toBe('dictation')
+    if (ex.type === 'dictation') expect(ex.ttsText).toBe('Bonjour, ça va ?')
+  })
+
+  it('legacy speaking mistakes retry as speak exercises', () => {
+    const ex = retryExercise({ q: 'Say aloud: I want a coffee.', a: 'Je veux un café.', date: '2026-07-18' })
+    expect(ex.type).toBe('speak')
+    if (ex.type === 'speak') expect(ex.target).toBe('Je veux un café.')
+  })
 })

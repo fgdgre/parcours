@@ -44,12 +44,14 @@
       <div v-if="accentSlip" class="accent-note small">
         ⚠️ Right word, wrong accents — it's <em>{{ exercise.answer[0] }}</em>. Accents change the sound; this counts against your Spelling stat.
       </div>
-      <button class="btn tts-btn" @click="tts.speak(exercise.answer[0]!, progress.settings.ttsRate)">
-        🔊 Hear it
-      </button>
-      <button class="btn tts-btn" @click="explainIt">
-        {{ explained ? '✓ Copied — paste into a Claude chat' : '🤔 Explain this to me (AI)' }}
-      </button>
+      <div class="feedback-actions">
+        <button class="btn tts-btn" @click="tts.speak(exercise.answer[0]!, progress.settings.ttsRate)">
+          🔊 Hear it
+        </button>
+        <button class="btn tts-btn" @click="explainIt">
+          {{ explained ? '✓ Copied' : '🤔 Explain (AI)' }}
+        </button>
+      </div>
       <button class="btn btn-primary btn-block" @click="finish">Continue</button>
     </template>
   </div>
@@ -115,7 +117,10 @@ function submit() {
   // keyboard-typed answers are real spelling tests — surface accent slips
   accentSlip.value = !bankMode.value && lenient && !strictCorrect.value
   if (accentSlip.value) {
-    progress.logMistakes([{ q: `Accents: ${props.exercise.prompt}`, a: props.exercise.answer[0]! }])
+    const q = props.exercise.prompt.startsWith('Accents:')
+      ? props.exercise.prompt
+      : `Accents: ${props.exercise.prompt}`
+    progress.logMistakes([{ q, a: props.exercise.answer[0]! }])
   }
   submitted.value = true
 }
