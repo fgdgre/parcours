@@ -48,6 +48,9 @@
       </button>
     </template>
 
+    <div class="feedback-actions">
+      <ExerciseNote :note-key="`Say: ${exercise.target}`" what="sentence" />
+    </div>
     <button v-if="attempted" class="btn btn-primary btn-block" @click="$emit('done', passed)">Continue</button>
     <button v-else class="btn btn-block" @click="$emit('done', false)">Skip</button>
   </div>

@@ -17,6 +17,7 @@ const sample = {
   examHistory: [{ id: 'exam-ch1', pct: 92, seconds: 341, date: '2026-07-13' }],
   skillStats: { mc: { correct: 12, total: 15 } },
   dayStats: { '2026-07-13': { seconds: 1200, correct: 17, total: 21 } },
+  notes: { 'card:v1-24': 'avoir = the word behind j’ai' },
   settings: defaultSettings(),
 }
 

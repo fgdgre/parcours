@@ -19,6 +19,9 @@
           <span class="muted small">{{ card.exEn2 }}</span>
         </p>
       </div>
+      <div class="feedback-actions">
+        <ExerciseNote :note-key="`card:${card.id}`" what="word" />
+      </div>
       <button class="btn btn-primary btn-block" @click="nextIntro">
         {{ idx + 1 < queue.length ? 'Got it — next word' : (typables.length > 0 ? 'Got it — now spell them all' : 'Got it') }}
       </button>

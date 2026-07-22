@@ -29,6 +29,7 @@
         <button class="btn explain-btn" @click="explainIt">
           {{ explained ? '✓ Copied' : '🤔 Explain (AI)' }}
         </button>
+        <ExerciseNote :note-key="`Dictation: ${exercise.ttsText}`" what="sentence" />
       </div>
       <button class="btn btn-primary btn-block" @click="$emit('done', correct)">Continue</button>
     </template>

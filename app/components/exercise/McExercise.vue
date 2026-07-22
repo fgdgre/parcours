@@ -24,6 +24,7 @@
         <button class="btn explain-btn" @click="explainIt">
           {{ explained ? '✓ Copied' : '🤔 Explain (AI)' }}
         </button>
+        <ExerciseNote :note-key="exercise.prompt" />
       </div>
       <button class="btn btn-primary btn-block" @click="$emit('done', correct)">Continue</button>
     </template>

@@ -21,6 +21,9 @@
       <p v-else class="muted small">Tap to reveal</p>
     </div>
     <template v-if="revealed">
+      <div class="feedback-actions">
+        <ExerciseNote :note-key="`card:${card.id}`" what="word" />
+      </div>
       <div class="grades">
         <button class="btn grade again" @click="grade('again')">Again</button>
         <button class="btn grade hard" @click="grade('hard')">Hard</button>

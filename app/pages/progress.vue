@@ -282,6 +282,7 @@ async function copyProgressReview() {
     recentMistakes: progress.mistakes.slice(0, 50),
     writings: progress.writingRatings.slice(0, 30),
     studyTime: progress.dayStats,
+    myNotes: progress.notes,
     settings: progress.settings,
   }
   await copyToClipboard(buildProgressReviewPrompt(payload))

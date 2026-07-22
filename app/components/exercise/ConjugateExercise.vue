@@ -34,6 +34,7 @@
         <button class="btn explain-btn" @click="explainIt">
           {{ explained ? '✓ Copied' : '🤔 Explain (AI)' }}
         </button>
+        <ExerciseNote :note-key="`Conjugate ${exercise.verb} with “${exercise.pronoun}”`" />
       </div>
       <button class="btn btn-primary btn-block" @click="$emit('done', correct)">Continue</button>
     </template>

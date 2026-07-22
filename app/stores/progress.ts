@@ -61,6 +61,7 @@ export interface PersistedState {
   examHistory: ExamAttempt[]
   skillStats: Record<string, SkillStat>
   dayStats: Record<string, DayStat>
+  notes: Record<string, string>
   settings: Settings
 }
 
@@ -84,6 +85,7 @@ export function serializeState(
     examHistory: s.examHistory,
     skillStats: s.skillStats,
     dayStats: s.dayStats,
+    notes: s.notes,
     settings: s.settings,
   }
   return JSON.stringify(payload, null, 2)
@@ -126,6 +128,7 @@ export function validateBackup(json: string): BackupValidation {
       examHistory: (Array.isArray(parsed.examHistory) ? parsed.examHistory : []) as ExamAttempt[],
       skillStats: (isRecord(parsed.skillStats) ? parsed.skillStats : {}) as Record<string, SkillStat>,
       dayStats: (isRecord(parsed.dayStats) ? parsed.dayStats : {}) as Record<string, DayStat>,
+      notes: (isRecord(parsed.notes) ? parsed.notes : {}) as Record<string, string>,
       settings: settings as Settings,
     },
   }
@@ -142,6 +145,7 @@ export const useProgress = defineStore('progress', () => {
   const examHistory = ref<ExamAttempt[]>([])
   const skillStats = ref<Record<string, SkillStat>>({})
   const dayStats = ref<Record<string, DayStat>>({})
+  const notes = ref<Record<string, string>>({})
   const settings = ref<Settings>(defaultSettings())
   const loaded = ref(false)
 
@@ -158,6 +162,7 @@ export const useProgress = defineStore('progress', () => {
       examHistory: examHistory.value,
       skillStats: skillStats.value,
       dayStats: dayStats.value,
+      notes: notes.value,
       settings: settings.value,
     }))
   }
@@ -179,6 +184,7 @@ export const useProgress = defineStore('progress', () => {
     examHistory.value = data.examHistory
     skillStats.value = data.skillStats
     dayStats.value = data.dayStats
+    notes.value = data.notes
     settings.value = data.settings
   }
 
@@ -191,7 +197,7 @@ export const useProgress = defineStore('progress', () => {
     }
     loaded.value = true
     watch(
-      [completedLessons, srs, introduced, examScores, lessonScores, mistakes, writingRatings, examHistory, skillStats, dayStats, settings],
+      [completedLessons, srs, introduced, examScores, lessonScores, mistakes, writingRatings, examHistory, skillStats, dayStats, notes, settings],
       persistSoon,
       { deep: true },
     )
@@ -282,6 +288,11 @@ export const useProgress = defineStore('progress', () => {
     dayStats.value[today] = day
   }
 
+  function setNote(key: string, text: string) {
+    if (text.trim().length === 0) delete notes.value[key]
+    else notes.value[key] = text.trim().slice(0, 500)
+  }
+
   function addTime(seconds: number) {
     const today = todayIso()
     const day = dayStats.value[today] ?? { seconds: 0, correct: 0, total: 0 }
@@ -302,6 +313,7 @@ export const useProgress = defineStore('progress', () => {
       examHistory: examHistory.value,
       skillStats: skillStats.value,
       dayStats: dayStats.value,
+      notes: notes.value,
       settings: settings.value,
     })
   }
@@ -325,17 +337,18 @@ export const useProgress = defineStore('progress', () => {
     examHistory.value = []
     skillStats.value = {}
     dayStats.value = {}
+    notes.value = {}
     settings.value = defaultSettings()
     persistNow()
   }
 
   return {
     completedLessons, srs, introduced, examScores, lessonScores, mistakes,
-    writingRatings, examHistory, skillStats, dayStats, settings, loaded,
+    writingRatings, examHistory, skillStats, dayStats, notes, settings, loaded,
     load, isDone, markDone, unmarkDone,
     isIntroduced, introduceCard, reviewCard, recordExam, recordLesson, logMistakes,
     recordRetry, dueRetries,
-    addWriting, recordRun, addTime,
+    addWriting, recordRun, addTime, setNote,
     dueIds, wordsSeen, wordsLearned,
     exportBackup, importBackup, resetAll,
   }

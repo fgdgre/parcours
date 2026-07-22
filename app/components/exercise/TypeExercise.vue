@@ -51,6 +51,7 @@
         <button class="btn tts-btn" @click="explainIt">
           {{ explained ? '✓ Copied' : '🤔 Explain (AI)' }}
         </button>
+        <ExerciseNote :note-key="exercise.prompt" />
       </div>
       <button class="btn btn-primary btn-block" @click="finish">Continue</button>
     </template>
