@@ -58,7 +58,16 @@
     </template>
 
     <template v-else-if="mode === 'session'">
-      <ExerciseRunner :key="sessionKey" :exercises="sessionExercises" @finished="onFinished" />
+      <p class="muted small">Every answer saves immediately — quit any time, nothing is lost.</p>
+      <ExerciseRunner
+        :key="sessionKey"
+        :exercises="sessionExercises"
+        @answered="onAnswered"
+        @finished="onFinished"
+      />
+      <button class="btn btn-block quit-btn" @click="endSession">
+        End session — progress saved
+      </button>
     </template>
 
     <div v-else class="card stack">
@@ -112,19 +121,25 @@ function startSession() {
   sessionItems.value = [...due.value]
   sessionExercises.value = sessionItems.value.map(retryExercise)
   sessionKey.value += 1
+  summary.value = { clean: 0, reset: 0 }
   mode.value = 'session'
 }
 
-function onFinished(result: { missed: { q: string }[] }) {
-  let clean = 0
-  let reset = 0
-  for (const m of sessionItems.value) {
-    const failed = result.missed.some(x => x.q === m.q)
-    progress.recordRetry(m.q, !failed)
-    if (failed) reset += 1
-    else clean += 1
-  }
-  summary.value = { clean, reset }
+// each answer records the retry the moment it happens — quitting mid-session
+// (or the app dying) can no longer lose completed work
+function onAnswered(p: { index: number; correct: boolean }) {
+  const m = sessionItems.value[p.index]
+  if (!m) return
+  progress.recordRetry(m.q, p.correct, m.a)
+  if (p.correct) summary.value.clean += 1
+  else summary.value.reset += 1
+}
+
+function endSession() {
+  mode.value = summary.value.clean + summary.value.reset > 0 ? 'summary' : 'list'
+}
+
+function onFinished() {
   mode.value = 'summary'
 }
 </script>
@@ -155,5 +170,6 @@ function onFinished(result: { missed: { q: string }[] }) {
 .closed-toggle { border: 0; background: none; color: var(--muted); align-self: flex-start; padding: 4px 0; }
 .closed-item { opacity: 0.55; }
 .score { font-size: 1.4rem; font-weight: 700; }
+.quit-btn { color: var(--muted); border-style: dashed; }
 .okline { color: var(--ok); }
 </style>

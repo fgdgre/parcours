@@ -1,0 +1,92 @@
+[
+  {
+    "type": "conjugate",
+    "verb": "être",
+    "pronoun": "je",
+    "tense": "present",
+    "answer": ["suis"],
+    "hint": "être = to be. je suis, tu es, il est.",
+    "explain": "The chant: je suis · tu es · il est."
+  },
+  {
+    "type": "conjugate",
+    "verb": "avoir",
+    "pronoun": "tu",
+    "tense": "present",
+    "answer": ["as"],
+    "hint": "avoir = to have. j'ai, tu as, il a.",
+    "explain": "tu as → il a: the il-form is the tu-form minus s."
+  },
+  {
+    "type": "conjugate",
+    "verb": "aller",
+    "pronoun": "il",
+    "tense": "present",
+    "answer": ["va"],
+    "hint": "aller = to go. je vais, tu vas, il va.",
+    "explain": "Same trick: tu vas → il va."
+  },
+  {
+    "type": "conjugate",
+    "verb": "vouloir",
+    "pronoun": "il",
+    "tense": "present",
+    "answer": ["veut"],
+    "hint": "vouloir = to want. je veux, tu veux, il veut — x, x, t.",
+    "explain": "All three sound /vø/ — only the last letter changes. This one has 9 lapses on your card; let's retire it."
+  },
+  {
+    "type": "conjugate",
+    "verb": "pouvoir",
+    "pronoun": "je",
+    "tense": "present",
+    "answer": ["peux"],
+    "hint": "pouvoir = can. je peux, tu peux, il peut — same x/x/t family as vouloir.",
+    "explain": "vouloir and pouvoir rhyme in every form."
+  },
+  {
+    "type": "mc",
+    "prompt": "One letter apart: “il a” vs “il va” —",
+    "options": [
+      "il a = he HAS (avoir) · il va = he GOES (aller)",
+      "both mean he goes",
+      "both mean he has",
+      "il va is past tense"
+    ],
+    "answer": 0,
+    "explain": "Your writings mix these. a = has, va = goes. Say them aloud: /a/ vs /va/."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “He has a coffee.” (has — which verb?)",
+    "answer": ["il a un café"],
+    "hint": "has → avoir → il a (NOT il va).",
+    "explain": "il a un café. il va would mean he GOES."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “She goes to Paris.”",
+    "answer": ["elle va à paris"],
+    "hint": "goes → aller → elle va.",
+    "explain": "elle va à Paris — going, so va."
+  },
+  {
+    "type": "mc",
+    "prompt": "The blur to kill: je suis / je vais / je veux =",
+    "options": [
+      "I am / I go / I want — three different verbs",
+      "three ways to say I am",
+      "present, past, future of one verb",
+      "formal, neutral, casual"
+    ],
+    "answer": 0,
+    "explain": "suis = am (être) · vais = go (aller) · veux = want (vouloir). Your morning chant keeps them apart."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I am tired.” (fatigué = tired)",
+    "answer": ["je suis fatigué", "je suis fatiguée"],
+    "hint": "am → être → je suis.",
+    "explain": "State/description → être. je suis fatigué."
+  }
+]

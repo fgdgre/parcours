@@ -421,6 +421,27 @@
         "optional": true
       },
       {
+        "id": "focus-questions",
+        "type": "exercises",
+        "title": "Focus · question words & their spelling",
+        "exerciseFile": "focus-questions",
+        "durationMin": 6
+      },
+      {
+        "id": "focus-places",
+        "type": "exercises",
+        "title": "Focus · à, au, de — going places",
+        "exerciseFile": "focus-places",
+        "durationMin": 6
+      },
+      {
+        "id": "focus-verbs",
+        "type": "exercises",
+        "title": "Focus · core verbs sprint",
+        "exerciseFile": "focus-verbs",
+        "durationMin": 6
+      },
+      {
         "id": "writing-ch1",
         "type": "exercises",
         "title": "Writing · say it in your own words",

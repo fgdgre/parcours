@@ -1,0 +1,75 @@
+[
+  {
+    "type": "mc",
+    "prompt": "French will never let you say “à le”. What happens instead?",
+    "options": [
+      "à + le fuse into au — je vais AU magasin",
+      "you drop the article",
+      "you say “de le”",
+      "nothing, “à le” is fine"
+    ],
+    "answer": 0,
+    "explain": "à + le = au, always. (And later: de + le = du.)"
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I'm going to the store.” (magasin = store, masculine)",
+    "answer": ["je vais au magasin"],
+    "hint": "à + le magasin → au magasin. NOT “de” — de means FROM.",
+    "explain": "Your exact slip was “je vais de magasin” — de is the wrong direction. TO the store = au magasin."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I'm going to Paris.”",
+    "answer": ["je vais à paris"],
+    "hint": "Cities take plain à.",
+    "explain": "Cities: à Paris, à Montréal, à Varsovie."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I'm going to Canada.”",
+    "answer": ["je vais au canada"],
+    "hint": "le Canada is masculine → au.",
+    "explain": "Masculine countries: au Canada. Feminine: en France."
+  },
+  {
+    "type": "mc",
+    "prompt": "“de” before a place means…",
+    "options": ["from (the opposite of à)", "to", "at", "the"],
+    "answer": 0,
+    "explain": "à/au = to/at · de = from. Direction decides."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I come from Paris.” (je viens…)",
+    "answer": ["je viens de paris"],
+    "hint": "Coming FROM → de.",
+    "explain": "je viens de Paris — de = from."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “He's at the café.”",
+    "answer": ["il est au café"],
+    "hint": "à + le café → au café.",
+    "explain": "Being AT a masculine place also takes au."
+  },
+  {
+    "type": "mc",
+    "prompt": "“She's in France.” → Elle est ___ France.",
+    "options": ["en", "au", "à", "de"],
+    "answer": 0,
+    "explain": "Feminine countries take en: en France, en Ukraine, en Pologne."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I'm not going to the store.”",
+    "answer": ["je ne vais pas au magasin", "je vais pas au magasin"],
+    "hint": "ne…pas wraps vais; au stays.",
+    "explain": "Negation wraps the verb — the place word is untouched."
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Je vais au magasin avec toi.",
+    "answer": ["je vais au magasin avec toi"]
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "type": "mc",
+    "prompt": "qui, quoi, quand, comment, pourquoi, combien — why do French question words look alike?",
+    "options": [
+      "Most start with qu- — like English wh- (who, what, when)",
+      "Coincidence",
+      "They're all borrowed from Latin unchanged",
+      "Only in formal writing"
+    ],
+    "answer": 0,
+    "explain": "qu- is the question family. Anchor the family, then each member is one syllable of spelling."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: why",
+    "answer": ["pourquoi"],
+    "hint": "pour + quoi — literally “for what”. Two words you already know, glued.",
+    "explain": "pourquoi = pour (for) + quoi (what). Never needs -s or accents."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: how",
+    "answer": ["comment"],
+    "hint": "comme + -ent: sounds /kɔ.mɑ̃/ — the -ent is the nasal ‘ah’.",
+    "explain": "comment — double m is the trap. comme (like) + nt."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: when",
+    "answer": ["quand"],
+    "hint": "qu- + -and (like “grand”). The d is silent.",
+    "explain": "quand /kɑ̃/ — silent d, like grand."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: how much / how many",
+    "answer": ["combien"],
+    "hint": "com + BIEN — “bien” (well) is hiding inside.",
+    "explain": "combien = com + bien. If you can spell bien, you can spell combien."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: what",
+    "answer": ["quoi"],
+    "hint": "qu- + oi (the /wa/ sound, like moi, toi).",
+    "explain": "quoi rhymes and spells like moi/toi — the -oi family."
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Pourquoi pas ?",
+    "answer": ["pourquoi pas"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "C'est combien ?",
+    "answer": ["c'est combien"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Comment ça va aujourd'hui ?",
+    "answer": ["comment ça va aujourd'hui"]
+  },
+  {
+    "type": "mc",
+    "prompt": "Which spelling is correct?",
+    "options": ["comment", "commant", "coment", "commen"],
+    "answer": 0,
+    "explain": "Double m, then -ent."
+  }
+]

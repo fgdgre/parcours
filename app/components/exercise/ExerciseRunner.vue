@@ -5,7 +5,7 @@
         v-for="(_, i) in exercises"
         :key="i"
         class="dot"
-        :class="{ done: i < idx, current: i === idx }"
+        :class="dotClass(i)"
       />
     </div>
     <component
@@ -34,13 +34,27 @@ interface RunResult {
 }
 
 const props = defineProps<{ exercises: Exercise[] }>()
-const emit = defineEmits<{ finished: [result: RunResult] }>()
+const emit = defineEmits<{
+  finished: [result: RunResult]
+  answered: [payload: { index: number; q: string; a: string; correct: boolean }]
+}>()
 
 const progress = useProgress()
 const idx = ref(0)
 const correctCount = ref(0)
 const gradableCount = ref(0)
 const missed = ref<{ q: string; a: string; ex?: Exercise }[]>([])
+const results = ref<Record<number, 'ok' | 'err' | 'open'>>({})
+
+function dotClass(i: number) {
+  const r = results.value[i]
+  return {
+    'dot-ok': r === 'ok',
+    'dot-err': r === 'err',
+    'dot-open': r === 'open',
+    current: i === idx.value,
+  }
+}
 const perType: Record<string, { correct: number; total: number }> = {}
 const current = computed(() => props.exercises[idx.value])
 
@@ -68,6 +82,11 @@ function componentFor(ex: Exercise) {
 
 function advance(correct?: boolean, meta?: { skill?: string; skillCorrect?: boolean }) {
   const ex = current.value
+  if (ex) {
+    results.value[idx.value] = ex.type === 'open' ? 'open' : (correct ? 'ok' : 'err')
+    const d = describe(ex)
+    emit('answered', { index: idx.value, q: d.q, a: d.a, correct: !!correct })
+  }
   // 'open' writing is never auto-graded — it neither counts toward the
   // score nor appears in the mistake log.
   if (ex && ex.type !== 'open') {
@@ -104,6 +123,8 @@ function advance(correct?: boolean, meta?: { skill?: string; skillCorrect?: bool
   border-radius: 999px;
   background: var(--border);
 }
-.dot.done { background: var(--ok); }
+.dot-ok { background: var(--ok); }
+.dot-err { background: var(--err); }
+.dot-open { background: var(--warn); }
 .dot.current { background: var(--accent); }
 </style>

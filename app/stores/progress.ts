@@ -257,10 +257,19 @@ export const useProgress = defineStore('progress', () => {
     if (mistakes.value.length > 100) mistakes.value.length = 100
   }
 
-  function recordRetry(q: string, ok: boolean) {
-    const i = mistakes.value.findIndex(m => m.q === q && !m.closed)
+  function recordRetry(q: string, ok: boolean, a?: string) {
+    let i = a !== undefined
+      ? mistakes.value.findIndex(m => m.q === q && m.a === a && !m.closed && !retriedToday(m))
+      : -1
+    if (i === -1) i = mistakes.value.findIndex(m => m.q === q && !m.closed && !retriedToday(m))
     if (i === -1) return
     mistakes.value[i] = applyRetry(mistakes.value[i]!, ok, todayIso())
+  }
+
+  /** guards double-recording when several legacy mistakes share one question */
+  function retriedToday(m: Mistake): boolean {
+    const today = todayIso()
+    return m.r1?.date === today || m.r2?.date === today
   }
 
   const dueRetries = computed(() => mistakes.value.filter(m => isDue(m, todayIso())))
