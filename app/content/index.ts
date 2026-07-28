@@ -1,4 +1,5 @@
 import type { Card, Chapter, Exercise, ExerciseLesson, Lesson, VocabLesson } from '~/types/content'
+import { shuffle } from '~/utils/drills'
 import curriculumJson from './curriculum.json'
 
 export const curriculum = curriculumJson as Chapter[]
@@ -68,6 +69,24 @@ export function chapterExercisePool(ch: Chapter): Exercise[] {
     .filter((l): l is ExerciseLesson => l.type === 'exercises')
     .flatMap(l => exercisesByFile[l.exerciseFile] ?? [])
     .filter(e => e.type !== 'speak' && e.type !== 'open')
+}
+
+/** Production-weighted exam sampling. A flat-random draw mirrors the pool,
+ * and pools are mc-heavy — so exams tested recognition (the easiest skill)
+ * and overstated readiness. An exam must make you WRITE French: ≥40% typed
+ * production (type/conjugate), ≥25% dictation, the rest mc — degrading
+ * gracefully when a chapter lacks items of a kind. */
+export function buildExamItems(pool: Exercise[], n: number): Exercise[] {
+  const target = Math.min(n, pool.length)
+  const dictation = shuffle(pool.filter(e => e.type === 'dictation'))
+  const production = shuffle(pool.filter(e => e.type === 'type' || e.type === 'conjugate'))
+  const recognition = shuffle(pool.filter(e => e.type !== 'dictation' && e.type !== 'type' && e.type !== 'conjugate'))
+  const nDict = Math.min(dictation.length, Math.round(target * 0.25))
+  const nProd = Math.min(production.length, Math.round(target * 0.4))
+  const picked = [...dictation.slice(0, nDict), ...production.slice(0, nProd)]
+  const fill = shuffle([...recognition, ...production.slice(nProd), ...dictation.slice(nDict)])
+  while (picked.length < target) picked.push(fill.shift()!)
+  return shuffle(picked)
 }
 
 /** The chapter's open writing prompts — one gets appended to every exam attempt. */

@@ -1,0 +1,63 @@
+[
+  {
+    "type": "mc",
+    "prompt": "The letters “oi” always spell one sound:",
+    "options": ["/wa/ — moi, toi, quoi, pourquoi", "/o/ like “go”", "/i/ like “see”", "it varies word by word"],
+    "answer": 0,
+    "explain": "oi = /wa/, no exceptions in everyday words. Hear /wa/ → write oi."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: me (as in “for me”)",
+    "answer": ["moi"],
+    "hint": "/mwa/ → m + oi.",
+    "explain": "moi — the oi family: moi, toi, quoi."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: you (as in “with you”, informal)",
+    "answer": ["toi"],
+    "hint": "/twa/ → t + oi.",
+    "explain": "toi — same family as moi."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: why",
+    "answer": ["pourquoi"],
+    "hint": "pour + quoi. The /wa/ at the end is oi.",
+    "explain": "pourquoi — oi carries the /wa/."
+  },
+  {
+    "type": "mc",
+    "prompt": "The letters “ou” spell /u/ (like “too”). Which word uses it?",
+    "options": ["bonjour", "moi", "café", "très"],
+    "answer": 0,
+    "explain": "bonjour, vous, pour, beaucoup — hear /u/ → write ou."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: a lot, very much",
+    "answer": ["beaucoup"],
+    "hint": "beau + coup — /bo.ku/. Both parts end in silent letters.",
+    "explain": "beaucoup — your recurring “beacoup” drops the u of beau. beau + coup."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: hello, good day",
+    "answer": ["bonjour"],
+    "hint": "bon + jour (day). The /u/ is ou.",
+    "explain": "bonjour = bon + jour. jour comes back in the next word…"
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: today",
+    "answer": ["aujourd'hui"],
+    "hint": "au + jour + d'hui — literally “on the day of this day”. jour is hiding in the middle.",
+    "explain": "aujourd'hui — find jour inside and the spelling assembles itself."
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Pourquoi moi ?",
+    "answer": ["pourquoi moi"]
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“an” and “en” spell the nasal /ɑ̃/ (“ah” through the nose). Which words carry it?",
+    "options": ["comment, quand, maintenant", "bien, combien", "non, bon", "oui, lui"],
+    "answer": 0,
+    "explain": "Hear the nasal “ah” → write an or en. commENT, quAND, maintenANT."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: how",
+    "answer": ["comment"],
+    "hint": "comme + nt — the -ent is the nasal ah. Double m.",
+    "explain": "comment — /kɔ.mɑ̃/, the nasal is spelled -ent here."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: when",
+    "answer": ["quand"],
+    "hint": "qu + and — nasal ah spelled an, silent d.",
+    "explain": "quand /kɑ̃/."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: now",
+    "answer": ["maintenant"],
+    "hint": "main + tenant — two chunks, two nasals.",
+    "explain": "maintenant — you already say it right; main+tenant spells it."
+  },
+  {
+    "type": "mc",
+    "prompt": "“on” spells the nasal /ɔ̃/ (“oh” through the nose). Which group?",
+    "options": ["non, bon, pardon", "quand, comment", "bien, combien", "vous, pour"],
+    "answer": 0,
+    "explain": "nON, bON, pardON — round nasal “oh” → write on."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: no",
+    "answer": ["non"],
+    "hint": "n + on.",
+    "explain": "non — nasal /ɔ̃/ spelled on."
+  },
+  {
+    "type": "mc",
+    "prompt": "“ien” spells /jɛ̃/ — a y-glide into a nasal “eh”. Which group?",
+    "options": ["bien, combien", "non, bon", "quand, comment", "moi, toi"],
+    "answer": 0,
+    "explain": "bIEN, combIEN — hear /jɛ̃/ → write ien."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: well, good (the “ça va ___” word)",
+    "answer": ["bien"],
+    "hint": "b + ien.",
+    "explain": "bien — and it hides inside the next word."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: how much, how many",
+    "answer": ["combien"],
+    "hint": "com + bien.",
+    "explain": "combien = com + bien. Spell bien, get combien free."
+  },
+  {
+    "type": "dictation",
+    "ttsText": "C'est bien, non ?",
+    "answer": ["c'est bien non"]
+  }
+]

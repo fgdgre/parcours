@@ -471,6 +471,95 @@
     ]
   },
   {
+    "id": "chF",
+    "title": "Chapitre Focus · Sons & Orthographe",
+    "subtitle": "A remedial sprint built from your own mistake log — writing the French you can already hear.",
+    "lessons": [
+      {
+        "id": "fx-sons-oi-ou",
+        "type": "exercises",
+        "title": "Sons → lettres · oi /wa/ and ou /u/",
+        "exerciseFile": "fx-sons-oi-ou",
+        "durationMin": 6
+      },
+      {
+        "id": "fx-sons-nasals",
+        "type": "exercises",
+        "title": "Sons → lettres · the three nasals (an, on, ien)",
+        "exerciseFile": "fx-sons-nasals",
+        "durationMin": 6
+      },
+      {
+        "id": "fx-silent-letters",
+        "type": "exercises",
+        "title": "Silent endings · letters for the eyes only",
+        "exerciseFile": "fx-silent-letters",
+        "durationMin": 6
+      },
+      {
+        "id": "fx-accents",
+        "type": "exercises",
+        "title": "Accents with meaning · é è ê ç à",
+        "exerciseFile": "fx-accents",
+        "durationMin": 6
+      },
+      {
+        "id": "fx-dictee-1",
+        "type": "exercises",
+        "title": "Dictée 1 · short sentences",
+        "exerciseFile": "fx-dictee-1",
+        "durationMin": 6
+      },
+      {
+        "id": "fx-un-verbe",
+        "type": "exercises",
+        "title": "One verb rule · never stack conjugated verbs",
+        "exerciseFile": "fx-un-verbe",
+        "durationMin": 6
+      },
+      {
+        "id": "fx-articles",
+        "type": "exercises",
+        "title": "un / une / le / la / mon · gender without guessing",
+        "exerciseFile": "fx-articles",
+        "durationMin": 6
+      },
+      {
+        "id": "fx-dictee-2",
+        "type": "exercises",
+        "title": "Dictée 2 · negation & places",
+        "exerciseFile": "fx-dictee-2",
+        "durationMin": 6
+      },
+      {
+        "id": "fx-traduction",
+        "type": "exercises",
+        "title": "Translation sprint · your missed sentences, round 2",
+        "exerciseFile": "fx-traduction",
+        "durationMin": 6
+      },
+      {
+        "id": "fx-dictee-boss",
+        "type": "exercises",
+        "title": "Dictée finale · boss level",
+        "exerciseFile": "fx-dictee-boss",
+        "durationMin": 6
+      },
+      {
+        "id": "fx-checkpoint",
+        "type": "checkpoint",
+        "title": "Focus checkpoint",
+        "durationMin": 3,
+        "canDoStatements": [
+          "I can write short everyday sentences from hearing alone.",
+          "I can spell the question words and nasal words (comment, quand, maintenant, combien) without peeking.",
+          "I use exactly ONE conjugated verb per clause — the next verb stays in the infinitive.",
+          "I pick un/une/le/la/mon by gender instead of guessing."
+        ]
+      }
+    ]
+  },
+  {
     "id": "ch2",
     "title": "Chapter 2 · Rythme",
     "subtitle": "Weeks 3–4 — daily life vocabulary joins in",

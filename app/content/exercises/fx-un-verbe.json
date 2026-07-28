@@ -1,0 +1,75 @@
+[
+  {
+    "type": "mc",
+    "prompt": "THE rule your writings break most: when two verbs meet…",
+    "options": [
+      "only the FIRST is conjugated — the second stays infinitive: je veux mangER",
+      "both are conjugated",
+      "the second gets “de” in between",
+      "the second gets “pour” in between"
+    ],
+    "answer": 0,
+    "explain": "One conjugated verb per clause. Everything after it stays in the dictionary form — no matter how far from the pronoun it sits. (This answers your note on Sprint 8/8: distance doesn't matter; following another verb does.)"
+  },
+  {
+    "type": "mc",
+    "prompt": "“je suis veux un gâteau” is wrong because…",
+    "options": [
+      "suis and veux are BOTH conjugated — pick one: je veux un gâteau",
+      "gâteau is feminine",
+      "it needs “de”",
+      "suis must come after veux"
+    ],
+    "answer": 0,
+    "explain": "English “I am wanting” tempts you to add suis. French never stacks two conjugated verbs."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I want to close the door.” (fermer = to close)",
+    "answer": ["je veux fermer la porte"],
+    "hint": "veux is conjugated → fermer stays infinitive, no “de”, no “fermé”.",
+    "explain": "je veux fermer la porte — your past slips: “je veux fermé” and “je voudrais de fermer”."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I would like to speak French.”",
+    "answer": ["je voudrais parler français"],
+    "hint": "Nothing between voudrais and parler.",
+    "explain": "je voudrais parler — verb + infinitive, glued directly."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I'm not going to speak with you.” (informal)",
+    "answer": ["je ne vais pas parler avec toi", "je vais pas parler avec toi"],
+    "hint": "ne…pas wraps vais. Then parler directly — no “pour”.",
+    "explain": "je ne vais pas parler avec toi — this morning you wrote “pas pour parler”. pour = in order to; it doesn't belong between aller and its verb."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I can eat now.”",
+    "answer": ["je peux manger maintenant"],
+    "hint": "peux conjugated → manger infinitive.",
+    "explain": "je peux manger maintenant."
+  },
+  {
+    "type": "mc",
+    "prompt": "“possible” links to a verb with…",
+    "options": ["de — ce n'est pas possible DE voler", "pour", "à", "nothing"],
+    "answer": 0,
+    "explain": "possible de + infinitive. Your “possible pour voler” → possible de voler. (pour + verb = “in order to”.)"
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “It's not possible to fly today.” (voler = to fly)",
+    "answer": ["ce n'est pas possible de voler aujourd'hui"],
+    "hint": "possible + de + infinitive.",
+    "explain": "ce n'est pas possible de voler aujourd'hui."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I'm going to sleep.” (dormir = to sleep)",
+    "answer": ["je vais dormir"],
+    "hint": "aller + infinitive = near future. Nothing in between.",
+    "explain": "je vais dormir — clean, like your best sentence this week."
+  }
+]

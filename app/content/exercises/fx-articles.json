@@ -1,0 +1,72 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“my” before a masculine noun is…",
+    "options": ["mon — mon travail, mon ami", "moi — moi travail", "ma", "me"],
+    "answer": 0,
+    "explain": "moi = me (a pronoun, stands alone). mon = my (owns a noun). “moi travail” = “me work”."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “my work”",
+    "answer": ["mon travail"],
+    "hint": "mon, not moi.",
+    "explain": "mon travail — this morning's slip, retired."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “a coffee”",
+    "answer": ["un café"],
+    "hint": "café is masculine.",
+    "explain": "un café."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “a question”",
+    "answer": ["une question"],
+    "hint": "-tion words are ALWAYS feminine — a rare 100% rule.",
+    "explain": "une question, une situation, une réservation — every -tion word is feminine, forever."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “the door”",
+    "answer": ["la porte"],
+    "hint": "porte is feminine.",
+    "explain": "la porte — you wrote “le porte” on day 3; most -e endings lean feminine."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “the window”",
+    "answer": ["la fenêtre"],
+    "hint": "Feminine, and ê wears the hat.",
+    "explain": "la fenêtre."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “a slice” (of pizza, of bread…)",
+    "answer": ["une tranche"],
+    "hint": "tranche is feminine.",
+    "explain": "une tranche — your Friday pizza question, answered."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “a little” (as in “a little French”)",
+    "answer": ["un peu"],
+    "hint": "un, not “an” — French has no “an”.",
+    "explain": "un peu — “an peu” was English sneaking in."
+  },
+  {
+    "type": "mc",
+    "prompt": "“two coffees” is…",
+    "options": ["deux cafés — plural adds s (silent)", "deux café", "deux de café", "des deux café"],
+    "answer": 0,
+    "explain": "Plural s is silent but written — deux cafés. From your café dialogue: “je veux deux café” needed the s."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “my friend” (male)",
+    "answer": ["mon ami"],
+    "hint": "mon + ami.",
+    "explain": "mon ami."
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "type": "mc",
+    "prompt": "The golden rule of French endings: final s, t, d, x are usually…",
+    "options": ["silent — you write them but never say them", "pronounced softly", "pronounced only on Sundays", "always pronounced"],
+    "answer": 0,
+    "explain": "très, veux, quand, pas — the last letter is for your EYES, not your mouth. This is why dictation feels hard: you must write letters you can't hear."
+  },
+  {
+    "type": "type",
+    "prompt": "Write with the pronoun: “I want”",
+    "answer": ["je veux"],
+    "hint": "/ʒə vø/ — the x is silent but must be written.",
+    "explain": "je veux — silent x. (Not Vuex — that's your day job leaking in.)"
+  },
+  {
+    "type": "type",
+    "prompt": "Write with the pronoun: “he wants”",
+    "answer": ["il veut"],
+    "hint": "Same sound /vø/, but il takes t.",
+    "explain": "je veuX, tu veuX, il veuT — sound identical, endings differ."
+  },
+  {
+    "type": "type",
+    "prompt": "Write with the pronoun: “I can”",
+    "answer": ["je peux"],
+    "hint": "Same x/x/t family as vouloir.",
+    "explain": "je peux — silent x again."
+  },
+  {
+    "type": "mc",
+    "prompt": "Which letter is silent in “quand”?",
+    "options": ["the d", "the q", "the n", "none"],
+    "answer": 0,
+    "explain": "quand /kɑ̃/ — the d only exists on paper."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: not (the second half of ne…)",
+    "answer": ["pas"],
+    "hint": "/pa/ — silent s.",
+    "explain": "pas — one of thousands of silent final s."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: very",
+    "answer": ["très"],
+    "hint": "/tʁɛ/ — accent grave on e, silent s.",
+    "explain": "très — è + silent s."
+  },
+  {
+    "type": "type",
+    "prompt": "Write with the pronoun: “you speak” (informal)",
+    "answer": ["tu parles"],
+    "hint": "The -es is completely silent — sounds exactly like je parle.",
+    "explain": "tu parles — je parle / tu parles / il parle all sound the same; only spelling changes."
+  },
+  {
+    "type": "mc",
+    "prompt": "Why do je parle / tu parles / il parle all sound identical?",
+    "options": ["the endings -e / -es / -e are all silent", "French people mumble", "they don't — tu is louder", "only in songs"],
+    "answer": 0,
+    "explain": "Your ear already knows these verbs. Dictation is teaching your fingers the silent endings."
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Tu veux un café ?",
+    "answer": ["tu veux un café"]
+  }
+]

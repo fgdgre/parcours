@@ -163,7 +163,7 @@
 <script setup lang="ts">
 import type { Exercise } from '~/types/content'
 import {
-  cardsById, chapterCards, chapterExercisePool, chapterOf, chapterOpenPool,
+  buildExamItems, cardsById, chapterCards, chapterExercisePool, chapterOf, chapterOpenPool,
   exercisesByFile, lessonById, nextLessonAfter,
 } from '~/content'
 import { buildDrills, shuffle } from '~/utils/drills'
@@ -297,7 +297,7 @@ function startExam() {
     ...chapterExercisePool(chapter.value),
     ...buildDrills(chapterCards(chapter.value), Object.values(cardsById), 'mixed', 8),
   ]
-  const items = shuffle(pool).slice(0, Math.min(lesson.value.questions, pool.length))
+  const items = buildExamItems(pool, lesson.value.questions)
   // every exam ends with one open writing task (auto-passed; check it via "Copy to check")
   const openPool = chapterOpenPool(chapter.value)
   if (openPool.length > 0) items.push(shuffle(openPool)[0]!)

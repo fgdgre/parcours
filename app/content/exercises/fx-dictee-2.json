@@ -1,0 +1,42 @@
+[
+  {
+    "type": "dictation",
+    "ttsText": "Je ne vais pas au magasin.",
+    "answer": ["je ne vais pas au magasin"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Il n'y a pas de problème.",
+    "answer": ["il n'y a pas de problème"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Je viens de Paris.",
+    "answer": ["je viens de paris"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Elle est au café maintenant.",
+    "answer": ["elle est au café maintenant"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Je ne peux pas venir aujourd'hui.",
+    "answer": ["je ne peux pas venir aujourd'hui"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Tu vas à Paris demain.",
+    "answer": ["tu vas à paris demain"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Ce n'est pas possible ici.",
+    "answer": ["ce n'est pas possible ici"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Je veux aller au café avec toi.",
+    "answer": ["je veux aller au café avec toi"]
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "type": "mc",
+    "prompt": "é vs è — what's the difference?",
+    "options": ["é = closed “ay” (café) · è = open “eh” (très)", "purely decorative", "é is formal, è is casual", "they mark stress"],
+    "answer": 0,
+    "explain": "é points right = tongue up, “ay”. è points left = mouth open, “eh”. Say café, then très — feel it."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: very (with its accent)",
+    "answer": ["très"],
+    "hint": "Open “eh” sound → è (accent grave, pointing left).",
+    "explain": "très — open sound, grave accent."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: problem (with its accent)",
+    "answer": ["problème"],
+    "hint": "pro-blè-me — the open “eh” before -me takes è.",
+    "explain": "problème — your writings keep dropping this one."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: coffee (with its accent)",
+    "answer": ["café"],
+    "hint": "Ends on closed “ay” → é.",
+    "explain": "café — closed sound, accent aigu."
+  },
+  {
+    "type": "mc",
+    "prompt": "The hat ê (être, fenêtre) usually marks…",
+    "options": ["a letter s that disappeared centuries ago (forest→forêt)", "a loud syllable", "a borrowed word", "nothing — optional"],
+    "answer": 0,
+    "explain": "être was “estre”. The hat is a tombstone for a dead s — a story beats memorizing."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: to be",
+    "answer": ["être"],
+    "hint": "ê wears the hat.",
+    "explain": "être — hat on the e."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: maybe",
+    "answer": ["peut-être"],
+    "hint": "peut + hyphen + être. The verb “can” glued to the verb “be”.",
+    "explain": "peut-être — literally “can-be”. You flagged this one as unspellable; now it's two words you know."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: please (formal, all three words)",
+    "answer": ["s'il vous plaît"],
+    "hint": "s'il = si + il. The hat sits on the î of plaît — not on the a.",
+    "explain": "s'il vous plaît — your “sil vous plâit” put the hat on the wrong letter. It's plaît."
+  },
+  {
+    "type": "mc",
+    "prompt": "à vs a: “Il ___ un café.”",
+    "options": ["a — the verb (il a = he has)", "à — the preposition", "either works", "neither"],
+    "answer": 0,
+    "explain": "a (no accent) = verb avoir. à (accent) = to/at. The accent exists exactly to tell them apart."
+  },
+  {
+    "type": "mc",
+    "prompt": "The little tail on ç (ça, français) does what?",
+    "options": ["makes c sound like s before a/o/u", "makes it silent", "marks a question", "decoration"],
+    "answer": 0,
+    "explain": "Without the cedilla, “ca” would sound like “ka”. ça = /sa/."
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "type": "dictation",
+    "ttsText": "Je vais au magasin avec mon ami.",
+    "answer": ["je vais au magasin avec mon ami"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Il n'y a pas de café aujourd'hui.",
+    "answer": ["il n'y a pas de café aujourd'hui"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Je voudrais parler avec vous maintenant.",
+    "answer": ["je voudrais parler avec vous maintenant"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Ce n'est pas une bonne idée.",
+    "answer": ["ce n'est pas une bonne idée"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Vous pouvez répéter, s'il vous plaît ?",
+    "answer": ["vous pouvez répéter s'il vous plaît"]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Je ne sais pas pourquoi, mais ça va.",
+    "answer": ["je ne sais pas pourquoi mais ça va"]
+  },
+  {
+    "type": "type",
+    "prompt": "Boss round — “I want to close the window.”",
+    "answer": ["je veux fermer la fenêtre"],
+    "hint": "One conjugated verb, feminine window, hat on the ê."
+  },
+  {
+    "type": "type",
+    "prompt": "Boss round — “Maybe tomorrow, my friend.”",
+    "answer": ["peut-être demain, mon ami", "peut-être demain mon ami"],
+    "hint": "peut-être (can-be) + mon (not moi)."
+  }
+]

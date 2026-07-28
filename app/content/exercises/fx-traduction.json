@@ -1,0 +1,56 @@
+[
+  {
+    "type": "type",
+    "prompt": "Round 2 on your missed sprint — “Why not?”",
+    "answer": ["pourquoi pas"],
+    "hint": "Two words, both drilled this week."
+  },
+  {
+    "type": "type",
+    "prompt": "“Me too, thanks a lot!”",
+    "answer": ["moi aussi, merci beaucoup", "moi aussi merci beaucoup"],
+    "hint": "moi (not mon!) + aussi."
+  },
+  {
+    "type": "type",
+    "prompt": "“I can come with you.” (informal)",
+    "answer": ["je peux venir avec toi", "je peux venir avec vous"],
+    "hint": "peux conjugated → venir infinitive."
+  },
+  {
+    "type": "type",
+    "prompt": "“I have a question for you.” (informal)",
+    "answer": ["j'ai une question pour toi", "j'ai une question pour vous"],
+    "hint": "-tion → feminine → une."
+  },
+  {
+    "type": "type",
+    "prompt": "“It's not possible today.”",
+    "answer": ["ce n'est pas possible aujourd'hui", "c'est pas possible aujourd'hui"],
+    "hint": "ce n'est pas + possible + the long word you can now assemble: au+jour+d'hui."
+  },
+  {
+    "type": "type",
+    "prompt": "“I'm going to speak French now.”",
+    "answer": ["je vais parler français maintenant"],
+    "hint": "vais conjugated → parler infinitive → main+tenant."
+  },
+  {
+    "type": "type",
+    "prompt": "“There is a café here.”",
+    "answer": ["il y a un café ici"],
+    "hint": "il y a — the there-is chunk."
+  },
+  {
+    "type": "type",
+    "prompt": "“Yes, but not now.”",
+    "answer": ["oui, mais pas maintenant", "oui mais pas maintenant"],
+    "hint": "No verb → no ne. Just pas before the word it cancels."
+  },
+  {
+    "type": "type",
+    "prompt": "“I would like to eat something.”",
+    "answer": ["je voudrais manger quelque chose"],
+    "hint": "voudrais → manger stays infinitive."
+  }
+]
