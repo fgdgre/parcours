@@ -23,7 +23,8 @@
     <p class="muted small">
       Writing isn't graded here. The copy button packs your text with a tutor briefing —
       paste it into any AI chat to get corrections and keep the conversation going in French.
-      The AI ends with a strict <strong>RATING: NN/100</strong> — record it below.
+      The AI ends with a strict <strong>RATING: NN/100</strong> — type it below;
+      it's kept when you tap “Done writing”.
     </p>
 
     <div v-if="hasCopied" class="stack rating-block">
@@ -95,9 +96,13 @@ function saveRating() {
 }
 
 function finish() {
-  // keep the text for analytics even when no rating was recorded
+  // "Done writing" must save whatever is filled in — a typed rating that was
+  // never "Saved" was silently dropped here for two weeks
   if (!stored.value && text.value.trim().length > 0) {
-    progress.addWriting(props.exercise.prompt, text.value.trim(), null, note.value.trim())
+    const typed = typeof rating.value === 'number'
+      ? Math.max(0, Math.min(100, rating.value))
+      : null
+    progress.addWriting(props.exercise.prompt, text.value.trim(), typed, note.value.trim())
     stored.value = true
   }
   emit('done', true)

@@ -285,6 +285,13 @@ export const useProgress = defineStore('progress', () => {
     if (writingRatings.value.length > 100) writingRatings.value.length = 100
   }
 
+  /** backfill or correct a rating from the Progress list */
+  function setWritingScore(index: number, score: number) {
+    const w = writingRatings.value[index]
+    if (!w || !Number.isFinite(score)) return
+    writingRatings.value[index] = { ...w, score: Math.max(0, Math.min(100, Math.round(score))) }
+  }
+
   function recordRun(perType: Record<string, { correct: number; total: number }>) {
     const today = todayIso()
     const day = dayStats.value[today] ?? { seconds: 0, correct: 0, total: 0 }
@@ -357,7 +364,7 @@ export const useProgress = defineStore('progress', () => {
     load, isDone, markDone, unmarkDone,
     isIntroduced, introduceCard, reviewCard, recordExam, recordLesson, logMistakes,
     recordRetry, dueRetries,
-    addWriting, recordRun, addTime, setNote,
+    addWriting, setWritingScore, recordRun, addTime, setNote,
     dueIds, wordsSeen, wordsLearned,
     exportBackup, importBackup, resetAll,
   }

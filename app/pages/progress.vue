@@ -79,10 +79,26 @@
           <span>Average (AI-rated, strict)</span>
           <strong :class="qualityClass(writingAvg)">{{ writingAvg }}/100</strong>
         </div>
-        <div v-for="(r, i) in progress.writingRatings.slice(0, 3)" :key="i" class="spread">
+        <div v-for="(r, i) in progress.writingRatings.slice(0, 10)" :key="i" class="spread">
           <span class="muted small rating-task">{{ r.task }}</span>
-          <span class="small">{{ r.score ?? '—' }}</span>
+          <input
+            v-if="editingScore === i"
+            ref="scoreEl"
+            v-model.number="editValue"
+            class="input score-input"
+            type="number"
+            inputmode="numeric"
+            min="0"
+            max="100"
+            placeholder="NN"
+            @keydown.enter="commitScore(i)"
+            @blur="commitScore(i)"
+          >
+          <button v-else class="score-btn small" :class="{ missing: r.score === null }" @click="startScoreEdit(i, r.score)">
+            {{ r.score ?? '＋ add' }}
+          </button>
         </div>
+        <p class="muted small">Tap a score to add or fix the AI rating from your review chat.</p>
       </div>
     </template>
 
@@ -174,6 +190,25 @@ import { buildMistakesPrompt, buildProgressReviewPrompt } from '~/utils/reviewPr
 import { addDays, todayIso } from '~/utils/srs'
 
 const progress = useProgress()
+
+// tap-to-backfill for AI writing ratings that were never recorded
+const editingScore = ref<number | null>(null)
+// v-model.number hands back '' when the field is emptied
+const editValue = ref<number | '' | null>(null)
+const scoreEl = ref<HTMLInputElement>()
+function startScoreEdit(i: number, current: number | null) {
+  editingScore.value = i
+  editValue.value = current
+  // focus opens the phone keyboard AND guarantees the blur-commit path exists
+  nextTick(() => scoreEl.value?.focus())
+}
+function commitScore(i: number) {
+  if (editingScore.value !== i) return
+  if (typeof editValue.value === 'number' && editValue.value >= 0 && editValue.value <= 100) {
+    progress.setWritingScore(i, editValue.value)
+  }
+  editingScore.value = null
+}
 
 const required = (ch: Chapter) => ch.lessons.filter(l => !isOptional(l))
 const doneIn = (ch: Chapter) => required(ch).filter(l => progress.isDone(l.id)).length
@@ -362,4 +397,16 @@ function resetAll() {
 .mistake { padding-bottom: 8px; border-bottom: 1px solid var(--border); }
 .mistake .q { margin: 0; color: var(--muted); }
 .mistake .a { margin: 2px 0 0; font-weight: 600; }
+.score-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--fg);
+  padding: 4px 10px;
+  min-height: 32px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.score-btn.missing { color: var(--muted); border-style: dashed; }
+.score-input { width: 70px; min-height: 36px; text-align: center; padding: 4px; }
 </style>

@@ -4,7 +4,7 @@
     <section v-for="ch in curriculum" :key="ch.id" class="stack chapter">
       <button
         class="chapter-head"
-        :class="{ open: isOpen(ch.id) }"
+        :class="{ open: isOpen(ch.id), 'ch-done': isChapterDone(ch) }"
         :aria-expanded="isOpen(ch.id)"
         @click="toggle(ch.id)"
       >
@@ -14,7 +14,7 @@
           <ProgressBar class="head-bar" :value="required(ch).length ? doneIn(ch) / required(ch).length : 0" />
         </span>
         <span class="head-meta">
-          <span class="muted small">{{ doneIn(ch) }}/{{ required(ch).length }}</span>
+          <span class="muted small">{{ isChapterDone(ch) ? '✓ done' : `${doneIn(ch)}/${required(ch).length}` }}</span>
           <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M9 6l6 6-6 6" />
           </svg>
@@ -23,6 +23,7 @@
       <template v-if="isOpen(ch.id)">
         <template v-for="(day, di) in daysFor(ch)" :key="`${ch.id}-day-${di}`">
           <button
+            :id="day.current ? 'current-day' : undefined"
             class="day-head"
             :class="{ 'day-done': day.done, 'day-current': day.current }"
             @click="toggleDay(day)"
@@ -93,8 +94,18 @@ function daysFor(ch: Chapter): Day[] {
 }
 
 const currentChapterId = computed(
-  () => curriculum.find(ch => doneIn(ch) < ch.lessons.length)?.id ?? curriculum[0]?.id,
+  () => curriculum.find(ch => doneIn(ch) < required(ch).length)?.id ?? curriculum[0]?.id,
 )
+
+const isChapterDone = (ch: Chapter) => doneIn(ch) >= required(ch).length
+
+// land the user on today's work: the current chapter is expanded by default,
+// so its current-day node exists right after mount
+onMounted(() => {
+  nextTick(() => {
+    document.getElementById('current-day')?.scrollIntoView({ block: 'center' })
+  })
+})
 
 const open = ref<Record<string, boolean>>({})
 const isOpen = (id: string) => open.value[id] ?? id === currentChapterId.value
@@ -128,6 +139,7 @@ const toggleDay = (day: Day) => {
 }
 .chapter-head:active { transform: scale(0.985); background: var(--accent-soft); }
 .chapter-head.open { border-color: var(--accent); }
+.chapter-head.ch-done { opacity: 0.65; }
 .head-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1; }
 .head-bar { margin-top: 4px; }
 .title { font-size: 1.05rem; font-weight: 650; }
