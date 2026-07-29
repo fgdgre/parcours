@@ -1,0 +1,70 @@
+[
+  {
+    "type": "mc",
+    "passage": "Aujourd'hui, je travaille beaucoup. Mais ce soir (ce soir = tonight), je veux sortir avec mes amis. (sortir = to go out) Nous allons au restaurant. Il y a un très bon restaurant ici. Demain, ce n'est pas possible — demain, je travaille aussi. Alors, ce soir ! (alors = so)",
+    "prompt": "🎧 Listen first, then read. What is the narrator doing a lot of today?",
+    "options": [
+      "working (je travaille)",
+      "eating",
+      "going out",
+      "sleeping"
+    ],
+    "answer": 0,
+    "explain": "je travaille beaucoup — travailler = to work."
+  },
+  {
+    "type": "mc",
+    "passage": "Aujourd'hui, je travaille beaucoup. Mais ce soir (ce soir = tonight), je veux sortir avec mes amis. (sortir = to go out) Nous allons au restaurant. Il y a un très bon restaurant ici. Demain, ce n'est pas possible — demain, je travaille aussi. Alors, ce soir ! (alors = so)",
+    "prompt": "What's the plan for tonight?",
+    "options": [
+      "going out with friends to a restaurant",
+      "working more",
+      "staying home",
+      "going to Canada"
+    ],
+    "answer": 0,
+    "explain": "je veux sortir avec mes amis, nous allons au restaurant."
+  },
+  {
+    "type": "mc",
+    "passage": "Aujourd'hui, je travaille beaucoup. Mais ce soir (ce soir = tonight), je veux sortir avec mes amis. (sortir = to go out) Nous allons au restaurant. Il y a un très bon restaurant ici. Demain, ce n'est pas possible — demain, je travaille aussi. Alors, ce soir ! (alors = so)",
+    "prompt": "Why not tomorrow?",
+    "options": [
+      "the narrator works tomorrow too (demain, je travaille aussi)",
+      "the restaurant closes",
+      "the friends leave",
+      "no reason given"
+    ],
+    "answer": 0,
+    "explain": "demain, ce n'est pas possible — demain, je travaille aussi."
+  },
+  {
+    "type": "type",
+    "prompt": "From memory — write the story's phrase for “we're going to the restaurant”.",
+    "answer": [
+      "nous allons au restaurant"
+    ],
+    "hint": "nous allons + au (à + le).",
+    "explain": "nous allons au restaurant."
+  },
+  {
+    "type": "mc",
+    "prompt": "“sortir” in this story means…",
+    "options": [
+      "to go out",
+      "to sleep",
+      "to order",
+      "to close"
+    ],
+    "answer": 0,
+    "explain": "sortir — the natural verb for going out (better than “aller dans la rue”, remember?)."
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Ce soir, je veux sortir avec mes amis.",
+    "answer": [
+      "ce soir, je veux sortir avec mes amis",
+      "ce soir je veux sortir avec mes amis"
+    ]
+  }
+]

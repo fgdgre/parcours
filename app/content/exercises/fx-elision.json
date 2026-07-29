@@ -1,0 +1,83 @@
+[
+  {
+    "type": "mc",
+    "prompt": "Why does French fuse words (je ai → j'ai)?",
+    "options": [
+      "small grammar words (je, ne, le, la, de, ce, que) drop their vowel before a vowel — the apostrophe marks it",
+      "to look fancy",
+      "only in poetry",
+      "random tradition"
+    ],
+    "answer": 0,
+    "explain": "Only the little grammar words elide: je→j', ne→n', le/la→l', de→d', ce→c', que→qu'. (tu as stays tu as!) This is THE reason dictation is hard: one sound-blob is written as fused words."
+  },
+  {
+    "type": "dictation",
+    "ttsText": "J'ai une question.",
+    "answer": [
+      "j'ai une question"
+    ]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Je n'ai pas le temps.",
+    "answer": [
+      "je n'ai pas le temps"
+    ]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Il n'est pas ici.",
+    "answer": [
+      "il n'est pas ici"
+    ]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Ce n'est pas possible.",
+    "answer": [
+      "ce n'est pas possible"
+    ]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Qu'est-ce que c'est ?",
+    "answer": [
+      "qu'est-ce que c'est"
+    ]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Je m'appelle Dima.",
+    "answer": [
+      "je m'appelle dima"
+    ]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Il y a un café ici.",
+    "answer": [
+      "il y a un café ici"
+    ]
+  },
+  {
+    "type": "dictation",
+    "ttsText": "S'il vous plaît, monsieur.",
+    "answer": [
+      "s'il vous plaît, monsieur",
+      "s'il vous plaît monsieur"
+    ]
+  },
+  {
+    "type": "mc",
+    "prompt": "You hear /ʒnepa/ (“zhnay-pah”). You write…",
+    "options": [
+      "je n'ai pas — four words fused by ear",
+      "je nai pas",
+      "jenepas",
+      "je ne ai pas"
+    ],
+    "answer": 0,
+    "explain": "je + ne + ai + pas — ne elides into n'. Spot the pattern: n' before every vowel-verb."
+  }
+]

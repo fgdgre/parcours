@@ -1,0 +1,69 @@
+[
+  {
+    "type": "mc",
+    "passage": "Paul et Marie sont à Paris. Ils vont au café.\n— On va manger quelque chose ? demande Paul. (demande = asks)\n— Oui, mais je n'ai pas le temps maintenant, dit Marie. (dit = says)\n— Pourquoi pas demain ?\n— D'accord ! Demain, c'est très bien.",
+    "prompt": "🎧 Listen first, then read. Where are Paul and Marie?",
+    "options": [
+      "in Paris",
+      "in Kyiv",
+      "at the store",
+      "in Canada"
+    ],
+    "answer": 0,
+    "explain": "Paul et Marie SONT à Paris — sont = ils-form of être."
+  },
+  {
+    "type": "mc",
+    "passage": "Paul et Marie sont à Paris. Ils vont au café.\n— On va manger quelque chose ? demande Paul. (demande = asks)\n— Oui, mais je n'ai pas le temps maintenant, dit Marie. (dit = says)\n— Pourquoi pas demain ?\n— D'accord ! Demain, c'est très bien.",
+    "prompt": "What does Paul suggest?",
+    "options": [
+      "eating something (on va manger quelque chose ?)",
+      "going to Canada",
+      "closing the café",
+      "speaking English"
+    ],
+    "answer": 0,
+    "explain": "On va manger quelque chose ? — on = the casual “we”."
+  },
+  {
+    "type": "mc",
+    "passage": "Paul et Marie sont à Paris. Ils vont au café.\n— On va manger quelque chose ? demande Paul. (demande = asks)\n— Oui, mais je n'ai pas le temps maintenant, dit Marie. (dit = says)\n— Pourquoi pas demain ?\n— D'accord ! Demain, c'est très bien.",
+    "prompt": "Why not right now?",
+    "options": [
+      "she doesn't have time (je n'ai pas le temps)",
+      "she isn't hungry",
+      "the café is closed",
+      "she is in Kyiv"
+    ],
+    "answer": 0,
+    "explain": "je n'ai pas le temps — avoir le temps = to have time."
+  },
+  {
+    "type": "mc",
+    "prompt": "From memory — how does it end?",
+    "options": [
+      "they agree on tomorrow (d'accord, demain)",
+      "they never eat",
+      "Paul leaves",
+      "Marie orders a coffee"
+    ],
+    "answer": 0,
+    "explain": "Pourquoi pas demain ? — D'accord !"
+  },
+  {
+    "type": "type",
+    "prompt": "From memory — write Marie's phrase “I don't have the time”.",
+    "answer": [
+      "je n'ai pas le temps"
+    ],
+    "hint": "ne + ai fuse: n'ai.",
+    "explain": "je n'ai pas le temps — elision under negation."
+  },
+  {
+    "type": "dictation",
+    "ttsText": "On va manger quelque chose ?",
+    "answer": [
+      "on va manger quelque chose"
+    ]
+  }
+]

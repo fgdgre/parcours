@@ -546,6 +546,57 @@
         "durationMin": 6
       },
       {
+        "id": "fx-homophones",
+        "type": "exercises",
+        "title": "Homophones · a/à, ou/où, au, du — spelling decides",
+        "exerciseFile": "fx-homophones",
+        "durationMin": 5
+      },
+      {
+        "id": "fx-liens-verbes",
+        "type": "exercises",
+        "title": "Link words · pour / de / nothing between verbs",
+        "exerciseFile": "fx-liens-verbes",
+        "durationMin": 6
+      },
+      {
+        "id": "fx-elision",
+        "type": "exercises",
+        "title": "Dictée · elision — where words fuse (j'ai, n'est pas)",
+        "exerciseFile": "fx-elision",
+        "durationMin": 6
+      },
+      {
+        "id": "fx-spelling-sprint",
+        "type": "exercises",
+        "title": "Spelling sprint · repeat offenders",
+        "exerciseFile": "fx-spelling-sprint",
+        "durationMin": 5
+      },
+      {
+        "id": "fx-parle",
+        "type": "exercises",
+        "title": "Speak it · core verbs out loud",
+        "exerciseFile": "fx-parle",
+        "durationMin": 5
+      },
+      {
+        "id": "story-fx-1",
+        "type": "exercises",
+        "title": "📖 Histoire · Marie au café",
+        "exerciseFile": "story-fx-1",
+        "durationMin": 5,
+        "optional": true
+      },
+      {
+        "id": "story-fx-2",
+        "type": "exercises",
+        "title": "📖 Histoire · Dima à Varsovie",
+        "exerciseFile": "story-fx-2",
+        "durationMin": 5,
+        "optional": true
+      },
+      {
         "id": "fx-checkpoint",
         "type": "checkpoint",
         "title": "Focus checkpoint",
@@ -554,7 +605,8 @@
           "I can write short everyday sentences from hearing alone.",
           "I can spell the question words and nasal words (comment, quand, maintenant, combien) without peeking.",
           "I use exactly ONE conjugated verb per clause — the next verb stays in the infinitive.",
-          "I pick un/une/le/la/mon by gender instead of guessing."
+          "I pick un/une/le/la/mon by gender instead of guessing.",
+          "I can hear where French words fuse (j'ai, n'est pas) and still write them as separate words."
         ]
       }
     ]
@@ -730,6 +782,14 @@
         "optional": true
       },
       {
+        "id": "story-ch2-1",
+        "type": "exercises",
+        "title": "📖 Histoire · Paul et Marie à Paris",
+        "exerciseFile": "story-ch2-1",
+        "durationMin": 5,
+        "optional": true
+      },
+      {
         "id": "quiz-lt-11-12",
         "type": "exercises",
         "title": "Quiz · nous, on & near future",
@@ -868,6 +928,14 @@
         "durationMin": 24,
         "instructions": "Watch, relax, follow the drawings. Do NOT translate in your head; guessing from pictures is the exercise.",
         "teaches": "Comprehensible input — your brain acquiring French from context."
+      },
+      {
+        "id": "story-ch2-2",
+        "type": "exercises",
+        "title": "📖 Histoire · Ce soir, on sort !",
+        "exerciseFile": "story-ch2-2",
+        "durationMin": 5,
+        "optional": true
       },
       {
         "id": "lt-15",

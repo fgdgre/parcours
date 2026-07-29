@@ -1,0 +1,106 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“Il ___ un café.”",
+    "options": [
+      "a — the verb (il a = he has)",
+      "à — the preposition (to/at)"
+    ],
+    "answer": 0,
+    "explain": "A verb is needed here: il a. The accent on à exists precisely to separate these twins."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je vais ___ Paris.”",
+    "options": [
+      "à — to (preposition)",
+      "a — has (verb)"
+    ],
+    "answer": 0,
+    "explain": "Going TO a city → à. The sentence already has its verb (vais)."
+  },
+  {
+    "type": "mc",
+    "prompt": "“___ va bien.”",
+    "options": [
+      "Ça — that/it (ça va)",
+      "Sa — his/her"
+    ],
+    "answer": 0,
+    "explain": "Ça va = it goes. sa = his/her before a feminine noun (sa porte)."
+  },
+  {
+    "type": "mc",
+    "prompt": "“coffee ___ tea” — coffee or tea:",
+    "options": [
+      "ou — or (no accent)",
+      "où — where (with accent)"
+    ],
+    "answer": 0,
+    "explain": "ou = or. où = where. One accent, totally different word."
+  },
+  {
+    "type": "mc",
+    "prompt": "“___ est le café ?” (asking for directions)",
+    "options": [
+      "Où — where",
+      "Ou — or"
+    ],
+    "answer": 0,
+    "explain": "Où est… = where is… The accent means it's the question word."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Il est ___ café.”",
+    "options": [
+      "au — because à + le fuses",
+      "à le — literally"
+    ],
+    "answer": 0,
+    "explain": "à + le is illegal in French — it always fuses to au."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je viens ___ Canada.” (le Canada, masculine)",
+    "options": [
+      "du — because de + le fuses",
+      "de le — literally"
+    ],
+    "answer": 0,
+    "explain": "Same fusion on the “from” side: de + le = du. je viens du Canada."
+  },
+  {
+    "type": "mc",
+    "prompt": "Sound-twins by ear: “il a” vs “il à” —",
+    "options": [
+      "only “il a” exists — à is never a verb",
+      "both are correct",
+      "il à is more formal",
+      "they're interchangeable"
+    ],
+    "answer": 0,
+    "explain": "à can never follow a subject pronoun (il, elle, on) directly — the pronoun needs its verb, and that's a."
+  },
+  {
+    "type": "mc",
+    "prompt": "“C'est ___ toi.” (it's for you)",
+    "options": [
+      "pour — for",
+      "par — by"
+    ],
+    "answer": 0,
+    "explain": "pour = for. par = by/through — different word, drilled later."
+  },
+  {
+    "type": "mc",
+    "prompt": "Dictation survival rule: you hear /a/ after a subject pronoun (il, elle, on). You write…",
+    "options": [
+      "a — no accent, it's the verb avoir",
+      "à — with accent, always",
+      "ah",
+      "either"
+    ],
+    "answer": 0,
+    "explain": "Subject + /a/ = the verb. il a, elle a, on a. Hear /a/ after vais/vas/va-style context (going somewhere) → à."
+  }
+]

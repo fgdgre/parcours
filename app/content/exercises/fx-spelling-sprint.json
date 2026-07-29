@@ -1,0 +1,83 @@
+[
+  {
+    "type": "type",
+    "prompt": "Spell: sir, mister (the polite address)",
+    "answer": [
+      "monsieur"
+    ],
+    "hint": "Sounds /mə.sjø/ but spells mon + sieur — the spelling ignores the sound. Memorize the picture.",
+    "explain": "monsieur — your “monseur” missed the i. One of French's most irregular spellings; just photograph it."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: reservation (with its accent)",
+    "answer": [
+      "réservation"
+    ],
+    "hint": "ré- with é, then like English. Every -tion word you'll meet is feminine.",
+    "explain": "réservation — cognate + é."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: “my name is” (two words, with the apostrophe)",
+    "answer": [
+      "je m'appelle"
+    ],
+    "hint": "me + appelle fuse: m'appelle. Double p, double l.",
+    "explain": "je m'appelle — your “mapelle” lost the apostrophe and a p."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: something (two words)",
+    "answer": [
+      "quelque chose"
+    ],
+    "hint": "quelque + chose. ch- like “sh”, -ose like “rose”.",
+    "explain": "quelque chose — your “shose” was the ear spelling; French writes that sound ch."
+  },
+  {
+    "type": "type",
+    "prompt": "Spell: brother (with its accent)",
+    "answer": [
+      "frère"
+    ],
+    "hint": "Open “eh” → è, like très.",
+    "explain": "frère — è twice a week keeps the accent awake."
+  },
+  {
+    "type": "type",
+    "prompt": "Boss rep — spell: please (formal, all three words)",
+    "answer": [
+      "s'il vous plaît"
+    ],
+    "hint": "s'il = si + il. Hat on the î of plaît.",
+    "explain": "s'il vous plaît — missed twice in your writings; this is its retirement drill."
+  },
+  {
+    "type": "type",
+    "prompt": "Boss rep — spell: a lot",
+    "answer": [
+      "beaucoup"
+    ],
+    "hint": "beau + coup.",
+    "explain": "beaucoup."
+  },
+  {
+    "type": "type",
+    "prompt": "Boss rep — spell: today",
+    "answer": [
+      "aujourd'hui"
+    ],
+    "hint": "au + jour + d'hui.",
+    "explain": "aujourd'hui — jour in the middle carries it."
+  },
+  {
+    "type": "type",
+    "prompt": "Boss rep — spell: maybe",
+    "answer": [
+      "peut-être"
+    ],
+    "hint": "can-be, with the hyphen and the hat.",
+    "explain": "peut-être."
+  }
+]

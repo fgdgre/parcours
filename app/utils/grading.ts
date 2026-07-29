@@ -7,7 +7,10 @@ export function normalizeFr(s: string, opts: NormalizeOptions = {}): string {
     .normalize('NFC')
     .toLowerCase()
     .replace(/[’‘ʼ]/g, "'")
-    .replace(/[.!?,;:…]+\s*$/gu, '')
+    // punctuation is inaudible — strip it everywhere, not just at the end,
+    // or dictations with internal commas become unpassable by ear.
+    // Apostrophes and hyphens stay: they ARE spelling (j'ai, peut-être).
+    .replace(/[.!?,;:…«»"()]/gu, ' ')
     .replace(/\s+/g, ' ')
     .trim()
   if (opts.stripAccents) {

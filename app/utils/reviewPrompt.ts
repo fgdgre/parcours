@@ -96,7 +96,7 @@ export function buildProgressReviewPrompt(payload: object): string {
 (A0–A1), native Ukrainian speaker with B2 English, learning French for Canadian immigration \
 (long-term target: TCF Canada, B2 in all four skills). I study with a self-built app that follows \
 Language Transfer (40 tracks), a 55-lesson pronunciation course, comprehensible input, SRS vocabulary \
-(350 words), exercises, chapter exams, and daily writing/speaking workouts.
+(350 words), exercises, chapter exams, and daily quiz/writing/speaking/dictation workouts.
 
 Below is my COMPLETE progress data exported from the app. Analyze it honestly — do not flatter me; \
 inflated praise costs me real immigration points later. Please give me:

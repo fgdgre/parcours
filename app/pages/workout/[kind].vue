@@ -16,6 +16,9 @@
     <template v-else-if="!finished">
       <p class="muted small">{{ meta.desc }}</p>
       <ExerciseRunner v-if="items.length > 0" :key="runKey" :exercises="items" @finished="onFinished" />
+      <div v-else class="card">
+        <p class="muted small">Couldn't build this workout from your words — learn a few more on the Path first.</p>
+      </div>
     </template>
 
     <div v-else class="card stack">
@@ -41,6 +44,7 @@ const KINDS: Record<string, { title: string; desc: string; drill: DrillKind; cou
   quiz: { title: 'Daily quiz', desc: 'Ten quick questions from your words — meanings, translations, listening.', drill: 'mixed', count: 10 },
   writing: { title: 'Daily writing', desc: 'One free-writing task. Use “Copy to check” to review it with AI afterwards.', drill: 'writing', count: 1 },
   speaking: { title: 'Daily speaking', desc: 'Five real sentences to say aloud — the recognizer checks it understood you.', drill: 'speaking', count: 5 },
+  dictation: { title: 'Daily dictation', desc: 'Five sentences to hear and write down — the listening gym. Replay as often as you need.', drill: 'dictation', count: 5 },
 }
 
 const kind = computed(() => route.params.kind as string)

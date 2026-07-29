@@ -1,0 +1,45 @@
+[
+  {
+    "type": "mc",
+    "passage": "Bonjour ! Je m'appelle Marie. Je suis au café avec mon ami Paul. Paul veut un café. Moi, je voudrais deux croissants, s'il vous plaît. Le café ici est très bon, et il n'y a pas de problème. Demain, je vais au café avec toi aussi !",
+    "prompt": "🎧 Tap the speaker and LISTEN first — eyes closed. Then read. Where is Marie?",
+    "options": ["at the café", "at the store", "in Paris", "at home"],
+    "answer": 0,
+    "explain": "je suis au café — au = at the."
+  },
+  {
+    "type": "mc",
+    "passage": "Bonjour ! Je m'appelle Marie. Je suis au café avec mon ami Paul. Paul veut un café. Moi, je voudrais deux croissants, s'il vous plaît. Le café ici est très bon, et il n'y a pas de problème. Demain, je vais au café avec toi aussi !",
+    "prompt": "What does Paul want?",
+    "options": ["a coffee", "two croissants", "nothing", "a problem"],
+    "answer": 0,
+    "explain": "Paul veut un café — veut = il-form of vouloir."
+  },
+  {
+    "type": "mc",
+    "passage": "Bonjour ! Je m'appelle Marie. Je suis au café avec mon ami Paul. Paul veut un café. Moi, je voudrais deux croissants, s'il vous plaît. Le café ici est très bon, et il n'y a pas de problème. Demain, je vais au café avec toi aussi !",
+    "prompt": "What does Marie order — and how politely?",
+    "options": ["je voudrais deux croissants — the polite want", "je veux un café — direct", "elle ne veut pas — nothing", "un problème"],
+    "answer": 0,
+    "explain": "je voudrais = the polite “I'd like”. And deux croissantS — plural s."
+  },
+  {
+    "type": "mc",
+    "prompt": "From memory — when does Marie go to the café with YOU?",
+    "options": ["demain (tomorrow)", "maintenant (now)", "ce soir (tonight)", "never"],
+    "answer": 0,
+    "explain": "Demain, je vais au café avec toi aussi !"
+  },
+  {
+    "type": "type",
+    "prompt": "From memory — write the story's phrase that means “there's no problem”.",
+    "answer": ["il n'y a pas de problème"],
+    "hint": "il y a → negative wraps it: il n'y a pas + de.",
+    "explain": "il n'y a pas de problème — un becomes de after a negative."
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Le café ici est très bon.",
+    "answer": ["le café ici est très bon"]
+  }
+]

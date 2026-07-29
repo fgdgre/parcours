@@ -1,0 +1,45 @@
+[
+  {
+    "type": "mc",
+    "passage": "Salut ! Je m'appelle Dima. Je viens de Kyiv, mais maintenant je suis à Varsovie. Aujourd'hui, je vais au magasin avec mon ami. Je veux aller au café aussi. Je ne peux pas aller au Canada maintenant — mais demain, pourquoi pas ?",
+    "prompt": "🎧 Listen first, then read. Where does Dima come from?",
+    "options": ["from Kyiv", "from Warsaw", "from Canada", "from the store"],
+    "answer": 0,
+    "explain": "je viens DE Kyiv — de = from."
+  },
+  {
+    "type": "mc",
+    "passage": "Salut ! Je m'appelle Dima. Je viens de Kyiv, mais maintenant je suis à Varsovie. Aujourd'hui, je vais au magasin avec mon ami. Je veux aller au café aussi. Je ne peux pas aller au Canada maintenant — mais demain, pourquoi pas ?",
+    "prompt": "Where is he NOW?",
+    "options": ["in Warsaw (à Varsovie)", "in Kyiv", "in Canada", "at the café"],
+    "answer": 0,
+    "explain": "maintenant je suis à Varsovie — cities take plain à."
+  },
+  {
+    "type": "mc",
+    "passage": "Salut ! Je m'appelle Dima. Je viens de Kyiv, mais maintenant je suis à Varsovie. Aujourd'hui, je vais au magasin avec mon ami. Je veux aller au café aussi. Je ne peux pas aller au Canada maintenant — mais demain, pourquoi pas ?",
+    "prompt": "Where does he go today, and with whom?",
+    "options": ["to the store, with his friend", "to Canada, alone", "to Kyiv, with Marie", "nowhere"],
+    "answer": 0,
+    "explain": "je vais au magasin avec mon ami."
+  },
+  {
+    "type": "mc",
+    "prompt": "From memory — can he go to Canada now?",
+    "options": ["No — je ne peux pas… maintenant. But tomorrow, why not?", "Yes, right now", "He is already there", "The story doesn't say"],
+    "answer": 0,
+    "explain": "je ne peux pas aller au Canada maintenant — mais demain, pourquoi pas ? Ton histoire, Dima. 🇨🇦"
+  },
+  {
+    "type": "type",
+    "prompt": "From memory — write the story's phrase for “I come from Kyiv”.",
+    "answer": ["je viens de kyiv"],
+    "hint": "venir → je viens + de.",
+    "explain": "je viens de Kyiv."
+  },
+  {
+    "type": "dictation",
+    "ttsText": "Je ne peux pas aller au Canada maintenant.",
+    "answer": ["je ne peux pas aller au canada maintenant"]
+  }
+]

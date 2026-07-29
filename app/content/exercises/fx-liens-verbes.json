@@ -1,0 +1,101 @@
+[
+  {
+    "type": "mc",
+    "prompt": "“Je vais ___ parler.” — what goes between?",
+    "options": [
+      "nothing — je vais parler",
+      "pour",
+      "de",
+      "à"
+    ],
+    "answer": 0,
+    "explain": "vouloir, pouvoir, aller + infinitive glue DIRECTLY. Nothing in between, ever."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Je suis ici ___ parler français.” (I'm here TO speak French — purpose)",
+    "options": [
+      "pour — in order to",
+      "nothing",
+      "de",
+      "au"
+    ],
+    "answer": 0,
+    "explain": "pour + infinitive = purpose, “in order to”. That's where pour belongs — NOT after aller."
+  },
+  {
+    "type": "mc",
+    "prompt": "“Ce n'est pas possible ___ dormir ici.” (dormir = to sleep)",
+    "options": [
+      "de — possible DE + infinitive",
+      "pour",
+      "nothing",
+      "à"
+    ],
+    "answer": 0,
+    "explain": "In the “c'est … + verb” pattern, possible and difficile link with de: c'est possible de venir, c'est difficile de comprendre le français."
+  },
+  {
+    "type": "mc",
+    "prompt": "“C'est difficile ___ comprendre le français.” (difficile = difficult, comprendre = to understand)",
+    "options": [
+      "de",
+      "pour",
+      "nothing",
+      "du"
+    ],
+    "answer": 0,
+    "explain": "Same family as possible: difficile de comprendre."
+  },
+  {
+    "type": "mc",
+    "prompt": "The one exception you'll meet: “Je viens ___ manger.” = I JUST ate.",
+    "options": [
+      "de — venir de + infinitive = just did",
+      "nothing",
+      "pour",
+      "à"
+    ],
+    "answer": 0,
+    "explain": "venir de + infinitive is a fixed recipe meaning “just did something”. The only verb pair that takes de like this at your level."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I work to learn French.” (travailler, apprendre = to learn)",
+    "answer": [
+      "je travaille pour apprendre le français"
+    ],
+    "hint": "Purpose → pour + infinitive. And apprendre needs the article: le français.",
+    "explain": "je travaille pour apprendre le français."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I'm not going to sleep.” (dormir)",
+    "answer": [
+      "je ne vais pas dormir",
+      "je vais pas dormir"
+    ],
+    "hint": "ne…pas wraps vais; dormir glues directly — no pour!",
+    "explain": "je ne vais pas dormir — your old slip was inserting pour here."
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “I would like to close the window.”",
+    "answer": [
+      "je voudrais fermer la fenêtre"
+    ],
+    "hint": "voudrais + infinitive, nothing between.",
+    "explain": "je voudrais fermer — no de. (venir de is the only de-gluer you need for now.)"
+  },
+  {
+    "type": "type",
+    "prompt": "Say: “It's not possible to work tonight.” (ce soir = tonight)",
+    "answer": [
+      "ce n'est pas possible de travailler ce soir",
+      "c'est pas possible de travailler ce soir",
+      "il n'est pas possible de travailler ce soir"
+    ],
+    "hint": "possible + de + infinitive.",
+    "explain": "ce n'est pas possible de travailler ce soir."
+  }
+]

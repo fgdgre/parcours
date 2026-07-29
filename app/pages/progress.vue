@@ -79,7 +79,7 @@
           <span>Average (AI-rated, strict)</span>
           <strong :class="qualityClass(writingAvg)">{{ writingAvg }}/100</strong>
         </div>
-        <div v-for="(r, i) in progress.writingRatings.slice(0, 10)" :key="i" class="spread">
+        <div v-for="(r, i) in visibleWritings" :key="i" class="spread">
           <span class="muted small rating-task">{{ r.task }}</span>
           <input
             v-if="editingScore === i"
@@ -99,6 +99,13 @@
           </button>
         </div>
         <p class="muted small">Tap a score to add or fix the AI rating from your review chat.</p>
+        <button
+          v-if="progress.writingRatings.length > 10"
+          class="btn btn-block show-all"
+          @click="toggleShowAll"
+        >
+          {{ showAllWritings ? 'Show fewer' : `Show all (${progress.writingRatings.length})` }}
+        </button>
       </div>
     </template>
 
@@ -192,6 +199,17 @@ import { addDays, todayIso } from '~/utils/srs'
 const progress = useProgress()
 
 // tap-to-backfill for AI writing ratings that were never recorded
+const showAllWritings = ref(false)
+const visibleWritings = computed(() =>
+  showAllWritings.value ? progress.writingRatings : progress.writingRatings.slice(0, 10),
+)
+// iOS never blurs an input that unmounts — commit an open editor before
+// the toggle rips its row out of the DOM
+function toggleShowAll() {
+  if (editingScore.value !== null) commitScore(editingScore.value)
+  showAllWritings.value = !showAllWritings.value
+}
+
 const editingScore = ref<number | null>(null)
 // v-model.number hands back '' when the field is emptied
 const editValue = ref<number | '' | null>(null)
@@ -408,5 +426,6 @@ function resetAll() {
   -webkit-tap-highlight-color: transparent;
 }
 .score-btn.missing { color: var(--muted); border-style: dashed; }
+.show-all { color: var(--muted); border-style: dashed; }
 .score-input { width: 70px; min-height: 36px; text-align: center; padding: 4px; }
 </style>

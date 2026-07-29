@@ -138,6 +138,7 @@ const workouts = computed(() => ([
   { kind: 'quiz', icon: '🧠', label: 'Quiz', sub: '10 q' },
   { kind: 'writing', icon: '📝', label: 'Writing', sub: '1 task' },
   { kind: 'speaking', icon: '🎙', label: 'Speaking', sub: '5 phrases' },
+  { kind: 'dictation', icon: '🎧', label: 'Dictation', sub: '5 sentences' },
 ].map(w => ({ ...w, done: progress.isDone(`workout-${w.kind}-${todayIso()}`) }))))
 
 const backupOverdue = computed(() => {
@@ -157,7 +158,7 @@ const backupOverdue = computed(() => {
 .done-check { color: var(--ok); font-weight: 700; }
 .practice-head { margin-top: 6px; }
 .backup-nudge { border-color: var(--warn); }
-.workouts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.workouts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .workout {
   display: flex;
   flex-direction: column;

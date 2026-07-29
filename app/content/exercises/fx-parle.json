@@ -1,0 +1,42 @@
+[
+  {
+    "type": "speak",
+    "target": "Je veux parler français.",
+    "en": "I want to speak French."
+  },
+  {
+    "type": "speak",
+    "target": "Je peux venir demain.",
+    "en": "I can come tomorrow."
+  },
+  {
+    "type": "speak",
+    "target": "Je vais au magasin.",
+    "en": "I'm going to the store."
+  },
+  {
+    "type": "speak",
+    "target": "J'ai une question pour toi.",
+    "en": "I have a question for you."
+  },
+  {
+    "type": "speak",
+    "target": "Il est au café.",
+    "en": "He's at the café."
+  },
+  {
+    "type": "speak",
+    "target": "Je viens de Kyiv.",
+    "en": "I come from Kyiv."
+  },
+  {
+    "type": "speak",
+    "target": "Ce n'est pas possible aujourd'hui.",
+    "en": "It's not possible today."
+  },
+  {
+    "type": "speak",
+    "target": "Je voudrais un café, s'il vous plaît.",
+    "en": "I would like a coffee, please."
+  }
+]
