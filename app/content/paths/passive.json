@@ -1,0 +1,278 @@
+[
+  {
+    "id": "p1",
+    "topic": "Greetings & basics",
+    "items": [
+      {
+        "fr": "Bonjour.",
+        "en": "Hello."
+      },
+      {
+        "fr": "Salut !",
+        "en": "Hi!"
+      },
+      {
+        "fr": "Bonsoir.",
+        "en": "Good evening."
+      },
+      {
+        "fr": "Ça va ?",
+        "en": "How's it going?"
+      },
+      {
+        "fr": "Ça va bien.",
+        "en": "It's going well."
+      },
+      {
+        "fr": "Ça va très bien.",
+        "en": "Going very well."
+      },
+      {
+        "fr": "Comment ça va ?",
+        "en": "How are you?"
+      },
+      {
+        "fr": "Merci beaucoup.",
+        "en": "Thanks a lot."
+      },
+      {
+        "fr": "Au revoir.",
+        "en": "Goodbye."
+      },
+      {
+        "fr": "À bientôt.",
+        "en": "See you soon."
+      }
+    ]
+  },
+  {
+    "id": "p2",
+    "topic": "Café & polite",
+    "items": [
+      {
+        "fr": "S'il vous plaît.",
+        "en": "Please."
+      },
+      {
+        "fr": "Je voudrais un café.",
+        "en": "I'd like a coffee."
+      },
+      {
+        "fr": "Je voudrais deux cafés, s'il vous plaît.",
+        "en": "I'd like two coffees, please."
+      },
+      {
+        "fr": "C'est combien ?",
+        "en": "How much is it?"
+      },
+      {
+        "fr": "Pardon, monsieur.",
+        "en": "Excuse me, sir."
+      },
+      {
+        "fr": "Bien sûr.",
+        "en": "Of course."
+      },
+      {
+        "fr": "Pas de problème.",
+        "en": "No problem."
+      },
+      {
+        "fr": "Non, merci.",
+        "en": "No, thank you."
+      },
+      {
+        "fr": "D'accord.",
+        "en": "Okay."
+      },
+      {
+        "fr": "Moi aussi.",
+        "en": "Me too."
+      }
+    ]
+  },
+  {
+    "id": "p3",
+    "topic": "Aller — near future & going places",
+    "items": [
+      {
+        "fr": "Je vais manger.",
+        "en": "I'm going to eat."
+      },
+      {
+        "fr": "Je vais dormir ce soir.",
+        "en": "I'm going to sleep tonight."
+      },
+      {
+        "fr": "Je vais parler français.",
+        "en": "I'm going to speak French."
+      },
+      {
+        "fr": "Je vais au magasin.",
+        "en": "I'm going to the store."
+      },
+      {
+        "fr": "Je ne vais pas parler.",
+        "en": "I'm not going to speak."
+      },
+      {
+        "fr": "Qu'est-ce que tu vas faire ?",
+        "en": "What are you going to do?"
+      },
+      {
+        "fr": "Ce soir, je vais manger et dormir.",
+        "en": "Tonight I'll eat and sleep."
+      },
+      {
+        "fr": "Je vais travailler demain.",
+        "en": "I'm going to work tomorrow."
+      },
+      {
+        "fr": "On va voir.",
+        "en": "We'll see."
+      },
+      {
+        "fr": "Tu vas venir ?",
+        "en": "Are you going to come?"
+      }
+    ]
+  },
+  {
+    "id": "p4",
+    "topic": "Want / can / have",
+    "items": [
+      {
+        "fr": "Je veux un café.",
+        "en": "I want a coffee."
+      },
+      {
+        "fr": "Je veux parler français.",
+        "en": "I want to speak French."
+      },
+      {
+        "fr": "Je ne veux pas de café.",
+        "en": "I don't want coffee."
+      },
+      {
+        "fr": "Je peux venir avec toi.",
+        "en": "I can come with you."
+      },
+      {
+        "fr": "Je ne peux pas venir aujourd'hui.",
+        "en": "I can't come today."
+      },
+      {
+        "fr": "J'ai une question pour toi.",
+        "en": "I have a question for you."
+      },
+      {
+        "fr": "Il a un café.",
+        "en": "He has a coffee."
+      },
+      {
+        "fr": "Je n'ai pas de problème.",
+        "en": "I don't have a problem."
+      },
+      {
+        "fr": "Tu veux venir avec moi ?",
+        "en": "Do you want to come with me?"
+      },
+      {
+        "fr": "Peut-être.",
+        "en": "Maybe."
+      }
+    ]
+  },
+  {
+    "id": "p5",
+    "topic": "Fused & elided phrases",
+    "items": [
+      {
+        "fr": "J'ai un café.",
+        "en": "I have a coffee."
+      },
+      {
+        "fr": "Je n'ai pas le temps.",
+        "en": "I don't have time."
+      },
+      {
+        "fr": "Il y a un café ici.",
+        "en": "There's a café here."
+      },
+      {
+        "fr": "Il n'y a pas de café.",
+        "en": "There's no coffee."
+      },
+      {
+        "fr": "Il n'est pas ici.",
+        "en": "He's not here."
+      },
+      {
+        "fr": "C'est ici.",
+        "en": "It's here."
+      },
+      {
+        "fr": "Qu'est-ce que c'est ?",
+        "en": "What is it?"
+      },
+      {
+        "fr": "Ce n'est pas une bonne idée.",
+        "en": "It's not a good idea."
+      },
+      {
+        "fr": "Je m'appelle Dima.",
+        "en": "My name is Dima."
+      },
+      {
+        "fr": "S'il vous plaît, monsieur.",
+        "en": "Please, sir."
+      }
+    ]
+  },
+  {
+    "id": "p6",
+    "topic": "Connected sentences",
+    "items": [
+      {
+        "fr": "Oui, mais pas maintenant.",
+        "en": "Yes, but not now."
+      },
+      {
+        "fr": "Pourquoi pas ?",
+        "en": "Why not?"
+      },
+      {
+        "fr": "C'est une bonne idée.",
+        "en": "It's a good idea."
+      },
+      {
+        "fr": "Je viens de Kyiv.",
+        "en": "I come from Kyiv."
+      },
+      {
+        "fr": "Je viens du Canada.",
+        "en": "I come from Canada."
+      },
+      {
+        "fr": "Elle est en France.",
+        "en": "She's in France."
+      },
+      {
+        "fr": "Ce n'est pas possible aujourd'hui.",
+        "en": "It's not possible today."
+      },
+      {
+        "fr": "Je voudrais parler avec toi maintenant.",
+        "en": "I'd like to speak with you now."
+      },
+      {
+        "fr": "Je ne sais pas pourquoi, mais ça va.",
+        "en": "I don't know why, but it's okay."
+      },
+      {
+        "fr": "Merci beaucoup, au revoir.",
+        "en": "Thanks a lot, goodbye."
+      }
+    ]
+  }
+]

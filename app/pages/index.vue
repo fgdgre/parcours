@@ -42,6 +42,35 @@
       <p class="muted">Every lesson on the path is done. Practice below, or revisit anything from the Path tab.</p>
     </div>
 
+    <!-- 1b. The two annex paths: optional, roll over until done -->
+    <NuxtLink v-if="oralCurrent" :to="`/oral/${oralCurrent.day}`" class="card path-card oral-card">
+      <span class="pc-head">
+        🎧 Listening · Day {{ oralCurrent.day }}/14
+        <span v-if="oralCarried" class="chip carried">carried</span>
+        <span v-if="oralDoneToday" class="done-check">✓ today</span>
+      </span>
+      <span class="small pc-sub">{{ oralDayTitle(oralCurrent) }}</span>
+      <span class="muted small">{{ oralDoneToday ? 'Done — next unlocks now if you want more' : `~${oralDayMinutes(oralCurrent)} min · optional, never lost` }}</span>
+    </NuxtLink>
+    <div v-else-if="oralLadder.length > 0" class="card path-card oral-card done-card">
+      <span class="pc-head">🎧 Listening ladder complete</span>
+      <span class="muted small">14/14 — time to re-export for the next program.</span>
+    </div>
+
+    <NuxtLink v-if="gramCurrent" :to="`/grammar/${gramCurrent.day}`" class="card path-card gram-card">
+      <span class="pc-head">
+        📐 Grammar · Day {{ gramCurrent.day }}/14
+        <span v-if="gramCarried" class="chip carried">carried</span>
+        <span v-if="gramDoneToday" class="done-check">✓ today</span>
+      </span>
+      <span class="small pc-sub">{{ gramCurrent.topic }}</span>
+      <span class="muted small">{{ gramDoneToday ? 'Done — next unlocks now if you want more' : '~6 min · optional, never lost' }}</span>
+    </NuxtLink>
+    <div v-else-if="grammarLadder.length > 0" class="card path-card gram-card done-card">
+      <span class="pc-head">📐 Grammar ladder complete</span>
+      <span class="muted small">14/14 — re-export and we add the next patterns.</span>
+    </div>
+
     <!-- 2. Then use what you learned -->
     <h2 class="practice-head">Practice what you learned</h2>
 
@@ -81,6 +110,33 @@ import { isOptional, programDays } from '~/content'
 import { todayIso } from '~/utils/srs'
 
 const progress = useProgress()
+
+// --- annex path cards (Oral green / Grammar amber) ---
+import { grammarDayKey, grammarLadder, oralDayKey, oralDayMinutes, oralDayTitle, oralLadder } from '~/content/paths'
+
+const oralCurrent = computed(() => oralLadder.find(d => !progress.isDone(oralDayKey(d.day))))
+const gramCurrent = computed(() => grammarLadder.find(g => !progress.isDone(grammarDayKey(g.day))))
+const oralDoneToday = computed(() =>
+  oralLadder.some(d => progress.completedLessons[oralDayKey(d.day)] === todayIso()))
+const gramDoneToday = computed(() =>
+  grammarLadder.some(g => progress.completedLessons[grammarDayKey(g.day)] === todayIso()))
+// a lesson is "carried" when it was first surfaced on an earlier day and is still open
+const oralCarried = computed(() => {
+  const d = oralCurrent.value
+  if (!d) return false
+  const shown = progress.pathShown[oralDayKey(d.day)]
+  return !!shown && shown < todayIso()
+})
+const gramCarried = computed(() => {
+  const g = gramCurrent.value
+  if (!g) return false
+  const shown = progress.pathShown[grammarDayKey(g.day)]
+  return !!shown && shown < todayIso()
+})
+onMounted(() => {
+  if (oralCurrent.value) progress.markPathShown(oralDayKey(oralCurrent.value.day))
+  if (gramCurrent.value) progress.markPathShown(grammarDayKey(gramCurrent.value.day))
+})
 const { isLocked } = useLocking()
 
 const dateLabel = new Date().toLocaleDateString('en-GB', {
@@ -138,7 +194,6 @@ const workouts = computed(() => ([
   { kind: 'quiz', icon: '🧠', label: 'Quiz', sub: '10 q' },
   { kind: 'writing', icon: '📝', label: 'Writing', sub: '1 task' },
   { kind: 'speaking', icon: '🎙', label: 'Speaking', sub: '5 phrases' },
-  { kind: 'dictation', icon: '🎧', label: 'Dictation', sub: '5 sentences' },
 ].map(w => ({ ...w, done: progress.isDone(`workout-${w.kind}-${todayIso()}`) }))))
 
 const backupOverdue = computed(() => {
@@ -158,7 +213,16 @@ const backupOverdue = computed(() => {
 .done-check { color: var(--ok); font-weight: 700; }
 .practice-head { margin-top: 6px; }
 .backup-nudge { border-color: var(--warn); }
-.workouts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.workouts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.path-card { display: flex; flex-direction: column; gap: 4px; text-decoration: none; color: var(--fg); }
+.oral-card { border-left: 4px solid var(--path-oral); }
+.gram-card { border-left: 4px solid var(--path-grammar); }
+.pc-head { font-weight: 700; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.oral-card .pc-head { color: var(--path-oral-text); }
+.gram-card .pc-head { color: var(--path-grammar-text); }
+.pc-sub { font-weight: 600; }
+.chip.carried { background: var(--warn-soft); color: var(--warn); }
+.done-card { opacity: 0.75; }
 .workout {
   display: flex;
   flex-direction: column;

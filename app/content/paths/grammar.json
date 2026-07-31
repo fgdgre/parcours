@@ -1,0 +1,1070 @@
+[
+  {
+    "id": "g1",
+    "day": 1,
+    "topic": "Two verbs together",
+    "rule": "After vouloir, pouvoir, aller (and je voudrais), only the FIRST verb is conjugated. The second stays in its plain dictionary (infinitive) form with nothing between the verbs — no 'de', no 'pour', no ending change. This holds no matter how many words separate them.",
+    "examples": [
+      {
+        "fr": "Je veux fermer la porte.",
+        "en": "I want to close the door."
+      },
+      {
+        "fr": "Je voudrais parler français.",
+        "en": "I'd like to speak French."
+      },
+      {
+        "fr": "Je vais manger maintenant.",
+        "en": "I'm going to eat now."
+      },
+      {
+        "fr": "Je peux venir demain.",
+        "en": "I can come tomorrow."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "I want to eat.",
+        "answer": [
+          "je veux manger"
+        ]
+      },
+      {
+        "prompt": "I'd like to close the window.",
+        "answer": [
+          "je voudrais fermer la fenêtre"
+        ]
+      },
+      {
+        "prompt": "I'm going to speak French.",
+        "answer": [
+          "je vais parler français"
+        ]
+      },
+      {
+        "prompt": "I can come with you.",
+        "answer": [
+          "je peux venir avec toi",
+          "je peux venir avec vous"
+        ]
+      },
+      {
+        "prompt": "He wants to sleep. (dormir)",
+        "answer": [
+          "il veut dormir"
+        ]
+      },
+      {
+        "prompt": "I'm not going to work.",
+        "answer": [
+          "je ne vais pas travailler"
+        ]
+      },
+      {
+        "prompt": "I want to speak with you.",
+        "answer": [
+          "je veux parler avec toi",
+          "je veux parler avec vous"
+        ]
+      },
+      {
+        "prompt": "She's going to eat something.",
+        "answer": [
+          "elle va manger quelque chose"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g2",
+    "day": 2,
+    "topic": "Link words: pour / de / nothing",
+    "rule": "Use 'pour' only for purpose ('in order to'): je suis ici pour parler. Use 'de' in the c'est-pattern after possible/difficile: c'est possible de dormir. After aller/vouloir/pouvoir + another verb, put NOTHING between them.",
+    "examples": [
+      {
+        "fr": "Je suis ici pour parler français.",
+        "en": "I'm here to speak French."
+      },
+      {
+        "fr": "Ce n'est pas possible de voler.",
+        "en": "It's not possible to fly."
+      },
+      {
+        "fr": "Je vais parler.",
+        "en": "I'm going to speak."
+      },
+      {
+        "fr": "Je viens de manger.",
+        "en": "I just ate. (venir de = just did)"
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "I'm here to work.",
+        "answer": [
+          "je suis ici pour travailler"
+        ]
+      },
+      {
+        "prompt": "It's difficult to understand French. (difficile, comprendre)",
+        "answer": [
+          "c'est difficile de comprendre le français",
+          "il est difficile de comprendre le français"
+        ]
+      },
+      {
+        "prompt": "I'm going to sleep.",
+        "answer": [
+          "je vais dormir"
+        ]
+      },
+      {
+        "prompt": "I work to learn French. (apprendre)",
+        "answer": [
+          "je travaille pour apprendre le français"
+        ]
+      },
+      {
+        "prompt": "It's not possible to work tonight.",
+        "answer": [
+          "ce n'est pas possible de travailler ce soir",
+          "il n'est pas possible de travailler ce soir"
+        ]
+      },
+      {
+        "prompt": "I'm not going to speak.",
+        "answer": [
+          "je ne vais pas parler"
+        ]
+      },
+      {
+        "prompt": "I just ate.",
+        "answer": [
+          "je viens de manger"
+        ]
+      },
+      {
+        "prompt": "I'd like to eat something.",
+        "answer": [
+          "je voudrais manger quelque chose"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g3",
+    "day": 3,
+    "topic": "ne … pas wraps the verb",
+    "rule": "Negation is a sandwich: ne goes BEFORE the conjugated verb, pas right AFTER it. Before a vowel, ne shrinks to n' (je n'ai pas). Write both halves, always — dropping 'ne' is spoken-only.",
+    "examples": [
+      {
+        "fr": "Je ne veux pas.",
+        "en": "I don't want to."
+      },
+      {
+        "fr": "Je n'ai pas le temps.",
+        "en": "I don't have time."
+      },
+      {
+        "fr": "Il n'est pas ici.",
+        "en": "He's not here."
+      },
+      {
+        "fr": "Je ne vais pas travailler.",
+        "en": "I'm not going to work."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "I don't want to eat.",
+        "answer": [
+          "je ne veux pas manger"
+        ]
+      },
+      {
+        "prompt": "I don't have time. (le temps)",
+        "answer": [
+          "je n'ai pas le temps"
+        ],
+        "hint": "ne + ai → n'ai."
+      },
+      {
+        "prompt": "He's not here.",
+        "answer": [
+          "il n'est pas ici"
+        ]
+      },
+      {
+        "prompt": "It's not possible.",
+        "answer": [
+          "ce n'est pas possible"
+        ]
+      },
+      {
+        "prompt": "I can't come today.",
+        "answer": [
+          "je ne peux pas venir aujourd'hui"
+        ]
+      },
+      {
+        "prompt": "I'm not going to speak now.",
+        "answer": [
+          "je ne vais pas parler maintenant"
+        ]
+      },
+      {
+        "prompt": "I don't know.",
+        "answer": [
+          "je ne sais pas"
+        ]
+      },
+      {
+        "prompt": "She doesn't want to sleep.",
+        "answer": [
+          "elle ne veut pas dormir"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g4",
+    "day": 4,
+    "topic": "pas de — the article collapses",
+    "rule": "After a negative, un/une/des collapse into plain 'de': j'ai un café → je n'ai pas DE café. Two exceptions: le/la/les stay (je n'ai pas LE temps), and after être nothing changes (ce n'est pas UNE bonne idée).",
+    "examples": [
+      {
+        "fr": "Je n'ai pas de café.",
+        "en": "I don't have (any) coffee."
+      },
+      {
+        "fr": "Il n'y a pas de problème.",
+        "en": "There's no problem."
+      },
+      {
+        "fr": "Je n'ai pas le temps.",
+        "en": "I don't have the time. (le stays)"
+      },
+      {
+        "fr": "Ce n'est pas une bonne idée.",
+        "en": "It's not a good idea. (être keeps une)"
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "I don't have a problem.",
+        "answer": [
+          "je n'ai pas de problème"
+        ]
+      },
+      {
+        "prompt": "There's no coffee.",
+        "answer": [
+          "il n'y a pas de café"
+        ]
+      },
+      {
+        "prompt": "I don't want coffee.",
+        "answer": [
+          "je ne veux pas de café"
+        ]
+      },
+      {
+        "prompt": "No problem!",
+        "answer": [
+          "pas de problème"
+        ]
+      },
+      {
+        "prompt": "There's no café here.",
+        "answer": [
+          "il n'y a pas de café ici"
+        ]
+      },
+      {
+        "prompt": "I don't have a question.",
+        "answer": [
+          "je n'ai pas de question"
+        ]
+      },
+      {
+        "prompt": "I don't have the time.",
+        "answer": [
+          "je n'ai pas le temps"
+        ],
+        "hint": "the time → le stays le."
+      },
+      {
+        "prompt": "It's not a good idea.",
+        "answer": [
+          "ce n'est pas une bonne idée"
+        ],
+        "hint": "après être, une survives."
+      }
+    ]
+  },
+  {
+    "id": "g5",
+    "day": 5,
+    "topic": "Places: à / au / en / de / du",
+    "rule": "Direction TO: à + city (à Paris), au + masculine place (au magasin, au Canada — because à+le fuses to au), en + feminine country (en France). Direction FROM: de (+ city), du (= de+le, masculine).",
+    "examples": [
+      {
+        "fr": "Je vais à Paris.",
+        "en": "I'm going to Paris."
+      },
+      {
+        "fr": "Je vais au magasin.",
+        "en": "I'm going to the store."
+      },
+      {
+        "fr": "Elle est en France.",
+        "en": "She's in France."
+      },
+      {
+        "fr": "Je viens du Canada.",
+        "en": "I come from Canada."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "I'm going to Paris.",
+        "answer": [
+          "je vais à paris"
+        ]
+      },
+      {
+        "prompt": "I'm going to the store.",
+        "answer": [
+          "je vais au magasin"
+        ]
+      },
+      {
+        "prompt": "He's at the café.",
+        "answer": [
+          "il est au café"
+        ]
+      },
+      {
+        "prompt": "I'm going to Canada.",
+        "answer": [
+          "je vais au canada"
+        ]
+      },
+      {
+        "prompt": "She's in France.",
+        "answer": [
+          "elle est en france"
+        ]
+      },
+      {
+        "prompt": "I come from Kyiv.",
+        "answer": [
+          "je viens de kyiv"
+        ]
+      },
+      {
+        "prompt": "I come from Canada.",
+        "answer": [
+          "je viens du canada"
+        ],
+        "hint": "de + le = du."
+      },
+      {
+        "prompt": "You're going to Montréal. (tu)",
+        "answer": [
+          "tu vas à montréal"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g6",
+    "day": 6,
+    "topic": "Review · days 1–5",
+    "review": true,
+    "rule": "No new rule today. Eight sentences that each need one of this week's patterns: one conjugated verb, the right link word (or none), the ne…pas sandwich, pas de, and the right place word.",
+    "examples": [
+      {
+        "fr": "Je veux fermer la porte.",
+        "en": "one verb conjugated"
+      },
+      {
+        "fr": "Ce n'est pas possible de dormir.",
+        "en": "possible de"
+      },
+      {
+        "fr": "Je n'ai pas de café.",
+        "en": "pas de"
+      },
+      {
+        "fr": "Je vais au magasin.",
+        "en": "au = à + le"
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "I want to close the door.",
+        "answer": [
+          "je veux fermer la porte"
+        ]
+      },
+      {
+        "prompt": "It's not possible to sleep here.",
+        "answer": [
+          "ce n'est pas possible de dormir ici",
+          "il n'est pas possible de dormir ici"
+        ]
+      },
+      {
+        "prompt": "I don't have (any) coffee.",
+        "answer": [
+          "je n'ai pas de café"
+        ]
+      },
+      {
+        "prompt": "I'm not going to speak with you.",
+        "answer": [
+          "je ne vais pas parler avec toi",
+          "je ne vais pas parler avec vous"
+        ]
+      },
+      {
+        "prompt": "I'm going to the store with my friend.",
+        "answer": [
+          "je vais au magasin avec mon ami"
+        ]
+      },
+      {
+        "prompt": "She's in France now.",
+        "answer": [
+          "elle est en france maintenant"
+        ]
+      },
+      {
+        "prompt": "I come from Canada.",
+        "answer": [
+          "je viens du canada"
+        ]
+      },
+      {
+        "prompt": "I'd like to eat something tonight.",
+        "answer": [
+          "je voudrais manger quelque chose ce soir"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g7",
+    "day": 7,
+    "topic": "Gender & articles",
+    "rule": "Every noun is masculine (un/le) or feminine (une/la) — memorize the article WITH the word, as one unit. One clue you can trust: -tion words are feminine, every one you'll meet. French gender ≠ Ukrainian gender: trust the article, not the translation.",
+    "examples": [
+      {
+        "fr": "une question, la question",
+        "en": "-tion → feminine"
+      },
+      {
+        "fr": "un café, le café",
+        "en": "masculine"
+      },
+      {
+        "fr": "la porte, la fenêtre",
+        "en": "feminine"
+      },
+      {
+        "fr": "un problème, le problème",
+        "en": "masculine (despite the -e!)"
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "a question",
+        "answer": [
+          "une question"
+        ]
+      },
+      {
+        "prompt": "the door",
+        "answer": [
+          "la porte"
+        ]
+      },
+      {
+        "prompt": "a problem",
+        "answer": [
+          "un problème"
+        ],
+        "hint": "problème, système, thème are masculine."
+      },
+      {
+        "prompt": "the window",
+        "answer": [
+          "la fenêtre"
+        ]
+      },
+      {
+        "prompt": "a coffee",
+        "answer": [
+          "un café"
+        ]
+      },
+      {
+        "prompt": "a reservation",
+        "answer": [
+          "une réservation"
+        ]
+      },
+      {
+        "prompt": "the store",
+        "answer": [
+          "le magasin"
+        ]
+      },
+      {
+        "prompt": "a good idea",
+        "answer": [
+          "une bonne idée"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g8",
+    "day": 8,
+    "topic": "Possessives: mon / ma / mes",
+    "rule": "'My' matches the NOUN's gender, not yours: mon travail (masc.), ma question (fem.), mes amis (plural). Exception: before a vowel sound, ma becomes mon even for feminine nouns — mon amie, mon idée. And never 'moi + noun' — moi means 'me' and stands alone.",
+    "examples": [
+      {
+        "fr": "mon travail",
+        "en": "my work"
+      },
+      {
+        "fr": "ma question",
+        "en": "my question"
+      },
+      {
+        "fr": "mes amis",
+        "en": "my friends"
+      },
+      {
+        "fr": "C'est pour moi.",
+        "en": "It's for me. (moi stands alone)"
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "my work",
+        "answer": [
+          "mon travail"
+        ],
+        "hint": "mon, not moi."
+      },
+      {
+        "prompt": "my friend (male)",
+        "answer": [
+          "mon ami"
+        ]
+      },
+      {
+        "prompt": "my question",
+        "answer": [
+          "ma question"
+        ]
+      },
+      {
+        "prompt": "my friends",
+        "answer": [
+          "mes amis"
+        ]
+      },
+      {
+        "prompt": "my problem",
+        "answer": [
+          "mon problème"
+        ]
+      },
+      {
+        "prompt": "my door",
+        "answer": [
+          "ma porte"
+        ]
+      },
+      {
+        "prompt": "my friend (female)",
+        "answer": [
+          "mon amie"
+        ],
+        "hint": "Feminine, but starts with a vowel → mon, not ma."
+      },
+      {
+        "prompt": "my window",
+        "answer": [
+          "ma fenêtre"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g9",
+    "day": 9,
+    "topic": "être vs avoir — il est / il a",
+    "rule": "être = being (state, place, description): il est ici. avoir = having (possession): il a un café. By ear they're nearly twins — il est sounds like 'eel-EH', il a like 'eel-AH' — so decide by MEANING: is he BEING something, or does he HAVE something?",
+    "examples": [
+      {
+        "fr": "Il est au café.",
+        "en": "He IS at the café."
+      },
+      {
+        "fr": "Il a un café.",
+        "en": "He HAS a coffee."
+      },
+      {
+        "fr": "Je suis fatigué.",
+        "en": "I am tired."
+      },
+      {
+        "fr": "J'ai une question.",
+        "en": "I have a question."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "He is here.",
+        "answer": [
+          "il est ici"
+        ]
+      },
+      {
+        "prompt": "He has a coffee.",
+        "answer": [
+          "il a un café"
+        ]
+      },
+      {
+        "prompt": "I am tired. (fatigué)",
+        "answer": [
+          "je suis fatigué",
+          "je suis fatiguée"
+        ]
+      },
+      {
+        "prompt": "I have a question.",
+        "answer": [
+          "j'ai une question"
+        ]
+      },
+      {
+        "prompt": "She is at the café.",
+        "answer": [
+          "elle est au café"
+        ]
+      },
+      {
+        "prompt": "She has the time.",
+        "answer": [
+          "elle a le temps"
+        ]
+      },
+      {
+        "prompt": "It is possible.",
+        "answer": [
+          "c'est possible"
+        ]
+      },
+      {
+        "prompt": "I have a problem.",
+        "answer": [
+          "j'ai un problème"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g10",
+    "day": 10,
+    "topic": "-er verb endings: -e / -es / -e",
+    "rule": "Regular -er verbs (parler, aimer, travailler): je parle, tu parles, il/elle parle. All three endings are SILENT — the forms sound identical. Your ear already knows them; this drill teaches your fingers.",
+    "examples": [
+      {
+        "fr": "je parle",
+        "en": "I speak"
+      },
+      {
+        "fr": "tu parles",
+        "en": "you speak (silent -es)"
+      },
+      {
+        "fr": "il parle",
+        "en": "he speaks"
+      },
+      {
+        "fr": "elle travaille",
+        "en": "she works"
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "I speak (parler, with pronoun)",
+        "answer": [
+          "je parle"
+        ]
+      },
+      {
+        "prompt": "you speak (tu)",
+        "answer": [
+          "tu parles"
+        ]
+      },
+      {
+        "prompt": "he speaks",
+        "answer": [
+          "il parle"
+        ]
+      },
+      {
+        "prompt": "she likes (aimer)",
+        "answer": [
+          "elle aime"
+        ]
+      },
+      {
+        "prompt": "I work (travailler)",
+        "answer": [
+          "je travaille"
+        ]
+      },
+      {
+        "prompt": "you work (tu)",
+        "answer": [
+          "tu travailles"
+        ]
+      },
+      {
+        "prompt": "He works tomorrow.",
+        "answer": [
+          "il travaille demain"
+        ]
+      },
+      {
+        "prompt": "She speaks French.",
+        "answer": [
+          "elle parle français",
+          "elle parle le français"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g11",
+    "day": 11,
+    "topic": "Questions with est-ce que",
+    "rule": "Put 'Est-ce que' in front of any plain sentence and it becomes a yes/no question — no word-order gymnastics: Est-ce que tu veux venir ? Before a vowel it elides: Est-ce qu'il… For 'what', use Qu'est-ce que: Qu'est-ce que tu vas faire ?",
+    "examples": [
+      {
+        "fr": "Est-ce que tu veux venir ?",
+        "en": "Do you want to come?"
+      },
+      {
+        "fr": "Est-ce qu'il est ici ?",
+        "en": "Is he here? (que → qu')"
+      },
+      {
+        "fr": "Qu'est-ce que c'est ?",
+        "en": "What is it?"
+      },
+      {
+        "fr": "Qu'est-ce que tu vas faire ?",
+        "en": "What are you going to do?"
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Do you want to come? (tu)",
+        "answer": [
+          "est-ce que tu veux venir"
+        ]
+      },
+      {
+        "prompt": "Do you have the time? (tu)",
+        "answer": [
+          "est-ce que tu as le temps"
+        ]
+      },
+      {
+        "prompt": "Is it possible?",
+        "answer": [
+          "est-ce que c'est possible"
+        ]
+      },
+      {
+        "prompt": "What is it?",
+        "answer": [
+          "qu'est-ce que c'est"
+        ]
+      },
+      {
+        "prompt": "What are you going to do? (tu)",
+        "answer": [
+          "qu'est-ce que tu vas faire"
+        ]
+      },
+      {
+        "prompt": "Do you speak French? (tu)",
+        "answer": [
+          "est-ce que tu parles français"
+        ]
+      },
+      {
+        "prompt": "Does he want a coffee?",
+        "answer": [
+          "est-ce qu'il veut un café"
+        ],
+        "hint": "que + il → qu'il."
+      },
+      {
+        "prompt": "Do you want to eat something? (tu)",
+        "answer": [
+          "est-ce que tu veux manger quelque chose"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g12",
+    "day": 12,
+    "topic": "Question chunks: qui, quoi, où, combien",
+    "rule": "Everyday spoken questions are fixed chunks — learn them whole: Qui est-ce ? (who is it), C'est quoi ? (what is it, casual), Où est… ? (where is), C'est combien ? (how much). No grammar assembly needed.",
+    "examples": [
+      {
+        "fr": "Qui est-ce ?",
+        "en": "Who is it?"
+      },
+      {
+        "fr": "C'est quoi ?",
+        "en": "What is that? (casual)"
+      },
+      {
+        "fr": "Où est le café ?",
+        "en": "Where is the café?"
+      },
+      {
+        "fr": "C'est combien ?",
+        "en": "How much is it?"
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Who is it?",
+        "answer": [
+          "qui est-ce",
+          "c'est qui"
+        ]
+      },
+      {
+        "prompt": "What is it? (either way you know)",
+        "answer": [
+          "qu'est-ce que c'est",
+          "c'est quoi"
+        ]
+      },
+      {
+        "prompt": "Where is the café?",
+        "answer": [
+          "où est le café"
+        ]
+      },
+      {
+        "prompt": "How much is it?",
+        "answer": [
+          "c'est combien"
+        ]
+      },
+      {
+        "prompt": "Why?",
+        "answer": [
+          "pourquoi"
+        ]
+      },
+      {
+        "prompt": "When?",
+        "answer": [
+          "quand"
+        ]
+      },
+      {
+        "prompt": "How are you? (the ça question)",
+        "answer": [
+          "comment ça va",
+          "ça va"
+        ]
+      },
+      {
+        "prompt": "What are you going to eat? (tu)",
+        "answer": [
+          "qu'est-ce que tu vas manger",
+          "tu vas manger quoi"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g13",
+    "day": 13,
+    "topic": "Review · days 7–12",
+    "review": true,
+    "rule": "No new rule. Eight sentences mixing gender, possessives, être/avoir, -er endings and questions — the week in one sweep.",
+    "examples": [
+      {
+        "fr": "une question, mon travail",
+        "en": "gender + possessive"
+      },
+      {
+        "fr": "il est / il a",
+        "en": "being vs having"
+      },
+      {
+        "fr": "tu parles",
+        "en": "silent -es"
+      },
+      {
+        "fr": "Est-ce qu'il peut venir ?",
+        "en": "question + elision"
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "I have a question.",
+        "answer": [
+          "j'ai une question"
+        ]
+      },
+      {
+        "prompt": "my work",
+        "answer": [
+          "mon travail"
+        ]
+      },
+      {
+        "prompt": "He is at the store.",
+        "answer": [
+          "il est au magasin"
+        ]
+      },
+      {
+        "prompt": "He has a problem.",
+        "answer": [
+          "il a un problème"
+        ]
+      },
+      {
+        "prompt": "you speak (tu)",
+        "answer": [
+          "tu parles"
+        ]
+      },
+      {
+        "prompt": "Can he come? (est-ce que)",
+        "answer": [
+          "est-ce qu'il peut venir"
+        ]
+      },
+      {
+        "prompt": "How much is it?",
+        "answer": [
+          "c'est combien"
+        ]
+      },
+      {
+        "prompt": "My friends are here.",
+        "answer": [
+          "mes amis sont ici"
+        ],
+        "hint": "sont = the ils/elles form of être (they are) — new form, meet it here first."
+      }
+    ]
+  },
+  {
+    "id": "g14",
+    "day": 14,
+    "topic": "Apply everything · full sentences",
+    "rule": "The final test: real sentences that each need several patterns at once. Check yourself before answering: one conjugated verb per clause? right link word? ne…pas complete? right article and place word?",
+    "examples": [
+      {
+        "fr": "Ce soir, je vais manger au restaurant avec mes amis.",
+        "en": "near future + au + mes"
+      },
+      {
+        "fr": "Je n'ai pas le temps aujourd'hui, mais demain c'est possible.",
+        "en": "negation + le stays"
+      },
+      {
+        "fr": "Est-ce que tu veux venir avec moi ?",
+        "en": "question + two verbs"
+      },
+      {
+        "fr": "Mon ami a une question pour toi.",
+        "en": "possessive + avoir + gender"
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Tonight I'm going to eat at the restaurant with my friends.",
+        "answer": [
+          "ce soir je vais manger au restaurant avec mes amis",
+          "ce soir, je vais manger au restaurant avec mes amis",
+          "je vais manger au restaurant avec mes amis ce soir"
+        ]
+      },
+      {
+        "prompt": "I don't have time today, but tomorrow it's possible.",
+        "answer": [
+          "je n'ai pas le temps aujourd'hui mais demain c'est possible",
+          "je n'ai pas le temps aujourd'hui, mais demain c'est possible"
+        ]
+      },
+      {
+        "prompt": "Do you want to come with me to the café? (tu)",
+        "answer": [
+          "est-ce que tu veux venir avec moi au café",
+          "est-ce que tu veux venir au café avec moi"
+        ]
+      },
+      {
+        "prompt": "My friend has a question for you.",
+        "answer": [
+          "mon ami a une question pour toi",
+          "mon ami a une question pour vous"
+        ]
+      },
+      {
+        "prompt": "It's not possible to work tonight.",
+        "answer": [
+          "ce n'est pas possible de travailler ce soir",
+          "il n'est pas possible de travailler ce soir"
+        ]
+      },
+      {
+        "prompt": "She's going to Paris tomorrow with her friend. (son ami)",
+        "answer": [
+          "elle va à paris demain avec son ami",
+          "demain elle va à paris avec son ami",
+          "elle va à paris avec son ami demain"
+        ]
+      },
+      {
+        "prompt": "I don't want coffee, thanks.",
+        "answer": [
+          "je ne veux pas de café merci",
+          "je ne veux pas de café, merci"
+        ]
+      },
+      {
+        "prompt": "I'm here to learn French. (apprendre)",
+        "answer": [
+          "je suis ici pour apprendre le français"
+        ]
+      }
+    ]
+  }
+]

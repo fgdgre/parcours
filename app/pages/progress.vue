@@ -21,6 +21,9 @@
       </button>
     </div>
 
+    <PathTabs v-model="ptab" :tabs="PROGRESS_TABS" />
+
+    <template v-if="ptab === 'main'">
     <div class="stats">
       <div class="card stat">
         <span class="num">{{ progress.wordsSeen }}</span>
@@ -187,6 +190,91 @@
       <p class="muted small">Removes all progress, reviews and settings from this browser.</p>
       <button class="btn btn-block reset" @click="resetAll">Reset everything</button>
     </div>
+    </template>
+
+    <!-- ORAL -->
+    <template v-if="ptab === 'oral'">
+      <div class="stats">
+        <div class="card stat">
+          <span class="num oral-num">{{ listenMinutes7 }}</span>
+          <span class="muted small">min listened · 7 days</span>
+        </div>
+        <div class="card stat">
+          <span class="num oral-num">{{ listenMinutesTotal }}</span>
+          <span class="muted small">min listened · total</span>
+        </div>
+      </div>
+      <p class="muted small">
+        Minutes are the <strong>leading</strong> indicator; the weekly dictation score is the lagging one.
+        Segmentation improves in plateaus, then jumps.
+      </p>
+      <h2>Listening ladder</h2>
+      <div class="card stack">
+        <div class="spread">
+          <span>Days completed</span>
+          <strong class="oral-num">{{ oralDone }}/{{ oralLadder.length }}</strong>
+        </div>
+        <ProgressBar :value="oralLadder.length ? oralDone / oralLadder.length : 0" />
+        <div v-for="d in oralStoryScores" :key="d.day" class="spread">
+          <span class="muted small">Day {{ d.day }} · {{ d.title }}</span>
+          <span class="small" :class="qualityClass(d.pct)">{{ d.pct }}%</span>
+        </div>
+        <p v-if="oralStoryScores.length === 0" class="muted small">Story scores appear here from Day 7.</p>
+      </div>
+    </template>
+
+    <!-- GRAMMAR -->
+    <template v-if="ptab === 'grammar'">
+      <h2>Pattern ladder</h2>
+      <div class="card stack">
+        <div class="spread">
+          <span>Patterns done</span>
+          <strong class="gram-num">{{ gramDone }}/{{ grammarLadder.length }}</strong>
+        </div>
+        <ProgressBar :value="grammarLadder.length ? gramDone / grammarLadder.length : 0" />
+        <div class="spread">
+          <span>Production accuracy</span>
+          <span :class="gramAccuracy !== undefined ? qualityClass(gramAccuracy) : 'muted'">
+            {{ gramAccuracy !== undefined ? `${gramAccuracy}%` : '—' }}
+          </span>
+        </div>
+        <div v-for="g in gramScores" :key="g.day" class="spread">
+          <span class="muted small">Day {{ g.day }} · {{ g.topic }}</span>
+          <span class="small" :class="qualityClass(g.pct)">{{ g.pct }}%</span>
+        </div>
+      </div>
+      <p class="muted small">Misses feed the same retry queue as everything else — grammar closes through 🔁 too.</p>
+    </template>
+
+    <!-- SUMMARY -->
+    <template v-if="ptab === 'summary'">
+      <div class="stats">
+        <div class="card stat">
+          <span class="num">{{ minutes7 }}</span>
+          <span class="muted small">min studied · 7 days</span>
+        </div>
+        <div class="card stat">
+          <span class="num oral-num">{{ listenMinutes7 }}</span>
+          <span class="muted small">of them listening</span>
+        </div>
+      </div>
+      <h2>The three paths</h2>
+      <div class="card stack">
+        <div class="spread"><span>🧭 Main · lessons done</span><strong class="main-num">{{ lessonsDone }}</strong></div>
+        <div class="spread"><span>🎧 Oral · ladder</span><strong class="oral-num">{{ oralDone }}/{{ oralLadder.length }}</strong></div>
+        <div class="spread"><span>📐 Grammar · ladder</span><strong class="gram-num">{{ gramDone }}/{{ grammarLadder.length }}</strong></div>
+      </div>
+      <template v-if="weakest.length > 0">
+        <h2>Where the points are</h2>
+        <div class="card stack">
+          <div v-for="s2 in weakest" :key="s2.type" class="spread">
+            <span class="small">{{ s2.label }}</span>
+            <span class="small" :class="qualityClass(s2.pct)">{{ s2.pct }}%</span>
+          </div>
+          <p class="muted small">Your three lowest skills — the annex paths exist for exactly these.</p>
+        </div>
+      </template>
+    </template>
   </div>
 </template>
 
@@ -197,6 +285,54 @@ import { buildMistakesPrompt, buildProgressReviewPrompt } from '~/utils/reviewPr
 import { addDays, todayIso } from '~/utils/srs'
 
 const progress = useProgress()
+
+// --- mirrored path tabs ---
+import { grammarDayKey, grammarLadder, oralDayKey, oralDayTitle, oralLadder } from '~/content/paths'
+
+const PROGRESS_TABS = [
+  { id: 'main', label: 'Main', color: 'var(--path-main-text)' },
+  { id: 'oral', label: 'Oral', color: 'var(--path-oral-text)' },
+  { id: 'grammar', label: 'Grammar', color: 'var(--path-grammar-text)' },
+  { id: 'summary', label: 'Summary', color: 'var(--accent)' },
+]
+const ptab = ref('main')
+
+const listenMinutesTotal = computed(() =>
+  Math.round(Object.values(progress.listenStats).reduce((a, b) => a + b, 0) / 60))
+const listenMinutes7 = computed(() => {
+  const cutoff = addDays(todayIso(), -6)
+  return Math.round(Object.entries(progress.listenStats)
+    .filter(([d]) => d >= cutoff)
+    .reduce((a, [, sec]) => a + sec, 0) / 60)
+})
+const oralDone = computed(() => oralLadder.filter(d => progress.isDone(oralDayKey(d.day))).length)
+const gramDone = computed(() => grammarLadder.filter(g => progress.isDone(grammarDayKey(g.day))).length)
+const oralStoryScores = computed(() => oralLadder
+  .filter(d => d.kind === 'story')
+  .map((d) => {
+    const sc = progress.lessonScores[oralDayKey(d.day)]
+    return sc && sc.total > 0
+      ? { day: d.day, title: oralDayTitle(d), pct: Math.round((sc.correct / sc.total) * 100) }
+      : null
+  })
+  .filter((x): x is { day: number; title: string; pct: number } => x !== null))
+const gramScores = computed(() => grammarLadder
+  .map((g) => {
+    const sc = progress.lessonScores[grammarDayKey(g.day)]
+    return sc && sc.total > 0
+      ? { day: g.day, topic: g.topic, pct: Math.round((sc.correct / sc.total) * 100) }
+      : null
+  })
+  .filter((x): x is { day: number; topic: string; pct: number } => x !== null))
+const gramAccuracy = computed(() => {
+  const scs = grammarLadder
+    .map(g => progress.lessonScores[grammarDayKey(g.day)])
+    .filter((sc): sc is NonNullable<typeof sc> => !!sc && sc.total > 0)
+  if (scs.length === 0) return undefined
+  const c = scs.reduce((a, sc) => a + sc.correct, 0)
+  const t = scs.reduce((a, sc) => a + sc.total, 0)
+  return Math.round((c / t) * 100)
+})
 
 // tap-to-backfill for AI writing ratings that were never recorded
 const showAllWritings = ref(false)
@@ -279,6 +415,8 @@ const skillRows = computed(() =>
   }),
 )
 
+const weakest = computed(() => [...skillRows.value].sort((a, b) => a.pct - b.pct).slice(0, 3))
+
 const writingAvg = computed(() => {
   const rated = progress.writingRatings.filter(r => r.score !== null)
   if (rated.length === 0) return 0
@@ -335,6 +473,17 @@ async function copyProgressReview() {
     recentMistakes: progress.mistakes.slice(0, 50),
     writings: progress.writingRatings.slice(0, 30),
     studyTime: progress.dayStats,
+    oralPath: {
+      listenSecondsByDay: progress.listenStats,
+      listenedMinutesTotal: listenMinutesTotal.value,
+      ladderDone: `${oralDone.value}/${oralLadder.length}`,
+      storyScores: oralStoryScores.value,
+    },
+    grammarPath: {
+      ladderDone: `${gramDone.value}/${grammarLadder.length}`,
+      accuracyPct: gramAccuracy.value ?? null,
+      dayScores: gramScores.value,
+    },
     myNotes: progress.notes,
     settings: progress.settings,
   }
@@ -428,4 +577,7 @@ function resetAll() {
 .score-btn.missing { color: var(--muted); border-style: dashed; }
 .show-all { color: var(--muted); border-style: dashed; }
 .score-input { width: 70px; min-height: 36px; text-align: center; padding: 4px; }
+.oral-num { color: var(--path-oral-text); }
+.gram-num { color: var(--path-grammar-text); }
+.main-num { color: var(--path-main-text); }
 </style>

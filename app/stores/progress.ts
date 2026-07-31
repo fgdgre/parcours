@@ -12,6 +12,8 @@ export interface Settings {
   ttsRate: number
   preferKeyboard: boolean
   lastBackupAt: string
+  /** speaking practice stays locked until comprehension is steadier (or manual unlock) */
+  speakingUnlocked: boolean
 }
 
 export interface LessonScore {
@@ -61,12 +63,16 @@ export interface PersistedState {
   examHistory: ExamAttempt[]
   skillStats: Record<string, SkillStat>
   dayStats: Record<string, DayStat>
+  /** seconds of passive/story listening per day — the Oral path's leading indicator */
+  listenStats: Record<string, number>
+  /** first date a path-ladder item appeared on Today (powers the "carried" tag) */
+  pathShown: Record<string, string>
   notes: Record<string, string>
   settings: Settings
 }
 
 export function defaultSettings(): Settings {
-  return { strictAccents: false, ttsRate: 0.95, preferKeyboard: false, lastBackupAt: '' }
+  return { strictAccents: false, ttsRate: 0.95, preferKeyboard: false, lastBackupAt: '', speakingUnlocked: false }
 }
 
 export function serializeState(
@@ -85,6 +91,8 @@ export function serializeState(
     examHistory: s.examHistory,
     skillStats: s.skillStats,
     dayStats: s.dayStats,
+    listenStats: s.listenStats,
+    pathShown: s.pathShown,
     notes: s.notes,
     settings: s.settings,
   }
@@ -128,6 +136,8 @@ export function validateBackup(json: string): BackupValidation {
       examHistory: (Array.isArray(parsed.examHistory) ? parsed.examHistory : []) as ExamAttempt[],
       skillStats: (isRecord(parsed.skillStats) ? parsed.skillStats : {}) as Record<string, SkillStat>,
       dayStats: (isRecord(parsed.dayStats) ? parsed.dayStats : {}) as Record<string, DayStat>,
+      listenStats: (isRecord(parsed.listenStats) ? parsed.listenStats : {}) as Record<string, number>,
+      pathShown: (isRecord(parsed.pathShown) ? parsed.pathShown : {}) as Record<string, string>,
       notes: (isRecord(parsed.notes) ? parsed.notes : {}) as Record<string, string>,
       settings: settings as Settings,
     },
@@ -145,6 +155,8 @@ export const useProgress = defineStore('progress', () => {
   const examHistory = ref<ExamAttempt[]>([])
   const skillStats = ref<Record<string, SkillStat>>({})
   const dayStats = ref<Record<string, DayStat>>({})
+  const listenStats = ref<Record<string, number>>({})
+  const pathShown = ref<Record<string, string>>({})
   const notes = ref<Record<string, string>>({})
   const settings = ref<Settings>(defaultSettings())
   const loaded = ref(false)
@@ -162,6 +174,8 @@ export const useProgress = defineStore('progress', () => {
       examHistory: examHistory.value,
       skillStats: skillStats.value,
       dayStats: dayStats.value,
+      listenStats: listenStats.value,
+      pathShown: pathShown.value,
       notes: notes.value,
       settings: settings.value,
     }))
@@ -184,6 +198,8 @@ export const useProgress = defineStore('progress', () => {
     examHistory.value = data.examHistory
     skillStats.value = data.skillStats
     dayStats.value = data.dayStats
+    listenStats.value = data.listenStats
+    pathShown.value = data.pathShown
     notes.value = data.notes
     settings.value = data.settings
   }
@@ -197,7 +213,7 @@ export const useProgress = defineStore('progress', () => {
     }
     loaded.value = true
     watch(
-      [completedLessons, srs, introduced, examScores, lessonScores, mistakes, writingRatings, examHistory, skillStats, dayStats, notes, settings],
+      [completedLessons, srs, introduced, examScores, lessonScores, mistakes, writingRatings, examHistory, skillStats, dayStats, listenStats, pathShown, notes, settings],
       persistSoon,
       { deep: true },
     )
@@ -224,8 +240,10 @@ export const useProgress = defineStore('progress', () => {
 
   const dueIds = computed(() => dueCardIds(srs.value, todayIso()))
   const wordsSeen = computed(() => Object.keys(srs.value).length)
+  // "learned" = survived a week-spaced review. The old >=21d bar is a
+  // months-scale "mastered" criterion that made the counter look broken.
   const wordsLearned = computed(
-    () => Object.values(srs.value).filter(e => e.intervalDays >= 21).length,
+    () => Object.values(srs.value).filter(e => e.intervalDays >= 7).length,
   )
 
   function recordExam(id: string, percent: number, seconds = 0) {
@@ -292,6 +310,16 @@ export const useProgress = defineStore('progress', () => {
     writingRatings.value[index] = { ...w, score: Math.max(0, Math.min(100, Math.round(score))) }
   }
 
+  function addListenTime(seconds: number) {
+    if (seconds <= 0) return
+    const t = todayIso()
+    listenStats.value[t] = (listenStats.value[t] ?? 0) + Math.round(seconds)
+  }
+
+  function markPathShown(key: string) {
+    if (!pathShown.value[key]) pathShown.value[key] = todayIso()
+  }
+
   function recordRun(perType: Record<string, { correct: number; total: number }>) {
     const today = todayIso()
     const day = dayStats.value[today] ?? { seconds: 0, correct: 0, total: 0 }
@@ -329,6 +357,8 @@ export const useProgress = defineStore('progress', () => {
       examHistory: examHistory.value,
       skillStats: skillStats.value,
       dayStats: dayStats.value,
+      listenStats: listenStats.value,
+      pathShown: pathShown.value,
       notes: notes.value,
       settings: settings.value,
     })
@@ -353,6 +383,8 @@ export const useProgress = defineStore('progress', () => {
     examHistory.value = []
     skillStats.value = {}
     dayStats.value = {}
+    listenStats.value = {}
+    pathShown.value = {}
     notes.value = {}
     settings.value = defaultSettings()
     persistNow()
@@ -360,11 +392,11 @@ export const useProgress = defineStore('progress', () => {
 
   return {
     completedLessons, srs, introduced, examScores, lessonScores, mistakes,
-    writingRatings, examHistory, skillStats, dayStats, notes, settings, loaded,
+    writingRatings, examHistory, skillStats, dayStats, listenStats, pathShown, notes, settings, loaded,
     load, isDone, markDone, unmarkDone,
     isIntroduced, introduceCard, reviewCard, recordExam, recordLesson, logMistakes,
     recordRetry, dueRetries,
-    addWriting, setWritingScore, recordRun, addTime, setNote,
+    addWriting, setWritingScore, recordRun, addTime, addListenTime, markPathShown, setNote,
     dueIds, wordsSeen, wordsLearned,
     exportBackup, importBackup, resetAll,
   }

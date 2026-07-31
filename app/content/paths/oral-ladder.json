@@ -1,0 +1,16 @@
+[
+  { "day": 1, "kind": "passive", "refs": ["p1"], "note": "Eyes-off, 10–12 min. Just listen." },
+  { "day": 2, "kind": "passive", "refs": ["p1"], "note": "Same set again — repetition is the point." },
+  { "day": 3, "kind": "passive", "refs": ["p2"], "note": "New set." },
+  { "day": 4, "kind": "passive", "refs": ["p2", "p1"], "note": "Both sets interleaved." },
+  { "day": 5, "kind": "passive", "refs": ["p5"], "note": "PRIORITY — the phrases you hear as one long word." },
+  { "day": 6, "kind": "passive", "refs": ["p5"], "note": "Don't advance until these feel like separate words." },
+  { "day": 7, "kind": "story", "refs": ["story-a"], "note": "First active comprehension — slow." },
+  { "day": 8, "kind": "passive", "refs": ["p3"], "note": "Back to passive, new frame." },
+  { "day": 9, "kind": "story", "refs": ["story-b"], "note": "Negation + near future." },
+  { "day": 10, "kind": "passive", "refs": ["p5", "p6"], "note": "Fused phrases + connectors, mixed." },
+  { "day": 11, "kind": "story", "refs": ["story-c"], "note": "Places — à / au / de." },
+  { "day": 12, "kind": "story", "refs": ["story-a"], "rate": 1.0, "note": "Same story, natural speed." },
+  { "day": 13, "kind": "passive", "refs": ["p4"], "note": "New frame: want / can / have." },
+  { "day": 14, "kind": "dictation-check", "refs": [], "note": "Weekly measurement, clear head only. Expect low — that's fine." }
+]

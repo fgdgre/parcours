@@ -34,5 +34,24 @@ export function useTts() {
     speechSynthesis.speak(u)
   }
 
-  return { supported, speak }
+  /** Awaitable speech — resolves when the utterance ends (or errors/unsupported). */
+  function speakAsync(text: string, rate = 1): Promise<void> {
+    return new Promise((resolve) => {
+      if (!supported.value) return resolve()
+      speechSynthesis.cancel()
+      const u = new SpeechSynthesisUtterance(text)
+      u.lang = 'fr-FR'
+      if (voice.value) u.voice = voice.value
+      u.rate = rate
+      u.onend = () => resolve()
+      u.onerror = () => resolve()
+      speechSynthesis.speak(u)
+    })
+  }
+
+  function stop() {
+    if (supported.value) speechSynthesis.cancel()
+  }
+
+  return { supported, speak, speakAsync, stop }
 }

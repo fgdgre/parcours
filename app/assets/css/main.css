@@ -31,6 +31,15 @@
     --warn-soft: #372c15;
     --err: #e0837a;
     --err-soft: #3b201d;
+    --path-main: #9d7bff;
+    --path-main-text: #b39dfc;
+    --path-main-soft: #2a2440;
+    --path-oral: #5cb860;
+    --path-oral-text: #7fc983;
+    --path-oral-soft: #1e3020;
+    --path-grammar: #fbc02d;
+    --path-grammar-text: #e0b33c;
+    --path-grammar-soft: #383014;
   }
 }
 

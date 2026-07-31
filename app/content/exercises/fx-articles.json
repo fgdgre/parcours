@@ -43,10 +43,10 @@
   },
   {
     "type": "type",
-    "prompt": "Say: “a slice” (of pizza, of bread…)",
+    "prompt": "Say: “a slice” (of bread, of ham…)",
     "answer": ["une tranche"],
     "hint": "tranche is feminine.",
-    "explain": "une tranche — your Friday pizza question, answered."
+    "explain": "une tranche — feminine. (For pizza, French actually says une part de pizza — tranche is for bread and ham.)"
   },
   {
     "type": "type",

@@ -110,8 +110,50 @@ const orphans = Object.keys(cards).filter(id =>
 )
 if (orphans.length) warn.push(`${orphans.length} cards not referenced by any vocab lesson: ${orphans.slice(0, 5).join(', ')}…`)
 
+// --- three-path content (oral ladder, stories, grammar, briefs) ---
+const pathsDir = join(contentDir, 'paths')
+const passive = JSON.parse(readFileSync(join(pathsDir, 'passive.json'), 'utf8'))
+const stories = JSON.parse(readFileSync(join(pathsDir, 'stories.json'), 'utf8'))
+const ladder = JSON.parse(readFileSync(join(pathsDir, 'oral-ladder.json'), 'utf8'))
+const grammar = JSON.parse(readFileSync(join(pathsDir, 'grammar.json'), 'utf8'))
+const briefs = JSON.parse(readFileSync(join(pathsDir, 'briefs.json'), 'utf8'))
+
+const passiveIds = new Set(passive.map(x => x.id))
+const storyIds = new Set(stories.map(x => x.id))
+for (const set of passive) {
+  if (!set.items?.length) errors.push(`passive set ${set.id} has no items`)
+  for (const it of set.items ?? []) if (!it.fr || !it.en) errors.push(`passive ${set.id} item missing fr/en`)
+}
+for (const st of stories) {
+  if (!st.story?.length) errors.push(`story ${st.id} has no sentences`)
+  for (const q of st.questions ?? []) {
+    if (!Array.isArray(q.options) || q.options.length < 2) errors.push(`story ${st.id} question needs 2+ options`)
+    if (typeof q.answer !== 'number' || q.answer < 0 || q.answer >= (q.options?.length ?? 0))
+      errors.push(`story ${st.id} question answer index out of range`)
+  }
+}
+ladder.forEach((d, i) => {
+  if (d.day !== i + 1) errors.push(`oral ladder day ${d.day} out of sequence at index ${i}`)
+  const pool = d.kind === 'story' ? storyIds : passiveIds
+  if (d.kind !== 'dictation-check') {
+    if (!d.refs?.length) errors.push(`oral day ${d.day} has no refs`)
+    for (const r of d.refs ?? []) if (!pool.has(r)) errors.push(`oral day ${d.day} unknown ref ${r}`)
+  }
+})
+grammar.forEach((g, i) => {
+  if (g.day !== i + 1) errors.push(`grammar day ${g.day} out of sequence at index ${i}`)
+  if (!g.rule) errors.push(`grammar ${g.id} missing rule`)
+  if (!g.practice?.length) errors.push(`grammar ${g.id} has no practice items`)
+  for (const pr of g.practice ?? [])
+    if (!pr.prompt || !Array.isArray(pr.answer) || pr.answer.length === 0 || pr.answer.some(a => !a))
+      errors.push(`grammar ${g.id} bad practice item: ${JSON.stringify(pr).slice(0, 60)}`)
+})
+for (const b of briefs) if (!b.copyBlock || !b.theme) errors.push(`brief ${b.id} missing theme/copyBlock`)
+
 console.log(`chapters: ${curriculum.length}, lessons: ${lessonIds.size}, cards: ${Object.keys(cards).length}, exercise files: ${Object.keys(exerciseFiles).length}`)
 for (const w of warn) console.log(`WARN  ${w}`)
 for (const e of errors) console.log(`ERROR ${e}`)
+
+
 if (errors.length) process.exit(1)
 console.log('content OK')

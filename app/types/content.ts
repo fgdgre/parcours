@@ -79,3 +79,61 @@ export type Exercise =
   | { type: 'dictation'; ttsText: string; answer: string[] }
   | { type: 'speak'; target: string; en: string }
   | { type: 'open'; prompt: string; minWords?: number; hint?: string }
+
+// --- Three-path architecture (Oral / Grammar annexes to the Main spine) ---
+
+export interface PassiveItem {
+  fr: string
+  en: string
+}
+
+export interface PassiveSet {
+  id: string
+  topic: string
+  items: PassiveItem[]
+}
+
+export interface StoryQuestion {
+  q: string
+  en: string
+  options: string[]
+  answer: number
+}
+
+export interface OralStory {
+  id: string
+  topic: string
+  rate: number
+  story: string[]
+  /** new-word glosses shown on screen, never spoken */
+  gloss?: string
+  questions: StoryQuestion[]
+}
+
+export interface OralDay {
+  day: number
+  kind: 'passive' | 'story' | 'dictation-check'
+  refs: string[]
+  /** overrides the story's own rate (natural-speed repeat days) */
+  rate?: number
+  note?: string
+}
+
+export interface GrammarLesson {
+  id: string
+  day: number
+  topic: string
+  rule: string
+  examples: PassiveItem[]
+  practice: { prompt: string; answer: string[]; hint?: string }[]
+  review?: boolean
+}
+
+export interface SpeakingBrief {
+  id: string
+  theme: string
+  level: string
+  targetStructures: string[]
+  usefulPhrases: PassiveItem[]
+  copyBlock: string
+}

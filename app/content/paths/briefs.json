@@ -1,0 +1,50 @@
+[
+  {
+    "id": "brief-cafe",
+    "theme": "Ordering at a café",
+    "level": "A1",
+    "targetStructures": ["je voudrais + noun", "c'est combien", "s'il vous plaît", "greetings + goodbye"],
+    "usefulPhrases": [
+      { "fr": "Bonjour, je voudrais un café.", "en": "Hello, I'd like a coffee." },
+      { "fr": "C'est combien ?", "en": "How much is it?" },
+      { "fr": "Merci beaucoup, au revoir.", "en": "Thanks a lot, goodbye." }
+    ],
+    "copyBlock": "You are a friendly café waiter in France. I am an A1 French beginner. Speak ONLY simple French, slowly, short sentences. Play the waiter; I am the customer ordering. Greet me, take my order, tell me the price, and say goodbye. After we finish (about 6–8 exchanges), give me 3 short corrections in simple English on my French. Start now with 'Bonjour !'"
+  },
+  {
+    "id": "brief-intro",
+    "theme": "Introduce yourself",
+    "level": "A1",
+    "targetStructures": ["je m'appelle", "je viens de / du", "je suis + job", "je veux / je voudrais + infinitive"],
+    "usefulPhrases": [
+      { "fr": "Je m'appelle Dima, je viens de Kyiv.", "en": "My name is Dima, I'm from Kyiv." },
+      { "fr": "Je suis développeur.", "en": "I'm a developer." },
+      { "fr": "Je veux améliorer mon français.", "en": "I want to improve my French." }
+    ],
+    "copyBlock": "You are a friendly French speaker meeting me for the first time. I am an A1 beginner. Speak ONLY simple, slow French, short sentences. Ask me: my name, where I'm from, my job, and why I learn French — one question at a time, waiting for my answer. If I'm stuck, offer the word. After ~6 questions, give me 3 short corrections in simple English. Start with 'Bonjour ! Comment tu t'appelles ?'"
+  },
+  {
+    "id": "brief-magasin",
+    "theme": "At the store",
+    "level": "A1",
+    "targetStructures": ["je voudrais + noun", "il y a / il n'y a pas de", "c'est combien", "un / une / deux + noun"],
+    "usefulPhrases": [
+      { "fr": "Est-ce qu'il y a des croissants ?", "en": "Are there croissants?" },
+      { "fr": "Je voudrais une part de pizza.", "en": "I'd like a slice of pizza." },
+      { "fr": "D'accord, pas de problème.", "en": "Okay, no problem." }
+    ],
+    "copyBlock": "You are a shop assistant in a small French food store. I am an A1 French beginner. Speak ONLY simple French, slowly, short sentences. I'm shopping: greet me, ask what I want, tell me one thing is unavailable so I must react, tell me the price, say goodbye. One question at a time; if I'm stuck, offer the word. After ~8 exchanges, give me 3 short corrections in simple English. Start with 'Bonjour !'"
+  },
+  {
+    "id": "brief-journee",
+    "theme": "Talk about your day",
+    "level": "A1",
+    "targetStructures": ["je travaille / je vais + infinitive", "aujourd'hui / ce soir / demain", "je n'ai pas le temps", "parce que (because)"],
+    "usefulPhrases": [
+      { "fr": "Aujourd'hui, je travaille beaucoup.", "en": "Today I'm working a lot." },
+      { "fr": "Ce soir, je vais dormir.", "en": "Tonight I'm going to sleep." },
+      { "fr": "Demain, je vais parler français.", "en": "Tomorrow I'm going to speak French." }
+    ],
+    "copyBlock": "You are a friendly French colleague. I am an A1 French beginner. Speak ONLY simple, slow French, short sentences. Ask me about my day: what I'm doing today, tonight, and tomorrow — one question at a time, waiting for my answer. Gently push me to use 'je vais + verb' for future plans. If I'm stuck, offer the word. After ~6 questions, give me 3 short corrections in simple English. Start with 'Salut ! Ça va ?'"
+  }
+]

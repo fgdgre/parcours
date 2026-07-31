@@ -1,0 +1,272 @@
+[
+  {
+    "id": "story-a",
+    "topic": "Marie au café",
+    "rate": 0.85,
+    "story": [
+      "Bonjour ! Je m'appelle Marie.",
+      "Je viens de Paris.",
+      "Aujourd'hui, je vais au café avec mon ami.",
+      "Je voudrais un café.",
+      "Mon ami veut un thé.",
+      "C'est une bonne journée."
+    ],
+    "gloss": "un thé = a tea · une bonne journée = a good day",
+    "questions": [
+      {
+        "q": "D'où vient Marie ?",
+        "en": "Where is Marie from?",
+        "options": [
+          "de Paris",
+          "du Canada",
+          "de Kyiv"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Où va Marie aujourd'hui ?",
+        "en": "Where does Marie go today?",
+        "options": [
+          "au café",
+          "au magasin",
+          "à Paris"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qu'est-ce que Marie veut ?",
+        "en": "What does Marie want?",
+        "options": [
+          "un café",
+          "un thé",
+          "de l'eau"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "story-b",
+    "topic": "Le soir de Paul",
+    "rate": 0.85,
+    "story": [
+      "Ce soir, Paul ne va pas travailler.",
+      "Il est fatigué.",
+      "Il va manger quelque chose.",
+      "Puis il va dormir.",
+      "Demain, il va parler français avec un ami."
+    ],
+    "gloss": "fatigué = tired · puis = then",
+    "questions": [
+      {
+        "q": "Est-ce que Paul va travailler ce soir ?",
+        "en": "Is Paul going to work tonight?",
+        "options": [
+          "Non",
+          "Oui"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Pourquoi ?",
+        "en": "Why?",
+        "options": [
+          "Il est fatigué",
+          "Il est au café",
+          "Il n'a pas d'ami"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qu'est-ce qu'il va faire demain ?",
+        "en": "What will he do tomorrow?",
+        "options": [
+          "parler français",
+          "dormir",
+          "travailler"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "story-c",
+    "topic": "Le voyage de Dima",
+    "rate": 0.88,
+    "story": [
+      "Je m'appelle Dima. Je viens de Kyiv.",
+      "Maintenant, je suis au Canada.",
+      "Demain, je vais aller au magasin.",
+      "Je voudrais parler français avec mes amis.",
+      "Ce n'est pas facile, mais c'est possible."
+    ],
+    "gloss": "facile = easy · un voyage = a trip",
+    "questions": [
+      {
+        "q": "D'où vient Dima ?",
+        "en": "Where is Dima from?",
+        "options": [
+          "de Kyiv",
+          "du Canada",
+          "de Paris"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Où est Dima maintenant ?",
+        "en": "Where is Dima now?",
+        "options": [
+          "au Canada",
+          "en France",
+          "à Kyiv"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qu'est-ce qu'il voudrait faire ?",
+        "en": "What would he like to do?",
+        "options": [
+          "parler français",
+          "dormir",
+          "travailler"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "story-d",
+    "topic": "Marie au magasin",
+    "rate": 0.85,
+    "story": [
+      "Aujourd'hui, Marie va au magasin.",
+      "Elle veut une part de pizza et deux croissants.",
+      "Mais il n'y a pas de croissants aujourd'hui.",
+      "Pas de problème !",
+      "Elle va manger la pizza avec son ami Paul."
+    ],
+    "gloss": "une part = a slice (of pizza) · son ami = her friend",
+    "questions": [
+      {
+        "q": "Où va Marie aujourd'hui ?",
+        "en": "Where does Marie go today?",
+        "options": [
+          "au magasin",
+          "au café",
+          "en France"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qu'est-ce qu'il n'y a pas ?",
+        "en": "What is there none of?",
+        "options": [
+          "de croissants",
+          "de pizza",
+          "de café"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Avec qui est-ce qu'elle va manger ?",
+        "en": "Who is she going to eat with?",
+        "options": [
+          "avec Paul",
+          "avec Dima",
+          "avec toi"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "story-e",
+    "topic": "Paul est fatigué",
+    "rate": 0.85,
+    "story": [
+      "Paul travaille beaucoup aujourd'hui.",
+      "Il est très fatigué.",
+      "Il ne veut pas sortir ce soir.",
+      "Il n'a pas le temps.",
+      "Mais demain, il va parler français avec son ami Dima.",
+      "Ça, c'est une bonne idée."
+    ],
+    "gloss": "fatigué = tired · sortir = to go out",
+    "questions": [
+      {
+        "q": "Pourquoi est-ce que Paul ne veut pas sortir ?",
+        "en": "Why doesn't Paul want to go out?",
+        "options": [
+          "Il est fatigué",
+          "Il est au café",
+          "Il va au magasin"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Est-ce que Paul a le temps ce soir ?",
+        "en": "Does Paul have time tonight?",
+        "options": [
+          "Non",
+          "Oui"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qu'est-ce qu'il va faire demain ?",
+        "en": "What is he going to do tomorrow?",
+        "options": [
+          "parler français avec Dima",
+          "travailler beaucoup",
+          "dormir au café"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "story-f",
+    "topic": "Dima peut le faire",
+    "rate": 0.88,
+    "story": [
+      "Dima veut bien parler français.",
+      "Maintenant, c'est difficile, mais il peut apprendre.",
+      "Il travaille un peu tous les jours.",
+      "Demain, il va écouter une histoire.",
+      "Il ne peut pas tout comprendre.",
+      "Mais ce n'est pas un problème."
+    ],
+    "gloss": "apprendre = to learn · tous les jours = every day · écouter = to listen · une histoire = a story · tout = everything",
+    "questions": [
+      {
+        "q": "Qu'est-ce que Dima veut ?",
+        "en": "What does Dima want?",
+        "options": [
+          "bien parler français",
+          "un café",
+          "dormir"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Est-ce que c'est facile maintenant ?",
+        "en": "Is it easy right now?",
+        "options": [
+          "Non, c'est difficile",
+          "Oui, c'est facile"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qu'est-ce qu'il va faire demain ?",
+        "en": "What is he going to do tomorrow?",
+        "options": [
+          "écouter une histoire",
+          "aller au Canada",
+          "manger avec Marie"
+        ],
+        "answer": 0
+      }
+    ]
+  }
+]
