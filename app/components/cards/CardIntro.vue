@@ -33,7 +33,7 @@
       <div class="card word-card">
         <div class="row">
           <span class="en">{{ spellCard!.en }}</span>
-          <button class="btn tts" aria-label="Hear it" @click="hear(spellCard!)">🔊</button>
+          <button class="btn tts" aria-label="Hear it" @pointerdown.prevent @click="hear(spellCard!)">🔊</button>
         </div>
         <p class="muted small">Type the French word (tap 🔊 to hear it):</p>
         <input

@@ -5,44 +5,48 @@
     <PathTabs v-model="tab" :tabs="PATH_TABS" />
 
     <!-- MAIN — the spine -->
-    <section v-show="tab === 'main'" v-for="ch in curriculum" :key="ch.id" class="stack chapter">
-      <button
-        class="chapter-head"
-        :class="{ open: isOpen(ch.id), 'ch-done': isChapterDone(ch) }"
-        :aria-expanded="isOpen(ch.id)"
-        @click="toggle(ch.id)"
-      >
-        <span class="head-text">
-          <span class="title">{{ ch.title }}</span>
-          <span class="muted small">{{ ch.subtitle }}</span>
-          <ProgressBar class="head-bar" :value="required(ch).length ? doneIn(ch) / required(ch).length : 0" />
-        </span>
-        <span class="head-meta">
-          <span class="muted small">{{ isChapterDone(ch) ? '✓ done' : `${doneIn(ch)}/${required(ch).length}` }}</span>
-          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9 6l6 6-6 6" />
-          </svg>
-        </span>
-      </button>
-      <template v-if="isOpen(ch.id)">
-        <template v-for="(day, di) in daysFor(ch)" :key="`${ch.id}-day-${di}`">
-          <button
-            :id="day.current ? 'current-day' : undefined"
-            class="day-head"
-            :class="{ 'day-done': day.done, 'day-current': day.current }"
-            @click="toggleDay(day)"
+    <template v-if="tab === 'main'">
+      <section v-for="ch in curriculum" :key="ch.id" class="stack chapter">
+        <button
+          class="chapter-head"
+          :class="{ open: isOpen(ch.id), 'ch-done': isChapterDone(ch) }"
+          :aria-expanded="isOpen(ch.id)"
+          @click="toggle(ch.id)"
+        >
+          <span class="head-text">
+            <span class="title">{{ ch.title }}</span>
+            <span class="muted small">{{ ch.subtitle }}</span>
+            <ProgressBar class="head-bar" :value="required(ch).length ? doneIn(ch) / required(ch).length : 0" />
+          </span>
+          <span class="head-meta">
+            <span class="muted small">{{ isChapterDone(ch) ? '✓ done' : `${doneIn(ch)}/${required(ch).length}` }}</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </span>
+        </button>
+        <div v-if="isOpen(ch.id)" class="timeline" style="--tl: var(--path-main); --tl-soft: var(--path-main-soft)">
+          <div
+            v-for="(day, di) in daysFor(ch)"
+            :id="day.current ? 'tl-current' : undefined"
+            :key="`${ch.id}-day-${di}`"
+            class="tl-row"
+            :class="{ 'tl-done': day.done, 'tl-current': day.current }"
           >
-            <span>{{ day.label }} <span v-if="day.done && !isDayOpen(day)" class="collapsed-hint">▸</span></span>
-            <span class="muted small">
-              {{ day.done ? '✓ done' : `~${day.minutes} min` }}<template v-if="day.score !== undefined"> · {{ day.score }}%</template>
-            </span>
-          </button>
-          <template v-if="isDayOpen(day)">
-            <LessonCard v-for="l in day.lessons" :key="l.id" :lesson="l" />
-          </template>
-        </template>
-      </template>
-    </section>
+            <span class="tl-dot">{{ day.done ? '✓' : '' }}</span>
+            <button class="tl-head" @click="toggleDay(day)">
+              <span class="tl-title">{{ day.label }} <span v-if="day.done && !isDayOpen(day)" class="collapsed-hint">▸</span></span>
+              <span class="muted small">
+                {{ day.done ? '✓ done' : `~${day.minutes} min` }}<template v-if="day.score !== undefined"> · {{ day.score }}%</template>
+              </span>
+            </button>
+            <div v-if="isDayOpen(day)" class="tl-body stack">
+              <LessonCard v-for="l in day.lessons" :key="l.id" :lesson="l" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </template>
 
     <!-- ORAL — listening ladder + speaking briefs -->
     <template v-if="tab === 'oral'">
@@ -56,21 +60,23 @@
           The ladder trains <strong>segmentation</strong> — hearing where words split.
           Difficulty rises by speed and fusion, never vocabulary. Minutes matter, scores don't.
         </p>
-        <component
-          :is="oralState(d) === 'locked' ? 'div' : NuxtLinkC"
-          v-for="d in oralLadder"
-          :key="d.day"
-          :to="oralState(d) === 'locked' ? undefined : `/oral/${d.day}`"
-          class="card ladder-row spread"
-          :class="[`is-${oralState(d)}`, 'oral-row']"
-        >
-          <span class="small row-main">
-            <strong>Day {{ d.day }}</strong> · {{ kindIcon(d.kind) }} {{ oralDayTitle(d) }}
-          </span>
-          <span class="small row-side" :class="{ muted: oralState(d) !== 'done' }">
-            {{ oralState(d) === 'done' ? '✓' : oralState(d) === 'locked' ? '🔒' : `~${oralDayMinutes(d)} min` }}
-          </span>
-        </component>
+        <div class="timeline" style="--tl: var(--path-oral); --tl-soft: var(--path-oral-soft)">
+          <component
+            :is="oralState(d) === 'locked' ? 'div' : NuxtLinkC"
+            v-for="d in oralLadder"
+            :id="oralState(d) === 'current' ? 'tl-current' : undefined"
+            :key="d.day"
+            :to="oralState(d) === 'locked' ? undefined : `/oral/${d.day}`"
+            class="tl-row tl-link"
+            :class="{ 'tl-done': oralState(d) === 'done', 'tl-current': oralState(d) === 'current', 'is-locked': oralState(d) === 'locked' }"
+          >
+            <span class="tl-dot">{{ oralState(d) === 'done' ? '✓' : '' }}</span>
+            <span class="tl-title">Day {{ d.day }} · {{ kindIcon(d.kind) }} {{ oralDayTitle(d) }}</span>
+            <span class="muted small tl-side">
+              {{ oralState(d) === 'done' ? '✓ done' : oralState(d) === 'locked' ? '🔒' : `~${oralDayMinutes(d)} min` }}
+            </span>
+          </component>
+        </div>
       </template>
 
       <template v-else>
@@ -114,22 +120,26 @@
         One practical pattern per day, sequenced from <strong>your own past mistakes</strong>.
         Rule in plain words, then you produce eight sentences. No terminology.
       </p>
-      <component
-        :is="gramState(g) === 'locked' ? 'div' : NuxtLinkC"
-        v-for="g in grammarLadder"
-        :key="g.day"
-        :to="gramState(g) === 'locked' ? undefined : `/grammar/${g.day}`"
-        class="card ladder-row spread"
-        :class="[`is-${gramState(g)}`, 'gram-row']"
-      >
-        <span class="small row-main">
-          <strong>Day {{ g.day }}</strong> · 📐 {{ g.topic }}
-          <span v-if="g.review" class="chip review-chip">review</span>
-        </span>
-        <span class="small row-side" :class="{ muted: gramState(g) !== 'done' }">
-          {{ gramState(g) === 'done' ? (gramScore(g) !== undefined ? `✓ ${gramScore(g)}%` : '✓') : gramState(g) === 'locked' ? '🔒' : '~6 min' }}
-        </span>
-      </component>
+      <div class="timeline" style="--tl: var(--path-grammar); --tl-soft: var(--path-grammar-soft)">
+        <component
+          :is="gramState(g) === 'locked' ? 'div' : NuxtLinkC"
+          v-for="g in grammarLadder"
+          :id="gramState(g) === 'current' ? 'tl-current' : undefined"
+          :key="g.day"
+          :to="gramState(g) === 'locked' ? undefined : `/grammar/${g.day}`"
+          class="tl-row tl-link"
+          :class="{ 'tl-done': gramState(g) === 'done', 'tl-current': gramState(g) === 'current', 'is-locked': gramState(g) === 'locked' }"
+        >
+          <span class="tl-dot">{{ gramState(g) === 'done' ? '✓' : '' }}</span>
+          <span class="tl-title">
+            Day {{ g.day }} · 📐 {{ g.topic }}
+            <span v-if="g.review" class="chip review-chip">review</span>
+          </span>
+          <span class="muted small tl-side">
+            {{ gramState(g) === 'done' ? (gramScore(g) !== undefined ? `✓ ${gramScore(g)}%` : '✓ done') : gramState(g) === 'locked' ? '🔒' : '~6 min' }}
+          </span>
+        </component>
+      </div>
     </template>
   </div>
 </template>
@@ -241,13 +251,14 @@ const currentChapterId = computed(
 
 const isChapterDone = (ch: Chapter) => doneIn(ch) >= required(ch).length
 
-// land the user on today's work: the current chapter is expanded by default,
-// so its current-day node exists right after mount
-onMounted(() => {
+// land the user on today's node — on open and on every tab switch
+function scrollToCurrent() {
   nextTick(() => {
-    document.getElementById('current-day')?.scrollIntoView({ block: 'center' })
+    document.getElementById('tl-current')?.scrollIntoView({ block: 'center' })
   })
-})
+}
+onMounted(scrollToCurrent)
+watch(tab, scrollToCurrent)
 
 const open = ref<Record<string, boolean>>({})
 const isOpen = (id: string) => open.value[id] ?? id === currentChapterId.value
@@ -288,27 +299,78 @@ const toggleDay = (day: Day) => {
 .head-meta { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
 .chev { width: 20px; height: 20px; color: var(--muted); transition: transform 0.2s ease; }
 .chapter-head.open .chev { transform: rotate(90deg); }
-.day-head {
+.collapsed-hint { font-weight: 400; }
+
+/* --- timeline rail: one straight line, a node per day --- */
+.timeline { display: flex; flex-direction: column; }
+.tl-row { position: relative; padding: 0 0 6px 40px; min-height: 44px; }
+.tl-row::before {
+  content: '';
+  position: absolute;
+  left: 13px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+.timeline > .tl-row:first-child::before { top: 16px; }
+.timeline > .tl-row:last-child::before { height: 16px; bottom: auto; }
+.timeline > .tl-row:only-child::before { display: none; }
+.tl-row.tl-done::before { background: var(--tl); }
+.tl-dot {
+  position: absolute;
+  left: 4px;
+  top: 7px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--card);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--bg);
+  box-sizing: border-box;
+}
+.tl-done .tl-dot { background: var(--tl); border-color: var(--tl); }
+.tl-current .tl-dot { border-color: var(--tl); box-shadow: 0 0 0 3px var(--tl-soft); }
+.tl-done { opacity: 0.7; }
+.tl-current .tl-title { color: var(--tl); font-weight: 700; }
+.is-locked { opacity: 0.45; }
+.tl-head {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  margin: 10px 2px 0;
-  padding: 4px 0;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--muted);
   background: none;
   border: 0;
-  width: 100%;
+  color: var(--fg);
+  padding: 8px 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   cursor: pointer;
+  text-align: left;
   -webkit-tap-highlight-color: transparent;
 }
-.collapsed-hint { font-weight: 400; }
-.day-head.day-current { color: var(--accent); }
-.day-head.day-done { opacity: 0.6; }
+.tl-link {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 8px;
+  padding-bottom: 14px;
+  text-decoration: none;
+  color: var(--fg);
+}
+.tl-link .tl-title { font-size: 0.9rem; font-weight: 600; min-width: 0; }
+.tl-side { flex-shrink: 0; padding-top: 1px; }
+.tl-body { padding: 2px 0 12px; }
 .oral-toggle {
   display: flex;
   gap: 4px;
@@ -329,13 +391,6 @@ const toggleDay = (day: Day) => {
   -webkit-tap-highlight-color: transparent;
 }
 .ot.on { background: var(--path-oral-soft); color: var(--path-oral-text); }
-.ladder-row { padding: 12px 14px; text-decoration: none; color: var(--fg); }
-.ladder-row.is-locked { opacity: 0.45; }
-.ladder-row.is-done { opacity: 0.7; }
-.oral-row.is-current { border-color: var(--path-oral); }
-.gram-row.is-current { border-color: var(--path-grammar); }
-.row-main { min-width: 0; }
-.row-side { flex-shrink: 0; }
 .review-chip { background: var(--path-grammar-soft); color: var(--path-grammar-text); margin-left: 6px; }
 .brief .phrase { padding: 2px 0; }
 

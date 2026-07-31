@@ -2,6 +2,9 @@
   <div class="page stack">
     <h1>Progress</h1>
 
+    <PathTabs v-model="ptab" :tabs="PROGRESS_TABS" />
+
+    <template v-if="ptab === 'all'">
     <NuxtLink to="/guide" class="card spread">
       <span>📖 How to run this program</span>
       <span class="chip">Guide →</span>
@@ -21,9 +24,6 @@
       </button>
     </div>
 
-    <PathTabs v-model="ptab" :tabs="PROGRESS_TABS" />
-
-    <template v-if="ptab === 'main'">
     <div class="stats">
       <div class="card stat">
         <span class="num">{{ progress.wordsSeen }}</span>
@@ -61,6 +61,10 @@
       <p class="muted small">Minutes per day, last two weeks.</p>
     </div>
 
+    </template>
+
+    <template v-if="ptab === 'main'">
+    <div class="path-scope scope-main stack">
     <template v-if="skillRows.length > 0">
       <h2>Skills</h2>
       <div class="card stack">
@@ -155,11 +159,19 @@
       </div>
     </template>
 
+    </div>
+    </template>
+
+    <template v-if="ptab === 'all'">
     <h2>Backup</h2>
     <div class="card stack">
       <p class="muted small">
         Your progress lives only in this browser. Export a backup file from time to time.
       </p>
+      <div class="spread">
+        <span class="muted small">Storage used</span>
+        <span class="small">{{ storageKb }} KB <span class="muted">of ~5,000 KB</span></span>
+      </div>
       <button class="btn btn-block" @click="exportBackup">Export backup</button>
       <label class="btn btn-block import-label">
         Import backup
@@ -194,6 +206,7 @@
 
     <!-- ORAL -->
     <template v-if="ptab === 'oral'">
+    <div class="path-scope scope-oral stack">
       <div class="stats">
         <div class="card stat">
           <span class="num oral-num">{{ listenMinutes7 }}</span>
@@ -221,10 +234,12 @@
         </div>
         <p v-if="oralStoryScores.length === 0" class="muted small">Story scores appear here from Day 7.</p>
       </div>
+    </div>
     </template>
 
     <!-- GRAMMAR -->
     <template v-if="ptab === 'grammar'">
+    <div class="path-scope scope-grammar stack">
       <h2>Pattern ladder</h2>
       <div class="card stack">
         <div class="spread">
@@ -244,10 +259,11 @@
         </div>
       </div>
       <p class="muted small">Misses feed the same retry queue as everything else — grammar closes through 🔁 too.</p>
+    </div>
     </template>
 
-    <!-- SUMMARY -->
-    <template v-if="ptab === 'summary'">
+    <!-- shared cross-path summary, same All tab -->
+    <template v-if="ptab === 'all'">
       <div class="stats">
         <div class="card stat">
           <span class="num">{{ minutes7 }}</span>
@@ -282,6 +298,7 @@
 import type { Chapter } from '~/types/content'
 import { allLessons, cardsById, curriculum, isOptional } from '~/content'
 import { buildMistakesPrompt, buildProgressReviewPrompt } from '~/utils/reviewPrompt'
+import { STORAGE_KEY } from '~/stores/progress'
 import { addDays, todayIso } from '~/utils/srs'
 
 const progress = useProgress()
@@ -290,12 +307,19 @@ const progress = useProgress()
 import { grammarDayKey, grammarLadder, oralDayKey, oralDayTitle, oralLadder } from '~/content/paths'
 
 const PROGRESS_TABS = [
+  { id: 'all', label: 'All', color: 'var(--accent)' },
   { id: 'main', label: 'Main', color: 'var(--path-main-text)' },
   { id: 'oral', label: 'Oral', color: 'var(--path-oral-text)' },
   { id: 'grammar', label: 'Grammar', color: 'var(--path-grammar-text)' },
-  { id: 'summary', label: 'Summary', color: 'var(--accent)' },
 ]
-const ptab = ref('main')
+const ptab = ref('all')
+
+const storageKb = ref(0)
+function refreshStorageKb() {
+  // localStorage strings are UTF-16: 2 bytes per code unit against the ~5MB quota
+  storageKb.value = Math.round(((localStorage.getItem(STORAGE_KEY)?.length ?? 0) * 2) / 1024)
+}
+onMounted(refreshStorageKb)
 
 const listenMinutesTotal = computed(() =>
   Math.round(Object.values(progress.listenStats).reduce((a, b) => a + b, 0) / 60))
@@ -349,12 +373,12 @@ function toggleShowAll() {
 const editingScore = ref<number | null>(null)
 // v-model.number hands back '' when the field is emptied
 const editValue = ref<number | '' | null>(null)
-const scoreEl = ref<HTMLInputElement>()
+const scoreEl = ref<HTMLInputElement[]>([])
 function startScoreEdit(i: number, current: number | null) {
   editingScore.value = i
   editValue.value = current
   // focus opens the phone keyboard AND guarantees the blur-commit path exists
-  nextTick(() => scoreEl.value?.focus())
+  nextTick(() => scoreEl.value[0]?.focus())
 }
 function commitScore(i: number) {
   if (editingScore.value !== i) return
@@ -513,6 +537,7 @@ const ioMessage = ref('')
 const ioOk = ref(true)
 
 function exportBackup() {
+  setTimeout(refreshStorageKb, 600)
   const blob = new Blob([progress.exportBackup()], { type: 'application/json' })
   const a = document.createElement('a')
   a.href = URL.createObjectURL(blob)
@@ -524,6 +549,7 @@ function exportBackup() {
 }
 
 async function importBackup(e: Event) {
+  setTimeout(refreshStorageKb, 600)
   const file = (e.target as HTMLInputElement).files?.[0]
   if (!file) return
   const result = progress.importBackup(await file.text())
@@ -533,6 +559,7 @@ async function importBackup(e: Event) {
 }
 
 function resetAll() {
+  setTimeout(refreshStorageKb, 600)
   if (confirm('Delete ALL progress in this browser? Export a backup first if unsure.')) {
     progress.resetAll()
     ioOk.value = true
@@ -577,6 +604,10 @@ function resetAll() {
 .score-btn.missing { color: var(--muted); border-style: dashed; }
 .show-all { color: var(--muted); border-style: dashed; }
 .score-input { width: 70px; min-height: 36px; text-align: center; padding: 4px; }
+.path-scope.scope-main { --accent: var(--path-main-text); }
+.path-scope.scope-oral { --accent: var(--path-oral-text); }
+.path-scope.scope-grammar { --accent: var(--path-grammar-text); }
+.path-scope .num, .path-scope h2 { color: var(--accent); }
 .oral-num { color: var(--path-oral-text); }
 .gram-num { color: var(--path-grammar-text); }
 .main-num { color: var(--path-main-text); }

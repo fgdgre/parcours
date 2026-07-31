@@ -1,7 +1,9 @@
 <template>
   <div class="stack">
     <h2>Listen and type what you hear</h2>
-    <button class="btn btn-block" @click="play">
+    <!-- pointerdown.prevent: play without stealing focus — the keyboard stays
+         open and the caret stays in the answer field -->
+    <button class="btn btn-block" @pointerdown.prevent @click="play">
       🔊 {{ played ? 'Play again' : 'Play' }}
     </button>
     <input
