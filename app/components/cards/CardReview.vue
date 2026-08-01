@@ -4,19 +4,28 @@
     <div class="card word-card" @click="revealed = true">
       <div class="row">
         <span class="fr">{{ card.fr }}</span>
-        <button class="btn tts" aria-label="Hear it" @click.stop="hear">🔊</button>
+        <span class="tts-pair">
+          <button v-if="card.fr.includes(' ')" class="btn tts" aria-label="Word by word" @click.stop="tts.speakSlow(card.fr, progress.settings.ttsRate)">🐢</button>
+          <button class="btn tts" aria-label="Hear it" @click.stop="hear">🔊</button>
+        </span>
       </div>
       <template v-if="revealed">
         <p v-if="card.ipa" class="muted ipa">{{ card.ipa }}</p>
         <p class="en">{{ card.en }}</p>
-        <p v-if="card.exFr" class="ex">
-          {{ card.exFr }}<br>
-          <span class="muted small">{{ card.exEn }}</span>
-        </p>
-        <p v-if="card.exFr2" class="ex">
-          {{ card.exFr2 }}<br>
-          <span class="muted small">{{ card.exEn2 }}</span>
-        </p>
+        <div v-if="card.exFr" class="ex spread">
+          <span>{{ card.exFr }}<br><span class="muted small">{{ card.exEn }}</span></span>
+          <span class="tts-pair">
+            <button class="btn tts ex-tts" aria-label="Hear it" @click.stop="tts.speak(card.exFr!, progress.settings.ttsRate)">🔊</button>
+            <button class="btn tts ex-tts" aria-label="Word by word" @click.stop="tts.speakSlow(card.exFr!, progress.settings.ttsRate)">🐢</button>
+          </span>
+        </div>
+        <div v-if="card.exFr2" class="ex spread">
+          <span>{{ card.exFr2 }}<br><span class="muted small">{{ card.exEn2 }}</span></span>
+          <span class="tts-pair">
+            <button class="btn tts ex-tts" aria-label="Hear it" @click.stop="tts.speak(card.exFr2!, progress.settings.ttsRate)">🔊</button>
+            <button class="btn tts ex-tts" aria-label="Word by word" @click.stop="tts.speakSlow(card.exFr2!, progress.settings.ttsRate)">🐢</button>
+          </span>
+        </div>
       </template>
       <p v-else class="muted small">Tap to reveal</p>
     </div>
@@ -65,7 +74,9 @@ function grade(g: Grade) {
 <style scoped>
 .word-card { display: flex; flex-direction: column; gap: 6px; min-height: 170px; cursor: pointer; }
 .fr { font-size: 1.6rem; font-weight: 700; }
-.tts { min-height: 40px; padding: 6px 12px; margin-left: auto; }
+.tts { min-height: 40px; padding: 6px 12px; }
+.tts-pair { display: flex; gap: 6px; margin-left: auto; flex-shrink: 0; align-items: flex-start; }
+.ex-tts { min-height: 34px; padding: 4px 9px; }
 .ipa { margin: 0; }
 .en { font-size: 1.1rem; margin: 0; }
 .ex { margin: 4px 0 0; padding-top: 8px; border-top: 1px solid var(--border); }
