@@ -36,7 +36,10 @@
         <p class="muted small">The story, line by line:</p>
         <div v-for="(line, i) in story.story" :key="i" class="spread line">
           <span class="small">{{ line }}</span>
-          <button class="btn tts" aria-label="Hear it" @click="tts.speak(line, rate)">🔊</button>
+          <span class="tts-pair">
+            <button class="btn tts" aria-label="Hear it" @click="tts.speak(line, rate)">🔊</button>
+            <button class="btn tts" aria-label="Word by word" @click="tts.speakSlow(line, rate)">🐢</button>
+          </span>
         </div>
       </div>
       <button class="btn btn-primary btn-block" @click="$emit('done')">✓ Mark this day complete</button>
@@ -124,6 +127,7 @@ onUnmounted(() => {
 .replay { border-color: var(--path-oral); }
 .line { align-items: center; }
 .tts { min-height: 36px; padding: 4px 10px; flex-shrink: 0; }
+.tts-pair { display: flex; gap: 6px; flex-shrink: 0; }
 .score { font-size: 1.4rem; font-weight: 700; margin: 0; }
 .okline { color: var(--ok); }
 </style>

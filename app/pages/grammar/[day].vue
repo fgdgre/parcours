@@ -34,7 +34,10 @@
           <p class="muted small">See it in action:</p>
           <div v-for="(ex, i) in lesson.examples" :key="i" class="spread line">
             <span class="small"><strong>{{ ex.fr }}</strong><br><span class="muted">{{ ex.en }}</span></span>
-            <button class="btn tts" aria-label="Hear it" @click="tts.speak(ex.fr, progress.settings.ttsRate)">🔊</button>
+            <span class="tts-pair">
+              <button class="btn tts" aria-label="Hear it" @click="tts.speak(ex.fr, progress.settings.ttsRate)">🔊</button>
+              <button class="btn tts" aria-label="Word by word" @click="tts.speakSlow(ex.fr, progress.settings.ttsRate)">🐢</button>
+            </span>
           </div>
         </div>
         <button class="btn btn-primary btn-block" @click="practicing = true">
@@ -143,6 +146,7 @@ function goBack() {
 .rule-text { line-height: 1.5; }
 .line { align-items: center; }
 .tts { min-height: 36px; padding: 4px 10px; flex-shrink: 0; }
+.tts-pair { display: flex; gap: 6px; flex-shrink: 0; }
 .okline { color: var(--ok); font-weight: 600; margin: 0; }
 .score { font-size: 1.4rem; font-weight: 700; margin: 0; }
 </style>

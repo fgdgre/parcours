@@ -12,6 +12,9 @@
         <span class="muted small"> listened · goal {{ goalMinutes }} min</span>
       </p>
       <ProgressBar :value="Math.min(1, elapsed / (goalMinutes * 60))" />
+      <button class="btn slow-line" @click="playCurrentSlow">
+        🐢 This line, word by word
+      </button>
       <p class="muted small center">
         Ears only — no typing, no score. Let the words separate on their own.
         Keep the screen on: the phone voice stops if it locks.
@@ -119,6 +122,13 @@ function pause() {
   dropWakeLock()
 }
 
+function playCurrentSlow() {
+  const item = props.items[idx.value]
+  if (!item) return
+  pause()
+  tts.speakSlow(item.fr, props.rate)
+}
+
 const sleep = (ms: number) => new Promise(r => setTimeout(r, ms))
 
 async function run(token: number) {
@@ -160,6 +170,7 @@ onUnmounted(() => {
 }
 .play-btn:active { transform: scale(0.95); }
 .elapsed { font-size: 1.1rem; }
+.slow-line { align-self: stretch; border-color: var(--path-oral); color: var(--path-oral-text); }
 .line { padding: 2px 0; }
 .line.now span:first-child { color: var(--path-oral-text); font-weight: 700; }
 </style>

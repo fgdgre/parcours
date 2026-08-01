@@ -53,5 +53,13 @@ export function useTts() {
     if (supported.value) speechSynthesis.cancel()
   }
 
-  return { supported, speak, speakAsync, stop }
+  /** Word-by-word playback: commas make the voice pause between words, so the
+   * ear can find the boundaries. Fused units (j'ai, peut-être) stay whole —
+   * that IS the word at this level. */
+  function speakSlow(text: string, rate = 1) {
+    const words = text.replace(/[.,!?;:…«»"()]/g, ' ').split(/\s+/).filter(Boolean)
+    speak(words.join(', '), Math.min(rate, 1) * 0.85)
+  }
+
+  return { supported, speak, speakAsync, speakSlow, stop }
 }

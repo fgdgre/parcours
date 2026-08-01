@@ -3,9 +3,14 @@
     <h2>Listen and type what you hear</h2>
     <!-- pointerdown.prevent: play without stealing focus — the keyboard stays
          open and the caret stays in the answer field -->
-    <button class="btn btn-block" @pointerdown.prevent @click="play">
-      🔊 {{ played ? 'Play again' : 'Play' }}
-    </button>
+    <div class="play-row">
+      <button class="btn play-main" @pointerdown.prevent @click="play">
+        🔊 {{ played ? 'Play again' : 'Play' }}
+      </button>
+      <button class="btn play-slow" title="Word by word" @pointerdown.prevent @click="playSlow">
+        🐢
+      </button>
+    </div>
     <input
       v-model="input"
       class="input"
@@ -60,6 +65,11 @@ function play() {
   played.value = true
 }
 
+function playSlow() {
+  tts.speakSlow(props.exercise.ttsText, progress.settings.ttsRate)
+  played.value = true
+}
+
 function submit() {
   if (!input.value.trim()) return
   const accepted = [...props.exercise.answer, props.exercise.ttsText]
@@ -85,3 +95,9 @@ function onEnter() {
   else emit('done', correct.value)
 }
 </script>
+
+<style scoped>
+.play-row { display: flex; gap: 8px; }
+.play-main { flex: 1; }
+.play-slow { min-width: 56px; font-size: 1.2rem; }
+</style>

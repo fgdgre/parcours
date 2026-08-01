@@ -21,6 +21,7 @@
       </div>
       <div class="feedback-actions">
         <button class="btn tts-btn" @click="sayAnswer">🔊 Hear it</button>
+        <button class="btn tts-btn" aria-label="Word by word" @click="tts.speakSlow(exercise.options[exercise.answer]!, progress.settings.ttsRate)">🐢</button>
         <button class="btn explain-btn" @click="explainIt">
           {{ explained ? '✓ Copied' : '🤔 Explain (AI)' }}
         </button>

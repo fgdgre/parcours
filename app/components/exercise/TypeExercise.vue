@@ -48,6 +48,9 @@
         <button class="btn tts-btn" @click="tts.speak(exercise.answer[0]!, progress.settings.ttsRate)">
           🔊 Hear it
         </button>
+        <button class="btn tts-btn" aria-label="Word by word" @click="tts.speakSlow(exercise.answer[0]!, progress.settings.ttsRate)">
+          🐢
+        </button>
         <button class="btn tts-btn" @click="explainIt">
           {{ explained ? '✓ Copied' : '🤔 Explain (AI)' }}
         </button>

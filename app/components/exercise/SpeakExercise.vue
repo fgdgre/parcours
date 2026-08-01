@@ -5,6 +5,7 @@
       <p class="target">{{ exercise.target }}</p>
       <p class="muted small">{{ exercise.en }}</p>
       <button class="btn" @click="hear">🔊 Hear it</button>
+      <button class="btn" aria-label="Word by word" @click="tts.speakSlow(exercise.target, progress.settings.ttsRate)">🐢</button>
     </div>
 
     <template v-if="speech.supported.value && !speech.failed.value">
