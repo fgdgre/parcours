@@ -1066,5 +1066,165 @@
         ]
       }
     ]
+  },
+  {
+    "id": "g15",
+    "day": 15,
+    "topic": "le / la / les — “it” jumps in front of the verb",
+    "rule": "English puts 'it' after the verb: I want it. French throws it IN FRONT of the conjugated verb: je LE veux. Match the noun's gender — le (masc.), la (fem.), les (plural) — and before a vowel both shrink to l' (je l'aime). Watch the twin: le/la before a NOUN means 'the'; before a VERB it means him/her/it/them.",
+    "examples": [
+      {
+        "fr": "Je le veux.",
+        "en": "I want it. (it = le café)"
+      },
+      {
+        "fr": "Je la ferme.",
+        "en": "I close it. (it = la porte)"
+      },
+      {
+        "fr": "Je les aime.",
+        "en": "I like them. (les croissants)"
+      },
+      {
+        "fr": "Je l'écoute.",
+        "en": "I listen to it. (l' before a vowel; écouter = to listen)"
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "I want it. (it = the coffee)",
+        "answer": [
+          "je le veux"
+        ],
+        "hint": "café is masculine → le, and it goes BEFORE veux."
+      },
+      {
+        "prompt": "I close it. (it = the door)",
+        "answer": [
+          "je la ferme"
+        ],
+        "hint": "porte is feminine → la."
+      },
+      {
+        "prompt": "I have it. (it = the time)",
+        "answer": [
+          "je l'ai"
+        ],
+        "hint": "le + ai collide on the vowel → l'ai."
+      },
+      {
+        "prompt": "I like them. (them = the croissants)",
+        "answer": [
+          "je les aime"
+        ],
+        "hint": "plural → les. aime starts with a vowel but LES never shrinks."
+      },
+      {
+        "prompt": "I listen to it. (it = the story, une histoire)",
+        "answer": [
+          "je l'écoute"
+        ],
+        "hint": "la + écoute → l'écoute."
+      },
+      {
+        "prompt": "I close it now. (the window)",
+        "answer": [
+          "je la ferme maintenant"
+        ],
+        "hint": "The pronoun hugs the verb; maintenant stays outside."
+      },
+      {
+        "prompt": "I want them. (the croissants)",
+        "answer": [
+          "je les veux"
+        ]
+      },
+      {
+        "prompt": "I like it. (it = the café)",
+        "answer": [
+          "je l'aime"
+        ],
+        "hint": "le + aime → l'aime."
+      }
+    ]
+  },
+  {
+    "id": "g16",
+    "day": 16,
+    "topic": "The pronoun with two verbs & negation",
+    "rule": "With two verbs, the little word stands in front of the verb it belongs to — usually the infinitive: je veux LE fermer, je vais LE manger. Under negation, ne…pas still wraps the conjugated verb, and the pronoun stays glued to its own verb: je ne le veux pas · je ne veux pas le fermer.",
+    "examples": [
+      {
+        "fr": "Je veux la fermer.",
+        "en": "I want to close it. (la porte)"
+      },
+      {
+        "fr": "Je vais le manger.",
+        "en": "I'm going to eat it."
+      },
+      {
+        "fr": "Je ne le veux pas.",
+        "en": "I don't want it."
+      },
+      {
+        "fr": "Je vais le faire.",
+        "en": "I'm going to do it. (the chunk you'll say daily)"
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "I want to close it. (the door)",
+        "answer": [
+          "je veux la fermer"
+        ],
+        "hint": "porte → la, and it stands before fermer, not before veux."
+      },
+      {
+        "prompt": "I'm going to eat it. (the croissant)",
+        "answer": [
+          "je vais le manger"
+        ]
+      },
+      {
+        "prompt": "I don't want it. (the coffee)",
+        "answer": [
+          "je ne le veux pas"
+        ],
+        "hint": "ne…pas wraps veux; le stays glued to veux inside the wrap."
+      },
+      {
+        "prompt": "I can close it. (the window)",
+        "answer": [
+          "je peux la fermer"
+        ]
+      },
+      {
+        "prompt": "I'm going to listen to it. (the story)",
+        "answer": [
+          "je vais l'écouter"
+        ],
+        "hint": "la + écouter → l'écouter."
+      },
+      {
+        "prompt": "I don't want to eat it. (the croissant)",
+        "answer": [
+          "je ne veux pas le manger"
+        ],
+        "hint": "Negation wraps veux; le stays with manger."
+      },
+      {
+        "prompt": "Do you want it? (the coffee — est-ce que, tu)",
+        "answer": [
+          "est-ce que tu le veux"
+        ]
+      },
+      {
+        "prompt": "I'm going to do it.",
+        "answer": [
+          "je vais le faire"
+        ],
+        "hint": "faire = to do — your 7-lapse verb, in its most useful chunk."
+      }
+    ]
   }
 ]
