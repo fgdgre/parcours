@@ -41,6 +41,12 @@ const emit = defineEmits<{
 
 const progress = useProgress()
 const idx = ref(0)
+
+// a long exercise leaves the viewport parked at its Continue button —
+// bring the next question into view from its top
+watch(idx, () => {
+  nextTick(() => window.scrollTo({ top: 0, behavior: 'smooth' }))
+})
 const correctCount = ref(0)
 const gradableCount = ref(0)
 const missed = ref<{ q: string; a: string; ex?: Exercise }[]>([])

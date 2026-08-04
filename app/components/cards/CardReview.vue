@@ -57,6 +57,10 @@ const queue = ref<Card[]>([...props.cards])
 const revealed = ref(false)
 const card = computed(() => queue.value[0])
 
+watch(card, () => {
+  nextTick(() => window.scrollTo({ top: 0, behavior: 'smooth' }))
+})
+
 function hear() {
   if (card.value) tts.speak(card.value.fr, progress.settings.ttsRate)
 }

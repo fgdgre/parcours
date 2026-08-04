@@ -87,6 +87,10 @@ const typables = computed(() =>
   queue.value.filter(c => !c.fr.includes(' ') && !c.fr.includes('/')),
 )
 const spellIdx = ref(0)
+
+watch([idx, spellIdx], () => {
+  nextTick(() => window.scrollTo({ top: 0, behavior: 'smooth' }))
+})
 const spellCard = computed(() => typables.value[spellIdx.value])
 
 const spelling = ref('')
