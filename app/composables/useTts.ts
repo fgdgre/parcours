@@ -57,7 +57,7 @@ export function useTts() {
    * ear can find the boundaries. Fused units (j'ai, peut-être) stay whole —
    * that IS the word at this level. */
   function speakSlow(text: string, rate = 1) {
-    const words = text.replace(/[.,!?;:…«»"()]/g, ' ').split(/\s+/).filter(Boolean)
+    const words = text.replace(/[.,!?;:…«»"()—–]/g, ' ').split(/\s+/).filter(Boolean)
     speak(words.join(', '), Math.min(rate, 1) * 0.85)
   }
 

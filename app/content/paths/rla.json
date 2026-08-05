@@ -13,14 +13,50 @@
       "Le café coûte trois euros."
     ],
     "glossary": [
-      { "fr": "ce matin", "en": "this morning" },
-      { "fr": "un croissant", "en": "a croissant" },
-      { "fr": "coûte", "en": "costs" }
+      {
+        "fr": "ce matin",
+        "en": "this morning"
+      },
+      {
+        "fr": "un croissant",
+        "en": "a croissant"
+      },
+      {
+        "fr": "coûte",
+        "en": "costs"
+      }
     ],
     "questions": [
-      { "q": "Avec qui va Marie au café ?", "en": "Who does Marie go with?", "options": ["son ami Paul", "sa mère", "personne"], "answer": 0 },
-      { "q": "Qu'est-ce que Paul voudrait ?", "en": "What would Paul like?", "options": ["un thé", "un café", "un croissant"], "answer": 0 },
-      { "q": "Le café coûte combien ?", "en": "How much is the coffee?", "options": ["trois euros", "deux euros", "cinq euros"], "answer": 0 }
+      {
+        "q": "Avec qui va Marie au café ?",
+        "en": "Who does Marie go with?",
+        "options": [
+          "son ami Paul",
+          "sa mère",
+          "personne"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qu'est-ce que Paul voudrait ?",
+        "en": "What would Paul like?",
+        "options": [
+          "un thé",
+          "un café",
+          "un croissant"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Le café coûte combien ?",
+        "en": "How much is the coffee?",
+        "options": [
+          "trois euros",
+          "deux euros",
+          "cinq euros"
+        ],
+        "answer": 0
+      }
     ]
   },
   {
@@ -36,14 +72,50 @@
       "« Ce n'est pas facile, mais c'est possible », dit Dima."
     ],
     "glossary": [
-      { "fr": "fatigué", "en": "tired" },
-      { "fr": "puis", "en": "then" },
-      { "fr": "facile", "en": "easy" }
+      {
+        "fr": "fatigué",
+        "en": "tired"
+      },
+      {
+        "fr": "puis",
+        "en": "then"
+      },
+      {
+        "fr": "facile",
+        "en": "easy"
+      }
     ],
     "questions": [
-      { "q": "Comment est Dima ce soir ?", "en": "How is Dima tonight?", "options": ["fatigué", "content", "malade"], "answer": 0 },
-      { "q": "Qu'est-ce qu'il va faire après manger ?", "en": "What will he do after eating?", "options": ["dormir", "travailler", "sortir"], "answer": 0 },
-      { "q": "Qu'est-ce qu'il voudrait faire demain ?", "en": "Tomorrow he'd like to…", "options": ["parler français", "aller au Canada", "dormir"], "answer": 0 }
+      {
+        "q": "Comment est Dima ce soir ?",
+        "en": "How is Dima tonight?",
+        "options": [
+          "fatigué",
+          "content",
+          "malade"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qu'est-ce qu'il va faire après manger ?",
+        "en": "What will he do after eating?",
+        "options": [
+          "dormir",
+          "travailler",
+          "sortir"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qu'est-ce qu'il voudrait faire demain ?",
+        "en": "Tomorrow he'd like to…",
+        "options": [
+          "parler français",
+          "aller au Canada",
+          "dormir"
+        ],
+        "answer": 0
+      }
     ]
   },
   {
@@ -58,14 +130,214 @@
       "« Pas de problème », dit Paul. « Je vais venir demain. »"
     ],
     "glossary": [
-      { "fr": "acheter", "en": "to buy" },
-      { "fr": "du pain", "en": "some bread" },
-      { "fr": "fermé", "en": "closed" }
+      {
+        "fr": "acheter",
+        "en": "to buy"
+      },
+      {
+        "fr": "du pain",
+        "en": "some bread"
+      },
+      {
+        "fr": "fermé",
+        "en": "closed"
+      }
     ],
     "questions": [
-      { "q": "Où va Paul aujourd'hui ?", "en": "Where does Paul go?", "options": ["au magasin", "au café", "à Paris"], "answer": 0 },
-      { "q": "Quel est le problème ?", "en": "What's the problem?", "options": ["le magasin est fermé", "il n'a pas d'argent", "il est fatigué"], "answer": 0 },
-      { "q": "Quand va-t-il revenir ?", "en": "When will he come back?", "options": ["demain", "ce soir", "jamais"], "answer": 0 }
+      {
+        "q": "Où va Paul aujourd'hui ?",
+        "en": "Where does Paul go?",
+        "options": [
+          "au magasin",
+          "au café",
+          "à Paris"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Quel est le problème ?",
+        "en": "What's the problem?",
+        "options": [
+          "le magasin est fermé",
+          "il n'a pas d'argent",
+          "il est fatigué"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Quand va-t-il revenir ?",
+        "en": "When will he come back?",
+        "options": [
+          "demain",
+          "ce soir",
+          "jamais"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "rla-croissant",
+    "topic": "Le croissant de Paul",
+    "rate": 0.85,
+    "naturalRate": 1.0,
+    "story": [
+      "Paul est au café avec Marie.",
+      "Il y a un croissant sur la table.",
+      "Paul le veut, mais Marie le veut aussi.",
+      "« Tu le veux ? » demande Paul.",
+      "« Oui, je le veux ! » dit Marie.",
+      "Pas de problème ! Il y a deux croissants au café."
+    ],
+    "glossary": [
+      {
+        "fr": "sur",
+        "en": "on"
+      },
+      {
+        "fr": "la table",
+        "en": "the table"
+      }
+    ],
+    "questions": [
+      {
+        "q": "Qu'est-ce qu'il y a sur la table ?",
+        "en": "What is on the table?",
+        "options": [
+          "un croissant",
+          "un café",
+          "un thé"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qui veut le croissant ?",
+        "en": "Who wants the croissant?",
+        "options": [
+          "Paul et Marie",
+          "Paul",
+          "Marie"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Combien de croissants est-ce qu'il y a ?",
+        "en": "How many croissants are there?",
+        "options": [
+          "deux",
+          "un",
+          "trois"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "rla-matin",
+    "topic": "Le matin de Dima",
+    "rate": 0.85,
+    "naturalRate": 1.0,
+    "story": [
+      "Ce matin, Dima va travailler.",
+      "Mais il veut un café. Il le veut maintenant !",
+      "Il va au café avec son ami.",
+      "Le café coûte deux euros aujourd'hui.",
+      "« Très bien ! » dit Dima. « Je vais le prendre. »"
+    ],
+    "glossary": [
+      {
+        "fr": "prendre",
+        "en": "to take (je vais le prendre = I'll take it)"
+      },
+      {
+        "fr": "maintenant",
+        "en": "now"
+      }
+    ],
+    "questions": [
+      {
+        "q": "Qu'est-ce que Dima veut ce matin ?",
+        "en": "What does Dima want this morning?",
+        "options": [
+          "un café",
+          "un thé",
+          "dormir"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Le café coûte combien aujourd'hui ?",
+        "en": "How much is the coffee today?",
+        "options": [
+          "deux euros",
+          "trois euros",
+          "cinq euros"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Est-ce que Dima va le prendre ?",
+        "en": "Is Dima going to take it?",
+        "options": [
+          "Oui",
+          "Non"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "rla-amis",
+    "topic": "Les amis parlent français",
+    "rate": 0.88,
+    "naturalRate": 1.0,
+    "story": [
+      "Ce soir, Marie, Paul et Dima sont ensemble.",
+      "Ils vont manger et parler français.",
+      "Dima parle un peu, mais il comprend beaucoup.",
+      "« Tu parles bien ! » dit Marie.",
+      "« Merci, mais ce n'est pas facile », dit Dima.",
+      "Ils vont parler ensemble demain aussi."
+    ],
+    "glossary": [
+      {
+        "fr": "ensemble",
+        "en": "together"
+      },
+      {
+        "fr": "comprend",
+        "en": "understands"
+      }
+    ],
+    "questions": [
+      {
+        "q": "Qu'est-ce qu'ils vont faire ce soir ?",
+        "en": "What are they going to do tonight?",
+        "options": [
+          "manger et parler français",
+          "travailler",
+          "dormir"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Est-ce que Dima comprend beaucoup ?",
+        "en": "Does Dima understand a lot?",
+        "options": [
+          "Oui",
+          "Non"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Est-ce que Dima parle beaucoup ?",
+        "en": "Does Dima speak a lot?",
+        "options": [
+          "Non — il parle un peu",
+          "Oui — il parle beaucoup"
+        ],
+        "answer": 0
+      }
     ]
   }
 ]

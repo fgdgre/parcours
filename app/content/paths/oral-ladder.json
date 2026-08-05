@@ -135,5 +135,35 @@
       "rla-magasin"
     ],
     "note": "Slightly faster from the start (0.9)."
+  },
+  {
+    "day": 18,
+    "kind": "rla",
+    "refs": [
+      "rla-croissant"
+    ],
+    "note": "Your new grammar in the wild: le veut, je le veux — hear the pronoun jump."
+  },
+  {
+    "day": 19,
+    "kind": "rla",
+    "refs": [
+      "rla-matin"
+    ],
+    "note": "More pronoun-before-verb, by ear."
+  },
+  {
+    "day": 20,
+    "kind": "rla",
+    "refs": [
+      "rla-amis"
+    ],
+    "note": "Slightly faster (0.88) — and yes, this story is about you three."
+  },
+  {
+    "day": 21,
+    "kind": "dictation-check",
+    "refs": [],
+    "note": "Weekly measurement #2 — compare with day 14, not with perfection."
   }
 ]
