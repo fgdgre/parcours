@@ -118,8 +118,19 @@ const ladder = JSON.parse(readFileSync(join(pathsDir, 'oral-ladder.json'), 'utf8
 const grammar = JSON.parse(readFileSync(join(pathsDir, 'grammar.json'), 'utf8'))
 const briefs = JSON.parse(readFileSync(join(pathsDir, 'briefs.json'), 'utf8'))
 
+const rla = JSON.parse(readFileSync(join(pathsDir, 'rla.json'), 'utf8'))
 const passiveIds = new Set(passive.map(x => x.id))
 const storyIds = new Set(stories.map(x => x.id))
+const rlaIds = new Set(rla.map(x => x.id))
+for (const l of rla) {
+  if (!l.story?.length) errors.push(`rla ${l.id} has no sentences`)
+  for (const g of l.glossary ?? []) if (!g.fr || !g.en) errors.push(`rla ${l.id} glossary item missing fr/en`)
+  for (const q of l.questions ?? []) {
+    if (!Array.isArray(q.options) || q.options.length < 2) errors.push(`rla ${l.id} question needs 2+ options`)
+    if (typeof q.answer !== 'number' || q.answer < 0 || q.answer >= (q.options?.length ?? 0))
+      errors.push(`rla ${l.id} question answer index out of range`)
+  }
+}
 for (const set of passive) {
   if (!set.items?.length) errors.push(`passive set ${set.id} has no items`)
   for (const it of set.items ?? []) if (!it.fr || !it.en) errors.push(`passive ${set.id} item missing fr/en`)
@@ -134,7 +145,7 @@ for (const st of stories) {
 }
 ladder.forEach((d, i) => {
   if (d.day !== i + 1) errors.push(`oral ladder day ${d.day} out of sequence at index ${i}`)
-  const pool = d.kind === 'story' ? storyIds : passiveIds
+  const pool = d.kind === 'story' ? storyIds : d.kind === 'rla' ? rlaIds : passiveIds
   if (d.kind !== 'dictation-check') {
     if (!d.refs?.length) errors.push(`oral day ${d.day} has no refs`)
     for (const r of d.refs ?? []) if (!pool.has(r)) errors.push(`oral day ${d.day} unknown ref ${r}`)

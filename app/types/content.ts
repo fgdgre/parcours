@@ -112,7 +112,7 @@ export interface OralStory {
 
 export interface OralDay {
   day: number
-  kind: 'passive' | 'story' | 'dictation-check'
+  kind: 'passive' | 'story' | 'rla' | 'dictation-check'
   refs: string[]
   /** overrides the story's own rate (natural-speed repeat days) */
   rate?: number
@@ -136,4 +136,15 @@ export interface SpeakingBrief {
   targetStructures: string[]
   usefulPhrases: PassiveItem[]
   copyBlock: string
+}
+
+/** Read → Listen (text hidden) → Answer → Reveal — the ear does the test, the eyes only prime it. */
+export interface RlaLesson {
+  id: string
+  topic: string
+  rate: number
+  naturalRate?: number
+  story: string[]
+  glossary: PassiveItem[]
+  questions: StoryQuestion[]
 }

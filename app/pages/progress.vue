@@ -332,7 +332,7 @@ const listenMinutes7 = computed(() => {
 const oralDone = computed(() => oralLadder.filter(d => progress.isDone(oralDayKey(d.day))).length)
 const gramDone = computed(() => grammarLadder.filter(g => progress.isDone(grammarDayKey(g.day))).length)
 const oralStoryScores = computed(() => oralLadder
-  .filter(d => d.kind === 'story')
+  .filter(d => d.kind === 'story' || d.kind === 'rla')
   .map((d) => {
     const sc = progress.lessonScores[oralDayKey(d.day)]
     return sc && sc.total > 0

@@ -43,6 +43,14 @@
         @done="finish"
       />
 
+      <ReadListenAnswer
+        v-else-if="entry.kind === 'rla' && rla"
+        :key="`${entry.day}-${rla.id}`"
+        :lesson="rla"
+        :record-key="oralDayKey(entry.day)"
+        @done="finish"
+      />
+
       <template v-else-if="entry.kind === 'dictation-check'">
         <div class="card stack">
           <p class="muted small">
@@ -67,7 +75,7 @@
 </template>
 
 <script setup lang="ts">
-import { oralDayKey, oralDayTitle, oralLadder, passiveById, storyById } from '~/content/paths'
+import { oralDayKey, oralDayTitle, oralLadder, passiveById, rlaById, storyById } from '~/content/paths'
 import { todayIso } from '~/utils/srs'
 
 const route = useRoute()
@@ -83,6 +91,9 @@ const passiveItems = computed(() =>
 )
 const story = computed(() =>
   entry.value?.kind === 'story' ? storyById[entry.value.refs[0] ?? ''] : undefined,
+)
+const rla = computed(() =>
+  entry.value?.kind === 'rla' ? rlaById[entry.value.refs[0] ?? ''] : undefined,
 )
 const lockedAhead = computed(() => {
   if (!entry.value || done.value) return false

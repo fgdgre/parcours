@@ -1,0 +1,71 @@
+[
+  {
+    "id": "rla-cafe",
+    "topic": "Le café de Marie",
+    "rate": 0.85,
+    "naturalRate": 1.0,
+    "story": [
+      "Marie vient de Paris.",
+      "Ce matin, elle va au café avec son ami Paul.",
+      "Elle voudrait un café et un croissant.",
+      "Paul ne veut pas de café. Il voudrait un thé.",
+      "« C'est combien ? » demande Marie.",
+      "Le café coûte trois euros."
+    ],
+    "glossary": [
+      { "fr": "ce matin", "en": "this morning" },
+      { "fr": "un croissant", "en": "a croissant" },
+      { "fr": "coûte", "en": "costs" }
+    ],
+    "questions": [
+      { "q": "Avec qui va Marie au café ?", "en": "Who does Marie go with?", "options": ["son ami Paul", "sa mère", "personne"], "answer": 0 },
+      { "q": "Qu'est-ce que Paul voudrait ?", "en": "What would Paul like?", "options": ["un thé", "un café", "un croissant"], "answer": 0 },
+      { "q": "Le café coûte combien ?", "en": "How much is the coffee?", "options": ["trois euros", "deux euros", "cinq euros"], "answer": 0 }
+    ]
+  },
+  {
+    "id": "rla-soir",
+    "topic": "Le soir de Dima",
+    "rate": 0.85,
+    "naturalRate": 1.0,
+    "story": [
+      "Ce soir, Dima est fatigué.",
+      "Il ne va pas travailler.",
+      "Il va manger quelque chose, puis il va dormir.",
+      "Demain, il voudrait parler français avec un ami.",
+      "« Ce n'est pas facile, mais c'est possible », dit Dima."
+    ],
+    "glossary": [
+      { "fr": "fatigué", "en": "tired" },
+      { "fr": "puis", "en": "then" },
+      { "fr": "facile", "en": "easy" }
+    ],
+    "questions": [
+      { "q": "Comment est Dima ce soir ?", "en": "How is Dima tonight?", "options": ["fatigué", "content", "malade"], "answer": 0 },
+      { "q": "Qu'est-ce qu'il va faire après manger ?", "en": "What will he do after eating?", "options": ["dormir", "travailler", "sortir"], "answer": 0 },
+      { "q": "Qu'est-ce qu'il voudrait faire demain ?", "en": "Tomorrow he'd like to…", "options": ["parler français", "aller au Canada", "dormir"], "answer": 0 }
+    ]
+  },
+  {
+    "id": "rla-magasin",
+    "topic": "Au magasin",
+    "rate": 0.9,
+    "naturalRate": 1.0,
+    "story": [
+      "Paul va au magasin aujourd'hui.",
+      "Il voudrait acheter du pain.",
+      "Le magasin est fermé.",
+      "« Pas de problème », dit Paul. « Je vais venir demain. »"
+    ],
+    "glossary": [
+      { "fr": "acheter", "en": "to buy" },
+      { "fr": "du pain", "en": "some bread" },
+      { "fr": "fermé", "en": "closed" }
+    ],
+    "questions": [
+      { "q": "Où va Paul aujourd'hui ?", "en": "Where does Paul go?", "options": ["au magasin", "au café", "à Paris"], "answer": 0 },
+      { "q": "Quel est le problème ?", "en": "What's the problem?", "options": ["le magasin est fermé", "il n'a pas d'argent", "il est fatigué"], "answer": 0 },
+      { "q": "Quand va-t-il revenir ?", "en": "When will he come back?", "options": ["demain", "ce soir", "jamais"], "answer": 0 }
+    ]
+  }
+]

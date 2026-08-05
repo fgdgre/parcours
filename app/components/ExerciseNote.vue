@@ -2,14 +2,18 @@
   <button class="btn note-btn" :class="{ has: hasNote }" type="button" @click="toggle">
     {{ hasNote ? '📝 Note ●' : '📝 Note' }}
   </button>
-  <textarea
-    v-if="open"
-    v-model="draft"
-    class="input note-area"
-    rows="2"
-    :placeholder="`Your note about this ${what}…`"
-    @blur="save"
-  />
+  <div v-if="open" class="note-block stack">
+    <div v-if="previous.length > 0" class="history stack">
+      <p v-for="(entry, i) in previous" :key="i" class="small prev">{{ entry }}</p>
+    </div>
+    <textarea
+      v-model="draft"
+      class="input note-area"
+      rows="2"
+      :placeholder="previous.length > 0 ? `Add a new note about this ${what}…` : `Your note about this ${what}…`"
+      @blur="save"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -22,11 +26,14 @@ const progress = useProgress()
 const open = ref(false)
 const draft = ref('')
 
-const hasNote = computed(() => !!(progress.notes as Record<string, string>)[props.noteKey])
+const stored = computed(() => (progress.notes as Record<string, string>)[props.noteKey] ?? '')
+const hasNote = computed(() => !!stored.value)
+// earlier notes stay as read-only history; the box is always for a fresh one
+const previous = computed(() => stored.value.split('\n— ').filter(Boolean))
 
 watch(() => props.noteKey, () => {
   open.value = false
-  draft.value = (progress.notes as Record<string, string>)[props.noteKey] ?? ''
+  draft.value = ''
 }, { immediate: true })
 
 function toggle() {
@@ -35,7 +42,10 @@ function toggle() {
 }
 
 function save() {
-  progress.setNote(props.noteKey, draft.value)
+  const text = draft.value.trim()
+  if (!text) return
+  progress.setNote(props.noteKey, stored.value ? `${stored.value}\n— ${text}` : text)
+  draft.value = ''
 }
 </script>
 
@@ -47,9 +57,11 @@ function save() {
   color: var(--muted);
 }
 .note-btn.has { color: var(--accent); border-color: var(--accent); }
-/* inside a wrapping flex row, the textarea takes its own full-width line */
+/* inside a wrapping flex row, the block takes its own full-width line */
+.note-block { flex-basis: 100%; gap: 6px; }
+.history { gap: 2px; }
+.prev { margin: 0; color: var(--muted); border-left: 2px solid var(--border); padding-left: 8px; }
 .note-area {
-  flex-basis: 100%;
   min-height: 56px;
   resize: vertical;
   font-size: 0.95rem;
