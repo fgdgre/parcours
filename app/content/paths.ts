@@ -24,7 +24,7 @@ export const grammarDayKey = (day: number) => `gram-day-${day}`
 
 export function oralDayTitle(d: OralDay): string {
   if (d.kind === 'dictation-check') return 'Weekly dictation check'
-  if (d.kind === 'rla') return `Lire → Écouter · ${rlaById[d.refs[0] ?? '']?.topic ?? ''}`
+  if (d.kind === 'rla') return `Primed listening · ${rlaById[d.refs[0] ?? '']?.topic ?? ''}`
   if (d.kind === 'story') {
     const s = storyById[d.refs[0] ?? '']
     return `Histoire · ${s?.topic ?? ''}${d.rate && d.rate >= 1 ? ' (natural speed)' : ''}`

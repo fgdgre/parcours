@@ -138,13 +138,15 @@ export interface SpeakingBrief {
   copyBlock: string
 }
 
-/** Read → Listen (text hidden) → Answer → Reveal — the ear does the test, the eyes only prime it. */
+/** Primed listening: preview only the hard-to-segment key phrases, then the
+ * WHOLE story arrives by ear — the full text stays hidden until the final
+ * reveal. One source of error: hearing. */
 export interface RlaLesson {
   id: string
   topic: string
   rate: number
   naturalRate?: number
+  keyPhrases: PassiveItem[]
   story: string[]
-  glossary: PassiveItem[]
   questions: StoryQuestion[]
 }

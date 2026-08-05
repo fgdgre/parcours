@@ -124,7 +124,13 @@ const storyIds = new Set(stories.map(x => x.id))
 const rlaIds = new Set(rla.map(x => x.id))
 for (const l of rla) {
   if (!l.story?.length) errors.push(`rla ${l.id} has no sentences`)
-  for (const g of l.glossary ?? []) if (!g.fr || !g.en) errors.push(`rla ${l.id} glossary item missing fr/en`)
+  if (!l.keyPhrases?.length || l.keyPhrases.length > 5) errors.push(`rla ${l.id} needs 1-5 keyPhrases`)
+  for (const g of l.keyPhrases ?? []) if (!g.fr || !g.en) errors.push(`rla ${l.id} keyPhrase missing fr/en`)
+  const joined = l.story.join(' ').toLowerCase()
+  for (const g of l.keyPhrases ?? []) {
+    const probe = g.fr.toLowerCase().replace(/[!?.]+$/, '').split(',')[0].trim()
+    if (!joined.includes(probe)) warn.push(`rla ${l.id}: keyPhrase "${g.fr}" not found verbatim in the story`)
+  }
   for (const q of l.questions ?? []) {
     if (!Array.isArray(q.options) || q.options.length < 2) errors.push(`rla ${l.id} question needs 2+ options`)
     if (typeof q.answer !== 'number' || q.answer < 0 || q.answer >= (q.options?.length ?? 0))

@@ -4,6 +4,24 @@
     "topic": "Le café de Marie",
     "rate": 0.85,
     "naturalRate": 1.0,
+    "keyPhrases": [
+      {
+        "fr": "elle voudrait un café",
+        "en": "she'd like a coffee"
+      },
+      {
+        "fr": "Paul ne veut pas de café",
+        "en": "Paul doesn't want coffee"
+      },
+      {
+        "fr": "c'est combien ?",
+        "en": "how much is it?"
+      },
+      {
+        "fr": "le café coûte trois euros",
+        "en": "the coffee costs three euros"
+      }
+    ],
     "story": [
       "Marie vient de Paris.",
       "Ce matin, elle va au café avec son ami Paul.",
@@ -11,20 +29,6 @@
       "Paul ne veut pas de café. Il voudrait un thé.",
       "« C'est combien ? » demande Marie.",
       "Le café coûte trois euros."
-    ],
-    "glossary": [
-      {
-        "fr": "ce matin",
-        "en": "this morning"
-      },
-      {
-        "fr": "un croissant",
-        "en": "a croissant"
-      },
-      {
-        "fr": "coûte",
-        "en": "costs"
-      }
     ],
     "questions": [
       {
@@ -64,26 +68,30 @@
     "topic": "Le soir de Dima",
     "rate": 0.85,
     "naturalRate": 1.0,
+    "keyPhrases": [
+      {
+        "fr": "Dima est fatigué",
+        "en": "Dima is tired"
+      },
+      {
+        "fr": "il ne va pas travailler",
+        "en": "he's not going to work"
+      },
+      {
+        "fr": "puis il va dormir",
+        "en": "then he's going to sleep"
+      },
+      {
+        "fr": "ce n'est pas facile",
+        "en": "it's not easy"
+      }
+    ],
     "story": [
       "Ce soir, Dima est fatigué.",
       "Il ne va pas travailler.",
       "Il va manger quelque chose, puis il va dormir.",
       "Demain, il voudrait parler français avec un ami.",
       "« Ce n'est pas facile, mais c'est possible », dit Dima."
-    ],
-    "glossary": [
-      {
-        "fr": "fatigué",
-        "en": "tired"
-      },
-      {
-        "fr": "puis",
-        "en": "then"
-      },
-      {
-        "fr": "facile",
-        "en": "easy"
-      }
     ],
     "questions": [
       {
@@ -123,25 +131,25 @@
     "topic": "Au magasin",
     "rate": 0.9,
     "naturalRate": 1.0,
+    "keyPhrases": [
+      {
+        "fr": "il voudrait acheter du pain",
+        "en": "he'd like to buy some bread"
+      },
+      {
+        "fr": "le magasin est fermé",
+        "en": "the store is closed"
+      },
+      {
+        "fr": "pas de problème",
+        "en": "no problem"
+      }
+    ],
     "story": [
       "Paul va au magasin aujourd'hui.",
       "Il voudrait acheter du pain.",
       "Le magasin est fermé.",
       "« Pas de problème », dit Paul. « Je vais venir demain. »"
-    ],
-    "glossary": [
-      {
-        "fr": "acheter",
-        "en": "to buy"
-      },
-      {
-        "fr": "du pain",
-        "en": "some bread"
-      },
-      {
-        "fr": "fermé",
-        "en": "closed"
-      }
     ],
     "questions": [
       {
@@ -181,6 +189,20 @@
     "topic": "Le croissant de Paul",
     "rate": 0.85,
     "naturalRate": 1.0,
+    "keyPhrases": [
+      {
+        "fr": "il y a un croissant sur la table",
+        "en": "there's a croissant on the table"
+      },
+      {
+        "fr": "je le veux !",
+        "en": "I want it!"
+      },
+      {
+        "fr": "pas de problème",
+        "en": "no problem"
+      }
+    ],
     "story": [
       "Paul est au café avec Marie.",
       "Il y a un croissant sur la table.",
@@ -188,16 +210,6 @@
       "« Tu le veux ? » demande Paul.",
       "« Oui, je le veux ! » dit Marie.",
       "Pas de problème ! Il y a deux croissants au café."
-    ],
-    "glossary": [
-      {
-        "fr": "sur",
-        "en": "on"
-      },
-      {
-        "fr": "la table",
-        "en": "the table"
-      }
     ],
     "questions": [
       {
@@ -237,22 +249,26 @@
     "topic": "Le matin de Dima",
     "rate": 0.85,
     "naturalRate": 1.0,
+    "keyPhrases": [
+      {
+        "fr": "il le veut maintenant",
+        "en": "he wants it now"
+      },
+      {
+        "fr": "je vais le prendre",
+        "en": "I'll take it (prendre = to take)"
+      },
+      {
+        "fr": "le café coûte deux euros",
+        "en": "the coffee costs two euros"
+      }
+    ],
     "story": [
       "Ce matin, Dima va travailler.",
       "Mais il veut un café. Il le veut maintenant !",
       "Il va au café avec son ami.",
       "Le café coûte deux euros aujourd'hui.",
       "« Très bien ! » dit Dima. « Je vais le prendre. »"
-    ],
-    "glossary": [
-      {
-        "fr": "prendre",
-        "en": "to take (je vais le prendre = I'll take it)"
-      },
-      {
-        "fr": "maintenant",
-        "en": "now"
-      }
     ],
     "questions": [
       {
@@ -291,6 +307,20 @@
     "topic": "Les amis parlent français",
     "rate": 0.88,
     "naturalRate": 1.0,
+    "keyPhrases": [
+      {
+        "fr": "ils vont parler ensemble",
+        "en": "they're going to talk together"
+      },
+      {
+        "fr": "il comprend beaucoup",
+        "en": "he understands a lot"
+      },
+      {
+        "fr": "ce n'est pas facile",
+        "en": "it's not easy"
+      }
+    ],
     "story": [
       "Ce soir, Marie, Paul et Dima sont ensemble.",
       "Ils vont manger et parler français.",
@@ -298,16 +328,6 @@
       "« Tu parles bien ! » dit Marie.",
       "« Merci, mais ce n'est pas facile », dit Dima.",
       "Ils vont parler ensemble demain aussi."
-    ],
-    "glossary": [
-      {
-        "fr": "ensemble",
-        "en": "together"
-      },
-      {
-        "fr": "comprend",
-        "en": "understands"
-      }
     ],
     "questions": [
       {
@@ -335,6 +355,194 @@
         "options": [
           "Non — il parle un peu",
           "Oui — il parle beaucoup"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "rla-cuisine",
+    "topic": "Le matin de Marie",
+    "rate": 0.85,
+    "naturalRate": 1.0,
+    "keyPhrases": [
+      {
+        "fr": "dans la cuisine",
+        "en": "in the kitchen"
+      },
+      {
+        "fr": "il n'y a pas de café",
+        "en": "there's no coffee"
+      },
+      {
+        "fr": "qu'est-ce qu'on fait ?",
+        "en": "what do we do?"
+      },
+      {
+        "fr": "ce n'est pas grave",
+        "en": "it's no big deal"
+      }
+    ],
+    "story": [
+      "Ce matin, Marie va dans la cuisine.",
+      "Mais il n'y a pas de café !",
+      "« Qu'est-ce qu'on fait ? » demande Paul.",
+      "« Ce n'est pas grave », dit Marie. « On va au café. »",
+      "Ils sont contents."
+    ],
+    "questions": [
+      {
+        "q": "Quel est le problème ce matin ?",
+        "en": "What's the problem this morning?",
+        "options": [
+          "il n'y a pas de café",
+          "Marie est malade",
+          "le café est fermé"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qu'est-ce qu'ils décident de faire ?",
+        "en": "What do they decide?",
+        "options": [
+          "aller au café",
+          "dormir",
+          "travailler"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Comment sont-ils à la fin ?",
+        "en": "How are they at the end?",
+        "options": [
+          "contents",
+          "tristes",
+          "fatigués"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "rla-comprend",
+    "topic": "Dima ne comprend pas",
+    "rate": 0.85,
+    "naturalRate": 1.0,
+    "keyPhrases": [
+      {
+        "fr": "je n'ai pas compris",
+        "en": "I didn't understand"
+      },
+      {
+        "fr": "vous pouvez répéter ?",
+        "en": "can you repeat?"
+      },
+      {
+        "fr": "la femme parle vite",
+        "en": "the woman speaks fast"
+      },
+      {
+        "fr": "le dernier mot, lentement",
+        "en": "the last word, slowly"
+      }
+    ],
+    "story": [
+      "Dima parle avec une femme au magasin.",
+      "La femme parle vite.",
+      "« Je n'ai pas compris. Vous pouvez répéter ? » dit Dima.",
+      "La femme répète le dernier mot, lentement.",
+      "Maintenant, Dima comprend. « Merci beaucoup ! »"
+    ],
+    "questions": [
+      {
+        "q": "Pourquoi Dima ne comprend pas ?",
+        "en": "Why doesn't he understand?",
+        "options": [
+          "la femme parle vite",
+          "il est fatigué",
+          "il ne parle pas français"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qu'est-ce que la femme répète ?",
+        "en": "What does she repeat?",
+        "options": [
+          "le dernier mot",
+          "toute la phrase",
+          "rien"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Comment ça finit ?",
+        "en": "How does it end?",
+        "options": [
+          "Dima comprend",
+          "Dima part",
+          "la femme part"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "rla-parti",
+    "topic": "L'ami n'est pas là",
+    "rate": 0.9,
+    "naturalRate": 1.0,
+    "keyPhrases": [
+      {
+        "fr": "pour voir son ami",
+        "en": "to see his friend"
+      },
+      {
+        "fr": "son ami n'est pas là",
+        "en": "his friend isn't there"
+      },
+      {
+        "fr": "il vient de partir",
+        "en": "he just left (venir de = just did)"
+      },
+      {
+        "fr": "pas de problème",
+        "en": "no problem"
+      }
+    ],
+    "story": [
+      "Paul va au magasin pour voir son ami.",
+      "Mais son ami n'est pas là.",
+      "Une femme dit : « Il vient de partir. »",
+      "« Pas de problème », dit Paul. « Je vais venir demain. »"
+    ],
+    "questions": [
+      {
+        "q": "Pourquoi Paul va au magasin ?",
+        "en": "Why does Paul go?",
+        "options": [
+          "pour voir son ami",
+          "pour acheter du pain",
+          "pour manger"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Où est son ami ?",
+        "en": "Where's his friend?",
+        "options": [
+          "il vient de partir",
+          "au café",
+          "à Paris"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qu'est-ce que Paul va faire ?",
+        "en": "What will Paul do?",
+        "options": [
+          "venir demain",
+          "rentrer",
+          "attendre"
         ],
         "answer": 0
       }

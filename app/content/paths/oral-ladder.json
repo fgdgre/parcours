@@ -118,7 +118,7 @@
     "refs": [
       "rla-cafe"
     ],
-    "note": "Read once — then the text disappears and your ear takes the test."
+    "note": "Preview the key phrases — the story itself arrives only by ear."
   },
   {
     "day": 16,
@@ -126,7 +126,7 @@
     "refs": [
       "rla-soir"
     ],
-    "note": "Same drill, negation + near future."
+    "note": "Same method: hunt the fused chunks in the stream."
   },
   {
     "day": 17,
@@ -142,7 +142,7 @@
     "refs": [
       "rla-croissant"
     ],
-    "note": "Your new grammar in the wild: le veut, je le veux — hear the pronoun jump."
+    "note": "Your object pronouns in the wild: je le veux — catch them by ear."
   },
   {
     "day": 19,
@@ -165,5 +165,29 @@
     "kind": "dictation-check",
     "refs": [],
     "note": "Weekly measurement #2 — compare with day 14, not with perfection."
+  },
+  {
+    "day": 22,
+    "kind": "rla",
+    "refs": [
+      "rla-cuisine"
+    ],
+    "note": "New wave: il n'y a pas de, qu'est-ce qu'on fait — pure fusion targets."
+  },
+  {
+    "day": 23,
+    "kind": "rla",
+    "refs": [
+      "rla-comprend"
+    ],
+    "note": "The most useful story in the app: what to SAY when you don't understand."
+  },
+  {
+    "day": 24,
+    "kind": "rla",
+    "refs": [
+      "rla-parti"
+    ],
+    "note": "venir de + partir — the just-happened chunk, by ear, at 0.9."
   }
 ]
