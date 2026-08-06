@@ -81,7 +81,14 @@
           <button class="btn btn-block" @click="toggleDone">{{ done ? '✓ Done — tap to undo' : 'Mark as done' }}</button>
         </template>
         <template v-else-if="!finished && !done">
-          <ExerciseRunner :exercises="exercises" @finished="finishExercises" />
+          <ExerciseRunner
+            :key="lesson.id"
+            :exercises="session.items"
+            repeat-missed
+            :retry-start-index="exercises.length"
+            @answered="onSessionAnswered"
+            @finished="finishExercises"
+          />
         </template>
         <div v-else class="card stack">
           <p class="okline">✓ Exercises complete.</p>
@@ -162,6 +169,7 @@
 
 <script setup lang="ts">
 import type { Exercise } from '~/types/content'
+import type { MistakeEntry, RetrySession } from '~/utils/retries'
 import {
   buildExamItems, cardsById, chapterCards, chapterExercisePool, chapterOf, chapterOpenPool,
   exercisesByFile, lessonById, nextLessonAfter,
@@ -214,12 +222,38 @@ const exercises = computed(() =>
 )
 const finished = ref(false)
 const lastResult = ref<{ correct: number; total: number; missed: { q: string; a: string }[] } | null>(null)
+
+// a few due retries ride along at the end of every exercise lesson — the
+// backlog drains inside normal study instead of a separate scary session.
+// Snapshot per lesson: recording a retry mid-run changes due-ness, and a
+// live computed would mutate the running session under the runner's feet.
+const session = ref<RetrySession>({ items: [], retryOf: [] })
+const retryStats = ref({ correct: 0, total: 0 })
+watch(lesson, (l) => {
+  retryStats.value = { correct: 0, total: 0 }
+  session.value = l?.type === 'exercises'
+    ? withDueRetries(exercises.value, progress.mistakes as MistakeEntry[], todayIso())
+    : { items: [], retryOf: [] }
+}, { immediate: true })
+
+function onSessionAnswered(pay: { index: number; correct: boolean }) {
+  const m = session.value.retryOf[pay.index]
+  if (!m) return
+  progress.recordRetry(m.q, pay.correct, m.a)
+  retryStats.value.total += 1
+  if (pay.correct) retryStats.value.correct += 1
+}
 function finishExercises(result: { correct: number; total: number; missed: { q: string; a: string }[] }) {
   finished.value = true
   lastResult.value = result
   if (!lesson.value) return
   progress.markDone(lesson.value.id)
-  progress.recordLesson(lesson.value.id, result.correct, result.total)
+  // injected retries don't belong in the lesson's own score
+  progress.recordLesson(
+    lesson.value.id,
+    result.correct - retryStats.value.correct,
+    result.total - retryStats.value.total,
+  )
   progress.logMistakes(result.missed)
 }
 
@@ -259,6 +293,10 @@ async function continueWithAi() {
 }
 function restartExercises() {
   if (lesson.value) progress.unmarkDone(lesson.value.id)
+  // fresh snapshot: retries answered in the previous run are no longer due,
+  // and stale stats would corrupt (even negate) the next score
+  retryStats.value = { correct: 0, total: 0 }
+  session.value = withDueRetries(exercises.value, progress.mistakes as MistakeEntry[], todayIso())
   finished.value = false
 }
 

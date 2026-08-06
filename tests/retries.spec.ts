@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { MistakeEntry } from '../app/utils/retries'
-import { applyRetry, isDue, nextDue, retryExercise } from '../app/utils/retries'
+import { applyRetry, isDue, nextDue, withDueRetries, retryExercise } from '../app/utils/retries'
 
 const base: MistakeEntry = { q: 'Say: “I want to eat.”', a: 'je veux manger', date: '2026-07-18' }
 
@@ -59,5 +59,39 @@ describe('retryExercise', () => {
     const ex = retryExercise({ q: 'Say aloud: I want a coffee.', a: 'Je veux un café.', date: '2026-07-18' })
     expect(ex.type).toBe('speak')
     if (ex.type === 'speak') expect(ex.target).toBe('Je veux un café.')
+  })
+})
+
+describe('withDueRetries', () => {
+  const own = [
+    { type: 'mc' as const, prompt: 'Own question', options: ['a', 'b'], answer: 0 },
+  ]
+  const due = { q: 'Say: “I want it.”', a: 'je le veux', date: '2026-07-01', closed: false }
+  const notDue = { q: 'Other', a: 'x', date: '2026-08-01', closed: false }
+  const duplicate = { q: 'Own question', a: 'a', date: '2026-07-01', closed: false }
+
+  it('appends due retries after own items with a parallel retryOf map', () => {
+    const s = withDueRetries(own, [due, notDue], '2026-08-02', 3)
+    expect(s.items).toHaveLength(2)
+    expect(s.retryOf[0]).toBeNull()
+    expect(s.retryOf[1]).toBe(due)
+    expect(s.items[1]!.type).toBe('type')
+  })
+
+  it('never injects a retry that duplicates an own question', () => {
+    const s = withDueRetries(own, [duplicate], '2026-08-02', 3)
+    expect(s.items).toHaveLength(1)
+  })
+
+  it('respects the max cap', () => {
+    const many = Array.from({ length: 6 }, (_, i) => ({ q: `Q${i}`, a: `a${i}`, date: '2026-07-01', closed: false }))
+    const s = withDueRetries(own, many, '2026-08-02', 3)
+    expect(s.items).toHaveLength(4)
+  })
+
+  it('does not mutate prompts with tags', () => {
+    const s = withDueRetries([], [due], '2026-08-02', 3)
+    const item = s.items[0]!
+    expect('prompt' in item ? (item as { prompt: string }).prompt : '').not.toContain('🔁')
   })
 })

@@ -15,7 +15,15 @@
 
     <template v-else-if="!finished">
       <p class="muted small">{{ meta.desc }}</p>
-      <ExerciseRunner v-if="items.length > 0" :key="runKey" :exercises="items" @finished="onFinished" />
+      <ExerciseRunner
+        v-if="session.items.length > 0"
+        :key="runKey"
+        :exercises="session.items"
+        :repeat-missed="kind !== 'writing'"
+        :retry-start-index="items.length"
+        @answered="onSessionAnswered"
+        @finished="onFinished"
+      />
       <div v-else class="card">
         <p class="muted small">Couldn't build this workout from your words — learn a few more on the Path first.</p>
       </div>
@@ -34,6 +42,8 @@ import type { Card, Exercise } from '~/types/content'
 import { cardsById } from '~/content'
 import type { DrillKind } from '~/utils/drills'
 import { buildDrills } from '~/utils/drills'
+import type { MistakeEntry, RetrySession } from '~/utils/retries'
+import { withDueRetries } from '~/utils/retries'
 import { todayIso } from '~/utils/srs'
 
 const route = useRoute()
@@ -69,8 +79,20 @@ const items = ref<Exercise[]>([])
 const runKey = ref(0)
 const finished = ref(false)
 
+// the daily quiz doubles as the retry drain: a few due mistakes ride along.
+// Snapshot per build — recording a retry mid-run must not reshape the session.
+const session = ref<RetrySession>({ items: [], retryOf: [] })
+
+function onSessionAnswered(pay: { index: number; correct: boolean }) {
+  const m = session.value.retryOf[pay.index]
+  if (m) progress.recordRetry(m.q, pay.correct, m.a)
+}
+
 function build() {
   items.value = buildDrills(pool.value, allCards, meta.value.drill, meta.value.count)
+  session.value = kind.value === 'quiz'
+    ? withDueRetries(items.value, progress.mistakes as MistakeEntry[], todayIso())
+    : { items: [...items.value], retryOf: items.value.map(() => null) }
   runKey.value += 1
   finished.value = false
 }

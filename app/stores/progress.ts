@@ -262,7 +262,7 @@ export const useProgress = defineStore('progress', () => {
     if (items.length === 0) return
     const today = todayIso()
     for (const item of items) {
-      const i = mistakes.value.findIndex(m => m.q === item.q)
+      const i = mistakes.value.findIndex(m => m.q === item.q && (!item.a || !m.a || m.a === item.a))
       if (i !== -1) {
         // relapse of a known mistake: reopen it and reset its retry clock
         const prev = mistakes.value[i]!

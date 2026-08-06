@@ -116,6 +116,10 @@
 
     <!-- GRAMMAR — one pattern a day -->
     <template v-if="tab === 'grammar'">
+      <NuxtLink to="/cheatsheets" class="card spread sheets-link">
+        <span>📋 Cheat sheets — every rule so far, one page</span>
+        <span class="chip">Open →</span>
+      </NuxtLink>
       <p class="muted small">
         One practical pattern per day, sequenced from <strong>your own past mistakes</strong>.
         Rule in plain words, then you produce eight sentences. No terminology.
@@ -393,5 +397,6 @@ const toggleDay = (day: Day) => {
 .ot.on { background: var(--path-oral-soft); color: var(--path-oral-text); }
 .review-chip { background: var(--path-grammar-soft); color: var(--path-grammar-text); margin-left: 6px; }
 .brief .phrase { padding: 2px 0; }
+.sheets-link { border-color: var(--path-grammar); text-decoration: none; color: var(--fg); }
 
 </style>

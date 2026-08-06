@@ -54,3 +54,29 @@ export function retryExercise(m: MistakeEntry): Exercise {
   }
   return { type: 'type', prompt: m.q, answer: [m.a] }
 }
+
+export interface RetrySession {
+  items: Exercise[]
+  /** parallel to items: the mistake behind each injected exercise, or null for own items */
+  retryOf: (MistakeEntry | null)[]
+}
+
+/** Appends up to `max` due retries to a session — Duolingo-style interleaving
+ * that drains the retry backlog inside normal study instead of a separate chore. */
+export function withDueRetries(
+  own: Exercise[],
+  mistakes: MistakeEntry[],
+  today: string,
+  max = 3,
+): RetrySession {
+  // never inject a retry whose question is already one of the session's own
+  // items — the miss/retry records would fight over the same entry
+  const ownPrompts = new Set(own.map(o => ('prompt' in o ? o.prompt : null)).filter(Boolean))
+  const due = mistakes
+    .filter(m => isDue(m, today) && !ownPrompts.has(m.q))
+    .slice(0, max)
+  return {
+    items: [...own, ...due.map(retryExercise)],
+    retryOf: [...own.map(() => null), ...due],
+  }
+}

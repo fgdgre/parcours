@@ -1,7 +1,7 @@
 <template>
   <div class="stack">
     <p v-if="exercise.passage" class="card passage" lang="fr">{{ exercise.passage }}</p>
-    <h2>{{ exercise.prompt }}</h2>
+    <SpeakableText :text="exercise.prompt" />
     <p v-if="exercise.hint" class="muted small">{{ exercise.hint }}</p>
 
     <WordBank
@@ -45,15 +45,8 @@
         ⚠️ Right word, wrong accents — it's <em>{{ exercise.answer[0] }}</em>. Accents change the sound; this counts against your Spelling stat.
       </div>
       <div class="feedback-actions">
-        <button class="btn tts-btn" @click="tts.speak(exercise.answer[0]!, progress.settings.ttsRate)">
-          🔊 Hear it
-        </button>
-        <button class="btn tts-btn" aria-label="Word by word" @click="tts.speakSlow(exercise.answer[0]!, progress.settings.ttsRate)">
-          🐢
-        </button>
-        <button class="btn tts-btn" @click="explainIt">
-          {{ explained ? '✓ Copied' : '🤔 Explain (AI)' }}
-        </button>
+        <button class="btn tts-btn" aria-label="Hear it" @click="tts.speak(exercise.answer[0]!, progress.settings.ttsRate)">🔊</button>
+        <button class="btn tts-btn" aria-label="Word by word" @click="tts.speakSlow(exercise.answer[0]!, progress.settings.ttsRate)">🐢</button>
         <ExerciseNote :note-key="exercise.prompt" />
       </div>
       <button class="btn btn-primary btn-block" @click="finish">Continue</button>
@@ -63,8 +56,6 @@
 
 <script setup lang="ts">
 import { matchAnswer, normalizeFr } from '~/utils/grading'
-import { buildExplainPrompt } from '~/utils/reviewPrompt'
-import { copyText } from '~/utils/clipboard'
 import { cardsById } from '~/content'
 import WordBank from './WordBank.vue'
 
@@ -129,12 +120,6 @@ function submit() {
   submitted.value = true
 }
 
-const explained = ref(false)
-async function explainIt() {
-  await copyText(buildExplainPrompt(props.exercise.prompt, props.exercise.answer[0]!, input.value))
-  explained.value = true
-  setTimeout(() => { explained.value = false }, 3500)
-}
 
 function finish() {
   emit('done', correct.value, {

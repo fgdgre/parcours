@@ -29,11 +29,8 @@
       </div>
       <div class="feedback-actions">
         <button class="btn tts-btn" @click="tts.speak(`${exercise.pronoun} ${exercise.answer[0]}`, progress.settings.ttsRate)">
-          🔊 Hear it
-        </button>
-        <button class="btn explain-btn" @click="explainIt">
-          {{ explained ? '✓ Copied' : '🤔 Explain (AI)' }}
-        </button>
+🔊</button>
+
         <ExerciseNote :note-key="`Conjugate ${exercise.verb} with “${exercise.pronoun}”`" />
       </div>
       <button class="btn btn-primary btn-block" @click="$emit('done', correct)">Continue</button>
@@ -43,8 +40,6 @@
 
 <script setup lang="ts">
 import { matchAnswer } from '~/utils/grading'
-import { buildExplainPrompt } from '~/utils/reviewPrompt'
-import { copyText } from '~/utils/clipboard'
 
 const props = defineProps<{
   exercise: { type: 'conjugate'; verb: string; pronoun: string; tense: string; answer: string[]; hint?: string; explain?: string }
@@ -54,16 +49,6 @@ const emit = defineEmits<{ done: [correct: boolean] }>()
 const progress = useProgress()
 const tts = useTts()
 
-const explained = ref(false)
-async function explainIt() {
-  await copyText(buildExplainPrompt(
-    `Conjugate ${props.exercise.verb} with "${props.exercise.pronoun}" (${props.exercise.tense})`,
-    `${props.exercise.pronoun} ${props.exercise.answer[0]}`,
-    input.value,
-  ))
-  explained.value = true
-  setTimeout(() => { explained.value = false }, 3500)
-}
 const input = ref('')
 const submitted = ref(false)
 const correct = ref(false)

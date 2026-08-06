@@ -33,9 +33,6 @@
         It said: <em>{{ exercise.ttsText }}</em>
       </div>
       <div class="feedback-actions">
-        <button class="btn explain-btn" @click="explainIt">
-          {{ explained ? '✓ Copied' : '🤔 Explain (AI)' }}
-        </button>
         <ExerciseNote :note-key="`Dictation: ${exercise.ttsText}`" what="sentence" />
       </div>
       <button class="btn btn-primary btn-block" @click="$emit('done', correct)">Continue</button>
@@ -45,8 +42,6 @@
 
 <script setup lang="ts">
 import { matchAnswer } from '~/utils/grading'
-import { buildExplainPrompt } from '~/utils/reviewPrompt'
-import { copyText } from '~/utils/clipboard'
 
 const props = defineProps<{
   exercise: { type: 'dictation'; ttsText: string; answer: string[] }
@@ -79,16 +74,6 @@ function submit() {
   submitted.value = true
 }
 
-const explained = ref(false)
-async function explainIt() {
-  await copyText(buildExplainPrompt(
-    `Dictation — I heard this French sentence and had to write it: "${props.exercise.ttsText}"`,
-    props.exercise.ttsText,
-    input.value,
-  ))
-  explained.value = true
-  setTimeout(() => { explained.value = false }, 3500)
-}
 
 function onEnter() {
   if (!submitted.value) submit()

@@ -62,6 +62,7 @@
       <ExerciseRunner
         :key="sessionKey"
         :exercises="sessionExercises"
+        repeat-missed
         @answered="onAnswered"
         @finished="onFinished"
       />

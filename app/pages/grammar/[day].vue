@@ -50,7 +50,14 @@
           {{ showRule ? 'Hide the rule' : '📐 Peek at the rule' }}
         </button>
         <p v-if="showRule" class="muted small rule-text">{{ lesson.rule }}</p>
-        <ExerciseRunner :key="lesson.id" :exercises="practiceItems" @finished="onFinished" />
+        <ExerciseRunner
+          :key="lesson.id"
+          :exercises="session.items"
+          repeat-missed
+          :retry-start-index="practiceItems.length"
+          @answered="onSessionAnswered"
+          @finished="onFinished"
+        />
       </template>
 
       <template v-else>
@@ -77,6 +84,9 @@
 <script setup lang="ts">
 import type { Exercise } from '~/types/content'
 import { grammarDayKey, grammarLadder } from '~/content/paths'
+import type { MistakeEntry, RetrySession } from '~/utils/retries'
+import { withDueRetries } from '~/utils/retries'
+import { todayIso } from '~/utils/srs'
 
 const route = useRoute()
 const router = useRouter()
@@ -107,12 +117,38 @@ const practiceItems = computed<Exercise[]>(() =>
   })) ?? [],
 )
 
+const session = ref<RetrySession>({ items: [], retryOf: [] })
+const retryStats = ref({ correct: 0, total: 0 })
+// route-param navigation reuses this component — reset everything per day
+watch(dayNum, () => {
+  practicing.value = false
+  showRule.value = false
+  finishedRun.value = false
+  retryStats.value = { correct: 0, total: 0 }
+  session.value = withDueRetries(practiceItems.value, progress.mistakes as MistakeEntry[], todayIso())
+}, { immediate: true })
+
+function onSessionAnswered(pay: { index: number; correct: boolean }) {
+  const m = session.value.retryOf[pay.index]
+  if (!m) return
+  progress.recordRetry(m.q, pay.correct, m.a)
+  retryStats.value.total += 1
+  if (pay.correct) retryStats.value.correct += 1
+}
+
 function onFinished(result: { correct: number; total: number; missed: { q: string; a: string }[] }) {
   if (!lesson.value) return
-  progress.recordLesson(grammarDayKey(lesson.value.day), result.correct, result.total)
+  progress.recordLesson(
+    grammarDayKey(lesson.value.day),
+    result.correct - retryStats.value.correct,
+    result.total - retryStats.value.total,
+  )
   progress.logMistakes(result.missed)
   progress.markDone(grammarDayKey(lesson.value.day))
-  lastScore.value = { correct: result.correct, total: result.total }
+  lastScore.value = {
+    correct: result.correct - retryStats.value.correct,
+    total: result.total - retryStats.value.total,
+  }
   finishedRun.value = true
 }
 

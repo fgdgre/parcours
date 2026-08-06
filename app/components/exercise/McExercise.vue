@@ -4,7 +4,7 @@
     <button v-if="exercise.passage" class="btn tts-btn" @click="tts.speak(exercise.passage!, progress.settings.ttsRate)">
       🔊 Listen to the text
     </button>
-    <h2>{{ exercise.prompt }}</h2>
+    <SpeakableText :text="exercise.prompt" />
     <button
       v-for="(opt, i) in shuffled"
       :key="i"
@@ -20,11 +20,10 @@
         <span v-if="exercise.explain">&nbsp;{{ exercise.explain }}</span>
       </div>
       <div class="feedback-actions">
-        <button class="btn tts-btn" @click="sayAnswer">🔊 Hear it</button>
-        <button class="btn tts-btn" aria-label="Word by word" @click="tts.speakSlow(exercise.options[exercise.answer]!, progress.settings.ttsRate)">🐢</button>
-        <button class="btn explain-btn" @click="explainIt">
-          {{ explained ? '✓ Copied' : '🤔 Explain (AI)' }}
-        </button>
+        <template v-if="hearTarget">
+          <button class="btn tts-btn" aria-label="Hear it" @click="tts.speak(hearTarget, progress.settings.ttsRate)">🔊</button>
+          <button class="btn tts-btn" aria-label="Word by word" @click="tts.speakSlow(hearTarget, progress.settings.ttsRate)">🐢</button>
+        </template>
         <ExerciseNote :note-key="exercise.prompt" />
       </div>
       <button class="btn btn-primary btn-block" @click="$emit('done', correct)">Continue</button>
@@ -41,21 +40,12 @@ defineEmits<{ done: [correct: boolean] }>()
 const progress = useProgress()
 const tts = useTts()
 
-function sayAnswer() {
-  tts.speak(props.exercise.options[props.exercise.answer]!, progress.settings.ttsRate)
-}
+import { hearableFrench } from '~/utils/frText'
 
-import { buildExplainPrompt } from '~/utils/reviewPrompt'
-import { copyText } from '~/utils/clipboard'
-
-const explained = ref(false)
-async function explainIt() {
-  const correctText = shuffled.value.find(o => o.correct)!.text
-  const mine = picked.value !== null ? shuffled.value[picked.value]!.text : undefined
-  await copyText(buildExplainPrompt(props.exercise.prompt, correctText, mine))
-  explained.value = true
-  setTimeout(() => { explained.value = false }, 3500)
-}
+// never feed English to the fr-FR voice: prefer quoted French from the
+// prompt (the thing being asked about), else a French answer, else nothing
+const hearTarget = computed(() =>
+  hearableFrench(props.exercise.prompt, props.exercise.options[props.exercise.answer]!))
 
 const shuffled = ref(
   props.exercise.options
@@ -82,7 +72,6 @@ function optionClass(i: number) {
 
 <style scoped>
 .passage { font-size: 1.05rem; line-height: 1.7; font-style: normal; white-space: pre-line; }
-.explain-btn { min-height: 38px; padding: 6px 12px; align-self: flex-start; font-size: 0.85rem; color: var(--muted); }
 .tts-btn { min-height: 38px; padding: 6px 12px; align-self: flex-start; font-size: 0.85rem; color: var(--muted); }
 .option { justify-content: flex-start; text-align: left; }
 .opt-ok { border-color: var(--ok); background: var(--ok-soft); color: var(--ok); }

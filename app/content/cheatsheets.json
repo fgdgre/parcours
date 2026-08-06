@@ -1,0 +1,168 @@
+[
+  {
+    "id": "core-verbs",
+    "title": "The three core verbs",
+    "headers": ["", "être (be)", "avoir (have)", "aller (go)"],
+    "rows": [
+      ["je / j'", "je suis", "j'ai", "je vais"],
+      ["tu", "tu es", "tu as", "tu vas"],
+      ["il/elle/on", "il est", "il a", "il va"]
+    ],
+    "footer": "on = casual “we” but uses the il/elle form: on est, on a, on va. Trick: il form = tu form minus -s (tu vas → il va)."
+  },
+  {
+    "id": "endings",
+    "title": "Pronoun endings — each person's signature",
+    "headers": ["pronoun", "ending", "example"],
+    "rows": [
+      ["je", "-e / -s / -x", "je parle"],
+      ["tu", "-s", "tu parles"],
+      ["il / elle / on", "—, -t, -a", "il parle"],
+      ["nous", "-ons", "nous parlons"],
+      ["vous", "-ez", "vous parlez"],
+      ["ils / elles", "-ent (silent)", "ils parlent"]
+    ],
+    "footer": "The two clean, learn-once endings: nous → -ons, vous → -ez."
+  },
+  {
+    "id": "nous-vous",
+    "title": "nous & vous forms of known verbs",
+    "headers": ["verb", "nous (-ons)", "vous (-ez)"],
+    "rows": [
+      ["parler", "nous parlons", "vous parlez"],
+      ["manger", "nous mangeons", "vous mangez"],
+      ["aller", "nous allons", "vous allez"],
+      ["vouloir", "nous voulons", "vous voulez"],
+      ["pouvoir", "nous pouvons", "vous pouvez"],
+      ["avoir", "nous avons", "vous avez"],
+      ["être ✱", "nous sommes", "vous êtes"]
+    ],
+    "footer": "manger keeps the e: mangEons. ✱ être is the big exception for both."
+  },
+  {
+    "id": "vouloir-pouvoir",
+    "title": "vouloir / pouvoir — same irregular pattern",
+    "headers": ["", "vouloir (want)", "pouvoir (can)"],
+    "rows": [
+      ["je", "veux", "peux"],
+      ["tu", "veux", "peux"],
+      ["il/elle/on", "veut", "peut"],
+      ["nous", "voulons", "pouvons"],
+      ["vous", "voulez", "pouvez"]
+    ],
+    "footer": "je/tu/il all sound the same (/vø/, /pø/) — only spelling changes: -x, -x, -t."
+  },
+  {
+    "id": "er-verbs",
+    "title": "-er verbs — the regular pattern",
+    "items": [
+      "Chop -er, add the ending. je -e / tu -es / il -e — all silent, sound identical.",
+      "parler → je parle · tu parles · il parle · nous parlons · vous parlez",
+      "Same for: aimer, travailler, manger, habiter, écouter…",
+      "Irregulars break this (être, avoir, aller, vouloir, pouvoir) — memorize those."
+    ]
+  },
+  {
+    "id": "two-verbs",
+    "title": "Two verbs together",
+    "items": [
+      "Only the FIRST is conjugated; the second stays infinitive. No de, no pour, no ending change.",
+      "je veux manger · on peut aller · je vais dormir · nous voulons parler",
+      "✗ “on peut vais” (two conjugated) · ✗ “je veux mangé” (participle)",
+      "Test: is the 2nd verb in plain dictionary form? If yes → correct."
+    ]
+  },
+  {
+    "id": "link-words",
+    "title": "Link words between verbs: pour / de / nothing",
+    "headers": ["situation", "link", "example"],
+    "rows": [
+      ["purpose (“in order to”)", "pour + inf", "je suis ici pour parler"],
+      ["after possible / difficile", "de + inf", "c'est possible de dormir"],
+      ["after aller / vouloir / pouvoir", "nothing", "je vais parler"],
+      ["“just did”", "venir de + inf", "je viens de manger"]
+    ],
+    "footer": "Test for pour: if English can't say “in order to”, don't use pour."
+  },
+  {
+    "id": "negation",
+    "title": "Negation",
+    "items": [
+      "ne + [verb] + pas — wraps the VERB: je ne veux pas.",
+      "Elision: ne → n' before a vowel: il n'est pas · je n'ai pas.",
+      "être negative: je ne suis pas · tu n'es pas · il n'est pas.",
+      "pas de before a noun (un/une → de): je ne veux pas de café.",
+      "non = “no” (answer). ne…pas = negates a verb. Different jobs."
+    ]
+  },
+  {
+    "id": "places",
+    "title": "Places: à / au / en / de / du",
+    "headers": ["word", "meaning", "use for", "example"],
+    "rows": [
+      ["à", "to / at", "cities", "à Paris"],
+      ["au", "to / at", "masculine nouns (à+le)", "au magasin, au Canada"],
+      ["en", "to / in", "feminine countries", "en France"],
+      ["de", "from", "coming from", "je viens de Paris"],
+      ["du", "from the", "de + le (masc.)", "je viens du Canada"]
+    ],
+    "footer": "Contractions: à + le = au · de + le = du. Never write “à le” / “de le”."
+  },
+  {
+    "id": "gender",
+    "title": "Gender & articles",
+    "items": [
+      "un (masc.) / une (fem.) · le / la · plural adds -s: deux cafés.",
+      "Learn the article WITH the noun: une voiture, not just voiture.",
+      "Ending clues: -tion → feminine (100% rule); -ment / -age → masculine.",
+      "French gender ≠ Ukrainian gender. Don't borrow across languages."
+    ]
+  },
+  {
+    "id": "possessives",
+    "title": "Possessives (my / your)",
+    "items": [
+      "mon (masc.) / ma (fem.) / mes (plural) = my — mon travail, ma question, mes amis.",
+      "Before a vowel, ma becomes mon even for feminine nouns: mon amie, mon idée.",
+      "ton / ta / tes = your (informal).",
+      "mon ≠ moi. moi = “me” (stands alone); mon = “my” (owns a noun)."
+    ]
+  },
+  {
+    "id": "questions",
+    "title": "Question words",
+    "headers": ["FR", "EN", "hook"],
+    "rows": [
+      ["qui", "who", "the person one"],
+      ["quoi", "what", "C'est quoi ?"],
+      ["quand", "when", "silent -d"],
+      ["comment", "how", "double m, silent t"],
+      ["pourquoi", "why", "pour + quoi = “for what”"],
+      ["combien", "how much", "com + bien"]
+    ],
+    "footer": "Fixed phrases, learn whole: Comment ça va ? · Qui est-ce ? · C'est quoi ? · C'est combien ? · Pourquoi pas ?"
+  },
+  {
+    "id": "survival",
+    "title": "“I didn't catch that” — survival phrases",
+    "headers": ["FR", "EN"],
+    "rows": [
+      ["Pardon ?", "Sorry? / What?"],
+      ["Vous pouvez répéter, s'il vous plaît ?", "Can you repeat, please?"],
+      ["Vous pouvez répéter plus lentement ?", "…more slowly?"],
+      ["Vous pouvez répéter le dernier mot ?", "…the last word?"],
+      ["Je n'ai pas compris.", "I didn't understand."],
+      ["Qu'est-ce que ça veut dire ?", "What does that mean?"]
+    ]
+  },
+  {
+    "id": "spelling",
+    "title": "Spelling repeat-offenders — lock these",
+    "items": [
+      "café · très · beaucoup (watch the u) · s'il vous plaît (vous not vois; hat on plaît)",
+      "monsieur · problème · réservation · fenêtre · aujourd'hui",
+      "je m'appelle · quelque chose (ch, not sh) · magasin (s, not z)",
+      "anglais / français — lowercase in French."
+    ]
+  }
+]

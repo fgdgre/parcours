@@ -2,12 +2,13 @@
   <div class="stack">
     <div class="dots" aria-hidden="true">
       <span
-        v-for="(_, i) in exercises"
+        v-for="(_, i) in queue"
         :key="i"
         class="dot"
         :class="dotClass(i)"
       />
     </div>
+    <p v-if="retryFlag" class="small retry-flag">🔁 Comeback — you missed this one before</p>
     <component
       :is="componentFor(current)"
       v-if="current"
@@ -33,7 +34,14 @@ interface RunResult {
   missed: { q: string; a: string; ex?: Exercise }[]
 }
 
-const props = defineProps<{ exercises: Exercise[] }>()
+const props = defineProps<{
+  exercises: Exercise[]
+  /** Duolingo-style: a missed question re-enters the queue until answered
+   * correctly (max 3 attempts). Scores and stats count first attempts only. */
+  repeatMissed?: boolean
+  /** items at/after this original index are injected retries — badge them */
+  retryStartIndex?: number
+}>()
 const emit = defineEmits<{
   finished: [result: RunResult]
   answered: [payload: { index: number; q: string; a: string; correct: boolean }]
@@ -41,6 +49,10 @@ const emit = defineEmits<{
 
 const progress = useProgress()
 const idx = ref(0)
+const queue = ref<Exercise[]>([...props.exercises])
+// queue position -> index in props.exercises (repeats map back to their original)
+const originOf = ref<number[]>(props.exercises.map((_, i) => i))
+const attempts: Record<number, number> = {}
 
 // a long exercise leaves the viewport parked at its Continue button —
 // bring the next question into view from its top
@@ -58,11 +70,17 @@ function dotClass(i: number) {
     'dot-ok': r === 'ok',
     'dot-err': r === 'err',
     'dot-open': r === 'open',
+    'dot-repeat': i >= props.exercises.length,
     current: i === idx.value,
   }
 }
 const perType: Record<string, { correct: number; total: number }> = {}
-const current = computed(() => props.exercises[idx.value])
+const current = computed(() => queue.value[idx.value])
+const retryFlag = computed(() => {
+  if (props.retryStartIndex === undefined) return false
+  const orig = originOf.value[idx.value] ?? idx.value
+  return orig >= props.retryStartIndex
+})
 
 function describe(ex: Exercise): { q: string; a: string } {
   switch (ex.type) {
@@ -88,14 +106,20 @@ function componentFor(ex: Exercise) {
 
 function advance(correct?: boolean, meta?: { skill?: string; skillCorrect?: boolean }) {
   const ex = current.value
+  const orig = originOf.value[idx.value] ?? idx.value
+  const isRepeat = (attempts[orig] ?? 0) > 0
+  attempts[orig] = (attempts[orig] ?? 0) + 1
   if (ex) {
     results.value[idx.value] = ex.type === 'open' ? 'open' : (correct ? 'ok' : 'err')
-    const d = describe(ex)
-    emit('answered', { index: idx.value, q: d.q, a: d.a, correct: !!correct })
+    if (!isRepeat) {
+      const d = describe(ex)
+      emit('answered', { index: orig, q: d.q, a: d.a, correct: !!correct })
+    }
   }
   // 'open' writing is never auto-graded — it neither counts toward the
-  // score nor appears in the mistake log.
-  if (ex && ex.type !== 'open') {
+  // score nor appears in the mistake log. Repeats are pure practice:
+  // scores, skill stats and the mistake log all reflect first attempts only.
+  if (ex && ex.type !== 'open' && !isRepeat) {
     gradableCount.value += 1
     if (correct) correctCount.value += 1
     else missed.value.push({ ...describe(ex), ex })
@@ -108,7 +132,12 @@ function advance(correct?: boolean, meta?: { skill?: string; skillCorrect?: bool
     if (skillCorrect) t.correct += 1
     perType[key] = t
   }
-  if (idx.value + 1 >= props.exercises.length) {
+  // the miss comes back until answered correctly (max 3 tries per item)
+  if (ex && ex.type !== 'open' && !correct && props.repeatMissed && (attempts[orig] ?? 0) < 3) {
+    queue.value.push({ ...ex })
+    originOf.value.push(orig)
+  }
+  if (idx.value + 1 >= queue.value.length) {
     progress.recordRun(perType)
     emit('finished', {
       correct: correctCount.value,
@@ -133,4 +162,6 @@ function advance(correct?: boolean, meta?: { skill?: string; skillCorrect?: bool
 .dot-err { background: var(--err); }
 .dot-open { background: var(--warn); }
 .dot.current { background: var(--accent); }
+.dot-repeat { outline: 1px dashed var(--muted); outline-offset: 1px; }
+.retry-flag { margin: 0; color: var(--warn); font-weight: 600; }
 </style>
