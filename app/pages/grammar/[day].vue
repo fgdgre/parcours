@@ -185,4 +185,5 @@ function goBack() {
 .tts-pair { display: flex; gap: 6px; flex-shrink: 0; }
 .okline { color: var(--ok); font-weight: 600; margin: 0; }
 .score { font-size: 1.4rem; font-weight: 700; margin: 0; }
+.page { --fr-underline: var(--path-grammar); }
 </style>

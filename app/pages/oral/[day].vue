@@ -132,4 +132,5 @@ function goBack() {
 .back-btn svg { width: 18px; height: 18px; }
 .path-label { color: var(--path-oral-text); font-weight: 700; font-size: 0.85rem; margin: 0 0 4px; }
 .okline { color: var(--ok); font-weight: 600; margin: 0; }
+.page { --fr-underline: var(--path-oral); }
 </style>

@@ -93,6 +93,7 @@ th { color: var(--muted); font-weight: 600; font-size: 0.8rem; }
 tbody tr:last-child td { border-bottom: 0; }
 td:first-child { font-weight: 600; }
 .fr-cell {
+  position: relative;
   background: none;
   border: 0;
   padding: 0;
@@ -100,8 +101,18 @@ td:first-child { font-weight: 600; }
   color: inherit;
   text-align: left;
   cursor: pointer;
-  border-bottom: 1px dotted var(--accent);
   -webkit-tap-highlight-color: transparent;
+}
+.fr-cell::after {
+  content: '';
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  bottom: -1px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--path-grammar);
+  opacity: 0.7;
 }
 .fr-cell:active { opacity: 0.6; }
 .list { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; }

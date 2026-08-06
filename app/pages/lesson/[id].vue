@@ -390,4 +390,5 @@ const allChecked = computed(() => checks.value.length > 0 && checks.value.every(
 .check-row input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--accent); }
 .okline { color: var(--ok); font-weight: 600; }
 .score { font-size: 1.3rem; font-weight: 700; }
+.page { --fr-underline: var(--path-main); }
 </style>
