@@ -5,8 +5,8 @@
       <div class="row">
         <span class="fr">{{ card.fr }}</span>
         <span class="tts-pair">
-          <button v-if="card.fr.includes(' ')" class="btn tts" aria-label="Word by word" @click.stop="tts.speakSlow(card.fr, progress.settings.ttsRate)">🐢</button>
           <button class="btn tts" aria-label="Hear it" @click.stop="hear">🔊</button>
+          <button v-if="card.fr.includes(' ')" class="btn tts" aria-label="Word by word" @click.stop="tts.speakSlow(card.fr, progress.settings.ttsRate)">🐢</button>
         </span>
       </div>
       <template v-if="revealed">
